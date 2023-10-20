@@ -3,7 +3,6 @@
   - [carrduci-sys/](carrduci-sys)
       - [actualizaciones-csys.md](carrduci-sys/actualizaciones-csys.md)
       - [despliegue-respaldos-csys.md](carrduci-sys/despliegue-respaldos-csys.md)
-  - [directorio.md](directorio.md)
   - [generar_directorio.py](generar_directorio.py)
   - [ubuntu-server/](ubuntu-server)
   - [windows/](windows)
