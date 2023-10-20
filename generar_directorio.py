@@ -19,7 +19,7 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
     # contents each get pointers that are ├── with a final └── :
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
-        if (path.name != 'assets'):
+        if (path.name not in ['assets', 'directorio.md']):
             if '.git' in path.parts or '.dist' in path.parts:
                 continue
             if path.is_dir():
