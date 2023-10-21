@@ -56,8 +56,20 @@ programadas que llevan a cabo la implementación de CARRDUCIsys. Los respaldos d
 
   >En este caso es `ubuntu server`
 
-  Ver [coneccion-ssh.md](../ubuntu-serverr/coneccion-ssh.md) y 
+  Ver [coneccion-ssh.md](../ubuntu-serverr/conexion-ssh.md) y 
   [configurar-ubuntu-server.md](../ubuntu-serverr/configurar-ubuntu-server.md)
+</details>
+<details>
+  <summary>
+    <span style="
+      display:inline-block;
+    "> 
+      4. Tener docker instalado y haber iniciado sesión
+    </span>
+  </summary>
+
+
+  Ver [uso-docker.md](../docker/uso-docker.md)
 </details>
   
 
