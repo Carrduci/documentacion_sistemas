@@ -4,7 +4,8 @@
 
 El proposito es proveer información sobre el despliegue de las scripts o tareas 
 programadas que llevan a cabo la implementación de CARRDUCIsys. Los respaldos de las **bases de datos** y 
-**fotografías** vienen integrados y no se necesita ver por separado.
+**fotografías** vienen integrados y no se necesita ver por separado, solo programar una tarea paar copiarlos
+en la ubicación (fuera del servidor) donde se van a almacenar.
 
 <!-- <details>
   <summary>
@@ -81,7 +82,7 @@ programadas que llevan a cabo la implementación de CARRDUCIsys. Los respaldos d
 > interna. El equipo desde el que se hará el procedimiento tamién debe contar con acceso a la
 > red.
 
-Asegurarse de que el equipo esté en la misma red que el servidor de CARRDUCIsys eingresar el 
+Asegurarse de que el equipo esté en la misma red que el servidor de CARRDUCIsys e ingresar el 
 siguiente comando en la terminal de wsl:
 
 ```
@@ -115,3 +116,19 @@ remote: Total 102 (delta 43), reused 88 (delta 32), pack-reused 0
 Receiving objects: 100% (102/102), 13.16 KiB | 6.58 MiB/s, done.
 Resolving deltas: 100% (43/43), done.
 ```
+
+### 3. Ejecutar la script de actualización
+
+```
+~/utilidades_carrduci_sys/docker-carrduci-sys/aplicar-actualizacion-docker-servidor.sh
+
+```
+Lo que debe resultar en algo así:
+
+<img src="../assets/gifs/desplegar_actualizacion_carrduci_sys.gif" style="border-radius: 20px;">
+
+
+## Respaldos
+Aunque los respaldos vienen integrados en la script anterior, es necesario configurar la
+carpeta donde se guardan para que sea accesible desde la red. Esto se logra desplegando
+un servidor samba simple. [¿Cómo desplegar el servidor samba?](servidor-samba-carpeta-respaldos.md)
