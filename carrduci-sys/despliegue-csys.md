@@ -77,7 +77,7 @@ en la ubicación (fuera del servidor) donde se van a almacenar.
 
 ## Procedimiento
 
-### 2. Establecer conexión con el servidor
+### 1. Establecer conexión con el servidor
 > Para este paso ya debe existir un servidor configurado (con ip fija) y tener acceso a la red 
 > interna. El equipo desde el que se hará el procedimiento tamién debe contar con acceso a la
 > red.
