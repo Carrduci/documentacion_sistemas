@@ -1,6 +1,6 @@
 ### [< Directorio](../directorio.md)
 
-# Despliegar servidor Samba en ubuntu
+# Desplegar servidor Samba en ubuntu
 
 Para establecer una carpeta de red en un servidor Linux y que sea accesible desde 
 Windows, es necesario utilizar una herramienta llamada Samba.
