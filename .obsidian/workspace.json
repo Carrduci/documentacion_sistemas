@@ -1,0 +1,171 @@
+{
+  "main": {
+    "id": "cc540831be4ae369",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5fb838683250cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a930d67785fb1c39",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "830d2e3911f617e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "f77e71fb1307ad73",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d8bdb385ea2d8428",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "23fc51090818f9c2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "adb2d9080ad699ce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d8b5f13467dba795",
+    "type": "split",
+    "children": [
+      {
+        "id": "18a35b18d4473564",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d257cd0bf87c589b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "714cf7bd866d3623",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2df86ba9a02b3e8c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3da08f5b2ebfbb97",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "windows/establecer-copia-automatica-de-respaldos.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a930d67785fb1c39",
+  "lastOpenFiles": [
+    "subir_cambios.ps1",
+    "assets/imagenes/argumentos_tarea_apagar.png",
+    "assets/imagenes/hora_tarea_apagado.png",
+    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
+    "docker/uso-docker.md",
+    "ubuntu-server/conexion-ssh.md",
+    "ubuntu-server/configurar-ubuntu-server.md",
+    "windows/instalacion-wsl.md",
+    "windows/establecer-copia-automatica-de-respaldos.md",
+    "assets/gifs/desplegar_actualizacion_carrduci_sys.gif",
+    "assets/gifs/desplegar_servidor_samba.gif",
+    "assets/imagenes/coneccion_a_samba_desde_windows_prueba.png",
+    "assets/imagenes/crear_carpeta_en_programador_tareas.png",
+    "assets/imagenes/hora_fuertemente_recomendada_para_copiar_respaldo.png",
+    "assets/imagenes/reinicio_samba_final.png",
+    "assets/imagenes/seleccion_accion_tarea_creada.png",
+    "assets/imagenes/seleccion_cuadro_dialogo_tarea_creada.png",
+    "directorio.md",
+    "carrduci-sys/despliegue-csys.md"
+  ]
+}
