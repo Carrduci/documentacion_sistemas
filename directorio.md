@@ -1,13 +1,13 @@
 # Directorio De Manuales De Sistemas
 
-  - [carrduci-sys/](carrduci-sys)
-      - [despliegue-csys.md](carrduci-sys/despliegue-csys.md)
-      - [servidor-samba-carpeta-respaldos.md](carrduci-sys/servidor-samba-carpeta-respaldos.md)
-  - [docker/](docker)
-      - [uso-docker.md](docker/uso-docker.md)
-  - [ubuntu-server/](ubuntu-server)
-      - [conexion-ssh.md](ubuntu-server/conexion-ssh.md)
-      - [configurar-ubuntu-server.md](ubuntu-server/configurar-ubuntu-server.md)
-  - [windows/](windows)
-      - [establecer-copia-automatica-de-respaldos.md](windows/establecer-copia-automatica-de-respaldos.md)
-      - [instalacion-wsl.md](windows/instalacion-wsl.md)
+### Carrduci Sys
+  - [Despliegue Csys](./carrduci-sys/despliegue-csys.md)
+  - [Servidor Samba Carpeta Respaldos](./carrduci-sys/servidor-samba-carpeta-respaldos.md)
+### Docker
+  - [Uso Docker](./docker/uso-docker.md)
+### Ubuntu Server
+  - [Conexion Ssh](./ubuntu-server/conexion-ssh.md)
+  - [Configurar Ubuntu Server](./ubuntu-server/configurar-ubuntu-server.md)
+### Windows
+  - [Establecer Copia Automatica De Respaldos](./windows/establecer-copia-automatica-de-respaldos.md)
+  - [Instalacion Wsl](./windows/instalacion-wsl.md)
