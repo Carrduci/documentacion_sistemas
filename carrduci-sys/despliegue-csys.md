@@ -24,8 +24,7 @@ Ver [Subsistema De Linux](https://learn.microsoft.com/es-es/windows/wsl/install)
 
   >En este caso es `ubuntu server`
 
-Ver [coneccion-ssh.md](../ubuntu-serverr/conexion-ssh.md) y 
-[configurar-ubuntu-server.md](../ubuntu-serverr/configurar-ubuntu-server.md)
+Ver [coneccion-ssh.md](../ubuntu-server/conexion-ssh.md) y [configurar-ubuntu-server.md](../ubuntu-server/configurar-ubuntu-server.md)
 
 4. Tener Docker instalado y haber iniciado sesión
 
