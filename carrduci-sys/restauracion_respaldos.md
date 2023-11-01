@@ -1,6 +1,5 @@
 ### [< Directorio](../directorio.md)
-
-# Restaurar último respaldo
+# Restaurar respaldos
 
 Para restaurar la base de datos e imágenes, lo ideal es buscar el último respaldo generado. para ello hay dos opciones, copiar el respaldo desde Windows al servidor y luego restaurarlo (en caso de que no haya respaldos disponibles en este mismo) u obtener el último respaldo y restaurarlo.
 
@@ -32,3 +31,21 @@ Para esto hay que recurrir nuevamente a `utilidadades_carrrduci`.  Basta con eje
 ```
 
 Lo que debe tener un resultado algo así:
+![](../assets/gifs/restaurar_respaldo.gif)
+```
+ ===> Borrando carpeta anterior de respaldos ('/respaldos')
+ ===> Copiando ultimo respaldo encontrado en '/home/mentalselfthink/respaldos_csys/'
+Successfully copied 2.24GB to carrduci-sys-db:/respaldos
+ ===> Extrayendo contenidos del respaldo 'respaldo_carrduci_sys_bd-1698429600_10-31-23_12.10.tgz'
+      total de archivos: 11145
+ ===> Limpiando base de datos registrada
+ { ok: 1, dropped: 'carrduci' }
+ ===> Restaurando base de datos mongo. . .
+      archivo a restaurar: respaldo_carrduci_sys_bd-1698429600.gz
+      2023-11-01T17:27:16.751+0000      341759 document(s) restored successfully. 0 document(s) failed to restore.
+ -----------------------------------------------
+ ===> fin script
+```
+
+> Los números pueden variar
+
