@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys/despliegue-csys.md",
-                "mode": "source",
+                "file": "carrduci-sys/restauracion-respaldos.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys/despliegue-csys.md",
+                "file": "carrduci-sys/restauracion-respaldos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys/despliegue-csys.md",
+                "file": "carrduci-sys/restauracion-respaldos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys/despliegue-csys.md"
+                "file": "carrduci-sys/restauracion-respaldos.md"
               }
             }
           }
@@ -149,19 +149,21 @@
   "active": "86e60a5156861db3",
   "lastOpenFiles": [
     "directorio.md",
-    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/despliegue-csys.md",
+    "carrduci-sys/restauracion-respaldos.md",
+    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
+    "windows/establecer-copia-automatica-de-respaldos.md",
+    "windows/instalacion-wsl.md",
+    "ubuntu-server/configurar-ubuntu-server.md",
+    "ubuntu-server/conexion-ssh.md",
     "docker/uso-docker.md",
+    "restauracion_respaldos.md",
     "carrduci-sys/despliegue-csys 1.md",
     "tempCodeRunnerFile.py",
     "docker.md",
-    "windows/establecer-copia-automatica-de-respaldos.md",
     "subir_cambios.ps1",
     "assets/imagenes/argumentos_tarea_apagar.png",
     "assets/imagenes/hora_tarea_apagado.png",
-    "ubuntu-server/conexion-ssh.md",
-    "ubuntu-server/configurar-ubuntu-server.md",
-    "windows/instalacion-wsl.md",
     "assets/gifs/desplegar_actualizacion_carrduci_sys.gif",
     "assets/gifs/desplegar_servidor_samba.gif",
     "assets/imagenes/coneccion_a_samba_desde_windows_prueba.png",
