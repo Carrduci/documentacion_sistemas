@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "directorio.md",
-                "mode": "preview",
+                "file": "carrduci-sys/despliegue-csys.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "directorio.md",
+                "file": "carrduci-sys/despliegue-csys.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "directorio.md",
+                "file": "carrduci-sys/despliegue-csys.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "directorio.md"
+                "file": "carrduci-sys/despliegue-csys.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   "active": "86e60a5156861db3",
   "lastOpenFiles": [
     "directorio.md",
-    "docker/uso-docker.md",
+    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/despliegue-csys.md",
+    "docker/uso-docker.md",
     "carrduci-sys/despliegue-csys 1.md",
     "tempCodeRunnerFile.py",
     "docker.md",
@@ -158,7 +159,6 @@
     "subir_cambios.ps1",
     "assets/imagenes/argumentos_tarea_apagar.png",
     "assets/imagenes/hora_tarea_apagado.png",
-    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
     "ubuntu-server/conexion-ssh.md",
     "ubuntu-server/configurar-ubuntu-server.md",
     "windows/instalacion-wsl.md",

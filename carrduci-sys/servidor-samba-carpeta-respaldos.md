@@ -1,4 +1,4 @@
-- [ ] ### [< Directorio](../directorio.md)
+### [< Directorio](../directorio.md)
 
 # Desplegar servidor Samba en Ubuntu
 
