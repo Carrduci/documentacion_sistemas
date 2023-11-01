@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "directorio.md",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "directorio.md",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "directorio.md",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "directorio.md"
+                "file": "windows/establecer-copia-automatica-de-respaldos.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "86e60a5156861db3",
   "lastOpenFiles": [
+    "directorio.md",
     "carrduci-sys/restauracion_respaldos.md",
     "carrduci-sys/despliegue-csys.md",
-    "directorio.md",
     "carrduci-sys/restauracion-respaldos.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "carrduci-sys/servidor-samba-carpeta-respaldos.md",

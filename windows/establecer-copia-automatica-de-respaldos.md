@@ -59,6 +59,7 @@ Lo que debe resultar en algo parecido a esto
 ![](../assets/imagenes/nueva_carpeta_en_programador_tareas.png)
 
 Presionar `Crear tarea básica...` en el panel lateral izquierdo
+
 ![](../assets/imagenes/nueva_tarea_en_programador_tareas.png)
 
 Luego agregar un nombre a la tarea:
