@@ -63,17 +63,21 @@ Presionar `Crear tarea básica...` en el panel lateral izquierdo
 ![](../assets/imagenes/nueva_tarea_en_programador_tareas.png)
 
 Luego agregar un nombre a la tarea:
+
 ![](../assets/imagenes/nombre_tarea_creada.png)
 
 Establecer entonces que se ejecute a diario:
+
 ![](../assets/imagenes/seleccion_diariamente_tarea_creada.png)
 
 Y marcar en la casilla de hora lo siguiente (también seleccionar sincronizar zonas horarias):
+
 ![](../assets/imagenes/hora_fuertemente_recomendada_para_copiar_respaldo.png)
 
 Asegurarse de que sea la misma hora y no tocar las otras casillas.
 
 Seleccionar la acción que se desea realizar:
+
 ![](../assets/imagenes/seleccion_accion_tarea_creada.png)
 
 Después va a solicitar la línea de comando. Poner los siguientes valores en sus casillas correspondientes:
@@ -90,18 +94,22 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
 Asegurarse de reemplazar `<ruta_del_repositorio>` con la ruta donde se clonó bwripts.
+
 ![](../assets/imagenes/seleccion_comandos_tarea_creada.png)
 
 Seleccionar la siguiente casilla en el panel que sale en `Finalizar`:
+
 ![](../assets/imagenes/seleccion_cuadro_dialogo_tarea_creada.png)
 
 También marcar las siguientes casillas en el panel que se abre para que la script se pueda ejecutar 
 aunque no esté iniciada la sesión.
+
 ![](../assets/imagenes/seleccion_panel_usar_como_administrador_tarea_creada.png)
 
 Y finalmente asegurarse que en la parte inferior (Configurar para:) diga `Windows 10`.
 
 El resultado se debe ver como el siguiente:
+
 ![](../assets/imagenes/resultado_final_tarea_creada.png)
 
 ### Apagado automático (opcional)
@@ -109,6 +117,7 @@ El resultado se debe ver como el siguiente:
 En caso de que se programe encendido automático, es buena idea que también se apague la computadora luego de terminar. Para hacerlo, se puede programar una tarea automática usando el ejecutable `shutdown.exe`.
 
 Se recomienda configurar la tarea a las 2:00 a. m. (no mover el campo de inicio):
+
 ![](../assets/imagenes/hora_tarea_apagado.png)
 
 Seleccionar `Iniciar un programa` e ingresar los siguientes comandos:
