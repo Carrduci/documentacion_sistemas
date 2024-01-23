@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "72277be9a9b28f16",
+        "id": "797932dc59371c75",
         "type": "tabs",
         "children": [
           {
-            "id": "86e60a5156861db3",
+            "id": "7854137bfd05c015",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "windows/establecer-copia-automatica-de-respaldos.md",
-                "mode": "preview",
+                "file": "carrduci-sys/1-generacion-certificados.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "file": "carrduci-sys/1-generacion-certificados.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "file": "carrduci-sys/1-generacion-certificados.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "windows/establecer-copia-automatica-de-respaldos.md"
+                "file": "carrduci-sys/1-generacion-certificados.md"
               }
             }
           }
@@ -146,21 +146,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "86e60a5156861db3",
+  "active": "7854137bfd05c015",
   "lastOpenFiles": [
-    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
-    "carrduci-sys/despliegue-csys.md",
+    "README.md",
+    "directorio - copia.md",
     "directorio.md",
-    "carrduci-sys/restauracion_respaldos.md",
-    "ubuntu-server/conexion-ssh.md",
-    "docker/uso-docker.md",
-    "ubuntu-server/configurar-ubuntu-server.md",
+    "windows/instalacion-wsl.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
+    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
+    "carrduci-sys/3-restauracion-respaldos.md",
+    "carrduci-sys/2-despliegue-csys.md",
+    "restauracion_respaldos.md",
+    "carrduci-sys/1-generacion-certificados.md",
+    "ubuntu-server/conexion-ssh.md",
+    "servidor-samba-carpeta-respaldos.md",
+    "ubuntu-server/configurar-ubuntu-server.md",
+    "Untitled.md",
+    "carrduci-sys/1.generacion-certificados.md",
+    "carrduci-sys/4.servidor-samba-carpeta-respaldos.md",
+    "carrduci-sys/3.restauracion-respaldos.md",
+    "carrduci-sys/2.despliegue-csys.md",
+    "carrduci-sys/Untitled.md",
+    "carrduci-sys/despliegue-csys.md",
+    "carrduci-sys/restauracion_respaldos.md",
+    "docker/uso-docker.md",
+    "carrduci-sys/servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/restauracion-respaldos.md",
     "assets/gifs/desplegar_actualizacion_carrduci_sys.gif",
     "assets/gifs/restaurar_respaldo.gif",
     "assets/gifs/ezgif-1-a0967b8738.gif",
-    "windows/instalacion-wsl.md",
     "carrduci-sys/despliegue-csys 1.md",
     "tempCodeRunnerFile.py",
     "docker.md",

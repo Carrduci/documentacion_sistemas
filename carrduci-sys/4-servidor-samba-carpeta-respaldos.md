@@ -15,7 +15,7 @@ Ver [Subsistema De Linux](https://learn.microsoft.com/es-es/windows/wsl/install)
 
   >En este caso es `ubuntu server`
 
-Ver [coneccion-ssh.md](../ubuntu-server/conexion-ssh.md) y [configurar-ubuntu-server.md](../ubuntu-server/configurar-ubuntu-server.md)
+Ver [conexion-ssh.md](../ubuntu-server/conexion-ssh.md) y [configurar-ubuntu-server.md](../ubuntu-server/configurar-ubuntu-server.md)
 ## Procedimiento
 
 ### 1. Establecer conexión con el servidor

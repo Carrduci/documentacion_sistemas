@@ -86,6 +86,6 @@ Lo que debe resultar en algo así:
 
 Aunque los respaldos vienen integrados en la script anterior, es necesario configurar la
 carpeta donde se guardan para que sea accesible desde la red. Esto se logra desplegando
-un servidor samba simple. [¿Cómo desplegar el servidor samba?](servidor-samba-carpeta-respaldos.md)
+un servidor samba simple. [¿Cómo desplegar el servidor samba?](4-servidor-samba-carpeta-respaldos.md)
 
-para restaurar respaldos, ir [aquí](restauracion_respaldos.md).
+para restaurar respaldos, ir [aquí](3-restauracion-respaldos.md).
