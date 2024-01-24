@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys/1-generacion-certificados.md",
-                "mode": "preview",
+                "file": "README.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys/1-generacion-certificados.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys/1-generacion-certificados.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys/1-generacion-certificados.md"
+                "file": "README.md"
               }
             }
           }
@@ -148,10 +148,10 @@
   },
   "active": "7854137bfd05c015",
   "lastOpenFiles": [
+    "directorio.md",
     "README.md",
     "carrduci-sys/1-generacion-certificados.md",
     "directorio - copia.md",
-    "directorio.md",
     "windows/instalacion-wsl.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
