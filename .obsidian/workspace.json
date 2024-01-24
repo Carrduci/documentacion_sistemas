@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "directorio.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "mode": "preview",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "directorio.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "directorio.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "directorio.md"
+                "file": "carrduci-sys/3-restauracion-respaldos.md"
               }
             }
           }
@@ -161,6 +161,7 @@
   },
   "active": "bfec1f201858d2c8",
   "lastOpenFiles": [
+    "directorio.md",
     "carrduci-sys/2-despliegue-csys.md",
     "carrduci-sys/1-generacion-certificados.md",
     "windows/instalacion-wsl.md",
@@ -168,7 +169,6 @@
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/3-restauracion-respaldos.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
-    "directorio.md",
     "README.md",
     "carrduci-sys-api.md",
     "directorio - copia.md",

@@ -7,7 +7,7 @@ Para restaurar la base de datos e imágenes, lo ideal es buscar el último respa
 
 Es necesario utilizar el comando `scp` que se refiere en inglés a **Secure Copy**. Este comando nos permite copiar archivos a través de una conexión remota a Linux, pero si se debe hacer desde Windows, es requerido usar el subsistema de Linux (wsl) y  es preferible que el servidor al que se va a conectar tenga una ip fija.
 
-Asumiendo que ya está abierta una instancia de wsl y que la carpeta a la que se, hay que escribir un comando con la siguiente estructura:
+Asumiendo que ya está abierta una instancia de wsl y que la carpeta a la que se va a copiar está lista, hay que escribir un comando con la siguiente estructura:
 ```
 scp <archivo_a_copiar> <usuario_linux>@<direccion_ip_computadora>:<direccion_carpeta_respaldos>
 ```
