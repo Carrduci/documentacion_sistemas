@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "carrduci-sys/1-generacion-certificados.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -149,6 +149,7 @@
   "active": "7854137bfd05c015",
   "lastOpenFiles": [
     "README.md",
+    "carrduci-sys/1-generacion-certificados.md",
     "directorio - copia.md",
     "directorio.md",
     "windows/instalacion-wsl.md",
@@ -157,7 +158,6 @@
     "carrduci-sys/3-restauracion-respaldos.md",
     "carrduci-sys/2-despliegue-csys.md",
     "restauracion_respaldos.md",
-    "carrduci-sys/1-generacion-certificados.md",
     "ubuntu-server/conexion-ssh.md",
     "servidor-samba-carpeta-respaldos.md",
     "ubuntu-server/configurar-ubuntu-server.md",
