@@ -111,7 +111,8 @@ if [ -z $IP ]; then
 	echo "[ Error ] Debes definir la ip. Ejemplo: X.X.X.X"
     exit 1
 fi
-if [ -n $DNS ]; then
+TAM_STR_DNS=${#DNS}
+if [ "$TAM_STR_DNS" -gt "0" ]; then
     DNS=",DNS:$DNS"
 fi
 #Crear directorio certificado
