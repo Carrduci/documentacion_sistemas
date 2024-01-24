@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "carrduci-sys/1-generacion-certificados.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "bfec1f201858d2c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "directorio.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "directorio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "directorio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "directorio.md"
               }
             }
           }
@@ -146,27 +159,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7854137bfd05c015",
+  "active": "bfec1f201858d2c8",
   "lastOpenFiles": [
-    "directorio.md",
-    "README.md",
+    "carrduci-sys/2-despliegue-csys.md",
     "carrduci-sys/1-generacion-certificados.md",
-    "directorio - copia.md",
     "windows/instalacion-wsl.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/3-restauracion-respaldos.md",
-    "carrduci-sys/2-despliegue-csys.md",
+    "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+    "directorio.md",
+    "README.md",
+    "carrduci-sys-api.md",
+    "directorio - copia.md",
     "restauracion_respaldos.md",
     "ubuntu-server/conexion-ssh.md",
     "servidor-samba-carpeta-respaldos.md",
     "ubuntu-server/configurar-ubuntu-server.md",
-    "Untitled.md",
     "carrduci-sys/1.generacion-certificados.md",
     "carrduci-sys/4.servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/3.restauracion-respaldos.md",
     "carrduci-sys/2.despliegue-csys.md",
-    "carrduci-sys/Untitled.md",
     "carrduci-sys/despliegue-csys.md",
     "carrduci-sys/restauracion_respaldos.md",
     "docker/uso-docker.md",
@@ -177,7 +190,6 @@
     "assets/gifs/ezgif-1-a0967b8738.gif",
     "carrduci-sys/despliegue-csys 1.md",
     "tempCodeRunnerFile.py",
-    "docker.md",
     "subir_cambios.ps1",
     "assets/imagenes/argumentos_tarea_apagar.png",
     "assets/imagenes/hora_tarea_apagado.png",
