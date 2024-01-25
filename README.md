@@ -3,8 +3,7 @@
 # Documentación de SISTEMAS
 Este repositorio tiene el objetivo de ir agregando la documentación de los distintos procesos que se llevan a cabo en el departamento de Sistemas.
 
-Está pensado para leerse y editarse con [obsidian](https://obsidian.md/), y cuenta con una serie de scripts con los cuales subir cambios y descargar de Github, así como generar actualizar automáticamente el [directorio](../directorio.md).
-
+Está pensado para leerse y editarse con [obsidian](https://obsidian.md/), y cuenta con una serie de scripts con los cuales subir cambios y actualizar automáticamente el [directorio](../directorio.md).
 ## Instalación
 1. Descargar e instalar [obsidian](https://obsidian.md/) para Windows. Al abrir, la pantalla inicial debe ser algo parecido a esto:
 ![](../assets/imagenes/vista_inicial_obsidian.png)
@@ -12,8 +11,14 @@ Está pensado para leerse y editarse con [obsidian](https://obsidian.md/), y cue
 3. Dar clic en la opción **Open folder as vault** y abrir la carpeta resultante de clonar el repositorio.
 ![](../assets/imagenes/open_folder_as_vault_obsidian.png)
 ## Uso de las scripts
+**Estas scripts se deben ejecutar desde PowerShell**.
 ### Actualizar directorio
+Para esta se requiere tener instalado Python 3 en Windows. Suponiendo que se tiene instalado, en el directorio raíz del repositorio clonado, ejecutar el siguiente comando:
+```
+./generar_directorio.py
+```
 ### Subir cambios
+Para subir los cambios a GitHub es necesario primero cambiar la política de ejecución en PowerShell
 ### Descargar cambios
 
 

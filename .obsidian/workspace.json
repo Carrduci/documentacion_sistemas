@@ -95,7 +95,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 312.5
   },
   "right": {
     "id": "d8b5f13467dba795",
@@ -175,19 +175,19 @@
   "active": "7a1f798f7b56726d",
   "lastOpenFiles": [
     "directorio.md",
+    "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "-por-hacer.md",
+    "README.md",
     "por-hacer.md",
     "_por-hacer.md",
     "otro.md",
-    "README.md",
     "assets/imagenes/abrir_carpeta_clonada_obsidian.png",
     "assets/imagenes/open_folder_as_vault_obsidian.png",
     "carrduci-sys/2-despliegue-csys.md",
     "assets/imagenes/vista_inicial_obsidian.png",
     "carrduci-sys/1-generacion-certificados.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
-    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
-    "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
     "carrduci-sys/3-restauracion-respaldos.md",
     "windows/instalacion-wsl.md",
     "carrduci-sys-api.md",
