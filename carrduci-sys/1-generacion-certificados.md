@@ -251,7 +251,7 @@ En este caso, se necesitan 2 archivos para el API y la GUI: `ejemplo.crt` y `eje
  - La segunda es en el repositorio [utilidades-carrduci-sys](https://github.com/Carrduci/utilidades_carrduci_sys) (en la raíz), donde solo hay que reemplazar los dos archivos para producción, que se generan en el ejemplo [[#Certificado para producción]].
  - ****IMPORTANTE: para hacer este cambio, hay que clonar los repositorios, reemplazar los archivos como se indicó y después hacer `git push` en estos mismos. En la computadora donde se vayan a generar nuevas imágenes de docker, se debe hacer `pull` a los repositorios (si ya estaban clonados). Si alguno de los repositorios están clonados en el servidor donde se aloja CARRDUCIsys, también se debe hacer `git pull` ahí***.
 
-El archivo que tiene la terminación `_ca.crt` es el que se debe usar para **instalar en los equipos donde se quiere tener acceso al sistema**. Ver [¿Cómo instalar certificados en compus de usuarios?](./5-instalar-certificado-en-computadora-usuario).
+El archivo que tiene la terminación `_ca.crt` es el que se debe usar para **instalar en los equipos donde se quiere tener acceso al sistema**. Ver [¿Cómo instalar certificados en compus de usuarios?](./5-instalar-certificado-en-computadora-usuario.md).
 
 
 
