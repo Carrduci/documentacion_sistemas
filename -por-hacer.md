@@ -1,4 +1,4 @@
-### [< Directorio](../directorio.md)
+### [< Directorio](./directorio.md)
 # TODO (COSAS POR HACER)
 > Tareas específicas de la documentación solamente.
 
