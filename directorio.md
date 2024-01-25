@@ -1,5 +1,6 @@
 # Directorio De Manuales De Sistemas
 
+  - [ Por Hacer](./-por-hacer.md)
   - [Readme](./README.md)
 ### Carrduci Sys
   - [1 Generacion Certificados](./carrduci-sys/1-generacion-certificados.md)
