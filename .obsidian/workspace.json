@@ -8,44 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7854137bfd05c015",
+            "id": "465727d70b0a55d5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys/1-generacion-certificados.md",
+                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "bfec1f201858d2c8",
+            "id": "1213302e8f8fe2e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7a1f798f7b56726d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
+                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -111,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md"
               }
             }
           }
@@ -172,13 +159,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7a1f798f7b56726d",
+  "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
-    "directorio.md",
-    "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
-    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
-    "-por-hacer.md",
+    "carrduci-sys/1-generacion-certificados.md",
     "README.md",
+    "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+    "assets/imagenes/certificado_edge_panel_examinar.png",
+    "assets/imagenes/certificado_edge_siguiente.png",
+    "assets/imagenes/certificado_edge_panel_importar.png",
+    "assets/imagenes/certificado_edge_abrir.png",
+    "assets/imagenes/certificado_edge_config.png",
+    "Untitled.md",
+    "directorio.md",
+    "-por-hacer.md",
+    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "por-hacer.md",
     "_por-hacer.md",
     "otro.md",
@@ -186,7 +180,6 @@
     "assets/imagenes/open_folder_as_vault_obsidian.png",
     "carrduci-sys/2-despliegue-csys.md",
     "assets/imagenes/vista_inicial_obsidian.png",
-    "carrduci-sys/1-generacion-certificados.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "carrduci-sys/3-restauracion-respaldos.md",
     "windows/instalacion-wsl.md",
@@ -201,16 +194,9 @@
     "carrduci-sys/3.restauracion-respaldos.md",
     "carrduci-sys/2.despliegue-csys.md",
     "carrduci-sys/despliegue-csys.md",
-    "carrduci-sys/restauracion_respaldos.md",
-    "docker/uso-docker.md",
     "assets/gifs/desplegar_actualizacion_carrduci_sys.gif",
     "assets/gifs/restaurar_respaldo.gif",
-    "assets/gifs/ezgif-1-a0967b8738.gif",
     "tempCodeRunnerFile.py",
-    "subir_cambios.ps1",
-    "assets/imagenes/argumentos_tarea_apagar.png",
-    "assets/imagenes/hora_tarea_apagado.png",
-    "assets/gifs/desplegar_servidor_samba.gif",
-    "assets/imagenes/coneccion_a_samba_desde_windows_prueba.png"
+    "subir_cambios.ps1"
   ]
 }
