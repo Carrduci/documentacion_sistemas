@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
-                "mode": "source",
+                "file": "directorio.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+                "file": "directorio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+                "file": "directorio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md"
+                "file": "directorio.md"
               }
             }
           }
@@ -161,25 +161,27 @@
   },
   "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
-    "carrduci-sys/1-generacion-certificados.md",
     "README.md",
+    "directorio.md",
+    "-por-hacer.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+    "assets/imagenes/certificado_edge_terminado_comprobar.png",
+    "assets/imagenes/certificado_edge_terminado_aceptar.png",
+    "assets/imagenes/certificado_edge_instalar_si.png",
+    "assets/imagenes/certificado_edge_finalizar.png",
+    "assets/imagenes/certificado_edge_archivo_dejar_todo_igual.png",
+    "assets/imagenes/certificado_edge_archivo_seleccionado.png",
+    "carrduci-sys/1-generacion-certificados.md",
     "assets/imagenes/certificado_edge_panel_examinar.png",
     "assets/imagenes/certificado_edge_siguiente.png",
     "assets/imagenes/certificado_edge_panel_importar.png",
     "assets/imagenes/certificado_edge_abrir.png",
-    "assets/imagenes/certificado_edge_config.png",
     "Untitled.md",
-    "directorio.md",
-    "-por-hacer.md",
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "por-hacer.md",
     "_por-hacer.md",
     "otro.md",
-    "assets/imagenes/abrir_carpeta_clonada_obsidian.png",
-    "assets/imagenes/open_folder_as_vault_obsidian.png",
     "carrduci-sys/2-despliegue-csys.md",
-    "assets/imagenes/vista_inicial_obsidian.png",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "carrduci-sys/3-restauracion-respaldos.md",
     "windows/instalacion-wsl.md",
@@ -194,8 +196,6 @@
     "carrduci-sys/3.restauracion-respaldos.md",
     "carrduci-sys/2.despliegue-csys.md",
     "carrduci-sys/despliegue-csys.md",
-    "assets/gifs/desplegar_actualizacion_carrduci_sys.gif",
-    "assets/gifs/restaurar_respaldo.gif",
     "tempCodeRunnerFile.py",
     "subir_cambios.ps1"
   ]
