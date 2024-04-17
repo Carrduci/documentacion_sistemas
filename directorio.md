@@ -8,6 +8,9 @@
   - [3 Restauracion Respaldos](./carrduci-sys/3-restauracion-respaldos.md)
   - [4 Servidor Samba Carpeta Respaldos](./carrduci-sys/4-servidor-samba-carpeta-respaldos.md)
   - [5 Instalar Certificado En Computadora Usuario](./carrduci-sys/5-instalar-certificado-en-computadora-usuario.md)
+### Carrduci Sys Desarrollo
+  - [1 Entorno Desarollo](./carrduci-sys-desarrollo/1-entorno-desarollo.md)
+  - [2 Catalogo Archivos Por Modulo](./carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md)
 ### Docker
   - [Uso Docker](./docker/uso-docker.md)
 ### Ubuntu Server
