@@ -24,8 +24,7 @@ Ver [búsqueda de cómo programar auto-encendido](https://www.google.com.mx/sear
 
 Ver [bwripts](https://github.com/Carrduci/bwripts)
 
-  > Al ser un repositorio privado, se requiere una cuenta de GitHub, que esta esté en la organización 
-  > [Carrduci](https://github.com/orgs/Carrduci) y tener un token de GitHub generado (GitHub no permite iniciar 
+  > Al ser un repositorio privado, se requiere una cuenta de GitHub, que esta esté en la organización [Carrduci](https://github.com/orgs/Carrduci) y tener un token de GitHub generado (GitHub no permite iniciar 
   > sesión en la terminal con contraseña). En caso de no tener acceso, solicitárselo al administrador de la organización.
 ## Procedimiento
 
