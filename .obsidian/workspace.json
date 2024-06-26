@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
                 "mode": "preview",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md"
+                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md"
               }
             }
           }
@@ -162,10 +162,10 @@
   "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
     "directorio.md",
+    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
     "README.md",
     "carrduci-sys/1-generacion-certificados.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
-    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
     "carrduci-sys-desarrollo/1-entorno-desarollo.md",
     "ubuntu-server/configurar-ubuntu-server.md",
     "ubuntu-server/conexion-ssh.md",
