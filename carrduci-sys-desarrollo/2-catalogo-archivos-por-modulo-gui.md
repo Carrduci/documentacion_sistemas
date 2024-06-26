@@ -1,7 +1,7 @@
 ### [< Directorio](../directorio.md)
 
 # Catálogo de archivos por por módulo
-Este catálogo busca asistir la búsqueda de archivos que se requieren tener en cuenta para modificar los componentes de CARRDUCIsys.
+Este catálogo busca asistir la búsqueda de archivos que se requieren tener en cuenta para modificar los componentes de la interfaz (GUI) de CARRDUCIsys.
 
 >La separación del catálogo se basa en los apartados y títulos de la barra lateral del sistema, que es el único punto de acceso para los usuarios.
 
