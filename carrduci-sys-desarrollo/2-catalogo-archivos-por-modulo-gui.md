@@ -39,38 +39,29 @@ poner todas las funciones que nos sirvan para transferir datos o calcularos, por
 ### 1. Avisos
 1. Dasboard
 
-    | DESCRIPCIÓN | ARCHIVO               |
-    | ----------- | --------------------- |
-    | Principal   | `dashboard.component` |
-### 2. Almacen
-1. Produccion
+| DESCRIPCIÓN | ARCHIVO               |
+| ----------- | --------------------- |
+| Principal   | `dashboard.component` |
+### 2. Almacén
+1. Producción
 
-    | DESCRIPCIÓN              | ARCHIVO                                   |
-    | ------------------------ | ----------------------------------------- |
-    | Principal                | `almacen-produccion.component`            |
-    | Generador Reportes E/S   | `reporte-es-almacen-produccion.component` |
-    | Crear-Modificar Artículo | `articulo-crear-modificar.component`      |
-    
-1. Produccion - ES
+| DESCRIPCIÓN              | ARCHIVO                                   |
+| ------------------------ | ----------------------------------------- |
+| Principal                | `almacen-produccion.component`            |
+| Generador Reportes E/S   | `reporte-es-almacen-produccion.component` |
+| Crear-Modificar Artículo | `articulo-crear-modificar.component`      |
+1. Producción - ES
 
-    | DESCRIPCIÓN   | ARCHIVO                                                                       |
-    | ------------- | ----------------------------------------------------------------------------- |
-    | Principal     | `almacen-es.component`                                                        |
-    | Crear Salida  | `almacen-de-materia-prima-yherramientas-crear-modificar-salida.component`     |
-    | Crear Entrada | `almacen-de-materia-prima-yherramientas-crear-modificar-entrada.component.` |
-    
+| DESCRIPCIÓN   | ARCHIVO                                                                    |
+| ------------- | -------------------------------------------------------------------------- |
+| Principal     | `almacen-es.component`                                                     |
+| Crear Salida  | `almacen-de-materia-prima-yherramientas-crear-modificar-salida.component`  |
+| Crear Entrada | `almacen-de-materia-prima-yherramientas-crear-modificar-entrada.component` |
+
 1. Producción - IAP
-
-    #### PENDIENTE
-
 1. Producto terminado
-
-
 2. Reportes personalizados
-
-
 3. Requisiciones
-
 
 ### 3. Administrador
 ### 4. Compras
