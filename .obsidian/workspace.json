@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+                "file": "README.md",
                 "mode": "preview",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md"
+                "file": "README.md"
               }
             }
           }
@@ -161,13 +161,14 @@
   },
   "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
-    "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
     "directorio.md",
+    "README.md",
+    "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+    "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
     "2024-07-13.md",
     "Captura de pantalla 2024-07-13 110136.png",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
     "assets/imagenes/finalizar_agreagado_odbc.png",
     "assets/imagenes/Captura de pantalla 2024-07-13 110136.png",
     "assets/imagenes/dar_click_ok_odbc.png",
@@ -187,7 +188,6 @@
     "docker/uso-docker.md",
     "odbc-mongo",
     "carrduci-sys/3-restauracion-respaldos.md",
-    "README.md",
     "carrduci-sys/1-generacion-certificados.md",
     "ubuntu-server/configurar-ubuntu-server.md",
     "ubuntu-server/conexion-ssh.md",

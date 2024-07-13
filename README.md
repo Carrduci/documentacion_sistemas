@@ -15,7 +15,7 @@ Está pensado para leerse y editarse con [obsidian](https://obsidian.md/), y cue
 ### Actualizar directorio
 Para esta se requiere tener instalado Python 3 en Windows. Suponiendo que se tiene instalado, en el directorio raíz del repositorio clonado, ejecutar el siguiente comando:
 ```
-./generar_directorio.py
+python ./generar_directorio.py
 ```
 ### Subir cambios
 Para subir los cambios a GitHub es necesario primero cambiar la política de ejecución en PowerShell. Ejecutar el siguiente comando:
