@@ -34,18 +34,26 @@ En la parte de "\<comando\>" se necesita enviar algo para que la instrucción co
 ## 4. Creación del ODBC
 
 1. Primero, abrir el editor de orígenes de datos ODBC de 64 bits, para agregar un nuevo origen de datos.
+
 ![](../assets/imagenes/abrir_origenes_de_datos_odbc.png)
 2. Se abrirá el siguiente menú. Entonces hay que dar clic en agregar:
+
 ![](../assets/imagenes/agregar_fuente_datos_odbc.png)
 3. Seleccionar el controlador de Mongo.
+
 ![](../assets/imagenes/seleccionar_controlador_mongo_odbc.png)
 4. Agregar los siguientes datos al nuevo ODBC. Luego dar clic en **Test**.
+
 ![](../assets/imagenes/agregar_datos_odbc.png)
 5. Debe aparecer el siguiente recuadro:
+
 ![](../assets/imagenes/debe_aparecer_asi_odbc.png)
 6. Seleccinar **carrduci** en el campo **Database**:
+
 ![](../assets/imagenes/seleccionar_carrduci_odbc.png)
 7. Y dar clic en **Ok**.
+
 ![](../assets/imagenes/dar_click_ok_odbc.png)
 8. Luego en el recuadro de administrador de orígenes, debe aparecer el nuevo **ODBC**, llamado **carrduci**. Dar clic en aceptar.
+
 ![](../assets/imagenes/finalizar_agreagado_odbc.png)
