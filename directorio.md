@@ -13,6 +13,9 @@
   - [2 Catalogo Archivos Por Modulo Gui](./carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md)
 ### Docker
   - [Uso Docker](./docker/uso-docker.md)
+### Odbc Mongo
+  - [1 Instalar Conector Bi Mongo En Linux](./odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
+  - [2 Conectar A Bi De Mongo Remotamente Desde Windows](./odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
 ### Ubuntu Server
   - [Conexion Ssh](./ubuntu-server/conexion-ssh.md)
   - [Configurar Ubuntu Server](./ubuntu-server/configurar-ubuntu-server.md)

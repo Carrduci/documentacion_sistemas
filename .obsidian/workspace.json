@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
-                "mode": "preview",
+                "file": "directorio.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -82,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 312.5
+    "width": 396.5
   },
   "right": {
     "id": "d8b5f13467dba795",
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
+                "file": "directorio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
+                "file": "directorio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md"
+                "file": "directorio.md"
               }
             }
           }
@@ -161,42 +161,44 @@
   },
   "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
+    "2024-07-13.md",
     "directorio.md",
-    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
-    "README.md",
-    "carrduci-sys/1-generacion-certificados.md",
+    "Captura de pantalla 2024-07-13 110136.png",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+    "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
+    "assets/imagenes/finalizar_agreagado_odbc.png",
+    "assets/imagenes/Captura de pantalla 2024-07-13 110136.png",
+    "assets/imagenes/dar_click_ok_odbc.png",
+    "assets/imagenes/Captura de pantalla 2024-07-13 105916.png",
+    "assets/imagenes/seleccionar_carrduci_odbc.png",
+    "assets/imagenes/Captura de pantalla 2024-07-13 105452.png",
+    "assets/imagenes/debe_aparecer_asi_odbc.png",
+    "assets/imagenes/Captura de pantalla 2024-07-13 105153.png",
+    "assets/imagenes/agregar_datos_odbc.png",
+    "carrduci-sys/2-despliegue-csys.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
-    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
-    "ubuntu-server/configurar-ubuntu-server.md",
-    "ubuntu-server/conexion-ssh.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "windows/instalacion-wsl.md",
     "-por-hacer.md",
-    "assets/imagenes/certificado_edge_terminado_comprobar.png",
-    "assets/imagenes/certificado_edge_terminado_aceptar.png",
-    "assets/imagenes/certificado_edge_instalar_si.png",
-    "assets/imagenes/certificado_edge_finalizar.png",
-    "assets/imagenes/certificado_edge_archivo_dejar_todo_igual.png",
-    "assets/imagenes/certificado_edge_archivo_seleccionado.png",
-    "assets/imagenes/certificado_edge_panel_examinar.png",
-    "assets/imagenes/certificado_edge_siguiente.png",
-    "assets/imagenes/certificado_edge_panel_importar.png",
-    "assets/imagenes/certificado_edge_abrir.png",
-    "Untitled.md",
+    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
+    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
+    "docker/uso-docker.md",
+    "odbc-mongo",
+    "carrduci-sys/3-restauracion-respaldos.md",
+    "README.md",
+    "carrduci-sys/1-generacion-certificados.md",
+    "ubuntu-server/configurar-ubuntu-server.md",
+    "ubuntu-server/conexion-ssh.md",
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "por-hacer.md",
     "_por-hacer.md",
     "otro.md",
-    "carrduci-sys/2-despliegue-csys.md",
-    "carrduci-sys/3-restauracion-respaldos.md",
     "carrduci-sys-api.md",
     "directorio - copia.md",
     "restauracion_respaldos.md",
     "servidor-samba-carpeta-respaldos.md",
-    "carrduci-sys/1.generacion-certificados.md",
-    "carrduci-sys/4.servidor-samba-carpeta-respaldos.md",
-    "carrduci-sys/3.restauracion-respaldos.md",
-    "carrduci-sys/2.despliegue-csys.md",
     "tempCodeRunnerFile.py",
     "subir_cambios.ps1"
   ]
