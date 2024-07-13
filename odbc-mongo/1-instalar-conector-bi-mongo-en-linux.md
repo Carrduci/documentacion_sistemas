@@ -36,7 +36,7 @@ gpg: imported: 1
 ```
 #### 7. Verificar el archivo de instalación con el siguiente comando
 ```
-gpg --verify tar -xvzf mongodb-bi-linux-{arch}-{platform}-{version}.tgz.sig tar -xvzf mongodb-bi-linux-{arch}-{platform}-{version}.tgz
+gpg --verify tar -xvzf mongodb-bi-linux-x86_64-ubuntu2204-v2.14.14.tgz.sig tar -xvzf mongodb-bi-linux-x86_64-ubuntu2204-v2.14.14.tgz
 ```
 Que debe resultar en lo siguiente:
 ```

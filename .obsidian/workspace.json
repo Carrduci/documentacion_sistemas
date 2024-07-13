@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "directorio.md",
-                "mode": "source",
+                "file": "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "directorio.md",
+                "file": "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "directorio.md",
+                "file": "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "directorio.md"
+                "file": "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md"
               }
             }
           }
@@ -161,8 +161,8 @@
   },
   "active": "1213302e8f8fe2e3",
   "lastOpenFiles": [
-    "2024-07-13.md",
     "directorio.md",
+    "2024-07-13.md",
     "Captura de pantalla 2024-07-13 110136.png",
     "Untitled 1.canvas",
     "Untitled.canvas",
