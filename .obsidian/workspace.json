@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "797932dc59371c75",
+        "id": "0517901efa5bafc4",
         "type": "tabs",
         "children": [
           {
-            "id": "465727d70b0a55d5",
+            "id": "c8f3fbedb883c18c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "1213302e8f8fe2e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#catalogo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md"
               }
             }
           }
@@ -159,46 +146,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1213302e8f8fe2e3",
+  "active": "c8f3fbedb883c18c",
   "lastOpenFiles": [
     "directorio.md",
-    "README.md",
-    "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
-    "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
-    "2024-07-13.md",
-    "Captura de pantalla 2024-07-13 110136.png",
-    "Untitled 1.canvas",
-    "Untitled.canvas",
-    "assets/imagenes/finalizar_agreagado_odbc.png",
-    "assets/imagenes/Captura de pantalla 2024-07-13 110136.png",
-    "assets/imagenes/dar_click_ok_odbc.png",
-    "assets/imagenes/Captura de pantalla 2024-07-13 105916.png",
-    "assets/imagenes/seleccionar_carrduci_odbc.png",
-    "assets/imagenes/Captura de pantalla 2024-07-13 105452.png",
-    "assets/imagenes/debe_aparecer_asi_odbc.png",
-    "assets/imagenes/Captura de pantalla 2024-07-13 105153.png",
-    "assets/imagenes/agregar_datos_odbc.png",
-    "carrduci-sys/2-despliegue-csys.md",
+    "visual-studio-code/1-agregar-snippets.md",
+    "().md",
+    "ubuntu-server/configurar-ubuntu-server.md",
+    "assets/gifs/utilizacion_snippet_vscode.gif",
+    "assets/gifs/ezgif-4-f8e9da1f0b.gif",
+    "assets/imagenes/snippet_colocada_visual_studio.png",
+    "assets/imagenes/Captura de pantalla 2024-07-16 131032.png",
+    "assets/imagenes/espacion_donde_agregar_snippets_visual_studio.png",
+    "assets/imagenes/Captura de pantalla 2024-07-16 125458.png",
+    "assets/imagenes/seleccionar_typescript_snippets_visual_studio.png",
+    "assets/imagenes/Captura de pantalla 2024-07-16 124733.png",
+    "assets/imagenes/posibles_jsons_snippets_visual_studio.png",
+    "assets/imagenes/Captura de pantalla 2024-07-16 124355.png",
+    "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+    "visual-studio-code",
+    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
+    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
+    "carrduci-sys/2-despliegue-csys.md",
+    "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
+    "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
+    "README.md",
+    "2024-07-13.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
     "windows/instalacion-wsl.md",
     "-por-hacer.md",
-    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md",
-    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
     "docker/uso-docker.md",
     "odbc-mongo",
     "carrduci-sys/3-restauracion-respaldos.md",
     "carrduci-sys/1-generacion-certificados.md",
-    "ubuntu-server/configurar-ubuntu-server.md",
     "ubuntu-server/conexion-ssh.md",
-    "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "por-hacer.md",
     "_por-hacer.md",
     "otro.md",
     "carrduci-sys-api.md",
-    "directorio - copia.md",
-    "restauracion_respaldos.md",
-    "servidor-samba-carpeta-respaldos.md",
     "tempCodeRunnerFile.py",
     "subir_cambios.ps1"
   ]

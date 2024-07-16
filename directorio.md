@@ -10,7 +10,8 @@
   - [5 Instalar Certificado En Computadora Usuario](./carrduci-sys/5-instalar-certificado-en-computadora-usuario.md)
 ### Carrduci Sys Desarrollo
   - [1 Entorno Desarollo](./carrduci-sys-desarrollo/1-entorno-desarollo.md)
-  - [2 Catalogo Archivos Por Modulo Gui](./carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo-gui.md)
+  - [2 Catalogo Archivos Por Modulo](./carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md)
+  - [3 Estructuras De Documentacion](./carrduci-sys-desarrollo/3-estructuras-de-documentacion.md)
 ### Docker
   - [Uso Docker](./docker/uso-docker.md)
 ### Odbc Mongo
@@ -19,6 +20,8 @@
 ### Ubuntu Server
   - [Conexion Ssh](./ubuntu-server/conexion-ssh.md)
   - [Configurar Ubuntu Server](./ubuntu-server/configurar-ubuntu-server.md)
+### Visual Studio Code
+  - [1 Agregar Snippets](./visual-studio-code/1-agregar-snippets.md)
 ### Windows
   - [Establecer Copia Automatica De Respaldos](./windows/establecer-copia-automatica-de-respaldos.md)
   - [Instalacion Wsl](./windows/instalacion-wsl.md)
