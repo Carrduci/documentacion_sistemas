@@ -122,7 +122,7 @@ Siempre comentar y separar el área de importaciones. Las importaciones Isiempre
 | 1     | Importaciones externas (librerías).                                 | `/* IMPORTACIONES EXTERNAS */` |
 | 2     | Importaciones de modelos o esquemas desde otros archivos de modelo. | `/* OTROS MODELOS */`          |
 | 3     | Importaciones de servicios internos.                                | `/* SERVICIOS */`              |
-| 4     | Importaciones de utilidades internas.                               | `/* UTILIDADES */`             |
+| 4     | Importaciones de utilidades internas, middlewares, etc.             | `/* UTILIDADES */`             |
 #### 2. Esquema
 Usar la siguiente snippet para poner un comentario arriba de la declaración del esquema:
 ```

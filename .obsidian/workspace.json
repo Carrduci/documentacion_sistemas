@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "directorio.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "directorio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "directorio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md"
+                "file": "directorio.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "c8f3fbedb883c18c",
   "lastOpenFiles": [
-    "directorio.md",
     "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+    "directorio.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "windows/instalacion-wsl.md",
     "visual-studio-code/1-agregar-snippets.md",
