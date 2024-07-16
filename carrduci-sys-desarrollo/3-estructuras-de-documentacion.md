@@ -198,4 +198,8 @@ Que resulta en esto (usando un ejemplo):
 */
 ```
 #### 5. Exportaciones
-Aquí es donde se exporta la instancia del modelo de mongoose generada. Como en el API se usa JavaScript
+Aquí es donde se exporta la instancia del modelo de mongoose generada. Como en el API se usa JavaScript, las exportaciones son del modo:
+```
+module.exports = ALGO
+```
+Si se desea comentar, usar comentario de bloque.
