@@ -8,7 +8,7 @@ Ver [agregar snippets a visual studio code](../visual-studio-code/1-agregar-snip
 Modificar snippets como se desee.
 ## Establecimientos
 
-1. Siempre preferir comentario de bloque sobre comentario de línea.
+1. Siempre preferir comentario de bloque sobre comentario de línea; este es fácilmente escalable, es decir, puede crecer hacia abajo sin tener que agregar caracteres. En caso de comentar variables, funciones, clases, etc., usar comentario [JSDoc](https://jsdoc.app/), en Visual Studio Code, IntelliSense va a mostrar lo que este dentro del comentario al hacer hover sobre alguna referencia a lo que se comentó.
 2. Los comentarios siempre van arriba de la línea o el bloque de líneas a la/s que se hace referencia, no a un lado.
 3. Opcionalmente se puede agregar un espacio antes del comentario y otro luego de la línea o bloque de líneas que se comenta, para dar a entender que el comentario es para esa línea o bloque.
 4. Nunca usar acentos ni caracteres como la **ñ** en la documentación que se hace en el mismo código. Los caracteres especiales si son permitidos, pero solo los que ya se usan en el lenguaje de programación.
@@ -129,25 +129,22 @@ Usar la siguiente snippet para poner un comentario arriba de la declaración del
     "Documentacion modelo API": {
         "prefix": "__doc_api_modelo",
         "body": [
-            "$BLOCK_COMMENT_START -----------------------------------------------------",
-            "  - NOMBRE: ${1:NOMBRE ESQUEMA}",
+            "/** -----------------------------------------------------",
+            "  - NOMBRE: `${1:NOMBRE ESQUEMA}`",
             "  - Fecha documentacion: $CURRENT_DATE, $CURRENT_MONTH_NAME $CURRENT_YEAR",
             "  - Archivo: $RELATIVE_FILEPATH",
             "",
             "  - Descripcion:",
-            "  ${2:DESCRIPCION}",
-            "  ------",
-            "  - Archivos que lo usan:",
-            "  ${0:LISTA ARCHIVOS}",
-            "----------------------------------------------------- $BLOCK_COMMENT_END",
+            "  ${0:DESCRIPCION}",
+            "----------------------------------------------------- */",
         ],
         "description": "Un esquema o modelo de Mongo"
     },
 ```
 Se ve así (usando un ejemplo):
 ```
-/* -----------------------------------------------------
-  - NOMBRE: Modelo Schema
+/** -----------------------------------------------------
+  - NOMBRE: `Modelo Schema`
   - Fecha documentacion: 16, July 2024
   - Archivo: models/modelo.js
   
@@ -156,12 +153,9 @@ Se ve así (usando un ejemplo):
   modelo determinad la numeracion inicial o nombre del
   SKU, que podria servir como metodo rapido de
   identificacion.
-  ------
-  - Archivos que lo usan:
-  TODO: Anotar archivos relacionado al ModeloSchema
 ----------------------------------------------------- */
 ```
-Los campos del modelo serán documentados con comentarios de bloque, sin estructura específica.
+Los campos del modelo serán documentados con comentarios de JSDoc, sin estructura específica.
 
 En este mismo nivel (fuera de la instancia del esquema) se puede generar la instancia del modelo de mongoose, preferiblemente en una constante, ejemplo:
 ```
@@ -170,33 +164,7 @@ const MODELO_SCHEMA = mongoose.model('Modelo', modeloSchema)
 #### 3. Plugins, métodos, validadores
 Usar el comentario de bloque. No hay una estructura definida.
 #### 4. Middleware
-Usar el siguiente snippet:
-```
-    "Documentacion middleware modelo API": {
-        "prefix": "__doc_api_modelo_middleware",
-        "body": [
-            "$BLOCK_COMMENT_START",
-            "  NOMBRE MIDDLEWARE: ${1:NOMBRE ESQUEMA}",
-            "",
-            "  - Descripcion:",
-            "  ${2:DESCRIPCION}",
-            "$BLOCK_COMMENT_END"
-        ],
-        "description": "Para documentar una funcion intermedia entre operaciones de mongo"      
-    },
-```
-Que resulta en esto (usando un ejemplo):
-```
-/*
-  NOMBRE MIDDLEWARE: Eliminar relacionados a modelo
-  
-  - Descripcion:
-  Elimina todos los SKU'S que esten relacionados a
-  este modelo cuando este mismo es eliminado. Llama
-  a un metodo que esta incluido en le esquema de
-  SKU (ModeloCompleto).
-*/
-```
+Usar el comentario JSDoc. No hay una estructura definida.
 #### 5. Exportaciones
 Aquí es donde se exporta la instancia del modelo de mongoose generada. Como en el API se usa JavaScript, las exportaciones son del modo:
 ```
