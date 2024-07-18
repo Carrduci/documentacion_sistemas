@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md"
+                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md"
               }
             }
           }
@@ -149,7 +149,9 @@
   "active": "c8f3fbedb883c18c",
   "lastOpenFiles": [
     "directorio.md",
+    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
     "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "windows/instalacion-wsl.md",
     "visual-studio-code/1-agregar-snippets.md",
@@ -165,9 +167,7 @@
     "assets/imagenes/Captura de pantalla 2024-07-16 124733.png",
     "assets/imagenes/posibles_jsons_snippets_visual_studio.png",
     "assets/imagenes/Captura de pantalla 2024-07-16 124355.png",
-    "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
     "visual-studio-code",
-    "carrduci-sys-desarrollo/1-entorno-desarollo.md",
     "carrduci-sys/5-instalar-certificado-en-computadora-usuario.md",
     "carrduci-sys/4-servidor-samba-carpeta-respaldos.md",
     "carrduci-sys/2-despliegue-csys.md",

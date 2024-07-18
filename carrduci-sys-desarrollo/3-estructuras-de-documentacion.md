@@ -157,17 +157,19 @@ Se ve así (usando un ejemplo):
 ```
 Los campos del modelo serán documentados con comentarios de JSDoc, sin estructura específica.
 
-En este mismo nivel (fuera de la instancia del esquema) se puede generar la instancia del modelo de mongoose, preferiblemente en una constante, ejemplo:
-```
-const MODELO_SCHEMA = mongoose.model('Modelo', modeloSchema)
-```
 #### 3. Plugins, métodos, validadores
 Usar el comentario de bloque. No hay una estructura definida.
 #### 4. Middleware
 Usar el comentario JSDoc. No hay una estructura definida.
 #### 5. Exportaciones
+En este nivel (fuera de la instancia del esquema) se **DEBE** generar la instancia del modelo de mongoose, preferiblemente en una constante, ejemplo:
+```
+const MODELO_SCHEMA = mongoose.model('Modelo', modeloSchema)
+```
+> **ADVERTENCIA: ** Es muy importante que la instancia se genere en este nivel y no en NINGÚN otro. Hacerlo en otro puede ocasionar errores extraños.
+
 Aquí es donde se exporta la instancia del modelo de mongoose generada. Como en el API se usa JavaScript, las exportaciones son del modo:
 ```
 module.exports = ALGO
 ```
-Si se desea comentar, usar comentario de bloque.
+Si se desea comentar, usar comentario de bloque
