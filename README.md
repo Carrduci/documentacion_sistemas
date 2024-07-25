@@ -34,8 +34,9 @@ RemoteSigned
 ```
 Luego de esto, basta con ejecutar el siguiente comando para subir los cambios (asumiendo que Git ya esté configurado correctamente):
 ```
-.\subir_cambios.ps1 " - mensaje a reemplazar" "docs: "
+.\subir_cambios.ps1 " - mensaje a reemplazar" "tipo-commit"
 ```
+> El tipo de commit puede ser `feat` , `fix`, `chore`, `refactor` o `docs` (ver [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/))
 ### Descargar cambios
 Para hacer esto simplemente hay que usar el comando de git:
 ```
