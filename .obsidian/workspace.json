@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "preview",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "windows/establecer-copia-automatica-de-respaldos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "windows/establecer-copia-automatica-de-respaldos.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "c8f3fbedb883c18c",
   "lastOpenFiles": [
+    "README.md",
     "directorio.md",
     "carrduci-sys/3-restauracion-respaldos.md",
     "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
@@ -174,7 +175,6 @@
     "carrduci-sys/2-despliegue-csys.md",
     "odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",
     "odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md",
-    "README.md",
     "2024-07-13.md",
     "Untitled 1.canvas",
     "Untitled.canvas",

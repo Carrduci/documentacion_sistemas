@@ -52,9 +52,11 @@ taskschd.msc
 ![](../assets/imagenes/ejemplo_programador_tareas.png)
 
 Crear una nueva carpeta para crear una serie de tareas dando clic en `Biblioteca del Programador de tareas` y poner el nombre que se desee:
+
 ![](../assets/imagenes/crear_carpeta_en_programador_tareas.png)
 
 Lo que debe resultar en algo parecido a esto
+
 ![](../assets/imagenes/nueva_carpeta_en_programador_tareas.png)
 
 Presionar `Crear tarea básica...` en el panel lateral izquierdo
