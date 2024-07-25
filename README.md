@@ -34,7 +34,7 @@ RemoteSigned
 ```
 Luego de esto, basta con ejecutar el siguiente comando para subir los cambios (asumiendo que Git ya esté configurado correctamente):
 ```
-.\subir_cambios.ps1
+.\subir_cambios.ps1 " - mensaje a reemplazar" "docs: "
 ```
 ### Descargar cambios
 Para hacer esto simplemente hay que usar el comando de git:
