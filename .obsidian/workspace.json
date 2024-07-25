@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
+                "file": "carrduci-sys/3-restauracion-respaldos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md"
+                "file": "carrduci-sys/3-restauracion-respaldos.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "c8f3fbedb883c18c",
   "lastOpenFiles": [
+    "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
     "directorio.md",
     "carrduci-sys-desarrollo/1-entorno-desarollo.md",
-    "carrduci-sys-desarrollo/3-estructuras-de-documentacion.md",
     "carrduci-sys-desarrollo/2-catalogo-archivos-por-modulo.md",
     "windows/establecer-copia-automatica-de-respaldos.md",
     "windows/instalacion-wsl.md",

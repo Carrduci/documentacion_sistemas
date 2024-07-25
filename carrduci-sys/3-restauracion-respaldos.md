@@ -31,6 +31,7 @@ Para esto hay que recurrir nuevamente a `utilidadades_carrrduci`.  Basta con eje
 ```
 
 Lo que debe tener un resultado algo así:
+
 ![](../assets/gifs/restaurar_respaldo.gif)
 ```
  ===> Borrando carpeta anterior de respaldos ('/respaldos')
