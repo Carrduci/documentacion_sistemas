@@ -27,13 +27,15 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
     for pointer, path in zip(pointers, contents):
         if (path.name not in [
             'assets', 
-            '_sidebar.md', 
             'generar_directorio.py',
             '.obsidian',
             'subir_cambios.ps1',
             'subir_cambios.sh',
             'package.json',
             '.vscode',
+            '.nojekyll',
+            '_coverpage.md',
+            '_sidebar.md', 
         ]):
             if '.git' in path.parts or '.dist' in path.parts:
                 continue

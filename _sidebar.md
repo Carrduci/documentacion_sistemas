@@ -1,8 +1,6 @@
 * Home
 
-  * [](./.nojekyll)
   * [Readme](./README.md)
-  * [_Coverpage](./_coverpage.md)
 * Carrduci Sys
   * [1 Generacion Certificados](./carrduci-sys/1-generacion-certificados.md)
   * [2 Despliegue Csys](./carrduci-sys/2-despliegue-csys.md)
