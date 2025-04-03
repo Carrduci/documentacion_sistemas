@@ -1,4 +1,3 @@
-### [< Directorio](../directorio.md)
 # Instalar Mongo BI conector
 
 #### 1. Asegurarse de tener instalado **OpenSSL**

@@ -1,6 +1,3 @@
-### [< Directorio](../directorio.md)
-
-
 **NOTA:** No es necesario generar certificados si ya existen y no están vencidos.
 # Generar certificados para CARRDUCIsys
 Para llevar a cabo esto, es necesario hacer dos cosas:

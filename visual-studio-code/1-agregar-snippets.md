@@ -1,4 +1,3 @@
-### [< Directorio](../directorio.md)
 [< Regresar a 3-estructuras-de-documentacion](../carrduci-sys-desarrollo/3-estructuras-de-documentacion.md)
 # Snippets en Visual Studio Code
 Los snippets son una herramienta muy útil que permite autocompletar la frase que se desee con una estructura de texto determinada. Por ejemplo, al escribir "funcion", y tener una snippet con ese prefijo, Visual Studio mostrará un menú contextual en el que aparecerá la opción de autocompletar con la snippet que se haya creado para ese mismo prefijo, al darle enter podría insertar la estructura básica de una función de cualquier lenguaje y ahorrar algo de tiempo de escritura.

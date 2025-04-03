@@ -1,5 +1,3 @@
-### [< Directorio](../directorio.md)
-
 # Establecer copia automática de respaldo en Windows
 
 Para que los respaldos se puedan copiar automáticamente desde cualquier ubicación,

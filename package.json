@@ -1,0 +1,20 @@
+{
+  "name": "documentacion_sistemas",
+  "version": "1.0.0",
+  "description": "# Documentación de SISTEMAS Este repositorio tiene el objetivo de ir agregando la documentación de los distintos procesos que se llevan a cabo en el departamento de Sistemas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carrduci/documentacion_sistemas.git"
+  },
+  "author": "Kyostenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carrduci/documentacion_sistemas/issues"
+  },
+  "homepage": "https://github.com/Carrduci/documentacion_sistemas#readme"
+}

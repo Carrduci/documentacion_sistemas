@@ -1,5 +1,3 @@
-### [< Directorio](../directorio.md)
-
 # Desplegar CARRDUCIsys
 
 El propósito es proveer información sobre el despliegue de las scripts o tareas 

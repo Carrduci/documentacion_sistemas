@@ -1,2 +1,1 @@
-### [< Directorio](../directorio.md)
 

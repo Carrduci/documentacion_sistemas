@@ -1,4 +1,3 @@
-### [< Directorio](../directorio.md)
 # Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux
 
 

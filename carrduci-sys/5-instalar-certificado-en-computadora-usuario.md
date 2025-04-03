@@ -1,5 +1,3 @@
-### [< Directorio](../directorio.md)
-
 Antes se debió seguir [generación certificados](./1-generacion-certificados.md).
 # Instalar certificado de CARRDUCIsys en computadora de usuario
 De preferencia, CARRDUCIsys debe ser usado en navegadores basados en Chromium: **Chrome**, **Edge**, **Brave**. La instalación es muy similar en los 3, pero solo se mostrará cómo hacerlo en Edge.

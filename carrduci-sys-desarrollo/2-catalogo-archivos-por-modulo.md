@@ -1,5 +1,3 @@
-### [< Directorio](../directorio.md)
-
 # Explicación de los nombres (GUI)
 #docs #catalogo
 

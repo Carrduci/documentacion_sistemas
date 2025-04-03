@@ -1,4 +1,4 @@
-* Directorio De Manuales De Sistemas
+* Home
 
   * [Readme](./README.md)
 * Carrduci Sys
@@ -17,6 +17,7 @@
 * Odbc Mongo
   * [1 Instalar Conector Bi Mongo En Linux](./odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
   * [2 Conectar A Bi De Mongo Remotamente Desde Windows](./odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
+  * [Package](./package.json)
 * Ubuntu Server
   * [Conexion Ssh](./ubuntu-server/conexion-ssh.md)
   * [Configurar Ubuntu Server](./ubuntu-server/configurar-ubuntu-server.md)
