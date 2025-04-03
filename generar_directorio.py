@@ -5,8 +5,8 @@ import os
 space =  '    '
 branch = '    '
 # pointers:
-tee =    '  - '
-last =   '  - '
+tee =    '  * '
+last =   '  * '
 
 
 # Extracted from https://stackoverflow.com/a/59109706/13132076 
@@ -27,7 +27,7 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
     for pointer, path in zip(pointers, contents):
         if (path.name not in [
             'assets', 
-            'directorio.md', 
+            '_sidebar.md', 
             'generar_directorio.py',
             '.obsidian',
             'subir_cambios.ps1',
@@ -38,7 +38,7 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
                 continue
             if path.is_dir():
                 folder_name = ' '.join(path.name.split('-')).title()
-                yield f'### {folder_name}'
+                yield f'* {folder_name}'
             else:
                 corrected_path = f'{path.relative_to(dir_path.parent)}'
                 corrected_path = '/'.join(corrected_path.split('\\'))
@@ -49,7 +49,7 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
                 yield from tree(path, prefix=prefix+extension, is_dir=True)
             
 
-with open('directorio.md', 'w') as directorio_md:
-    directorio_md.write('# Directorio De Manuales De Sistemas\n\n')
+with open('_sidebar.md', 'w') as directorio_md:
+    directorio_md.write('* Directorio De Manuales De Sistemas\n\n')
     for line in tree(Path('.')):
         directorio_md.write(line + '\n')
