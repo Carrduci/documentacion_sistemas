@@ -13,65 +13,61 @@ Modificar snippets como se desee.
 3. Opcionalmente se puede agregar un espacio antes del comentario y otro luego de la línea o bloque de líneas que se comenta, para dar a entender que el comentario es para esa línea o bloque.
 4. Nunca usar acentos ni caracteres como la **ñ** en la documentación que se hace en el mismo código. Los caracteres especiales si son permitidos, pero solo los que ya se usan en el lenguaje de programación.
 5. Usar el separador de sección mostrado en el apartado **Estructuras Generales (snippets)** y poner el código entre las estructuras resultantes cuando se indique que se debe seguir un orden de secciones. A manera de sub-secciones, se puede usar el separador de línea dentro del separador de sección.
-6. Procurar agregar mucho espacio entre cada sección, para facilitar la lectura.
 ## Estructuras Generales (snippets)
 ### 1. Separador de sección
 #### TypeScript, JavaScript
 ```
-"Separador de seccion": {
-	"prefix": "__separador-seccion",
-	"body": [
-		"// o==================================================================o)",
-		"//   ${1:TITULO SECCION} (${3:inicio})",
-		"//   ${2:descripcion}",
-		"// (o---------------------------------------------------------\\/-----o)",
-		"",
-		"${0:}",
-		"",
-		"// (o---------------------------------------------------------/\\-----o)",
-		"//   ${1:TITULO SECCION} (${4:fin})",
-		"// (o=================================================================o)",
-	],
-	"description": "Grandes marcadores de sección."
-}
+    "Separador de seccion": {
+        "prefix": "__separador-seccion",
+        "body": [
+            "// (o==================================================================o)",
+            "//   #region ${1:TITULO SECCION}",
+            "// (o-----------------------------------------------------------\\/-----o)",
+            "",
+            "${0:}",
+            "",
+            "// (o-----------------------------------------------------------/\\-----o)",
+            "//   #endregion ${1:TITULO SECCION}",
+            "// (o==================================================================o)",
+        ],
+        "description": "Grandes marcadores de sección."
+    },
 ```
 #### HTML
 ```
-"Separador de seccion": {
-	"prefix": "__separador-seccion",
-	"body": [
-		"<!--================================================================o)",
-		"  ${1:TITULO SECCION} (${3:inicio})",
-		"  ${2:descripcion}",
-		"(o-----------------------------------------------------------\\/------>",
-		"",
-		"${0:}",
-		"",
-		"<!-----------------------------------------------------------/\\-----o)",
-		"  ${1:TITULO SECCION} (${4:fin})",
-		"(o=================================================================-->",
-	],
-	"description": "Grandes marcadores de sección."
-},
+    "Separador de seccion": {
+        "prefix": "__separador-seccion",
+        "body": [
+            "<!--===============================================================-->",
+            "<!-- #region #MARK: ${1:TITULO SECCION} -->",
+            "<!-----------------------------------------------------------\\/------>",
+            "",
+            "${0:}",
+            "",
+            "<!-----------------------------------------------------------/\\------>",
+            "<!-- #endregion ${1:TITULO SECCION} -->",
+            "<!--===============================================================-->",
+        ],
+        "description": "Grandes marcadores de sección."
+    },
 ```
 #### Python
 ```
-"Separador de seccion": {
-	"prefix": "__separador-seccion",
-	"body": [
-		"# (o==================================================================o)",
-		"#   ${1:TITULO SECCION} (${3:inicio})",
-		"#   ${2:little description}",
-		"# (o----------------------------------------------------------\\/-----o)",
-		"",
-		"${0:}",
-		"",
-		"# (o----------------------------------------------------------/\\-----o)",
-		"#   ${1:TITULO SECCION} (${4:fin})",
-		"# (o==================================================================o)",
-	],
-	"description": "Grandes marcadores de sección."
-}
+    "Section markers": {
+        "prefix": "__separador-seccion",
+        "body": [
+            "# (o==================================================================o)",
+            "#   #region ${1:TITULO SECCION}",
+            "# (o-----------------------------------------------------------\\/-----o)",
+            "",
+            "${0:}",
+            "",
+            "# (o-----------------------------------------------------------/\\-----o)",
+            "#   #endregion ${1:TITULO SECCION}",
+            "# (o==================================================================o)",
+        ],
+        "description": "Grandes marcadores de sección."
+    },
 ```
 ### 2. Separadores de línea
 #### TypeScript, JavaScript
