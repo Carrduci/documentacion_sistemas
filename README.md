@@ -1,5 +1,3 @@
-### [< Directorio](./directorio.md)
-
 # Documentación de SISTEMAS
 Este repositorio tiene el objetivo de ir agregando la documentación de los distintos procesos que se llevan a cabo en el departamento de Sistemas.
 
