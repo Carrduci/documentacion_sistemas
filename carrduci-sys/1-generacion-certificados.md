@@ -29,12 +29,10 @@ cd ~/easy-rsa
 ./easyrsa init-pki
 ```
 Que debe resultar en algo como:
-```
 
+```
 init-pki complete; you may now create a CA or requests.
 Your newly created PKI dir is: /home/<usuario>/easy-rsa/pki
-
-
 ```
 ### Paso 3: Crear una entidad de certificación
 Crear el archivo `vars` en el directorio `~/easy-rsa`:
