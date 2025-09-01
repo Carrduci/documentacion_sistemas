@@ -1,27 +1,10 @@
 from pathlib import Path
 import os
 
-# prefix components:
-space =  '    '
-branch = '    '
 # pointers:
-tee =    '  * '
-last =   '  * '
-
-
-# Extracted from https://stackoverflow.com/a/59109706/13132076 
-# with some modifications to generate a markdown index.
-def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
-    """Generar un directorio markdown
-
-    Args:
-        dir_path (Path): dirección de la carpeta actual
-        prefix (str, optional): Lo que poner antes del nombre. Defaults to ''.
-        is_dir (bool, optional): ¿Es carpeta?. Defaults to False.
-
-    Yields:
-        string: Nombre de carpeta o archivo en formato markdown
-    """
+tee =    '* '
+last =   '* '
+def tree(dir_path: Path):
     contents = sorted(dir_path.iterdir(), key=lambda x: x.name)
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
@@ -42,14 +25,17 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
         ]):
             if path.is_dir():
                 folder_name = ' '.join(path.name.split('-')).title()
-                yield f'* {folder_name}'
+                folder_indent_size = len(f'{path}'.split(os.sep)) - 1
+                folder_indent = '  ' * folder_indent_size
+                yield f'{folder_indent}* {folder_name}'
             else:
                 corrected_path = path
+                file_indent_size = len(f'{corrected_path}'.split(os.sep)) - 1
+                file_indent = '  ' * file_indent_size
                 file_name = ' '.join(path.name.split('-')).split('.')[0].title()
-                yield pointer + f'[{file_name}](./{corrected_path})'
-            if path.is_dir():
-                extension = branch if pointer == tee else space 
-                yield from tree(path, prefix=prefix+extension, is_dir=True)
+                yield file_indent + pointer + f'[{file_name}](./{corrected_path})'
+            if path.is_dir(): 
+                yield from tree(path)
             
 
 with open('_sidebar.md', 'w') as directorio_md:
