@@ -36,15 +36,15 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
             '.nojekyll',
             '_coverpage.md',
             '_sidebar.md', 
+            'index.html',
+            '.git',
+            '.dist',
         ]):
-            if '.git' in path.parts or '.dist' in path.parts:
-                continue
             if path.is_dir():
                 folder_name = ' '.join(path.name.split('-')).title()
                 yield f'* {folder_name}'
             else:
-                corrected_path = f'{path.relative_to(dir_path.parent)}'
-                corrected_path = '/'.join(corrected_path.split('\\'))
+                corrected_path = path
                 file_name = ' '.join(path.name.split('-')).split('.')[0].title()
                 yield pointer + f'[{file_name}](./{corrected_path})'
             if path.is_dir():
@@ -53,6 +53,6 @@ def tree(dir_path: Path, prefix: str='', is_dir:bool=False):
             
 
 with open('_sidebar.md', 'w') as directorio_md:
-    directorio_md.write('* Home\n\n')
+    directorio_md.write('* Home\n')
     for line in tree(Path('.')):
         directorio_md.write(line + '\n')
