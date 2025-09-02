@@ -1,46 +1,67 @@
 **NOTA:** No es necesario generar certificados si ya existen y no están vencidos.
+
 # Generar certificados para CARRDUCIsys
+
 Para llevar a cabo esto, es necesario hacer dos cosas:
-1. [[#Crear una entidad de certificación (CA)]] si no hay una.
-2. [[#Crear un CSR (Certificate Sign Request)]].
-## Crear una entidad de certificación (CA)
+
+1. [Crear una entidad de certificación (CA)](./docs/carrduci-sys/1-generacion-certificados.md?id=crear-ca) si no hay una.
+2. [Crear un C? (Certificate Sign Request)](./docs/carrduci-sys/1-generacion-certificados.md?id=crear-csr).
+
+## Crear una entidad de certificación (CA) :id=crear-ca
+
 ### Paso 1: Instalar `easy-rsa` y `openssl`
-```
+
+```sh
 sudo apt update
 sudo apt install easy-rsa
 sudo apt install openssl
 ```
+
 ### Paso 2: Preparar un directorio para la infraestructura de la clave pública (PKI - Public Key Infrastructure)
+
 Crear un directorio en la carpeta de inicio para que contenga unos enlaces simbólicos (soft links) que se crearan más adelante. Estos van a apuntar a los archivos del paquete easy-rsa que se encuentran en `/usr/share/easy-rsa`.
-```
+
+```sh
 mkdir ~/easy-rsa
 ```
+
 Crear los enlaces simbólicos con el comando `ln`:
-```
+
+```sh
 ln -s /usr/share/easy-rsa/* ~/easy-rsa/
 ```
+
 Restringir acceso al nuevo directorio de la PKI, para que solo el propietario pueda acceder:
-```
+
+```sh
 chmod 700 ~/easy-rsa
 ```
+
 Iniciar la PKI dentro del directorio easy-rsa:
-```
+
+```sh
 cd ~/easy-rsa
 ./easyrsa init-pki
 ```
+
 Que debe resultar en algo como:
 
 ```
 init-pki complete; you may now create a CA or requests.
 Your newly created PKI dir is: /home/<usuario>/easy-rsa/pki
 ```
+
 ### Paso 3: Crear una entidad de certificación
+
 Crear el archivo `vars` en el directorio `~/easy-rsa`:
-```
+
+```sh
 cd ~/easy-rsa
 nano vars
 ```
+
 Pegar lo siguiente en el archivo reemplazando los campos que estén rodeados por `<>` (hay que borrar los <>, solo dejar las ""):
+
 ```
 set_var EASYRSA_REQ_COUNTRY    "<US>"
 set_var EASYRSA_REQ_PROVINCE   "<NewYork>"
@@ -51,20 +72,24 @@ set_var EASYRSA_REQ_OU         "<Community>"
 set_var EASYRSA_ALGO           "ec"
 set_var EASYRSA_DIGEST         "sha512"
 ```
+
 Ejecutar el siguiente comando para crear el certificado root público y el par de claves privadas para la entidad de certificación:
-```
+
+```sh
 ./easyrsa build-ca
 ```
+
 Se solicitará ingresar una contraseña. Asegurarse de elegir una frase de contraseña segura y anotarla en algún lugar resguardado porque se debe ingresar siempre que se interactúe con el CA para, por ejemplo, firmar o revocar un certificado.
 
 También se va a solicitar confirmar el nombre común (CN) de la CA. Es el que se usa para hacer referencia a esta máquina en el contexto de la entidad de certificación. Se puede ingresar cualquier texto, pero se recomienda poner CARRDUCIsys o CARRDUCI.
 
 El resultado debería verse como lo siguiente:
+
 ```
 Using SSL: openssl OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
 
-Enter New CA Key Passphrase: 
-Re-Enter New CA Key Passphrase: 
+Enter New CA Key Passphrase:
+Re-Enter New CA Key Passphrase:
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
@@ -79,14 +104,18 @@ Your new CA certificate file for publishing is at:
 /home/<usuario>/easy-rsa/pki/ca.crt
 ```
 
-## Crear un CSR (Certificate Sign Request)
+## Crear un CSR (Certificate Sign Request) :id=crear-csr
+
 Crear un script con nano de la siguiente forma:
-```
+
+```sh
 cd ~/easy-rsa
 nano generar_certificado.sh
 ```
+
 Y pegar dentro lo siguiente:
-```
+
+```sh
 #! /bin/bash
 set -e
 NOMBRE="$1"
@@ -130,22 +159,31 @@ cd ~/easy-rsa
 cp ~/easy-rsa/pki/issued/"$NOMBRE".crt $DIRECTORIO/"$NOMBRE".crt
 cp ~/easy-rsa/pki/ca.crt  $DIRECTORIO/"$NOMBRE"_ca.crt
 ```
+
 Después salir presionando `CTRL+X` y luego `Y`.
 
 Agregar permisos de ejecución al archivo con el siguiente comando:
-```
+
+```sh
 chmod +x ~/easy-rsa/generar_certificado.sh
 ```
+
 Después ya se pueden generar certificados utilizando, dentro de la carpeta `~/easy-rsa` la siguiente estructura de comando (más adelante se explica cómo hacer para desarrollo y producción):
+
 ```
 ./generar_certificado.sh <nombre> <ip> <dns-opcional>
 ```
-### Certificado para desarrollo
+
+### Certificado para desarrollo :id=cert-des
+
 Para generar el certificado de desarrollo, aún en la carpeta `~/easy-rsa`, usar el siguiente comando:
-```
+
+```sh
 ./generar_certificado.sh desarrollo 127.0.0.1
 ```
+
 Rellenar los campos que solicita con estos datos recomendados:
+
 ```
 Country Name (2 letter code) [AU]:MX
 State or Province Name (full name) [Some-State]:Jalisco
@@ -159,7 +197,9 @@ Please enter the following 'extra' attributes
 A challenge password []:   #Alguna contraseña guardada en algún lugar seguro
 An optional company name []:
 ```
+
 Después va a pedir la contraseña de la CA (si se le puso). Ingresarla para obtener el siguiente resultado:
+
 ```
 Enter pass phrase for /home/mentalselfthink/easy-rsa/pki/private/ca.key:
 40576E71CE7F0000:error:0700006C:configuration file routines:NCONF_get_string:no value:../crypto/conf/conf_lib.c:315:group=<NULL> name=unique_subject
@@ -179,20 +219,27 @@ Write out database with 1 new entries
 Data Base Updated
 
 ```
+
 que nos debe dar una estructura así:
+
 ```
 ~/generacion-certificados/CERTIFICADO_desarrollo
-	desarrollo_ca.crt 
-	desarrollo.crt 
-	desarrollo.key 
+	desarrollo_ca.crt
+	desarrollo.crt
+	desarrollo.key
 	desarrollo.req
 ```
-### Certificado para producción
+
+### Certificado para producción :id=cert-prod
+
 Para generar el certificado de producción, aún en la carpeta `~/easy-rsa`, usar el siguiente comando:
-```
+
+```sh
 ./generar_certificado.sh api.192.168.1.149 192.168.1.149
 ```
+
 Rellenar los campos que solicita con estos datos recomendados:
+
 ```
 Country Name (2 letter code) [AU]:MX
 State or Province Name (full name) [Some-State]:Jalisco
@@ -207,7 +254,9 @@ to be sent with your certificate request
 A challenge password []:   #Alguna contraseña guardada en algún lugar seguro
 An optional company name []:
 ```
+
 Después va a pedir la contraseña de la CA (si se le puso). Ingresarla para obtener el siguiente resultado:
+
 ```
 Enter pass phrase for /home/mentalselfthink/easy-rsa/pki/private/ca.key:
 Check that the request matches the signature
@@ -226,29 +275,33 @@ Write out database with 1 new entries
 Data Base Updated
 
 ```
+
 que nos debe dar una estructura así:
+
 ```
 ~/generacion-certificados/CERTIFICADO_desarrollo
-	api.192.168.1.149_ca.crt 
-	api.192.168.1.149.crt 
-	api.192.168.1.149.key 
+	api.192.168.1.149_ca.crt
+	api.192.168.1.149.crt
+	api.192.168.1.149.key
 	api.192.168.1.149.req
 ```
+
 ## Utilización de los archivos generados
+
 Los archivos siempre se van a guardar en la carpeta `~/generacion-certificados`. Cada firma nueva se guarda en una carpeta con el siguiente formato: `CERTIFICADO_<nombre>` (más adelante se mostrará de donde viene `<nombre>`). Dentro de estas carpetas, debe haber 4 archivos más o menos como los siguientes:
+
 ```
 CERTIFICADO_ejemplo/
-	ejemplo_ca.crt 
-	ejemplo.crt 
-	ejemplo.key 
+	ejemplo_ca.crt
+	ejemplo.crt
+	ejemplo.key
 	ejemplo.req
 ```
+
 En este caso, se necesitan 2 archivos para el API y la GUI: `ejemplo.crt` y `ejemplo.key`. Dichos archivos se deben colocar en 2 ubicaciones:
- - La primera es en el repositorio [carrduci-sys-api](https://github.com/Carrduci/carrduci-sys-api/tree/carrduci-master/certificado), reemplazando los 4 archivos por los 2 que se corresponden con los de este ejemplo en [[#Certificado para desarrollo]] y los otros dos en [[#Certificado para producción]].
- - La segunda es en el repositorio [utilidades-carrduci-sys](https://github.com/Carrduci/utilidades_carrduci_sys) (en la raíz), donde solo hay que reemplazar los dos archivos para producción, que se generan en el ejemplo [[#Certificado para producción]].
- - ****IMPORTANTE: para hacer este cambio, hay que clonar los repositorios, reemplazar los archivos como se indicó y después hacer `git push` en estos mismos. En la computadora donde se vayan a generar nuevas imágenes de docker, se debe hacer `pull` a los repositorios (si ya estaban clonados). Si alguno de los repositorios están clonados en el servidor donde se aloja CARRDUCIsys, también se debe hacer `git pull` ahí***.
 
-El archivo que tiene la terminación `_ca.crt` es el que se debe usar para **instalar en los equipos donde se quiere tener acceso al sistema**. Ver [¿Cómo instalar certificados en compus de usuarios?](./5-instalar-certificado-en-computadora-usuario.md).
+-   La primera es en el repositorio [carrduci-sys-api](https://github.com/Carrduci/carrduci-sys-api/tree/carrduci-master/certificado), reemplazando los 4 archivos del directorio `/certificado` **(deben quedar con el mismo nombre)** por los 2 que se corresponden con los de este ejemplo en [Certificado para desarrollo](./docs/carrduci-sys/1-generacion-certificados?id=cert-des) y los otros dos en [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod).
+-   La segunda es en el repositorio [utilidades-carrduci-sys](https://github.com/Carrduci/utilidades_carrduci_sys) (en la raíz), donde solo hay que reemplazar los dos archivos para producción, que se generan en el ejemplo [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod).
+-   \***_IMPORTANTE: para hacer este cambio, hay que clonar los repositorios, reemplazar los archivos como se indicó y después hacer `git push` en estos mismos. En la computadora donde se vayan a generar nuevas imágenes de docker, se debe hacer `pull` a los repositorios (si ya estaban clonados). Si alguno de los repositorios están clonados en el servidor donde se aloja CARRDUCIsys, también se debe hacer `git pull` ahí_**.
 
-
-
+El archivo que tiene la terminación `_ca.crt` es el que se debe usar para **instalar en los equipos donde se quiere tener acceso al sistema**. Ver [¿Cómo instalar certificados en compus de usuarios?](./docs/carrduci-sys/5-instalar-certificado-en-computadora-usuario.md).

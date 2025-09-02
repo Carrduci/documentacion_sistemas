@@ -1,26 +1,26 @@
-* Home
-* [Readme](./README.md)
-* Docs
-  * Carrduci Sys
-    * [1 Generacion Certificados](./docs/carrduci-sys/1-generacion-certificados.md)
-    * [2 Despliegue Csys](./docs/carrduci-sys/2-despliegue-csys.md)
-    * [3 Restauracion Respaldos](./docs/carrduci-sys/3-restauracion-respaldos.md)
-    * [4 Servidor Samba Carpeta Respaldos](./docs/carrduci-sys/4-servidor-samba-carpeta-respaldos.md)
-    * [5 Instalar Certificado En Computadora Usuario](./docs/carrduci-sys/5-instalar-certificado-en-computadora-usuario.md)
-  * Carrduci Sys Desarrollo
-    * [Catalogo Archivos Por Modulo](./docs/carrduci-sys-desarrollo/catalogo-archivos-por-modulo.md)
-    * [Entorno Desarollo](./docs/carrduci-sys-desarrollo/entorno-desarollo.md)
-    * [Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/estructuras-de-documentacion.md)
-  * Docker
-    * [Uso Docker](./docs/docker/uso-docker.md)
-  * Odbc Mongo
-    * [1 Instalar Conector Bi Mongo En Linux](./docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
-    * [2 Conectar A Bi De Mongo Remotamente Desde Windows](./docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
-  * Ubuntu Server
-    * [Conexion Ssh](./docs/ubuntu-server/conexion-ssh.md)
-    * [Configurar Ubuntu Server](./docs/ubuntu-server/configurar-ubuntu-server.md)
-  * Visual Studio Code
-    * [Agregar Snippets](./docs/visual-studio-code/agregar-snippets.md)
-  * Windows
-    * [Establecer Copia Automatica De Respaldos](./docs/windows/establecer-copia-automatica-de-respaldos.md)
-    * [Instalacion Wsl](./docs/windows/instalacion-wsl.md)
+-   Home
+-   [Readme](./README.md)
+-   Docs
+    -   Carrduci Sys
+        -   [1 Generacion Certificados](./docs/carrduci-sys/1-generacion-certificados.md)
+        -   [2 Despliegue Csys](./docs/carrduci-sys/2-despliegue-csys.md)
+        -   [3 Restauracion Respaldos](./docs/carrduci-sys/3-restauracion-respaldos.md)
+        -   [4 Servidor Samba Carpeta Respaldos](./docs/carrduci-sys/4-servidor-samba-carpeta-respaldos.md)
+        -   [5 Instalar Certificado En Computadora Usuario](./docs/carrduci-sys/5-instalar-certificado-en-computadora-usuario.md)
+    -   Carrduci Sys Desarrollo
+        -   [Catalogo Archivos Por Modulo](./docs/carrduci-sys-desarrollo/catalogo-archivos-por-modulo.md)
+        -   [Entorno Desarollo](./docs/carrduci-sys-desarrollo/entorno-desarollo.md)
+        -   [Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/estructuras-de-documentacion.md)
+    -   Docker
+        -   [Uso Docker](./docs/docker/uso-docker.md)
+    -   Odbc Mongo
+        -   [1 Instalar Conector Bi Mongo En Linux](./docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
+        -   [2 Conectar A Bi De Mongo Remotamente Desde Windows](./docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
+    -   Ubuntu Server
+        -   [Conexion Ssh](./docs/ubuntu-server/conexion-ssh.md)
+        -   [Configurar Ubuntu Server](./docs/ubuntu-server/configurar-ubuntu-server.md)
+    -   Visual Studio Code
+        -   [Agregar Snippets](./docs/visual-studio-code/agregar-snippets.md)
+    -   Windows
+        -   [Establecer Copia Automatica De Respaldos](./docs/windows/establecer-copia-automatica-de-respaldos.md)
+        -   [Instalacion Wsl](./docs/windows/instalacion-wsl.md)
