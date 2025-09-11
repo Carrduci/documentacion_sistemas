@@ -21,7 +21,7 @@ Después de un rato, solicitará crear un nuevo usuario y contraseña. En el usu
 
 ![](../../assets/imagenes/instalacion_wsl_crear_usuario.png)
 
-Ahora hay que configurar la distribución como principal y la terminal como administrador.
+Ahora hay que configurar la distribución como principal y la terminal como administrador. **Cerrar la terminal y abrirla de nuevo**, luego entrar a la configuración.
 
 ![](../../assets/imagenes/instalacion_wsl_abrir_config_terminal.png)
 
