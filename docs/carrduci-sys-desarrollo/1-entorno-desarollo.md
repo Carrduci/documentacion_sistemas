@@ -20,7 +20,7 @@ Ver [Instalación WSL](./docs/windows/instalacion-wsl.md).
 
 !> Debes tener una cuenta de GitHub y debe estar añadida a la organización (Carrduci). Inicia sesión con esa cuenta en el navegador principal de la computadora (puedes cambiar el navegador principal si quieres).
 
-Ejecutar el siguiente comando
+Ejecutar el siguiente comando (pegar con `Ctrl` + `Shift` + `V`):
 
 ```sh
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
