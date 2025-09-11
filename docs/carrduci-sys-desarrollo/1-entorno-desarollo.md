@@ -106,7 +106,7 @@ Ejecutar el siguiente script en la terminal de subsistema. Puede tardar varios m
 para empezar a desarrollar. Podría pedirte la contraseña del usuario de subsistema que se creó anteriormente de nuevo.
 
 ```sh
-sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
+code --version && sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
 ```
 
 
