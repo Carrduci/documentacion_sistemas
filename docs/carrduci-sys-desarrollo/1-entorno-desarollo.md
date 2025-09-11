@@ -2,11 +2,21 @@
 
 Para poder desarrollar sobre el código de carrduci sys, es necesario llevar a cabo los siguientes pasos.
 
-## 1. Instalar el Subsistema de Linux en Windows
+## 1. Instalar VsCode en Windows
+
+Descargar el instalable desde la [página oficial](https://code.visualstudio.com/docs/?dv=win64user).
+
+Ejecutar el instalador y seguir los pasos de instalación, pero al llegar al punto de "Seleccione las Tareas Adicionales", asegurarse de que estas 4 opciones estén marcadas.
+
+![](../../assets/imagenes/instalacion_vscode_4opciones.png)
+
+Al finalizar, ejecutar VsCode al menos una vez, y cerrarlo.
+
+## 2. Instalar el Subsistema de Linux en Windows
 
 Ver [Instalación WSL](../windows/instalacion-wsl.md).
 
-## 2. Instalar el GitHub CLI (Command Line) e iniciar sesión
+## 3. Instalar el GitHub CLI (Command Line) e iniciar sesión
 
 !> Debes tener una cuenta de GitHub y debe estar añadida a la organización (Carrduci). Inicia sesión con esa cuenta en el navegador principal de la computadora (puedes cambiar el navegador principal si quieres).
 
@@ -75,17 +85,6 @@ Y en la terminal se debe ver así.
 
 ![](../../assets/imagenes/gh_cli_list_terminal.png)
 
-## 3. Ejecutar la script de despliegue
-
-!> Antes debiste haber iniciado sesión con GitHub CLI
-
-Ejecutar el siguiente script en la terminal de subsistema. Puede tardar varios minutos. Esto instalará todo lo necesario
-para empezar a desarrollar.
-
-```sh
-sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
-```
-
 ## 4. Añadir usuario a git
 
 Para poder hacer commits, es necesario indicarle a git el correo y usuario.
@@ -98,3 +97,16 @@ Ejecutar los siguientes comandos (reemplazando `<correo>` y `<usuario>` por los 
 git config --global user.email "<correo>"
 git config --global user.name "<usuario>"
 ```
+
+## 5. Ejecutar la script de despliegue
+
+!> Antes debiste haber iniciado sesión con GitHub CLI
+
+Ejecutar el siguiente script en la terminal de subsistema. Puede tardar varios minutos. Esto instalará todo lo necesario
+para empezar a desarrollar.
+
+```sh
+sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
+```
+
+
