@@ -98,7 +98,7 @@ git config --global user.email "<correo>"
 git config --global user.name "<usuario>"
 ```
 
-## 5. Ejecutar la script de despliegue
+## 5. Ejecutar la script de despliegue y comandos iniciales
 
 !> Antes debiste haber iniciado sesión con GitHub CLI
 
@@ -109,4 +109,45 @@ para empezar a desarrollar. Podría pedirte la contraseña del usuario de subsis
 code --version && sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
 ```
 
+Luego copiar todo esto y pegarlo en la consola, presionando `ENTER`.
 
+```
+code --install-extension ms-vscode-remote.remote-wsl \
+&& code --install-extension ms-python.python \
+&& code --install-extension ms-python.vscode-pylance \
+&& code --install-extension ms-python.debugpy \
+&& code --install-extension ms-python.vscode-python-envs \
+&& code --install-extension esbenp.prettier-vscode \
+&& code --install-extension ms-azuretools.vscode-docker \
+&& code --install-extension mongodb.mongodb-vscode \
+&& code --install-extension sp90.angular-control-flow-snippets \
+&& code --install-extension angular.ng-template \
+&& code --install-extension cyrilletuzi.angular-schematics \
+&& code --install-extension johnpapa.angular2 \
+&& code --install-extension hossaini.bootstrap-intellisense \
+&& code --install-extension mhutchie.git-graph \
+&& code --install-extension ecmel.vscode-html-css \
+&& code --install-extension bianxianyang.htmlplay \
+&& code --install-extension jasonlhy.hungry-delete \
+&& code --install-extension kuone.sequence-number \
+&& code --install-extension zignd.html-css-class-completion \
+&& code --install-extension muhammedrashid.stain \
+&& code --install-extension bradlc.vscode-tailwindcss \
+&& code --install-extension dbaeumer.vscode-eslint \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/queries_mongosh && git restore . \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/documentacion_sistemas && git restore . \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys && git restore . \
+&& nvm use 14.20.1 \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/carrduci-sys-api && git restore . && git checkout carrduci-dev && npm install \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/carrduci-sys-gui && git restore . && git checkout carrduci-dev && npm install \
+&& nvm use lts/* \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/carrduci-sys-online && git restore . && npm install \
+&& cd ~/carrduci-dev/carrduci_sys_workspace/api-gateway-carrduci && git restore . && npm install \
+&& cd ~/carrduci-dev/carrduci_sys_workspace
+```
+
+Y finalmente, para abrir el espacio de trabajo, en la terminal se usará este comando.
+
+```
+code ~/carrduci-dev/carrduci_sys_workspace/carrduci_sys_workspace.code-workspace
+```
