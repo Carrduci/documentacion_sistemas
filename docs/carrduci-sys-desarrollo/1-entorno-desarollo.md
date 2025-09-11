@@ -14,7 +14,7 @@ Al finalizar, ejecutar VsCode al menos una vez, y cerrarlo.
 
 ## 2. Instalar el Subsistema de Linux en Windows
 
-Ver [Instalación WSL](./docs/windows/instalacion-wsl.md).
+Ver [Instalación WSL](./docs/carrduci-sys-desarrollo/2-instalacion-wsl.md).
 
 ## 3. Instalar el GitHub CLI (Command Line) e iniciar sesión
 

@@ -17,7 +17,7 @@ Ver [utilidades_carrduci_sys](https://github.com/Carrduci/utilidades_carrduci_sy
 
 1. Instalar el Sub Sistema de Linux
 
-Ver [Subsistema De Linux](https://learn.microsoft.com/es-es/windows/wsl/install).
+Ver [Subsistema De Linux](./docs/carrduci-sys-desarrollo/2-instalacion-wsl.md).
 
 3.  Saber establecer una conexión ssh a un equipo remoto con Linux
 
