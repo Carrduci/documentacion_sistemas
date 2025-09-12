@@ -14,7 +14,7 @@ Al finalizar, ejecutar VsCode al menos una vez, y cerrarlo.
 
 ## 2. Instalar el Subsistema de Linux en Windows
 
-Ver [Instalación WSL](./docs/carrduci-sys-desarrollo/2-instalacion-wsl.md).
+Ver [Instalación WSL](./docs/carrduci-sys-desarrollo/1-instalacion-wsl.md).
 
 ## 3. Instalar el GitHub CLI (Command Line) e iniciar sesión
 
@@ -146,8 +146,19 @@ code --install-extension ms-vscode-remote.remote-wsl \
 && cd ~/carrduci-dev/carrduci_sys_workspace
 ```
 
-Y finalmente, para abrir el espacio de trabajo, en la terminal se usará este comando.
+Luego, para abrir el espacio de trabajo, en la terminal se usará este comando.
 
 ```
 code ~/carrduci-dev/carrduci_sys_workspace/carrduci_sys_workspace.code-workspace
+```
+
+## 6. Alimentar la base de datos local
+
+Ahora es necesario alimentar la base de datos local. Para ello, hay que usar el siguiente comando, que copia el ultimo
+respaldo generado en el servidor.
+
+> ! Es importante que tenga un espacio al inicio para que no se guarde en el historial de comandos, porque se escribe la contraseña del servidor diréctamente
+
+```
+ ~/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/bd-local/restaurar-respaldo-bd-local.sh <ip_servidor> <password_servidor>
 ```
