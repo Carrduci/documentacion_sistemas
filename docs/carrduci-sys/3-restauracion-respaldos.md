@@ -26,7 +26,7 @@ Por último, para restaurar, ver la opción **2**.
 
 #### 2. Obtener el último respaldo y restaurarlo
 
-Para esto hay que recurrir nuevamente a `utilidadades_carrrduci`. Basta con ejecutar lo siguiente:
+Hay que conectarse al servidor a travez de [`ssh`](./docs/ubuntu-server/conexion-ssh.md). Luego, hay que restaurar un respaldo de la carpeta de respaldos del servidor (ya sea que se copio desde una computadora externa en el paso 1, o se usen los respaldos que se generan automáticamente). Para esto hay que recurrir nuevamente a `utilidadades_carrrduci`. Basta con ejecutar lo siguiente:
 
 ```
 ~/utilidades_carrduci_sys/mongo/restaurar_respaldo.sh ~/respaldos_csys
@@ -34,7 +34,7 @@ Para esto hay que recurrir nuevamente a `utilidadades_carrrduci`. Basta con ejec
 
 Lo que debe tener un resultado algo así:
 
-![](../assets/gifs/restaurar_respaldo.gif)
+![](../../assets/gifs/restaurar_respaldo.gif)
 
 ```
  ===> Borrando carpeta anterior de respaldos ('/respaldos')

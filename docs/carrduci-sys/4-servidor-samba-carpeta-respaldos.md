@@ -7,7 +7,7 @@ Windows, es necesario utilizar una herramienta llamada Samba.
 
 1. Instalar el Sub Sistema de Linux
 
-Ver [Subsistema De Linux](https://learn.microsoft.com/es-es/windows/wsl/install).
+Ver [Subsistema De Linux](./docs/carrduci-sys-desarrollo/2-instalacion-wsl.md).
 
 2.  Saber establecer una conexión ssh a un equipo remoto con Linux
 
@@ -32,7 +32,7 @@ ssh <usuario_servidor>@<direccion.ip.servidor>
 
 Ejemplo: `ssh carrduci@192.168.149`
 
-A continuación nos pedirá la contraseña que el usuario al que estamos accediendo tiene.
+A continuación nos pedirá la contraseña del usuario al que estamos accediendo.
 
 ### 2. Instalar y desplegar Samba
 
@@ -99,6 +99,10 @@ Solo resta reiniciar samba para terminar
 
 ![](../../assets/imagenes/reinicio_samba_final.png)
 
+```
+sudo /etc/init.d/smbd restart -v
+```
+
 ## Visualizar carpeta de red en Windows
 
 ### Probar conexión
@@ -112,9 +116,9 @@ lo siguiente en la barra de direcciones del explorador de archivos:
 
 por ejemplo: `\\192.168.1.149`
 
-![](../assets/imagenes/direccion_servidor_samba_ejemplo.png)
+![](../../assets/imagenes/direccion_servidor_samba_ejemplo.png)
 
-![](../assets/imagenes/coneccion_a_samba_desde_windows_prueba.png)
+![](../../assets/imagenes/coneccion_a_samba_desde_windows_prueba.png)
 
 > Para ver el detalle completo de la conexión remota y copia de respaldo desde Windows
 > ir [aquí](../windows/establecer-copia-automatica-de-respaldos.md)
