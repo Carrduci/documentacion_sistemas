@@ -93,7 +93,7 @@ Para poder hacer commits, es necesario indicarle a git el correo y usuario.
 
 Ejecutar los siguientes comandos (reemplazando `<correo>` y `<usuario>` por los tuyos, dejando las comillas):
 
-```
+```sh
 git config --global user.email "<correo>"
 git config --global user.name "<usuario>"
 ```
@@ -109,9 +109,11 @@ para empezar a desarrollar. Podría pedirte la contraseña del usuario de subsis
 code --version && sudo curl -s -H "Authorization: token $(gh auth token)" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/Carrduci/utilidades_carrduci_sys/contents/instalar-dev-carrdyci-sys.sh | bash
 ```
 
+> Al finalizar, cerrar la terminal y volverla a abrir.
+
 Luego copiar todo esto y pegarlo en la consola, presionando `ENTER`.
 
-```
+```sh
 code --install-extension ms-vscode-remote.remote-wsl \
 && code --install-extension ms-python.python \
 && code --install-extension ms-python.vscode-pylance \
@@ -148,17 +150,34 @@ code --install-extension ms-vscode-remote.remote-wsl \
 
 Luego, para abrir el espacio de trabajo, en la terminal se usará este comando.
 
-```
+```sh
 code ~/carrduci-dev/carrduci_sys_workspace/carrduci_sys_workspace.code-workspace
 ```
 
-## 6. Alimentar la base de datos local
+## 6. Agregar el servidor de carrduci sys al registro de ssh
 
-Ahora es necesario alimentar la base de datos local. Para ello, hay que usar el siguiente comando, que copia el ultimo
+Para el siguiente paso, es necesario haberse conectado al menos una vez por ssh al servidor de carrduci. Para ello, ejecutar el siguiente comando.
+
+```sh
+ssh <usuario>@<ip_servidor> ls
+
+```
+
+Si es la primera vez que se hace la conexión, pedirá confirmar que el equipo es de confianza, luego solicitará la contraseña y al final imprimirá las carpetas del directorio `~` en el servidor. Ahora se puede pasar al último paso.
+
+## 7. Alimentar la base de datos local
+
+Ahora es necesario alimentar la base de datos local. Para ello, hay que usar el siguiente comando que copia el último
 respaldo generado en el servidor.
 
-> ! Es importante que tenga un espacio al inicio para que no se guarde en el historial de comandos, porque se escribe la contraseña del servidor diréctamente
+!> Es importante que tenga un espacio al inicio para que no se guarde en el historial de comandos, porque se escribe la contraseña del servidor diréctamente
 
-```
+```sh
  ~/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/bd-local/restaurar-respaldo-bd-local.sh <ip_servidor> <password_servidor>
 ```
+
+# Recomendaciones finales
+
+Para manipular la base de datos se puede usar la extensión de visual studio que se instaló automáticamente en los pasos anteriores ([ver doc.](https://www.mongodb.com/docs/mongodb-vscode/connect/)), o se puede usar [compass](https://www.mongodb.com/products/tools/compass), una GUI para mongodb.
+
+Para hacer pruebas en el API, usamos [postman](https://www.postman.com/downloads/).
