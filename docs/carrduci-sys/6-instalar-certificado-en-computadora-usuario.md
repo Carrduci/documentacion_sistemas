@@ -9,7 +9,7 @@ De preferencia, CARRDUCIsys debe ser usado en navegadores basados en Chromium: *
 Una vez abierto el navegador, agregar la siguiente url en la barra de direcciones:
 
 ```
-<navegador>://settings/privacy
+<navegador>://certificate-manager
 ```
 
 Reemplazar la primera palabra dependiendo del navegador:

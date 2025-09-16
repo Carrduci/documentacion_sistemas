@@ -1,4 +1,4 @@
-# Restaurar respaldos
+# Restaurar respaldos en servidor
 
 Para restaurar la base de datos e imágenes, lo ideal es buscar el último respaldo generado. para ello hay dos opciones, copiar el respaldo desde Windows al servidor y luego restaurarlo (en caso de que no haya respaldos disponibles en este mismo) u obtener el último respaldo y restaurarlo.
 

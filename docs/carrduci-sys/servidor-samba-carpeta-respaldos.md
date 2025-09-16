@@ -1,3 +1,5 @@
+!> Este procedimiento ya no es necesario
+
 # Desplegar servidor Samba en Ubuntu
 
 Para establecer una carpeta de red en un servidor Linux y que sea accesible desde

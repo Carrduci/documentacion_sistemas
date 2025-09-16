@@ -17,13 +17,13 @@ Ver [utilidades_carrduci_sys](https://github.com/Carrduci/utilidades_carrduci_sy
 
 1. Instalar el Sub Sistema de Linux
 
-Ver [Subsistema De Linux](./docs/carrduci-sys-desarrollo/2-instalacion-wsl.md).
+Ver [Subsistema De Linux](./docs/carrduci-sys-desarrollo/1-instalacion-wsl.md).
 
 3.  Saber establecer una conexión ssh a un equipo remoto con Linux
 
 > En este caso es `ubuntu server`
 
-Ver [coneccion-ssh](./docs/ubuntu-server/conexion-ssh) y [configurar-ubuntu-server](./docs/ubuntu-server/configurar-ubuntu-server)
+Ver [conexión ssh](./docs/ubuntu-server/conexion-ssh) y [configurar ubuntu server](./docs/ubuntu-server/configurar-ubuntu-server)
 
 4. Tener Docker instalado y haber iniciado sesión
 
@@ -87,10 +87,8 @@ Resolving deltas: 100% (43/43), done.
 Lo que debe resultar en algo así:
 ![](../../assets/gifs/desplegar_actualizacion_carrduci_sys.gif)
 
-## Respaldos
-
-Aunque los respaldos vienen integrados en la script anterior, es necesario configurar la
+<!-- Aunque los respaldos vienen integrados en la script anterior, es necesario configurar la
 carpeta donde se guardan para que sea accesible desde la red. Esto se logra desplegando
 un servidor samba simple. [¿Cómo desplegar el servidor samba?](./docs/carrduci-sys/4-servidor-samba-carpeta-respaldos.md)
 
-para restaurar respaldos, ir [aquí](./docs/carrduci-sys/3-restauracion-respaldos.md).
+para restaurar respaldos, ir [aquí](./docs/carrduci-sys/3-restauracion-respaldos.md). -->

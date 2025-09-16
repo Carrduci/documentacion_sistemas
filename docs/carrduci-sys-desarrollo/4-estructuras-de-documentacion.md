@@ -154,11 +154,11 @@ Acomodar todos los elementos de manera seccionado en el orden en el que se muest
 Siempre comentar y separar el área de importaciones. Las importaciones siempre deben ir hasta arriba y se deben separar, preferentemente de la siguiente manera.
 
 | ORDEN | DESCRIPCIÓN                                                         | COMENTARIO PARA AGREGAR        |
-| ----- | ------------------------------------------------------------------- | ------------------------------ |
-| 1     | Importaciones externas (librerías).                                 | `/* IMPORTACIONES EXTERNAS */` |
-| 2     | Importaciones de modelos o esquemas desde otros archivos de modelo. | `/* OTROS MODELOS */`          |
-| 3     | Importaciones de servicios internos.                                | `/* SERVICIOS */`              |
-| 4     | Importaciones de utilidades internas, middlewares, etc.             | `/* UTILIDADES */`             |
+| ----: | :------------------------------------------------------------------ | :----------------------------- |
+|     1 | Importaciones externas (librerías).                                 | `/* IMPORTACIONES EXTERNAS */` |
+|     2 | Importaciones de modelos o esquemas desde otros archivos de modelo. | `/* OTROS MODELOS */`          |
+|     3 | Importaciones de servicios internos.                                | `/* SERVICIOS */`              |
+|     4 | Importaciones de utilidades internas, middlewares, etc.             | `/* UTILIDADES */`             |
 
 #### 2. Esquema
 
@@ -215,7 +215,7 @@ En este nivel (fuera de la instancia del esquema) se **DEBE** generar la instanc
 const MODELO_SCHEMA = mongoose.model('Modelo', modeloSchema)
 ```
 
-> **ADVERTENCIA: ** Es muy importante que la instancia se genere en este nivel y no en NINGÚN otro. Hacerlo en otro puede ocasionar errores extraños.
+!> <b>ADVERTENCIA:</b> Es muy importante que la instancia se genere en este nivel y no en NINGÚN otro. Hacerlo en otro puede ocasionar errores extraños.
 
 Aquí es donde se exporta la instancia del modelo de mongoose generada. Como en el API se usa JavaScript, las exportaciones son del modo:
 

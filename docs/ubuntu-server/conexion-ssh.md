@@ -20,4 +20,4 @@ scp /ruta/a/archivo/local user@host:/ruta/a/archivo/remoto
 scp user@host:/ruta/a/archivo/remoto /ruta/a/archivo/local
 ```
 
-!>
+!> Esto requiere autenticación con contraseña, la cuál es insegura. Para ver una forma más segura, ira a [llave ssh](./docs/ubuntu-server/llave-ssh.md)

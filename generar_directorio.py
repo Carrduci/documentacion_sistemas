@@ -2,8 +2,8 @@ from pathlib import Path
 import os
 
 # pointers:
-tee =    '* '
-last =   '* '
+tee =    '- '
+last =   '- '
 def tree(dir_path: Path):
     contents = sorted(dir_path.iterdir(), key=lambda x: x.name)
     pointers = [tee] * (len(contents) - 1) + [last]
@@ -23,14 +23,17 @@ def tree(dir_path: Path):
             '.git',
             '.dist',
         ]):
+            if path.name == 'docs':
+                yield ''
             if path.is_dir():
                 folder_name = ' '.join(path.name.split('-')).title()
-                folder_indent_size = len(f'{path}'.split(os.sep)) - 1
+                folder_indent_size = len(f'{path}'.split(os.sep)) - 2
                 folder_indent = '  ' * folder_indent_size
-                yield f'{folder_indent}* {folder_name}'
+                if (folder_name != 'Docs'):
+                    yield f'{folder_indent}- <b class="title-badge">{folder_name}</b>'
             else:
                 corrected_path = path
-                file_indent_size = len(f'{corrected_path}'.split(os.sep)) - 1
+                file_indent_size = len(f'{corrected_path}'.split(os.sep)) - 2
                 file_indent = '  ' * file_indent_size
                 file_name = ' '.join(path.name.split('-')).split('.')[0].title()
                 yield file_indent + pointer + f'[{file_name}](./{corrected_path})'
@@ -39,6 +42,6 @@ def tree(dir_path: Path):
             
 
 with open('_sidebar.md', 'w') as directorio_md:
-    directorio_md.write('* Home\n')
+    directorio_md.write('- <b class="title-badge">Home</b>\n')
     for line in tree(Path('.')):
         directorio_md.write(line + '\n')

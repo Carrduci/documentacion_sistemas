@@ -5,7 +5,7 @@
 Para llevar a cabo esto, es necesario hacer dos cosas:
 
 1. [Crear una entidad de certificación (CA)](./docs/carrduci-sys/1-generacion-certificados.md?id=crear-ca) si no hay una.
-2. [Crear un C? (Certificate Sign Request)](./docs/carrduci-sys/1-generacion-certificados.md?id=crear-csr).
+2. [Crear un CSR (Certificate Sign Request)](./docs/carrduci-sys/1-generacion-certificados.md?id=crear-csr).
 
 ## Crear una entidad de certificación (CA) :id=crear-ca
 
@@ -298,10 +298,12 @@ CERTIFICADO_ejemplo/
 	ejemplo.req
 ```
 
-En este caso, se necesitan 2 archivos para el API y la GUI: `ejemplo.crt` y `ejemplo.key`. Dichos archivos se deben colocar en 2 ubicaciones:
+En este caso, se necesitan 3 archivos para el API y la GUI: `ejemplo.crt` y `ejemplo.key` y `ejemplo_ca.crt`. Dichos archivos se deben colocar en 3 ubicaciones:
 
--   La primera es en el repositorio [carrduci-sys-api](https://github.com/Carrduci/carrduci-sys-api/tree/carrduci-master/certificado), reemplazando los 4 archivos del directorio `/certificado` **(deben quedar con el mismo nombre)** por los 2 que se corresponden con los de este ejemplo en [Certificado para desarrollo](./docs/carrduci-sys/1-generacion-certificados?id=cert-des) y los otros dos en [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod).
--   La segunda es en el repositorio [utilidades-carrduci-sys](https://github.com/Carrduci/utilidades_carrduci_sys) (en la raíz), donde solo hay que reemplazar los dos archivos para producción, que se generan en el ejemplo [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod).
--   \***_IMPORTANTE: para hacer este cambio, hay que clonar los repositorios, reemplazar los archivos como se indicó y después hacer `git push` en estos mismos. En la computadora donde se vayan a generar nuevas imágenes de docker, se debe hacer `pull` a los repositorios (si ya estaban clonados). Si alguno de los repositorios están clonados en el servidor donde se aloja CARRDUCIsys, también se debe hacer `git pull` ahí_**.
+1.  La primera es en el repositorio [carrduci-sys-api](https://github.com/Carrduci/carrduci-sys-api/tree/carrduci-master/certificado), reemplazando los 4 archivos del directorio `/certificado` **(deben quedar con el mismo nombre)** por los 2 que se corresponden con los de este ejemplo en [Certificado para desarrollo](./docs/carrduci-sys/1-generacion-certificados?id=cert-des) y los otros dos en [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod).
+2.  La segunda es en el repositorio [utilidades-carrduci-sys](https://github.com/Carrduci/utilidades_carrduci_sys) (en la raíz), donde solo hay que reemplazar los tres archivos para producción, que se generan en el ejemplo [Certificado para producción](./docs/carrduci-sys/1-generacion-certificados?id=cert-prod) y el archivo `desarrollo_ca.crt`.
+3.  La última es reemplazar en el entorno local de desarrollo los archivos de certificado locales que están en el subsistema en la ruta `~/carrduci-dev/carrduci_sys_workspace/`. Reemplazar los antiguos `desarrollo.key` y `desarrollo.crt` por los nuevos. Esto no requiere commits ni comandos de git porque no es un repositorio.
+
+    > **_<h2>IMPORTANTE</h2> para hacer este cambio, en el caso de los primeros dos puntos, hay que clonar los repositorios, reemplazar los archivos como se indicó y después hacer `git push` en estos mismos. En la computadora donde se vayan a generar nuevas imágenes de docker, se debe hacer `pull` a los repositorios (si ya estaban clonados). Si alguno de los repositorios están clonados en el servidor donde se aloja CARRDUCIsys, también se debe hacer `git pull` ahí_**.
 
 El archivo que tiene la terminación `_ca.crt` es el que se debe usar para **instalar en los equipos donde se quiere tener acceso al sistema**. Ver [¿Cómo instalar certificados en compus de usuarios?](./docs/carrduci-sys/5-instalar-certificado-en-computadora-usuario.md).
