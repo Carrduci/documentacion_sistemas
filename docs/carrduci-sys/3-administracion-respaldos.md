@@ -21,9 +21,41 @@ Esto va a abrir el archivo donde se indican qué tareas va a ejecutar cron y en 
 
 Luego presionar `Ctrl` + `X` y en seguida `y`.
 
-La primera línea indica que a las 0, 10, 12, 15 y 18 horas con 10 minutos, todos los días del mes, todos los meses, todos los días de la semana, se va a ejecutar la script `obtener-ultimo-respaldo-y-guardar-con-imagenes.sh`. Esta script genera la carpeta `~/respados_csys` en el servidor y guarda ahí cada respaldo combinado (de colecciones e imágenes) que se vaya generando. De aquí es de donde podremos copiar respaldos a nuestro entorno local, o subirlos a la nube (aún no implementado).
+La primera línea del cron se estructura así:
 
-La segunda línea indica que a las 21 horas con 30 minutos, el día 25 de cada mes, se va a limpiar la carpeta de `~/respaldos_csys/` (todo su contenido), es decir, que los respaldos se purgan los 25 de cada mes. Esto es para evitar que se llene de respaldos el servidor.
+```
+<minutos> <horas> <dia_mes> <mes> <dia_seamana> <script>
+```
+
+Donde cada etiqueta tiene los siguientes valores y significados:
+
+| ETIQUETA       | VALOR                                                   | DESCRIPCIÓN                                          |
+| -------------- | ------------------------------------------------------- | ---------------------------------------------------- |
+| `<minutos>`    | 10                                                      | A la hora que se indique, en el minuto diez.         |
+| `<horas>`      | 0,10,12,15,18                                           | A las 00, 10, 12, 15 y 18 horas (en formato de 24h). |
+| `<dias_mes>`   | \*                                                      | Todos los días del mes.                              |
+| `<mes>`        | \*                                                      | Todos los meses.                                     |
+| `<dia_semana>` | \*                                                      | Todos los días de la semana.                         |
+| `<script>`     | `.../obtener-ultimo-respaldo-y-guardar-con-imagenes.sh` | Es la script que combina respaldos e imágenes.       |
+
+Se va a ejecutar la script `obtener-ultimo-respaldo-y-guardar-con-imagenes.sh`. Esta script genera la carpeta `~/respados_csys` en el servidor y guarda ahí cada respaldo combinado (de colecciones e imágenes) que se vaya generando. De aquí es de donde podremos copiar respaldos a nuestro entorno local, o subirlos a la nube (aún no implementado).
+
+La segunda línea se esctructura así:
+
+```
+<minutos> <horas> <dia_mes> <mes> <dia_seamana> <comando>
+```
+
+| ETIQUETA       | VALOR                      | DESCRIPCIÓN                                     |
+| -------------- | -------------------------- | ----------------------------------------------- |
+| `<minutos>`    | 30                         | A la hora que se indique, en el minuto treinta. |
+| `<horas>`      | 21                         | A las 21 horas (en formato de 24h).             |
+| `<dias_mes>`   | 25                         | Todos los 25 del mes.                           |
+| `<mes>`        | \*                         | Todos los meses.                                |
+| `<dia_semana>` | \*                         | Todos los días de la semana.                    |
+| `<comando>`    | `rm -r ~/respaldos_csys/*` | Comando que limpia la carpeta de respaldos.     |
+
+Se va a limpiar la carpeta de `~/respaldos_csys/` (todo su contenido), es decir, que los respaldos se purgan los 25 de cada mes. Esto es para evitar que se llene de respaldos el servidor.
 
 ### Sincronización con almacenamiento local
 
@@ -120,24 +152,52 @@ Una vez dentro del editor, revisar si no existen ya lineas parecidas a las sigui
 ?> Reemplazar `<usuario>` por el usuario que está en el servidor e `<ip_servidor>` por la dirección ip del servidor. En `<llave_privada>` poner la ruta de la llave ssh que se generó en el paso anterior, incluyendo al final de la ruta el archivo **(que no termina en `.pub`)**. Reemplazar `<disco_1>` y `<disco_2>` con las rutas del subsistema de los discos que se vayan a usar, o si se tiene solo un disco, omitir la segunda línea de cada bloque.
 
 ```
-# BLOQUE DE LA MADRUGADA -----------------------------------------
+# Sincronizacion desde el servidor
+30 0,10,12,15 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos.sh <usuario>@<ip_servidor>:~/respaldos_csys/* <disco_1>/respaldos_csys <disco_1>/logs_respaldos <llave_privada>
 
-# Primera sincronizacion desde el servidor
-# Esta requiere el encendido automatico
-30 0 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos.sh <usuario>@<ip_servidor>:~/respaldos_csys/* <disco_1>/respaldos_csys <disco_1>/logs_respaldos <llave_privada>
-
-# Primera copia del disco 1 al disco 2
-0 1 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos_local.sh <disco_1>/respaldos_csys/ <disco_2>/respaldos_csys <disco_2>/logs_respaldos
-
-
-# BLOQUE DE LA TARDE ---------------------------------------------
-
-# Segunda sincronizacion desde el servidor
-0 12 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos.sh <usuario>@<ip_servidor>:~/respaldos_csys/* <disco_1>/respaldos_csys <disco_1>/logs_respaldos <llave_privada>
-
-# Segunda copia del disco 1 al disco 2
-0 13 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos_local.sh <disco_1>/respaldos_csys/ <disco_2>/respaldos_csys <disco_2>/logs_respaldos
+# Copia del disco 1 al disco 2
+0 1,11,13,16 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos_local.sh <disco_1>/respaldos_csys/ <disco_2>/respaldos_csys <disco_2>/logs_respaldos
 ```
+
+La estructura en la línea 1 es:
+
+```
+<minutos> <horas> <dia_mes> <mes> <dia_seamana> <script_remota> <direccion_remota> <direccion_local_respaldos> <direccion_local_logs> <llave_ssh>
+```
+
+Donde cada etiqueta tiene los siguientes valores y significados:
+
+| ETIQUETA                      | VALOR                                        | DESCRIPCIÓN                                                                        |
+| ----------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `<minutos>`                   | 30                                           | A la hora que se indique, en el minuto treinta.                                    |
+| `<horas>`                     | 0,10,12,15                                   | A las 00, 10, 12 y 15 horas (en formato de 24h).                                   |
+| `<dias_mes>`                  | \*                                           | Todos los días del mes.                                                            |
+| `<mes>`                       | \*                                           | Todos los meses.                                                                   |
+| `<dia_semana>`                | \*                                           | Todos los días de la semana.                                                       |
+| `<script_remota>`             | `.../sincronizar_archivos.sh`                | Es la script que copia los respaldos desde el servidor.                            |
+| `<direccion_remota>`          | `<usuario>@<ip_servidor>:~/respaldos_csys/*` | Indica la ruta en el servidor donde se guardan los respaldos.                      |
+| `<direccion_local_respaldos>` | `<disco_1>/respaldos_csys`                   | Es la ruta local en la que se almacenarán los repaldos.                            |
+| `<direccion_local_logs>`      | `<disco_1>/logs_respaldos`                   | Es la ruta local en la que se almacenarán los logs de las copias de los respaldos. |
+| `<direccion_local>`           | `<disco_1>/respaldos_csys`                   | Es la ruta local en la que se almacenarán los repaldos.                            |
+| `<llave_ssh>`                 | `<llave_privada>`                            | Aquí va la ruta (incluyendo el archivo) de la llave ssh que se generó previamente  |
+
+La estructura en la segunda línea es:
+
+```
+<minutos> <horas> <dia_mes> <mes> <dia_seamana> <script_local> <direccion_respaldos_disco_1> <direccion_respaldos_disco_2> <direccion_logs_disco_2>
+```
+
+| ETIQUETA                        | VALOR                               | DESCRIPCIÓN                                                           |
+| ------------------------------- | ----------------------------------- | --------------------------------------------------------------------- |
+| `<minutos>`                     | 0                                   | A la hora que se indique, en el minuto cero.                          |
+| `<horas>`                       | 1,11,13,16                          | A las 01, 11, 13 y 16 horas (en formato de 24h).                      |
+| `<dias_mes>`                    | \*                                  | Todos los días del mes.                                               |
+| `<mes>`                         | \*                                  | Todos los meses.                                                      |
+| `<dia_semana>`                  | \*                                  | Todos los días de la semana.                                          |
+| `<script_local>`                | `.../sincronizar_archivos_local.sh` | Es la script que copia los archivos desde una ubicación local a otra. |
+| `<direccion_respaldos_disco_1>` | `<disco_1>/respaldos_csys/`         | La ubicación de los respaldos para copiar.                            |
+| `<direccion_respaldos_disco_2>` | `<disco_2>/respaldos_csys`          | La ubiación donde copiar los respaldos.                               |
+| `<direccion_logs_disco_2>`      | `<disco_2>/logs_respaldos`          | La ubicación donde guardar los logs de las copias de los respaldos.   |
 
 Finalizar presionando `Ctrl` + `X` y en seguida `Y`.
 
@@ -145,7 +205,7 @@ La primera línea, sincroniza todos los respaldos de la carpeta `~/respaldos_csy
 
 ?> En subsistema, para hacer referencia a los discos de la computadora, se tiene que usar la ruta `/mnt/<letra_disco_minuscula>/`, donde `<letra_disco_minuscula>` es la letra que windows le asigna al disco, pero en minúscula y sin los dos puntos `:` al final.
 
-La segunda línea solo sincroniza la misma carpeta del disco 1, al disco 2 (en caso de que se tenga más de un disco). Si se desea, se puede copiar a un tercer, cuarto, o n disco replicando la segunda línea tanto en el bloque de la madrugada como en el de la tarde.
+La segunda línea solo sincroniza la misma carpeta del disco 1, al disco 2 (en caso de que se tenga más de un disco). Si se desea, se puede copiar a un tercer, cuarto, o n disco replicando la segunda línea, poniendo al menos media hora de diferencia con las horas de la segunda línea.
 
 ### Sincronización a la nube
 
