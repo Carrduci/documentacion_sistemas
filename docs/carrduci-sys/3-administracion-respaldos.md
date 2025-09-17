@@ -139,6 +139,8 @@ Una vez dentro del editor, revisar si no existen ya lineas parecidas a las sigui
 0 13 * * * /home/sistemas/carrduci-dev/carrduci_sys_workspace/utilidades_carrduci_sys/copia-automatica-respaldos/ubuntu-22.04/sincronizar_archivos_local.sh <disco_1>/respaldos_csys/ <disco_2>/respaldos_csys <disco_2>/logs_respaldos
 ```
 
+Finalizar presionando `Ctrl` + `X` y en seguida `Y`.
+
 La primera línea, sincroniza todos los respaldos de la carpeta `~/respaldos_csys` del servidor, con la carpeta `.../respaldos_csys` del disco 1.
 
 ?> En subsistema, para hacer referencia a los discos de la computadora, se tiene que usar la ruta `/mnt/<letra_disco_minuscula>/`, donde `<letra_disco_minuscula>` es la letra que windows le asigna al disco, pero en minúscula y sin los dos puntos `:` al final.

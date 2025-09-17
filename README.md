@@ -34,13 +34,18 @@ El markdown que se usa aquí es una versión con extra herramientas, que es part
 
 Estando dentro del directorio se puede correr el comando `npm run start`, que iniciará un servidor local donde se podrá previsualizar la página de documentación.
 
-Cada vez que se quiera visualizar un cambio en la estructura de archivos, hay que ejecutar la script [generar_directorio.py](./generar_directorio.py) **dentro de la carpeta del repositorio**.
+Cada vez que se quiera visualizar un cambio en la estructura de archivos, hay que ejecutar la script [generar_directorio.py](./generar_directorio.py) **dentro de la carpeta del repositorio**, de la siguiente forma:
+
+```
+/bin/python3 /home/sistemas/carrduci-dev/carrduci_sys_workspace/documentacion_sistemas/generar_directorio.py
+```
 
 ## Subir cambios
 
 Una vez terminados los cambios, hay que utilizar nuevamente git. Ejecutar los siguientes comandos:
 
 ```sh
+/bin/python3 /home/sistemas/carrduci-dev/carrduci_sys_workspace/documentacion_sistemas/generar_directorio.py
 git add .
 git commit -m "cambios en la documentación"
 git push -u origin main

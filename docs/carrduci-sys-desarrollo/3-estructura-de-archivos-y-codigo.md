@@ -24,8 +24,6 @@ Ejemplo de archivos varios de un componente. Aquí se incluye el modulo, que es 
 
 Hay varios tipos de archivos más, el `model`, el `service`, `pipe`, `directive` y `routes`.
 
-El `model` es para poner las clases e interfaces que servirán para modelar los datos que se reciban desde el api.
-
 ```
     MODELO:       unNombre.model.ts
     SERVICIO:     unNombre.service.ts
@@ -34,11 +32,13 @@ El `model` es para poner las clases e interfaces que servirán para modelar los 
     RUTAS:        unNombre.routes.ts
 ```
 
+El `model` es para poner las clases e interfaces que servirán para modelar los datos que se reciban desde el api.
+
 El `service` es para poner todas las funciones que nos sirvan para transferir datos o calcularlos, por ejemplo, las funciones que consultan al api, o cálculos específicos como el estatus de algo y por lo general se relacionan con un modelo (comparten nombre), pero se pueden nombrar como la situación lo demande.
 
 Los archivos `pipe` son clases que contienen una funcion especial. Estas clases se pueden llamar desde el HTML invocando el selector que tienen especificado en su decorador después de un caracter pipe `|`, y ejecutan la función especial, que se llama "transform". Un ejemplo de pipe es, en la interpolación de angular: `{{ 'nombre' | uppercase }}`, que convierte la cadena que se le pasa a una de puras mayúsculas.
 
-Las directivas, con prefijo `directive`, son clases que tienen el proposito de agregar funcionalidades a elementos del html usando un selector css. Por ejemplo, si tenemos una directiva cuyo selector es `flotante-generico` que hace que en el elemento que se ponga se genere una ventana flotante al darle click, con el texto que se le asigne, entonces se usaría así
+Las directivas, con prefijo `directive`, son clases que tienen el proposito de agregar funcionalidades a elementos del html usando un selector css. Por ejemplo, si tenemos una directiva cuyo selector es `flotante-generico` que hace que en el elemento que se ponga se genere una ventana flotante al darle click, con el texto que se le asigne, entonces se usaría así:
 
 ```html
 <button flotante-generico="Este es el detalle">Detalle</button>
@@ -123,7 +123,9 @@ const Mongoose = require('mongoose');
 const ObjectId = Mongoose.Types.ObjectId; // Esto es para generar instancias de ObjectId, los ids que usa mongo para sus modelos.
 const MODELO = require('../../models/unNombre/unNombre.model');
 
-// Usar asignación por desestructuración en los parámetros de la función, para así poder pasar un objeto y que la función solo tome lo que necesita, en cualquier orden.
+// Usar asignación por desestructuración en los parámetros de la función,
+// para así poder pasar un objeto y que la función solo tome lo que necesita,
+// en cualquier orden.
 servicio.crear = async function ({ nombre, descripcion, idUsuario }) {
     let nuevoElemento = new MODELO({
         nombre: nombre,
@@ -135,12 +137,11 @@ servicio.crear = async function ({ nombre, descripcion, idUsuario }) {
         idUsuario: idUsuario,
         descripcion: 'Elmento creado'
     };
+
+    // Así se guarda en la BD
+    return await nuevoElemento.save();
 };
-
-servicio.modificar = async function ({ nombre, descripcion, idUsuario }) {};
 ```
-
-## Historial
 
 # Índice de archivos
 

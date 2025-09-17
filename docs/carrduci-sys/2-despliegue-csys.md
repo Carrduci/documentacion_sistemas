@@ -56,6 +56,7 @@ A continuación nos pedirá la contraseña que el usuario al que estamos accedie
 Se debe ejecutar el siguiente comando en la terminal, ubicándose en la ruta `~` (asumiendo configuraciones de git realizadas):
 
 ```
+cd ~
 git clone https://github.com/Carrduci/utilidades_carrduci_sys
 ```
 
