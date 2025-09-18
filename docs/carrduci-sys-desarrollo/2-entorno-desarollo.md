@@ -49,7 +49,7 @@ https://github.com/cli/cli/releases/tag/v2.54.0
 
 Ahora hay que autenticarse en GitHub con el siguiente comando:
 
-```
+```sh
 gh auth login
 ```
 

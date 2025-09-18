@@ -149,7 +149,7 @@ crontab -e
 
 Una vez dentro del editor, revisar si no existen ya lineas parecidas a las siguientes. Si no existen, pegarlas usando `Ctrl` + `Shift` + `V`.
 
-?> Reemplazar `<usuario>` por el usuario que está en el servidor e `<ip_servidor>` por la dirección ip del servidor. En `<llave_privada>` poner la ruta de la llave ssh que se generó en el paso anterior, incluyendo al final de la ruta el archivo **(que no termina en `.pub`)**. Reemplazar `<disco_1>` y `<disco_2>` con las rutas del subsistema de los discos que se vayan a usar, o si se tiene solo un disco, omitir la segunda línea de cada bloque.
+?> Reemplazar `<usuario>` por el usuario que está en el servidor e `<ip_servidor>` por la dirección ip del servidor. En `<llave_privada>` poner la ruta de la llave ssh que se generó en el paso anterior, incluyendo al final de la ruta el archivo **(que no termina en `.pub`)**. Reemplazar `<disco_1>` y `<disco_2>` con las rutas del subsistema de los discos que se vayan a usar, o si se tiene solo un disco, omitir la segunda línea.
 
 ```
 # Sincronizacion desde el servidor

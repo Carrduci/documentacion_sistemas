@@ -123,10 +123,12 @@ const Mongoose = require('mongoose');
 const ObjectId = Mongoose.Types.ObjectId; // Esto es para generar instancias de ObjectId, los ids que usa mongo para sus modelos.
 const MODELO = require('../../models/unNombre/unNombre.model');
 
+const SERVICIO = {};
+
 // Usar asignación por desestructuración en los parámetros de la función,
 // para así poder pasar un objeto y que la función solo tome lo que necesita,
 // en cualquier orden.
-servicio.crear = async function ({ nombre, descripcion, idUsuario }) {
+SERVICIO.crear = async function ({ nombre, descripcion, idUsuario }) {
     let nuevoElemento = new MODELO({
         nombre: nombre,
         descripcion: descripcion
@@ -141,6 +143,8 @@ servicio.crear = async function ({ nombre, descripcion, idUsuario }) {
     // Así se guarda en la BD
     return await nuevoElemento.save();
 };
+
+module.exports = SERVICIO;
 ```
 
 # Índice de archivos

@@ -14,7 +14,7 @@ Abrir la terminal de VsCode usando `Ctrl` + `J` y posicionarse en el directorio 
 
 Ejemplos de como dirgirse ahí:
 
-```
+```sh
 cd ~/carrduci-dev/carrduci_sys_workspace/carrduci-sys-api
 cd ~/carrduci-dev/carrduci_sys_workspace/carrduci-sys-gui
 ```
@@ -23,7 +23,7 @@ Cuando termines de hacer los cambios que se te solicitaron, debes primero hacer 
 
 Ejecutar el siguiente comando para asegurarse que estás en tu rama.
 
-```
+```sh
 git branch --show-current
 ```
 
@@ -31,13 +31,13 @@ Debe imprimir el nombre de tu rama. Si sale otro nombre, cámbiate a tu rama con
 
 ?> Reemplaza `<mi_rama>` por el nombre de tu rama.
 
-```
+```sh
 git checkout <mi_rama>
 ```
 
 Luego revisar si no hay cambios pendientes.
 
-```
+```sh
 git status
 ```
 
@@ -63,7 +63,7 @@ Changes not staged for commit:
 
 Para agregar todo lo que falta a la lista de spera (stage), ejecutar lo siguiente.
 
-```
+```sh
 git add .
 ```
 
@@ -83,7 +83,7 @@ Lo siguiente es hacer el commit.
 
 ?> Reemplaza `<mensaje>` por el mensaje que quieras poner en el commit, indicando brevemente lo que hiciste. Recerda seguir este [estandar para commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-```
+```sh
 git commit -m "<mensaje>"
 ```
 
@@ -91,7 +91,7 @@ Y por último, hay que enviar (hacer push de) los cambios a la nube.
 
 !> Reemplaza `<tu_rama>` por el nombre de tu rama.
 
-```
+```sh
 git push -u origin <tu_rama>
 ```
 
@@ -103,7 +103,7 @@ La persona autorizada (evaluador) debe combinar los cambios que se hicieron de l
 
 ?> Reemplazar `<rama_del_programador>` con el nombre de la rama del usuario que hizo los cambios.
 
-```
+```sh
 git pull
 git checkout <rama_del_programador>
 git pull
@@ -118,7 +118,7 @@ Entonces será necesario levantar el servidor local de carrduci-sys, asegurándo
 
 Una vez que se llega a la conclusión de que el nuevo código es funcional, hay que combinar los cambios con la rama `carrduci-master`.
 
-```
+```sh
 git checkout carrduci-master
 git pull
 git merge carrduci-dev
@@ -139,7 +139,7 @@ Detener los servidores locales, y moverse al siguiente paso.
 
 El evaluador debe asegurarse de estar en la rama `carrduci-master`.
 
-```
+```sh
 git branch --show-current
 ```
 
@@ -147,13 +147,13 @@ git branch --show-current
 
 Si no aparece `carrduci-master`, ejecutar:
 
-```
+```sh
 git checkout carrduci-master
 ```
 
 Luego, ejecutar este comando. Se puede ejecutar tanto en `carrduci-sys-api` como en `carrduci-sys-gui`, en 1 o en ambos, según se requiera.
 
-```
+```sh
 npm run build
 ```
 
@@ -195,7 +195,7 @@ Si la rama no existe en local, aparecerá este recuadro. Presionar "Checkout Bra
 
 Y entonces ejecutar.
 
-```
+```sh
 npm run build-solo-imgs
 ```
 
@@ -213,6 +213,6 @@ gui: digest: sha256:27fcce140a2dc54a40a876ea70ecdf17227b58ae4a7cbae4507b9ccaedbf
 
 Cada vez que se generan imágenes, se van guardando las capas y los contenedores creados. Esto puede ir consumiendo espacio. Para liberar ese espacio, usar el siguiente comando.
 
-```
+```sh
 docker system prune --volumes --all --force
 ```

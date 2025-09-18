@@ -7,13 +7,13 @@ de windows.
 
 Ahí, hay que ejecutar el comando.
 
-```
+```bash
 wsl --update
 ```
 
 Después, hay que instalar una distribución de `Ubuntu`. Ejecutar el siguiente comando
 
-```
+```bash
 wsl --install Ubuntu-24.04
 ```
 

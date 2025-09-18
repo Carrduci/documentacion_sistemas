@@ -21,7 +21,7 @@ Modificar snippets como se desee.
 
 #### TypeScript, JavaScript
 
-```
+```json
 	"Separador de seccion": {
 		"prefix": "__separador-seccion",
 		"body": [
@@ -41,7 +41,7 @@ Modificar snippets como se desee.
 
 #### HTML
 
-```
+```json
 	"Separador de seccion": {
 		"prefix": "__separador-seccion",
 		"body": [
@@ -61,7 +61,7 @@ Modificar snippets como se desee.
 
 #### Python
 
-```
+```json
 	"Separador de seccion": {
 		"prefix": "__separador-seccion",
 		"body": [
@@ -83,7 +83,7 @@ Modificar snippets como se desee.
 
 #### TypeScript, JavaScript
 
-```
+```json
 	"Sub separador de seccion": {
 		"prefix": "__sub-separador-seccion",
 		"body": [
@@ -103,7 +103,7 @@ Modificar snippets como se desee.
 
 #### HTML
 
-```
+```json
 	"Sub separador de seccion": {
 		"prefix": "__sub-separador-seccion",
 		"body": [
@@ -123,7 +123,7 @@ Modificar snippets como se desee.
 
 #### Python
 
-```
+```json
 	"Sub separador de seccion": {
 		"prefix": "__sub-separador-seccion",
 		"body": [
@@ -164,7 +164,7 @@ Siempre comentar y separar el área de importaciones. Las importaciones siempre 
 
 Usar la siguiente snippet para poner un comentario arriba de la declaración del esquema:
 
-```
+```json
     "Documentacion modelo API": {
         "prefix": "__doc_api_modelo",
         "body": [
