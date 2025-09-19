@@ -15,12 +15,15 @@
   - [3 Estructura De Archivos Y Codigo](./docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md)
   - [4 Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md)
   - [5 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/5-generar-version-y-compilar-imagenes-docker.md)
+  - <b class="title-badge">Css</b>
+    - [Valores Dimensiones Css](./docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md)
   - <b class="title-badge">Uso Componentes</b>
     - [Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)
     - [Busqueda Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)
     - [Calendario Generico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)
     - [Carga De Imagenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)
     - [Carrusel De Imagenes Generico](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)
+    - [Claves Autorizacion](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)
     - [Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)
     - [Flotante Generico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)
     - [Formulario Dinamico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)
