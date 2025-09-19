@@ -16,6 +16,7 @@
   - [4 Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md)
   - [5 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/5-generar-version-y-compilar-imagenes-docker.md)
   - <b class="title-badge">Uso Componentes</b>
+    - [Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)
     - [Busqueda Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)
     - [Calendario Generico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)
     - [Carga De Imagenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)
@@ -28,6 +29,7 @@
     - [Manejo De Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)
     - [Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)
     - [Modal](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)
+    - [Paginacion Y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)
     - [Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)
     - [Selector Fechas Generico](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)
     - [Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)
