@@ -53,3 +53,31 @@ Explicación de las propeidades.
 Para seleccionar un rango, basta con dar click en alguno de los días del mes, y luego dar click en otro o el mismo.
 
 ![](../../../assets/gifs/componentes__calendario_generico_uso.gif)
+
+Por ejemplo, con esta configuración:
+
+```html
+<app-calendario-generico
+    [year]="2025"
+    [mes]="0"
+    [nombreCortoDias]="true"
+    (fechasSeleccionadas)="obtenerRangoFechas($event)"
+></app-calendario-generico>
+```
+
+Y en el controlador:
+
+```ts
+obtenerRangoFechas(rango: any) {
+    console.log(rango)
+}
+```
+
+Al seleccionar un rango de fechas (al seleccionar la segunda fecha), en la consola se imprimirá el siguiente objeto:
+
+```json
+{
+    "fechaInicial": "2025-01-08T06:00:00.000Z",
+    "fechaFinal": "2025-01-31T06:00:00.000Z"
+}
+```
