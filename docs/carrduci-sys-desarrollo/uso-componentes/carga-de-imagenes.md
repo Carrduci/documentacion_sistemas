@@ -25,7 +25,7 @@ export class TalComponenteModule {
 
 Y usar el componente de la siguiente manera. En la vista (`.html`) llamar al selector así.
 
-```angular17html
+```html 
 
 <app-carga-de-imagenes
         [transformarFileAObjetoPlano]="true"
@@ -116,5 +116,65 @@ Y este es un ejemplo de arreglo que el componente emite:
 ]
 ```
 
+Este objeto debe ser pasado a un servicio que acepte un objeto con un campo de imágenes parecido al siguiente.
+
+```ts
+import {CargaDeImagenesTransporte} from "./carga-de-imagenes-transporte";
+
+export class UnModeloCualquiera {
+    // ...
+    imagenes: CargaDeImagenesTransporte[]
+
+    // ...
+
+    constructor(params: ParamsUnModeloCualquiera) {
+        /...
+    }
+}
+
+export interface ParamsUnModeloCualquiera {
+    // ...
+    imagenes: CargaDeImagenesTransporte[]
+    // ... 
+}
+```
+
+y en el servicio se debe esperar recibir esta misma clase
+
+```ts
+import {Injectable} from "@angular/core";
+
+@Injectable({
+    // ...
+})
+class AlgunServicioService {
+
+    crearDocumentoConImagenes(documento: UnModeloCualquiera) {
+        // ...
+    }
+
+}
+```
+
 ## Servicio del API
+
+### Guardar imágenes
+
+En el API, suponiendo que ya está lista una ruta y un controlador, hay que crear el documento y guardar las imágenes de
+la siguiente forma.
+
+```javascript
+const SERVICIO = {}
+
+SERVICIO.crearDocumentoConImagenes = async function ({
+                                                         nombre,
+                                                         descripcion,
+                                                         imagenes
+                                                     }) {
+    const A = 1
+};
+```
+
+### Eliminar imágenes
+
 
