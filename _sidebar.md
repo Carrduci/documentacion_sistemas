@@ -14,7 +14,8 @@
   - [2 Entorno Desarollo](./docs/carrduci-sys-desarrollo/2-entorno-desarollo.md)
   - [3 Estructura De Archivos Y Codigo](./docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md)
   - [4 Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md)
-  - [5 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/5-generar-version-y-compilar-imagenes-docker.md)
+  - [5 Creacion De Componentes](./docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md)
+  - [6 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md)
   - <b class="title-badge">Css</b>
     - [Colores Css](./docs/carrduci-sys-desarrollo/css/colores-css.md)
     - [Valores Dimensiones Css](./docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md)
