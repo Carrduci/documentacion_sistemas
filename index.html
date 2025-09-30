@@ -1,321 +1,335 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Docs Sistemas Carrduci</title>
-    <meta
-            content="IE=edge,chrome=1"
-            http-equiv="X-UA-Compatible"
-    />
-    <meta
-            content="width=device-width,initial-scale=1"
-            name="viewport"
-    />
-    <link
-            href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"
-            rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet">
-    <!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">-->
-    <style>
-        nav.app-nav li ul {
-            min-width: 100px;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<title>Docs Sistemas Carrduci</title>
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width,initial-scale=1" name="viewport" />
+		<link
+			href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
+			rel="stylesheet"
+		/>
+		<!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">-->
+		<style>
+			nav.app-nav li ul {
+				min-width: 100px;
+			}
 
-        .cover a.anchor span {
-            color: rgb(57, 57, 57) !important;
-        }
+			.cover a.anchor span {
+				color: rgb(57, 57, 57) !important;
+			}
 
-        .cover blockquote {
-            color: rgb(57, 57, 57) !important;
-        }
+			.cover blockquote {
+				color: rgb(57, 57, 57) !important;
+			}
 
-        .cover li {
-            color: rgb(57, 57, 57) !important;
-        }
+			.cover li {
+				color: rgb(57, 57, 57) !important;
+			}
 
-        .title-badge {
-            color: rgb(0, 116, 217);
-            padding-left: 3px;
-            padding-right: 3px;
-            padding-top: 1px;
-            padding-bottom: 1px;
-            /* color: white; */
-            font-weight: 900;
-        }
+			.title-badge {
+				color: rgb(0, 116, 217);
+				padding-left: 3px;
+				padding-right: 3px;
+				padding-top: 1px;
+				padding-bottom: 1px;
+				/* color: white; */
+				font-weight: 900;
+			}
 
-        .active {
-            font-weight: 600;
-        }
+			.active {
+				font-weight: 600;
+			}
 
-        .markdown-section table td::before {
-            display: none;
-        }
+			.markdown-section table td::before {
+				display: none;
+			}
 
-        hr.hr-secundario {
-            border-bottom: dashed 0.5px rgb(180 180 180);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            border-top: none;
-        }
+			hr.hr-secundario {
+				border-bottom: dashed 0.5px rgb(180 180 180);
+				margin-top: 50px;
+				margin-bottom: 50px;
+				border-top: none;
+			}
 
-        hr.hr-principal {
-            border-bottom: dashed 1px rgb(80, 80, 80);
-            margin-top: 80px;
-            margin-bottom: 50px;
-            border-top: none;
-        }
+			hr.hr-principal {
+				border-bottom: dashed 1px rgb(80, 80, 80);
+				margin-top: 80px;
+				margin-bottom: 50px;
+				border-top: none;
+			}
 
-        figure {
-            width: fit-content;
-            align-items: center;
-            border: solid 1px rgb(180 180 180);
-            padding: 0px;
-        }
+			figure {
+				width: fit-content;
+				align-items: center;
+				border: solid 1px rgb(180 180 180);
+				padding: 0px;
+			}
 
-        figcaption {
-            padding: 8px;
-            border-top: solid 1px rgb(180 180 180);
-        }
+			figcaption {
+				padding: 8px;
+				border-top: solid 1px rgb(180 180 180);
+			}
 
-        .text-warning {
-            color: orange !important;
-            font-weight: 900 !important;
-        }
+			.text-warning {
+				color: orange !important;
+				font-weight: 900 !important;
+			}
 
-        .text-danger {
-            color: red !important;
-            font-weight: 900 !important;
-        }
+			.text-danger {
+				color: red !important;
+				font-weight: 900 !important;
+			}
 
-        .text-success {
-            color: green !important;
-            font-weight: 900 !important;
-        }
+			.text-success {
+				color: green !important;
+				font-weight: 900 !important;
+			}
 
-        .text-info {
-            color: cadetblue !important;
-            font-weight: 900 !important;
-        }
+			.text-info {
+				color: cadetblue !important;
+				font-weight: 900 !important;
+			}
 
-        /*.toolbar {*/
-        /*    background: #2d2d2d;*/
-        /*    !*border-radius: 4px 4px 0 0;*!*/
-        /*    padding: 4px 8px;*/
-        /*}*/
+			/*.toolbar {*/
+			/*    background: #2d2d2d;*/
+			/*    !*border-radius: 4px 4px 0 0;*!*/
+			/*    padding: 4px 8px;*/
+			/*}*/
 
-        :not(div.code-toolbar:hover) > .toolbar:focus-within {
-            transition: all 150ms ease;
-            opacity: 0 !important;
-        }
+			:not(div.code-toolbar:hover) > .toolbar:focus-within {
+				transition: all 150ms ease;
+				opacity: 0 !important;
+			}
 
-        /*div.code-toolbar:hover > .toolbar:focus-within {*/
-        /*    transition: all 150ms ease;*/
-        /*    !*background-color: red;*!*/
-        /*    opacity: 0 !important;*/
-        /*}*/
+			/*div.code-toolbar:hover > .toolbar:focus-within {*/
+			/*    transition: all 150ms ease;*/
+			/*    !*background-color: red;*!*/
+			/*    opacity: 0 !important;*/
+			/*}*/
 
-        div.code-toolbar > .toolbar > .toolbar-item > a:focus,
-        div.code-toolbar > .toolbar > .toolbar-item > span:focus,
-        div.code-toolbar > .toolbar > .toolbar-item > button:focus {
-            transition: all 850ms ease;
-            color: white;
-            transform: rotate3d(0, 50, 0, 0deg);
-        }
+			div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+			div.code-toolbar > .toolbar > .toolbar-item > span:focus,
+			div.code-toolbar > .toolbar > .toolbar-item > button:focus {
+				transition: all 850ms ease;
+				color: white;
+				transform: rotate3d(0, 50, 0, 0deg);
+			}
 
-        div.code-toolbar > .toolbar > .toolbar-item > a:active,
-        div.code-toolbar > .toolbar > .toolbar-item > span:active,
-        div.code-toolbar > .toolbar > .toolbar-item > button:active {
-            transform: rotate3d(0, 50, 0, 360deg) !important;
-        }
+			div.code-toolbar > .toolbar > .toolbar-item > a:active,
+			div.code-toolbar > .toolbar > .toolbar-item > span:active,
+			div.code-toolbar > .toolbar > .toolbar-item > button:active {
+				transform: rotate3d(0, 50, 0, 360deg) !important;
+			}
 
-        div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > a,
-        div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > a {
-            color: white;
-            transform: rotate3d(0, 50, 0, 0deg);
-        }
+			div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > a,
+			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > a {
+				color: white;
+				transform: rotate3d(0, 50, 0, 0deg);
+			}
 
-        div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > a,
-        div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-        div.code-toolbar > .toolbar > .toolbar-item > a {
-            color: white;
-            cursor: pointer;
+			div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > a,
+			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > a {
+				color: white;
+				cursor: pointer;
+			}
 
-        }
+			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+			div.code-toolbar > .toolbar > .toolbar-item > span:active {
+				cursor: none;
+			}
 
-        div.code-toolbar > .toolbar > .toolbar-item > span:hover, div.code-toolbar > .toolbar > .toolbar-item > span:active {
-            cursor: none;
-        }
+			div.code-toolbar > .toolbar > .toolbar-item > a,
+			div.code-toolbar > .toolbar > .toolbar-item > button,
+			div.code-toolbar > .toolbar > .toolbar-item > span {
+				background: rgba(106, 106, 106, 0.4);
+				color: #fff;
+				border: none;
+				padding: 2px 8px;
+				margin-right: 4px;
+				border-radius: 3px;
+				font-size: 19px;
+				box-shadow: none;
+			}
 
-        div.code-toolbar > .toolbar > .toolbar-item > a, div.code-toolbar > .toolbar > .toolbar-item > button, div.code-toolbar > .toolbar > .toolbar-item > span {
-            background: rgba(106, 106, 106, 0.4);
-            color: #fff;
-            border: none;
-            padding: 2px 8px;
-            margin-right: 4px;
-            border-radius: 3px;
-            font-size: 19px;
-            box-shadow: none;
-        }
+			/*div.code-toolbar {*/
+			/*    padding-top: 40px;*/
+			/*    background-color: rgb(196, 196, 196);*/
+			/*}*/
 
-        /*div.code-toolbar {*/
-        /*    padding-top: 40px;*/
-        /*    background-color: rgb(196, 196, 196);*/
-        /*}*/
+			/*div.code-toolbar > .toolbar {*/
+			/*    position: absolute;*/
+			/*}*/
 
-        /*div.code-toolbar > .toolbar {*/
-        /*    position: absolute;*/
-        /*}*/
+			.github-corner {
+				display: none !important;
+			}
 
-        .github-corner {
-            display: none !important;
-        }
+			@media screen and (max-width: 768px) {
+				.table-card {
+					border: 1px solid #ddd;
+					margin-bottom: 10px;
+					background: #ffffff;
+				}
 
-        @media screen and (max-width: 768px) {
-            .table-card {
-                border: 1px solid #ddd;
-                margin-bottom: 10px;
-                background: #ffffff;
-            }
+				.card-label {
+					padding-top: 10px;
+					padding-bottom: 5px;
+					padding-left: 10px;
+					padding-right: 10px;
+					font-weight: bold;
+				}
 
-            .card-label {
-                padding-top: 10px;
-                padding-bottom: 5px;
-                padding-left: 10px;
-                padding-right: 10px;
-                font-weight: bold;
-            }
+				.card-value {
+					padding-bottom: 10px;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
 
-            .card-value {
-                padding-bottom: 10px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
+				.card-sep {
+					border-top: 1px solid #ddd;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+		<script>
+			window.$docsify = {
+				loadNavbar: true,
+				repo: 'Carrduci/documentacion_sistemas',
+				coverpage: '_coverpage.md',
+				loadSidebar: '_sidebar.md',
+				maxLevel: 6,
+				subMaxLevel: 6,
+				name: 'Docs Sistemas Carrduci',
+				auto2top: true,
+				search: {
+					localSearch: true,
+					placeholder: 'Buscar...',
+					noData: 'No se encontró nada',
+					depth: 6,
+					hideOtherSidebarContent: true,
+					paths: 'auto',
+				},
+				tabs: {
+					persist: true,
+					sync: true,
+					theme: 'classic',
+					tabComments: true,
+					tabHeadings: true,
+				},
+				plugins: [
+					{
+						hooks: {
+							afterEach: (html, next) => {
+								setTimeout(() => {
+									document
+										.querySelectorAll(
+											'pre[class*="language-"]'
+										)
+										.forEach((el) =>
+											Prism.highlightElement(el)
+										);
+								}, 100);
+								next();
+							},
+						},
+					},
+				],
+			};
+		</script>
+		<script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+			mermaid.initialize({ startOnLoad: true });
+			window.mermaid = mermaid;
+		</script>
+		<script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+		<script src="https://unpkg.com/docsify-themeable"></script>
+		<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+		<!--<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>-->
+		<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+		<script src="https://unpkg.com/docsify-swagger-ui@2.0.3/dist/index.min.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+		<script src="https://unpkg.com/docsify-sidebar-nav@latest/dist/docsify-sidebar-nav.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify-prism@latest/dist/docsify-prism.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-git.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+		<script>
+			const HACER_TABLAS_DE_MOVIL = () => {
+				setTimeout(() => {
+					const tables = document.querySelectorAll('table');
+					tables.forEach((table) => {
+						const rows = table.querySelectorAll('tr');
+						const headers = Array.from(
+							rows[0].querySelectorAll('th')
+						).map((th) => th.textContent);
 
-            .card-sep {
-                border-top: 1px solid #ddd;
-            }
-        }
-    </style>
-</head>
-<body>
-<div id="app"></div>
-<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-<script>
-    window.$docsify = {
-        loadNavbar: true,
-        repo: 'Carrduci/documentacion_sistemas',
-        coverpage: '_coverpage.md',
-        loadSidebar: '_sidebar.md',
-        maxLevel: 6,
-        subMaxLevel: 6,
-        name: 'Docs Sistemas Carrduci',
-        auto2top: true,
-        search: {
-            localSearch: true,
-            placeholder: 'Buscar...',
-            noData: 'No se encontró nada',
-            depth: 6,
-            hideOtherSidebarContent: true,
-            paths: 'auto'
-        },
-        tabs: {
-            persist: true,
-            sync: true,
-            theme: 'classic',
-            tabComments: true,
-            tabHeadings: true
-        },
-        plugins: [{
-            hooks: {
-                afterEach: (html, next) => {
-                    setTimeout(() => {
-                        document.querySelectorAll('pre[class*="language-"]').forEach(el => Prism.highlightElement(el));
-                    }, 100);
-                    next();
-                }
-            }
-        }]
-    };
-</script>
-<script src="https://unpkg.com/docsify-themeable"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-<!--<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>-->
-<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-<script src="https://unpkg.com/docsify-swagger-ui@2.0.3/dist/index.min.js"></script>
-<link
-        href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
-        rel="stylesheet"
-/>
-<script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-<script src="https://unpkg.com/docsify-sidebar-nav@latest/dist/docsify-sidebar-nav.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-prism@latest/dist/docsify-prism.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-git.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-<script>
-    const HACER_TABLAS_DE_MOVIL = () => {
-        setTimeout(() => {
-            const tables = document.querySelectorAll('table');
-            tables.forEach(table => {
-                const rows = table.querySelectorAll('tr');
-                const headers = Array.from(rows[0].querySelectorAll('th')).map(th => th.textContent);
+						if (window.innerWidth <= 768) {
+							rows.forEach((row, index) => {
+								if (index === 0) return; // Skip header row
+								const card = document.createElement('div');
+								card.className = 'table-card';
+								const cells = row.querySelectorAll('td');
+								cells.forEach((cell, i) => {
+									const label = document.createElement('div');
+									label.className = 'card-label';
+									label.textContent = headers[i];
+									const value = document.createElement('div');
+									value.className = 'card-value';
+									value.innerHTML = cell.innerHTML;
+									const sep = document.createElement('div');
+									sep.className = 'card-sep';
+									card.appendChild(label);
+									card.appendChild(value);
+									if (i < cells.length - 1) {
+										card.appendChild(sep);
+									}
+								});
+								table.parentNode.insertBefore(card, table);
+							});
+							table.style.display = 'none';
+						}
+					});
+				}, 500);
+			};
+			document.addEventListener('DOMContentLoaded', () => {
+				HACER_TABLAS_DE_MOVIL();
+			});
 
-                if (window.innerWidth <= 768) {
-                    rows.forEach((row, index) => {
-                        if (index === 0) return; // Skip header row
-                        const card = document.createElement('div');
-                        card.className = 'table-card';
-                        const cells = row.querySelectorAll('td');
-                        cells.forEach((cell, i) => {
-                            const label = document.createElement('div');
-                            label.className = 'card-label';
-                            label.textContent = headers[i];
-                            const value = document.createElement('div');
-                            value.className = 'card-value';
-                            value.innerHTML = cell.innerHTML;
-                            const sep = document.createElement('div');
-                            sep.className = 'card-sep';
-                            card.appendChild(label);
-                            card.appendChild(value);
-                            if (i < (cells.length - 1)) {
-                                card.appendChild(sep);
-                            }
-                        });
-                        table.parentNode.insertBefore(card, table);
-                    });
-                    table.style.display = 'none';
-                }
-            });
-        }, 500)
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        HACER_TABLAS_DE_MOVIL()
-    });
+			window.addEventListener('popstate', () => {
+				HACER_TABLAS_DE_MOVIL();
+			});
 
-    window.addEventListener('popstate', () => {
-        HACER_TABLAS_DE_MOVIL()
-    });
-
-    window.addEventListener('beforeunload', () => {
-        HACER_TABLAS_DE_MOVIL()
-    });
-
-</script>
-</body>
+			window.addEventListener('beforeunload', () => {
+				HACER_TABLAS_DE_MOVIL();
+			});
+		</script>
+	</body>
 </html>
