@@ -6,21 +6,23 @@ El sistema de **Claves de Autorización de Usuario Simples** permite crear y ges
 
 ### Características principales
 
-- **Códigos numéricos**: Claves numéricas hasheadas con bcrypt
-- **Asociados a usuarios**: Cada código pertenece a un usuario específico
-- **Tipos de código**: Permanentes o de un solo uso
-- **Usos específicos**: Definidos por tipo de acción que autorizan
-- **Trazabilidad**: Registro de creador y modificador
-- **Documentos específicos**: Opcional, para vincular a un documento concreto
+-   **Códigos numéricos**: Claves numéricas hasheadas con bcrypt
+-   **Asociados a usuarios**: Cada código pertenece a un usuario específico
+-   **Tipos de código**: Permanentes o de un solo uso
+-   **Usos específicos**: Definidos por tipo de acción que autorizan
+-   **Trazabilidad**: Registro de creador y modificador
+-   **Documentos específicos**: Opcional, para vincular a un documento concreto
 
 <hr class='hr-principal'>
 
 ## Casos de Uso
 
 ### 1. Reservas en Almacén de Producto Terminado
+
 Autorización para realizar reservas en el almacén de producto terminado.
 
 ### 2. Autorización de Líneas de Conteos
+
 Autorización para aprobar o modificar líneas en conteos de inventario.
 
 ?> **EXTENSIBLE**: Se pueden agregar nuevos usos modificando `USOS_CODIGOS_NUMERICOS_AUTORIZACION` en `/carrduci-sys-api/utils/varios.js`
@@ -77,9 +79,10 @@ carrduci-sys-gui/src/app/
 
 ### Contexto: Autenticación JWT
 
-!> **IMPORTANTE**: En todas las rutas protegidas del sistema, el objeto `req.user` es poblado **automáticamente** por el middleware de autenticación JWT (`express-jwt`). 
+!> **IMPORTANTE**: En todas las rutas protegidas del sistema, el objeto `req.user` es poblado **automáticamente** por el middleware de autenticación JWT (`express-jwt`).
 
 Este middleware:
+
 1. Extrae el token JWT del header `Authorization: Bearer <token>`
 2. Verifica y decodifica el token
 3. Agrega la información del usuario autenticado a `req.user`
@@ -106,42 +109,44 @@ const SERVICIO_AUTORIZACION = require('../../services/supervision/autorizacionDe
 const UTILES = require('../../utils/varios');
 
 controlador.crearCodigoParaUsuario = async function (req, res) {
-    try {
-        // req.user YA ESTÁ DISPONIBLE gracias al middleware JWT
-        // req.body contiene los datos enviados desde el frontend
-        
-        const RESPUESTA = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion(req);
-        // El servicio internamente usa:
-        // - req.body.usuario (ID del usuario que usará el código)
-        // - req.body.clave (código numérico)
-        // - req.body.tipo ('PERMANENTE' o 'UN_USO')
-        // - req.body.uso (tipo de autorización)
-        // - req.user._id (ID del creador - automático)
-        
-        // Usar UTILES.respuestaCorrecta() en lugar de res.status()
-        if (RESPUESTA.nuevo) {
-            return UTILES.respuestaCorrecta(
-                RESPUESTA.codigo,
-                res,
-                'datos',
-                'Código de autorización creado'
-            );
-        } else {
-            return UTILES.respuestaCorrecta(
-                RESPUESTA.codigo,
-                res,
-                'datos',
-                'Código de autorización existente sobreescrito'
-            );
-        }
-    } catch (error) {
-        // Usar UTILES.respuestaError() para errores
-        return UTILES.respuestaError(
-            error,
-            res,
-            'Hubo un error al crear el código de autorización'
-        );
-    }
+	try {
+		// req.user YA ESTÁ DISPONIBLE gracias al middleware JWT
+		// req.body contiene los datos enviados desde el frontend
+
+		const RESPUESTA = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion(
+			req
+		);
+		// El servicio internamente usa:
+		// - req.body.usuario (ID del usuario que usará el código)
+		// - req.body.clave (código numérico)
+		// - req.body.tipo ('PERMANENTE' o 'UN_USO')
+		// - req.body.uso (tipo de autorización)
+		// - req.user._id (ID del creador - automático)
+
+		// Usar UTILES.respuestaCorrecta() en lugar de res.status()
+		if (RESPUESTA.nuevo) {
+			return UTILES.respuestaCorrecta(
+				RESPUESTA.codigo,
+				res,
+				'datos',
+				'Código de autorización creado'
+			);
+		} else {
+			return UTILES.respuestaCorrecta(
+				RESPUESTA.codigo,
+				res,
+				'datos',
+				'Código de autorización existente sobreescrito'
+			);
+		}
+	} catch (error) {
+		// Usar UTILES.respuestaError() para errores
+		return UTILES.respuestaError(
+			error,
+			res,
+			'Hubo un error al crear el código de autorización'
+		);
+	}
 };
 ```
 
@@ -154,30 +159,30 @@ const SERVICIO_AUTORIZACION = require('./services/supervision/autorizacionDeusua
 
 // Simulando el objeto req
 const CODIGO = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion({
-    body: {
-        usuario: '507f1f77bcf86cd799439011',  // ID del usuario que USARÁ la clave
-        clave: '1234',                         // Código numérico (se hasheará automáticamente)
-        tipo: 'PERMANENTE',
-        uso: 'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'
-    },
-    user: {
-        _id: '507f1f77bcf86cd799439012'  // ID del usuario CREADOR (normalmente viene de req.user)
-    }
+	body: {
+		usuario: '507f1f77bcf86cd799439011', // ID del usuario que USARÁ la clave
+		clave: '1234', // Código numérico (se hasheará automáticamente)
+		tipo: 'PERMANENTE',
+		uso: 'RESERVAS_ALMACEN_PRODUCTO_TERMINADO',
+	},
+	user: {
+		_id: '507f1f77bcf86cd799439012', // ID del usuario CREADOR (normalmente viene de req.user)
+	},
 });
 
 // Crear código de un solo uso para un documento específico
 const CODIGO_UN_USO = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion({
-    body: {
-        usuario: '507f1f77bcf86cd799439011',
-        clave: '5678',
-        tipo: 'UN_USO',
-        uso: 'LINEAS_CONTEOS',
-        documentoEspecifico: '507f1f77bcf86cd799439013',  // ID del conteo
-        coleccionDocumentoEspecifico: 'conteos'
-    },
-    user: {
-        _id: '507f1f77bcf86cd799439012'
-    }
+	body: {
+		usuario: '507f1f77bcf86cd799439011',
+		clave: '5678',
+		tipo: 'UN_USO',
+		uso: 'LINEAS_CONTEOS',
+		documentoEspecifico: '507f1f77bcf86cd799439013', // ID del conteo
+		coleccionDocumentoEspecifico: 'conteos',
+	},
+	user: {
+		_id: '507f1f77bcf86cd799439012',
+	},
 });
 ```
 
@@ -188,45 +193,42 @@ const CODIGO_UN_USO = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion({
 ```javascript
 // Validar código por ID de usuario
 try {
-    const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigo(
-        '507f1f77bcf86cd799439011',  // ID del usuario
-        '1234',                       // Código a validar
-        'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'  // Uso
-    );
-    
-    console.log(MENSAJE);
-    // Output: "Autorización disparada por: Juan Pérez. El código fue expedido por Admin Sistema"
-    
+	const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigo(
+		'507f1f77bcf86cd799439011', // ID del usuario
+		'1234', // Código a validar
+		'RESERVAS_ALMACEN_PRODUCTO_TERMINADO' // Uso
+	);
+
+	console.log(MENSAJE);
+	// Output: "Autorización disparada por: Juan Pérez. El código fue expedido por Admin Sistema"
 } catch (error) {
-    console.error(error);
-    // Output: "Código incorrecto"
+	console.error(error);
+	// Output: "Código incorrecto"
 }
 
 // Validar código por email
 try {
-    const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigoPorEmail(
-        'usuario@carrduci.com',
-        '1234',
-        'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'
-    );
-    
+	const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigoPorEmail(
+		'usuario@carrduci.com',
+		'1234',
+		'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'
+	);
 } catch (error) {
-    console.error(error);
+	console.error(error);
 }
 
 // Validar código con documento específico
 try {
-    const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigo(
-        '507f1f77bcf86cd799439011',
-        '5678',
-        'LINEAS_CONTEOS',
-        null,  // email (opcional)
-        '507f1f77bcf86cd799439013'  // ID del documento a validar
-    );
-    
+	const MENSAJE = await SERVICIO_AUTORIZACION.comprobarCodigo(
+		'507f1f77bcf86cd799439011',
+		'5678',
+		'LINEAS_CONTEOS',
+		null, // email (opcional)
+		'507f1f77bcf86cd799439013' // ID del documento a validar
+	);
 } catch (error) {
-    console.error(error);
-    // Output: "No se puede usar el código con este elemento."
+	console.error(error);
+	// Output: "No se puede usar el código con este elemento."
 }
 ```
 
@@ -264,20 +266,20 @@ console.log(CODIGOS);
 
 ```javascript
 const CODIGO_ELIMINADO = await SERVICIO_AUTORIZACION.eliminarCodigoPorId({
-    params: {
-        id: '507f1f77bcf86cd799439014'
-    }
+	params: {
+		id: '507f1f77bcf86cd799439014',
+	},
 });
 ```
 
 ### Rutas de la API
 
-| Método | Ruta | Permiso | Descripción |
-|--------|------|---------|-------------|
-| `POST` | `/autorizacionesUsuarios` | `SUPER_ADMIN` | Crear código de autorización |
-| `GET` | `/autorizacionesUsuarios` | `SUPER_ADMIN` | Obtener todos los códigos |
-| `DELETE` | `/autorizacionesUsuarios/:id` | `SUPER_ADMIN` | Eliminar código por ID |
-| `POST` | `/autorizacionesUsuarios/crearCodigoUsoUnicoParaConteos` | `conteos:acciones:crearCodigoDeAprobado` | Crear código de uso único para conteos |
+| Método   | Ruta                                                     | Permiso                                  | Descripción                            |
+| -------- | -------------------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| `POST`   | `/autorizacionesUsuarios`                                | `SUPER_ADMIN`                            | Crear código de autorización           |
+| `GET`    | `/autorizacionesUsuarios`                                | `SUPER_ADMIN`                            | Obtener todos los códigos              |
+| `DELETE` | `/autorizacionesUsuarios/:id`                            | `SUPER_ADMIN`                            | Eliminar código por ID                 |
+| `POST`   | `/autorizacionesUsuarios/crearCodigoUsoUnicoParaConteos` | `conteos:acciones:crearCodigoDeAprobado` | Crear código de uso único para conteos |
 
 <hr class='hr-secundario'>
 
@@ -289,72 +291,77 @@ const CODIGO_ELIMINADO = await SERVICIO_AUTORIZACION.eliminarCodigoPorId({
 import { AutorizacionUsuarioSimpleService } from 'src/app/services/supervision/autorizacion-usuario-simple/autorizacion-usuario-simple.service';
 
 export class MiComponente {
-    
-    constructor(
-        private autorizacionService: AutorizacionUsuarioSimpleService
-    ) {}
-    
-    // Crear código permanente
-    crearCodigoPermanente() {
-        this.autorizacionService.crearCodigoDeAutorizacion(
-            '507f1f77bcf86cd799439011',  // ID usuario
-            1234,                         // Clave numérica
-            'PERMANENTE',
-            'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'
-        ).subscribe({
-            next: (respuesta) => {
-                console.log('Código creado:', respuesta);
-            },
-            error: (error) => {
-                console.error('Error:', error);
-            }
-        });
-    }
-    
-    // Crear código de un solo uso
-    crearCodigoUnUso() {
-        this.autorizacionService.crearCodigoDeAutorizacion(
-            '507f1f77bcf86cd799439011',
-            5678,
-            'UN_USO',
-            'LINEAS_CONTEOS'
-        ).subscribe({
-            next: (respuesta) => {
-                console.log('Código creado:', respuesta);
-            }
-        });
-    }
-    
-    // Crear código de uso único para conteos
-    crearCodigoConteo(idConteo: string) {
-        this.autorizacionService.crearCodigoUsoUnicoParaConteos(
-            '507f1f77bcf86cd799439011',
-            9999,
-            idConteo
-        ).subscribe({
-            next: (respuesta) => {
-                console.log('Código para conteo creado:', respuesta);
-            }
-        });
-    }
-    
-    // Obtener todos los códigos
-    listarCodigos() {
-        this.autorizacionService.obtenerTodosLosCodigos().subscribe({
-            next: (codigos) => {
-                console.log('Códigos registrados:', codigos);
-            }
-        });
-    }
-    
-    // Eliminar código
-    eliminarCodigo(id: string) {
-        this.autorizacionService.eliminarCodigoPorId(id).subscribe({
-            next: (respuesta) => {
-                console.log('Código eliminado:', respuesta);
-            }
-        });
-    }
+	constructor(
+		private autorizacionService: AutorizacionUsuarioSimpleService
+	) {}
+
+	// Crear código permanente
+	crearCodigoPermanente() {
+		this.autorizacionService
+			.crearCodigoDeAutorizacion(
+				'507f1f77bcf86cd799439011', // ID usuario
+				1234, // Clave numérica
+				'PERMANENTE',
+				'RESERVAS_ALMACEN_PRODUCTO_TERMINADO'
+			)
+			.subscribe({
+				next: (respuesta) => {
+					console.log('Código creado:', respuesta);
+				},
+				error: (error) => {
+					console.error('Error:', error);
+				},
+			});
+	}
+
+	// Crear código de un solo uso
+	crearCodigoUnUso() {
+		this.autorizacionService
+			.crearCodigoDeAutorizacion(
+				'507f1f77bcf86cd799439011',
+				5678,
+				'UN_USO',
+				'LINEAS_CONTEOS'
+			)
+			.subscribe({
+				next: (respuesta) => {
+					console.log('Código creado:', respuesta);
+				},
+			});
+	}
+
+	// Crear código de uso único para conteos
+	crearCodigoConteo(idConteo: string) {
+		this.autorizacionService
+			.crearCodigoUsoUnicoParaConteos(
+				'507f1f77bcf86cd799439011',
+				9999,
+				idConteo
+			)
+			.subscribe({
+				next: (respuesta) => {
+					console.log('Código para conteo creado:', respuesta);
+				},
+			});
+	}
+
+	// Obtener todos los códigos
+	listarCodigos() {
+		this.autorizacionService.obtenerTodosLosCodigos().subscribe({
+			next: (codigos) => {
+				console.log('Códigos registrados:', codigos);
+			},
+		});
+	}
+
+	// Eliminar código
+	eliminarCodigo(id: string) {
+		this.autorizacionService.eliminarCodigoPorId(id).subscribe({
+			next: (respuesta) => {
+				console.log('Código eliminado:', respuesta);
+			},
+		});
+	}
 }
 ```
 
@@ -366,61 +373,57 @@ import { AutorizacionUsuarioSimpleService } from 'src/app/services/supervision/a
 import { ManejoDeMensajesService } from 'src/app/services/utilidades/manejo-de-mensajes.service';
 
 @Component({
-    selector: 'app-gestionar-autorizaciones',
-    templateUrl: './gestionar-autorizaciones.component.html'
+	selector: 'app-gestionar-autorizaciones',
+	templateUrl: './gestionar-autorizaciones.component.html',
 })
 export class GestionarAutorizacionesComponent {
-    
-    codigos: any[] = [];
-    
-    constructor(
-        private autorizacionService: AutorizacionUsuarioSimpleService,
-        private msjService: ManejoDeMensajesService
-    ) {}
-    
-    ngOnInit() {
-        this.cargarCodigos();
-    }
-    
-    cargarCodigos() {
-        this.autorizacionService.obtenerTodosLosCodigos().subscribe({
-            next: (codigos) => {
-                this.codigos = codigos;
-            }
-        });
-    }
-    
-    crearNuevoCodigo(
-        idUsuario: string,
-        clave: number,
-        tipo: 'PERMANENTE' | 'UN_USO',
-        uso: string
-    ) {
-        this.autorizacionService.crearCodigoDeAutorizacion(
-            idUsuario,
-            clave,
-            tipo,
-            uso
-        ).subscribe({
-            next: () => {
-                this.cargarCodigos();  // Recargar lista
-            }
-        });
-    }
-    
-    eliminar(id: string) {
-        this.msjService.confirmarAccion(
-            '¿Eliminar código de autorización?',
-            'Esta acción no se puede deshacer',
-            () => {
-                this.autorizacionService.eliminarCodigoPorId(id).subscribe({
-                    next: () => {
-                        this.cargarCodigos();  // Recargar lista
-                    }
-                });
-            }
-        );
-    }
+	codigos: any[] = [];
+
+	constructor(
+		private autorizacionService: AutorizacionUsuarioSimpleService,
+		private msjService: ManejoDeMensajesService
+	) {}
+
+	ngOnInit() {
+		this.cargarCodigos();
+	}
+
+	cargarCodigos() {
+		this.autorizacionService.obtenerTodosLosCodigos().subscribe({
+			next: (codigos) => {
+				this.codigos = codigos;
+			},
+		});
+	}
+
+	crearNuevoCodigo(
+		idUsuario: string,
+		clave: number,
+		tipo: 'PERMANENTE' | 'UN_USO',
+		uso: string
+	) {
+		this.autorizacionService
+			.crearCodigoDeAutorizacion(idUsuario, clave, tipo, uso)
+			.subscribe({
+				next: () => {
+					this.cargarCodigos(); // Recargar lista
+				},
+			});
+	}
+
+	eliminar(id: string) {
+		this.msjService.confirmarAccion(
+			'¿Eliminar código de autorización?',
+			'Esta acción no se puede deshacer',
+			() => {
+				this.autorizacionService.eliminarCodigoPorId(id).subscribe({
+					next: () => {
+						this.cargarCodigos(); // Recargar lista
+					},
+				});
+			}
+		);
+	}
 }
 ```
 
@@ -428,52 +431,52 @@ export class GestionarAutorizacionesComponent {
 
 ```html
 <div class="container">
-    <h2>Gestión de Códigos de Autorización</h2>
-    
-    <div class="row">
-        <div class="col-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Tipo</th>
-                        <th>Uso</th>
-                        <th>Creador</th>
-                        <th>Fecha Creación</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let codigo of codigos">
-                        <td>{{ codigo.usuario?.nombre }}</td>
-                        <td>
-                            <span 
-                                class="badge" 
-                                [ngClass]="{
+	<h2>Gestión de Códigos de Autorización</h2>
+
+	<div class="row">
+		<div class="col-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Usuario</th>
+						<th>Tipo</th>
+						<th>Uso</th>
+						<th>Creador</th>
+						<th>Fecha Creación</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let codigo of codigos">
+						<td>{{ codigo.usuario?.nombre }}</td>
+						<td>
+							<span
+								class="badge"
+								[ngClass]="{
                                     'badge-success': codigo.tipo === 'PERMANENTE',
                                     'badge-warning': codigo.tipo === 'UN_USO'
                                 }"
-                            >
-                                {{ codigo.tipo }}
-                            </span>
-                        </td>
-                        <td>{{ codigo.uso }}</td>
-                        <td>{{ codigo.creador?.nombre }}</td>
-                        <td>{{ codigo.createdAt | date:'short' }}</td>
-                        <td>
-                            <button 
-                                class="btn btn-sm btn-danger"
-                                (click)="eliminar(codigo._id)"
-                            >
-                                <i class="fas fa-trash"></i>
-                                Eliminar
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+							>
+								{{ codigo.tipo }}
+							</span>
+						</td>
+						<td>{{ codigo.uso }}</td>
+						<td>{{ codigo.creador?.nombre }}</td>
+						<td>{{ codigo.createdAt | date:'short' }}</td>
+						<td>
+							<button
+								class="btn btn-sm btn-danger"
+								(click)="eliminar(codigo._id)"
+							>
+								<i class="fas fa-trash"></i>
+								Eliminar
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 ```
 
@@ -487,29 +490,29 @@ export class GestionarAutorizacionesComponent {
 const AUTORIZACION_USUARIO = require('../supervision/autorizacionDeusuarioSimple.service');
 const { USOS_CODIGOS_NUMERICOS_AUTORIZACION } = require('../../utils/varios');
 
-SERVICIO.aprobarLineaConteo = async function(req) {
-    const CLAVE_CONFIRMAR = req.body.clave;
-    const MOTIVO_AUTORIZACION = req.body.motivoAutorizacion;
-    const ID_CONTEO = req.body.idConteo;
-    
-    if (!MOTIVO_AUTORIZACION) {
-        throw 'Se requiere un motivo de autorización.';
-    }
-    
-    // Validar código de autorización
-    const MENSAJE_AUTORIZACION = await AUTORIZACION_USUARIO.comprobarCodigo(
-        req.user._id,
-        CLAVE_CONFIRMAR,
-        USOS_CODIGOS_NUMERICOS_AUTORIZACION.LINEAS_CONTEOS,
-        null,
-        ID_CONTEO  // Valida que el código sea para este conteo específico
-    );
-    
-    console.log(MENSAJE_AUTORIZACION);
-    // Output: "Autorización disparada por: Juan Pérez. Era de un uso, así que se eliminó el código usado. El código fue expedido por Supervisor Conteos."
-    
-    // Continuar con la lógica de aprobación...
-    // ...
+SERVICIO.aprobarLineaConteo = async function (req) {
+	const CLAVE_CONFIRMAR = req.body.clave;
+	const MOTIVO_AUTORIZACION = req.body.motivoAutorizacion;
+	const ID_CONTEO = req.body.idConteo;
+
+	if (!MOTIVO_AUTORIZACION) {
+		throw 'Se requiere un motivo de autorización.';
+	}
+
+	// Validar código de autorización
+	const MENSAJE_AUTORIZACION = await AUTORIZACION_USUARIO.comprobarCodigo(
+		req.user._id,
+		CLAVE_CONFIRMAR,
+		USOS_CODIGOS_NUMERICOS_AUTORIZACION.LINEAS_CONTEOS,
+		null,
+		ID_CONTEO // Valida que el código sea para este conteo específico
+	);
+
+	console.log(MENSAJE_AUTORIZACION);
+	// Output: "Autorización disparada por: Juan Pérez. Era de un uso, así que se eliminó el código usado. El código fue expedido por Supervisor Conteos."
+
+	// Continuar con la lógica de aprobación...
+	// ...
 };
 ```
 
@@ -521,84 +524,91 @@ import { ConteosService } from 'src/app/services/conteos/conteos.service';
 import { ManejoDeMensajesService } from 'src/app/services/utilidades/manejo-de-mensajes.service';
 
 @Component({
-    selector: 'app-aprobar-conteo',
-    templateUrl: './aprobar-conteo.component.html'
+	selector: 'app-aprobar-conteo',
+	templateUrl: './aprobar-conteo.component.html',
 })
 export class AprobarConteoComponent {
-    
-    claveAutorizacion: number;
-    motivoAutorizacion: string;
-    
-    constructor(
-        private conteosService: ConteosService,
-        private msjService: ManejoDeMensajesService
-    ) {}
-    
-    aprobarLinea(idConteo: string, idLinea: string) {
-        if (!this.claveAutorizacion) {
-            this.msjService.mostrarAdvertencia('Ingrese su clave de autorización');
-            return;
-        }
-        
-        if (!this.motivoAutorizacion) {
-            this.msjService.mostrarAdvertencia('Ingrese el motivo de autorización');
-            return;
-        }
-        
-        this.conteosService.aprobarLinea({
-            idConteo: idConteo,
-            idLinea: idLinea,
-            clave: this.claveAutorizacion,
-            motivoAutorizacion: this.motivoAutorizacion
-        }).subscribe({
-            next: (respuesta) => {
-                this.msjService.mostrarExito('Línea aprobada correctamente');
-                this.claveAutorizacion = null;
-                this.motivoAutorizacion = '';
-            },
-            error: (error) => {
-                // El error mostrará "Código incorrecto" o detalles específicos
-                this.msjService.mostrarError(error);
-            }
-        });
-    }
+	claveAutorizacion: number;
+	motivoAutorizacion: string;
+
+	constructor(
+		private conteosService: ConteosService,
+		private msjService: ManejoDeMensajesService
+	) {}
+
+	aprobarLinea(idConteo: string, idLinea: string) {
+		if (!this.claveAutorizacion) {
+			this.msjService.mostrarAdvertencia(
+				'Ingrese su clave de autorización'
+			);
+			return;
+		}
+
+		if (!this.motivoAutorizacion) {
+			this.msjService.mostrarAdvertencia(
+				'Ingrese el motivo de autorización'
+			);
+			return;
+		}
+
+		this.conteosService
+			.aprobarLinea({
+				idConteo: idConteo,
+				idLinea: idLinea,
+				clave: this.claveAutorizacion,
+				motivoAutorizacion: this.motivoAutorizacion,
+			})
+			.subscribe({
+				next: (respuesta) => {
+					this.msjService.mostrarExito(
+						'Línea aprobada correctamente'
+					);
+					this.claveAutorizacion = null;
+					this.motivoAutorizacion = '';
+				},
+				error: (error) => {
+					// El error mostrará "Código incorrecto" o detalles específicos
+					this.msjService.mostrarError(error);
+				},
+			});
+	}
 }
 ```
 
 ```html
 <div class="modal-body">
-    <h4>Aprobar Línea de Conteo</h4>
-    
-    <div class="form-group">
-        <label>Motivo de Autorización *</label>
-        <textarea 
-            class="form-control"
-            [(ngModel)]="motivoAutorizacion"
-            rows="3"
-            placeholder="Explique por qué autoriza esta acción"
-        ></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Clave de Autorización *</label>
-        <input 
-            type="password"
-            class="form-control"
-            [(ngModel)]="claveAutorizacion"
-            placeholder="Ingrese su código numérico"
-        />
-        <small class="form-text text-muted">
-            Solo personal autorizado puede aprobar líneas de conteo
-        </small>
-    </div>
-    
-    <button 
-        class="btn btn-success"
-        (click)="aprobarLinea(conteo._id, linea._id)"
-    >
-        <i class="fas fa-check"></i>
-        Aprobar Línea
-    </button>
+	<h4>Aprobar Línea de Conteo</h4>
+
+	<div class="form-group">
+		<label>Motivo de Autorización *</label>
+		<textarea
+			class="form-control"
+			[(ngModel)]="motivoAutorizacion"
+			rows="3"
+			placeholder="Explique por qué autoriza esta acción"
+		></textarea>
+	</div>
+
+	<div class="form-group">
+		<label>Clave de Autorización *</label>
+		<input
+			type="password"
+			class="form-control"
+			[(ngModel)]="claveAutorizacion"
+			placeholder="Ingrese su código numérico"
+		/>
+		<small class="form-text text-muted">
+			Solo personal autorizado puede aprobar líneas de conteo
+		</small>
+	</div>
+
+	<button
+		class="btn btn-success"
+		(click)="aprobarLinea(conteo._id, linea._id)"
+	>
+		<i class="fas fa-check"></i>
+		Aprobar Línea
+	</button>
 </div>
 ```
 
@@ -619,38 +629,39 @@ Las claves de autorización se administran desde:
 
 ### Interfaz de Administración
 
-![Gestión de claves de autorización](../../assets/claves-autorizacion/admin-claves.png)
+![Gestión de claves de autorización](../../../assets/gifs/componentes__claves_autorizacion.gif)
 
 La interfaz de administración muestra:
 
 #### **Tabla de Códigos Existentes**
 
-| Columna | Descripción |
-|---------|-------------|
-| **Usuario** | Usuario que usará el código |
-| **Creador** | Usuario que creó el código |
-| **Modificador** | Usuario que modificó el código (si aplica) |
-| **Tipo** | `PERMANENTE` o `UN USO` |
-| **Uso** | Tipo de autorización que otorga |
-| **Documento Específico** | SI/NO (si está vinculado a un documento) |
-| **Colección** | Colección del documento (si aplica) |
-| **Fecha Creación** | Timestamp de creación |
-| **Última Edición** | Timestamp de última modificación |
+| Columna                  | Descripción                                |
+| ------------------------ | ------------------------------------------ |
+| **Usuario**              | Usuario que usará el código                |
+| **Creador**              | Usuario que creó el código                 |
+| **Modificador**          | Usuario que modificó el código (si aplica) |
+| **Tipo**                 | `PERMANENTE` o `UN USO`                    |
+| **Uso**                  | Tipo de autorización que otorga            |
+| **Documento Específico** | SI/NO (si está vinculado a un documento)   |
+| **Colección**            | Colección del documento (si aplica)        |
+| **Fecha Creación**       | Timestamp de creación                      |
+| **Última Edición**       | Timestamp de última modificación           |
 
 #### **Botón "Crear Nuevo Código"**
 
 Al hacer clic en "Crear Nuevo Código", se abre un modal con el formulario:
 
 **Campos del formulario**:
+
 1. **Usuario**: Seleccionar el usuario que usará el código
 2. **Clave Numérica**: Código numérico de 4-8 dígitos
 3. **Tipo**: Seleccionar entre:
-   - `PERMANENTE` - Uso ilimitado
-   - `UN_USO` - Se elimina tras usarse
+    - `PERMANENTE` - Uso ilimitado
+    - `UN_USO` - Se elimina tras usarse
 4. **Uso**: Seleccionar el tipo de autorización:
-   - `RESERVAS_ALMACEN_PRODUCTO_TERMINADO`
-   - `LINEAS_CONTEOS`
-   - (Otros usos configurados)
+    - `RESERVAS_ALMACEN_PRODUCTO_TERMINADO`
+    - `LINEAS_CONTEOS`
+    - (Otros usos configurados)
 
 #### **Botón "Revocar" por Código**
 
@@ -679,98 +690,98 @@ carrduci-sys-gui/src/app/components/ajustes/
 import { AutorizacionUsuarioSimpleService } from 'src/app/services/supervision/autorizacion-usuario-simple/autorizacion-usuario-simple.service';
 
 export class AjustesSistemaComponent {
-    
-    todosLosCodigosDeAutorizacion: {
-        usuario: Usuario;
-        createdAt: Date;
-        updatedAt: Date;
-    }[];
-    
-    constructor(
-        private AutorizacionUsuarioSimpleService: AutorizacionUsuarioSimpleService
-    ) {}
-    
-    ngOnInit(): void {
-        if (this.contieneElPermiso.transform('SUPER_ADMIN')) {
-            this.obtenerListaDeCoodigosDeAutorizacionExistentes();
-        }
-    }
-    
-    // Abrir modal de creación
-    abrirModalCreacionCodigo() {
-        this.modalCearCodigosDeSeguridad.mostrarModal();
-        this.mostrandoModal = true;
-    }
-    
-    // Crear nuevo código
-    crearCodigo(formulario: FormularioCreacionCodigo) {
-        this.AutorizacionUsuarioSimpleService.crearCodigoDeAutorizacion(
-            formulario.usuario,
-            formulario.clave,
-            formulario.tipo,
-            formulario.uso
-        ).subscribe(
-            (_) => {
-                this.modalCearCodigosDeSeguridad.ocultarModal();
-                this.mostrandoModal = false;
-                this.obtenerListaDeCoodigosDeAutorizacionExistentes();
-            }
-        );
-    }
-    
-    // Eliminar/Revocar código
-    revocarCodigo(datosCodigo: any) {
-        this.AutorizacionUsuarioSimpleService.eliminarCodigoPorId(
-            datosCodigo._id
-        ).subscribe((_) => {
-            this.obtenerListaDeCoodigosDeAutorizacionExistentes();
-        });
-    }
-    
-    // Obtener todos los códigos
-    obtenerListaDeCoodigosDeAutorizacionExistentes() {
-        this.AutorizacionUsuarioSimpleService.obtenerTodosLosCodigos().subscribe(
-            (codigos) => {
-                this.todosLosCodigosDeAutorizacion = codigos;
-                this.crearTablaGenerica();
-            }
-        );
-    }
-    
-    // Crear estructura de tabla genérica
-    crearTablaGenerica() {
-        this.datosColumnas = [
-            {
-                titulo: 'usuario',
-                campoCelda: {
-                    funcion: (datosClave) => datosClave.usuario?.nombre || 'Usuario Desconocido'
-                }
-            },
-            {
-                titulo: 'tipo',
-                campoCelda: {
-                    funcion: (datosClave) => datosClave.tipo.split('_').join(' ')
-                }
-            },
-            {
-                titulo: 'uso',
-                campoCelda: {
-                    funcion: (datosClave) => datosClave.uso.split('_').join(' ')
-                }
-            },
-            // ... más columnas
-        ];
-        
-        this.datosTabla = this.tablaGenericaService.generarEstructura(
-            'No se ha encontrado ningún código de usuario',
-            this.todosLosCodigosDeAutorizacion,
-            this.datosColumnas,
-            {
-                botones: this.botonesTablaCodigosUsuarios,
-                alineacionBotones: 'right'
-            }
-        );
-    }
+	todosLosCodigosDeAutorizacion: {
+		usuario: Usuario;
+		createdAt: Date;
+		updatedAt: Date;
+	}[];
+
+	constructor(
+		private AutorizacionUsuarioSimpleService: AutorizacionUsuarioSimpleService
+	) {}
+
+	ngOnInit(): void {
+		if (this.contieneElPermiso.transform('SUPER_ADMIN')) {
+			this.obtenerListaDeCoodigosDeAutorizacionExistentes();
+		}
+	}
+
+	// Abrir modal de creación
+	abrirModalCreacionCodigo() {
+		this.modalCearCodigosDeSeguridad.mostrarModal();
+		this.mostrandoModal = true;
+	}
+
+	// Crear nuevo código
+	crearCodigo(formulario: FormularioCreacionCodigo) {
+		this.AutorizacionUsuarioSimpleService.crearCodigoDeAutorizacion(
+			formulario.usuario,
+			formulario.clave,
+			formulario.tipo,
+			formulario.uso
+		).subscribe((_) => {
+			this.modalCearCodigosDeSeguridad.ocultarModal();
+			this.mostrandoModal = false;
+			this.obtenerListaDeCoodigosDeAutorizacionExistentes();
+		});
+	}
+
+	// Eliminar/Revocar código
+	revocarCodigo(datosCodigo: any) {
+		this.AutorizacionUsuarioSimpleService.eliminarCodigoPorId(
+			datosCodigo._id
+		).subscribe((_) => {
+			this.obtenerListaDeCoodigosDeAutorizacionExistentes();
+		});
+	}
+
+	// Obtener todos los códigos
+	obtenerListaDeCoodigosDeAutorizacionExistentes() {
+		this.AutorizacionUsuarioSimpleService.obtenerTodosLosCodigos().subscribe(
+			(codigos) => {
+				this.todosLosCodigosDeAutorizacion = codigos;
+				this.crearTablaGenerica();
+			}
+		);
+	}
+
+	// Crear estructura de tabla genérica
+	crearTablaGenerica() {
+		this.datosColumnas = [
+			{
+				titulo: 'usuario',
+				campoCelda: {
+					funcion: (datosClave) =>
+						datosClave.usuario?.nombre || 'Usuario Desconocido',
+				},
+			},
+			{
+				titulo: 'tipo',
+				campoCelda: {
+					funcion: (datosClave) =>
+						datosClave.tipo.split('_').join(' '),
+				},
+			},
+			{
+				titulo: 'uso',
+				campoCelda: {
+					funcion: (datosClave) =>
+						datosClave.uso.split('_').join(' '),
+				},
+			},
+			// ... más columnas
+		];
+
+		this.datosTabla = this.tablaGenericaService.generarEstructura(
+			'No se ha encontrado ningún código de usuario',
+			this.todosLosCodigosDeAutorizacion,
+			this.datosColumnas,
+			{
+				botones: this.botonesTablaCodigosUsuarios,
+				alineacionBotones: 'right',
+			}
+		);
+	}
 }
 ```
 
@@ -783,13 +794,13 @@ sequenceDiagram
     participant Modal as Modal Creación
     participant Service as Autorizacion Service
     participant API as Backend API
-    
+
     Admin->>GUI: Acceder a Ajustes Sistema
     GUI->>Service: obtenerTodosLosCodigos()
     Service->>API: GET /autorizacionesUsuarios
     API-->>Service: Lista de códigos
     Service-->>GUI: Renderizar tabla
-    
+
     Admin->>GUI: Click "Crear Nuevo Código"
     GUI->>Modal: Abrir modal
     Admin->>Modal: Llenar formulario
@@ -806,30 +817,33 @@ sequenceDiagram
 ### Permisos Necesarios
 
 !> **CRÍTICO**: Solo usuarios con permiso `SUPER_ADMIN` pueden:
-- Ver la lista de códigos de autorización
-- Crear nuevos códigos
-- Revocar códigos existentes
+
+-   Ver la lista de códigos de autorización
+-   Crear nuevos códigos
+-   Revocar códigos existentes
 
 El componente verifica el permiso en `ngOnInit()`:
+
 ```typescript
 if (this.contieneElPermiso.transform('SUPER_ADMIN')) {
-    this.obtenerListaDeCoodigosDeAutorizacionExistentes();
+	this.obtenerListaDeCoodigosDeAutorizacionExistentes();
 }
 ```
 
 ### Validaciones en el Formulario
 
 El formulario de creación incluye:
-- **Usuario**: Campo requerido (select con lista de usuarios)
-- **Clave**: Campo requerido, solo números
-- **Tipo**: Campo requerido (PERMANENTE o UN_USO)
-- **Uso**: Campo requerido (lista de usos disponibles)
+
+-   **Usuario**: Campo requerido (select con lista de usuarios)
+-   **Clave**: Campo requerido, solo números
+-   **Tipo**: Campo requerido (PERMANENTE o UN_USO)
+-   **Uso**: Campo requerido (lista de usos disponibles)
 
 ### Mensajes de Confirmación
 
-- **Crear código**: "Código de autorización creado exitosamente"
-- **Revocar código**: "Código de autorización eliminado"
-- **Error**: Mensajes específicos del servicio de manejo de mensajes
+-   **Crear código**: "Código de autorización creado exitosamente"
+-   **Revocar código**: "Código de autorización eliminado"
+-   **Error**: Mensajes específicos del servicio de manejo de mensajes
 
 <hr class='hr-secundario'>
 
@@ -841,11 +855,11 @@ Edita `/carrduci-sys-api/utils/varios.js`:
 
 ```javascript
 const USOS_CODIGOS_NUMERICOS_AUTORIZACION = {
-    RESERVAS_ALMACEN_PRODUCTO_TERMINADO: 'RESERVAS_ALMACEN_PRODUCTO_TERMINADO',
-    LINEAS_CONTEOS: 'LINEAS_CONTEOS',
-    // Agregar nuevo uso
-    ELIMINAR_ORDENES: 'ELIMINAR_ORDENES',
-    MODIFICAR_PRECIOS: 'MODIFICAR_PRECIOS'
+	RESERVAS_ALMACEN_PRODUCTO_TERMINADO: 'RESERVAS_ALMACEN_PRODUCTO_TERMINADO',
+	LINEAS_CONTEOS: 'LINEAS_CONTEOS',
+	// Agregar nuevo uso
+	ELIMINAR_ORDENES: 'ELIMINAR_ORDENES',
+	MODIFICAR_PRECIOS: 'MODIFICAR_PRECIOS',
 };
 ```
 
@@ -856,34 +870,36 @@ const USOS_CODIGOS_NUMERICOS_AUTORIZACION = {
 const AUTORIZACION_USUARIO = require('../supervision/autorizacionDeusuarioSimple.service');
 const { USOS_CODIGOS_NUMERICOS_AUTORIZACION } = require('../../utils/varios');
 
-SERVICIO.eliminarOrden = async function(req) {
-    const CLAVE_CONFIRMAR = req.body.clave;
-    const ID_ORDEN = req.params.id;
-    
-    // Validar autorización
-    await AUTORIZACION_USUARIO.comprobarCodigo(
-        req.user._id,
-        CLAVE_CONFIRMAR,
-        USOS_CODIGOS_NUMERICOS_AUTORIZACION.ELIMINAR_ORDENES
-    );
-    
-    // Proceder con eliminación...
-    // ...
+SERVICIO.eliminarOrden = async function (req) {
+	const CLAVE_CONFIRMAR = req.body.clave;
+	const ID_ORDEN = req.params.id;
+
+	// Validar autorización
+	await AUTORIZACION_USUARIO.comprobarCodigo(
+		req.user._id,
+		CLAVE_CONFIRMAR,
+		USOS_CODIGOS_NUMERICOS_AUTORIZACION.ELIMINAR_ORDENES
+	);
+
+	// Proceder con eliminación...
+	// ...
 };
 ```
 
 ```typescript
 // Frontend - Crear código del nuevo tipo
-this.autorizacionService.crearCodigoDeAutorizacion(
-    idUsuario,
-    1234,
-    'PERMANENTE',
-    'ELIMINAR_ORDENES'
-).subscribe({
-    next: (respuesta) => {
-        console.log('Código para eliminar órdenes creado');
-    }
-});
+this.autorizacionService
+	.crearCodigoDeAutorizacion(
+		idUsuario,
+		1234,
+		'PERMANENTE',
+		'ELIMINAR_ORDENES'
+	)
+	.subscribe({
+		next: (respuesta) => {
+			console.log('Código para eliminar órdenes creado');
+		},
+	});
 ```
 
 <hr class='hr-secundario'>
@@ -893,15 +909,17 @@ this.autorizacionService.crearCodigoDeAutorizacion(
 ### 1. Seguridad
 
 ✅ **HACER**:
-- Siempre usar `bcrypt` para hashear las claves (se hace automáticamente)
-- Validar permisos antes de crear códigos (solo `SUPER_ADMIN`)
-- Usar códigos de `'UN_USO'` para acciones críticas puntuales
-- Registrar siempre el `creador` y `modificador`
+
+-   Siempre usar `bcrypt` para hashear las claves (se hace automáticamente)
+-   Validar permisos antes de crear códigos (solo `SUPER_ADMIN`)
+-   Usar códigos de `'UN_USO'` para acciones críticas puntuales
+-   Registrar siempre el `creador` y `modificador`
 
 ❌ **NO HACER**:
-- No almacenar claves en texto plano
-- No compartir claves por canales inseguros
-- No reutilizar códigos de un solo uso
+
+-   No almacenar claves en texto plano
+-   No compartir claves por canales inseguros
+-   No reutilizar códigos de un solo uso
 
 ### 2. Trazabilidad
 
@@ -916,14 +934,16 @@ this.autorizacionService.crearCodigoDeAutorizacion(
 ### 3. Tipos de Código
 
 **`PERMANENTE`**:
-- Para autorizaciones recurrentes
-- El usuario puede usar el código múltiples veces
-- Se debe cambiar periódicamente por seguridad
+
+-   Para autorizaciones recurrentes
+-   El usuario puede usar el código múltiples veces
+-   Se debe cambiar periódicamente por seguridad
 
 **`UN_USO`**:
-- Para autorizaciones puntuales
-- Se elimina automáticamente después de usarse
-- Ideal para aprobar documentos específicos
+
+-   Para autorizaciones puntuales
+-   Se elimina automáticamente después de usarse
+-   Ideal para aprobar documentos específicos
 
 ### 4. Documentos Específicos
 
@@ -944,13 +964,13 @@ this.autorizacionService.crearCodigoDeAutorizacion(
 
 ### Errores Comunes
 
-| Error | Causa | Solución |
-|-------|-------|----------|
-| `"Se requiere el código numérico"` | No se proporcionó la clave | Enviar `clave` en el body |
-| `"Se requiere el id del usuario"` | No se proporcionó usuario | Enviar `usuario` en el body |
-| `"Código incorrecto"` | La clave no coincide | Verificar que la clave sea correcta |
-| `"No tienes ningún código numérico autorizado"` | El usuario no tiene códigos para ese uso | Crear un código primero |
-| `"No se puede usar el código con este elemento"` | El código es para otro documento | Usar el código correcto para el documento |
+| Error                                            | Causa                                    | Solución                                  |
+| ------------------------------------------------ | ---------------------------------------- | ----------------------------------------- |
+| `"Se requiere el código numérico"`               | No se proporcionó la clave               | Enviar `clave` en el body                 |
+| `"Se requiere el id del usuario"`                | No se proporcionó usuario                | Enviar `usuario` en el body               |
+| `"Código incorrecto"`                            | La clave no coincide                     | Verificar que la clave sea correcta       |
+| `"No tienes ningún código numérico autorizado"`  | El usuario no tiene códigos para ese uso | Crear un código primero                   |
+| `"No se puede usar el código con este elemento"` | El código es para otro documento         | Usar el código correcto para el documento |
 
 ### Ejemplo de Manejo
 
@@ -1025,19 +1045,20 @@ Para usar las imágenes en esta documentación:
 
 ### Consideraciones de Rendimiento
 
-- Las claves se hashean con bcrypt (factor 12)
-- La validación requiere comparación con bcrypt (proceso costoso)
-- Se recomienda limitar intentos de validación
-- Los códigos `'UN_USO'` se eliminan inmediatamente tras validarse
+-   Las claves se hashean con bcrypt (factor 12)
+-   La validación requiere comparación con bcrypt (proceso costoso)
+-   Se recomienda limitar intentos de validación
+-   Los códigos `'UN_USO'` se eliminan inmediatamente tras validarse
 
 ### Auditoría
 
 El sistema registra automáticamente en logs:
-- Cuándo se crea un código
-- Quién lo crea
-- Cuándo se usa un código
-- Quién lo usa
-- Si era de un solo uso y se eliminó
+
+-   Cuándo se crea un código
+-   Quién lo crea
+-   Cuándo se usa un código
+-   Quién lo usa
+-   Si era de un solo uso y se eliminó
 
 Revisar logs del servidor para auditoría completa:
 

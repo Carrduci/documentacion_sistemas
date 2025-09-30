@@ -519,11 +519,28 @@ registroHistorialSchema.index({ usuario: 1 }, { name: 'filtro_por_usuario' });
 
 ## Uso en el Frontend (GUI)
 
+### Preparación: Importar Módulos Necesarios
+
+Para usar el componente de historial, necesitas importar el módulo del componente:
+
+```typescript
+import { HistorialElementoModule } from 'src/app/components/utiles/historial/historial-elemento/historial-elemento.module';
+import { ModalModule } from 'src/app/pages/utilidadesPages/utilidades-tipo-crud-para-GUI/plantillas/modal.module';
+
+@NgModule({
+	declarations: [MiComponenteComponent],
+	imports: [
+		// ... otros módulos
+		HistorialElementoModule,
+		ModalModule, // Si usarás el componente en modales
+	],
+})
+export class MiModuloModule {}
+```
+
 ### Componente: app-historial-elemento
 
 El componente tiene **dos modos de uso**:
-
-#### Modo 1: Sin Paginación (Deprecado)
 
 Pasando directamente el array de registros:
 
@@ -725,6 +742,10 @@ export class HistorialElementoComponent {
 	}
 }
 ```
+
+### Ejemplo
+
+![](../../../assets/imagenes/componentes__historial_ejemplo.png)
 
 <hr class='hr-principal'>
 
