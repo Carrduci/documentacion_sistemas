@@ -202,14 +202,14 @@ export interface Proveedor {
 
 ### Registro de Rutas (Actualizado)
 
-Para componentes creados en `components/`, el registro de rutas cambia significativamente. Dado que cada componente tiene su propio módulo independiente (regla estricta: "cada componente su módulo"), se debe usar **`loadComponent`** en lugar de `loadChildren`.
+Para componentes creados en `components/`, el registro de rutas cambia significativamente. Dado que cada componente tiene su propio módulo independiente (regla estricta: "cada componente su módulo"), se debe usar **`loadChildren`** en lugar de `loadComponent`.
 
-#### ¿Por qué `loadComponent` en lugar de `loadChildren`?
+#### ¿Por qué `loadChildren` en lugar de `loadComponent`?
 
--   **`loadComponent`**: Ideal para componentes individuales con módulos independientes. Carga el componente directamente sin necesidad de módulos complejos.
--   **`loadChildren`**: Se usa para cargar módulos completos que contienen múltiples rutas y componentes (lazy loading por dominio completo).
+-   **`loadChildren`**: Carga módulos completos con todas sus dependencias bajo demanda. **SIEMPRE se usa en CARRDUCI** para módulos independientes y archivos de rutas.
+-   **`loadComponent`**: Se usa para componentes standalone sin módulo propio. **NUNCA se usa en CARRDUCI**.
 
-En CARRDUCI, como **NO creamos módulos principales por dominio**, cada componente es independiente y debe cargarse con `loadComponent`.
+En CARRDUCI, **cada componente tiene su propio módulo independiente** y **todos los lazy loading se hacen a nivel de módulo**, por lo que se debe usar `loadChildren` para cargar el módulo completo.
 
 **Sin embargo, para el futuro lazy loading por dominio**, `loadChildren` SÍ se puede usar para cargar archivos de rutas directamente:
 
@@ -237,7 +237,7 @@ export const ADMINISTRACION_ROUTES: Routes = [
     },
     {
         path: 'proveedores',
-        loadComponent: () => import('./vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
+        loadChildren: () => import('./vista-administracion-proveedores/vista-administracion-proveedores.module').then(m => m.VistaAdministracionProveedoresModule),
         canActivate: [VerificaTokenGuard, PermisosGuard],
         data: {
             titulo: 'Administración de proveedores',
@@ -251,24 +251,25 @@ export const ADMINISTRACION_ROUTES: Routes = [
 **Ventajas del enfoque híbrido futuro:**
 
 -   ✅ **Lazy loading por dominio**: Carga todas las rutas de un dominio bajo demanda
--   ✅ **Componentes individuales**: Dentro del dominio, cada componente se carga individualmente
+-   ✅ **Componentes independientes**: Dentro del dominio, cada componente se carga usando `loadChildren` con su módulo
 -   ✅ **Arquitectura escalable**: Fácil agregar nuevos componentes al dominio
 -   ✅ **Mantenibilidad**: Separación clara entre configuración de dominio y componentes individuales
+-   ✅ **Consistencia total**: Siempre `loadChildren`, nunca `loadComponent`
 
-#### 🕐 **Actualidad: `loadComponent` para componentes individuales**
+#### 🕐 **Actualidad: `loadChildren` para módulos independientes**
 
-En la **actualidad**, siguiendo la regla estricta de CARRDUCI ("cada componente su módulo"), todos los componentes se cargan individualmente usando `loadComponent`.
+En la **actualidad**, siguiendo la regla estricta de CARRDUCI ("cada componente su módulo"), todos los componentes se cargan usando `loadChildren` para cargar sus módulos independientes.
 
-⚠️ **IMPORTANTE**: Actualmente en `pages.routes.ts` NO se está usando `loadComponent` (todas las rutas usan `component:` directamente). Sin embargo, **de ahora en adelante** todas las rutas nuevas DEBEN usar `loadComponent` para mantener consistencia y preparar el terreno para futuras migraciones de lazy loading.
+⚠️ **IMPORTANTE**: Actualmente en `pages.routes.ts` NO se está usando `loadChildren` (todas las rutas usan `component:` directamente). Sin embargo, **de ahora en adelante** todas las rutas nuevas DEBEN usar `loadChildren` para mantener consistencia y preparar el terreno para futuras migraciones de lazy loading.
 
-Esto significa que cada ruta en `pages.routes.ts` carga directamente su componente específico:
+Esto significa que cada ruta en `pages.routes.ts` carga directamente su módulo específico:
 
 ```typescript
 // pages.routes.ts - Ejemplo ACTUAL para componente en components/
 {
     path: 'administracion/proveedores',
     canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
+    loadChildren: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.module').then(m => m.VistaAdministracionProveedoresModule),
     data: {
         titulo: 'Administración de proveedores',
         permissions: permisosKeysConfig['menu:administracion:proveedores']
@@ -283,16 +284,16 @@ Esto significa que cada ruta en `pages.routes.ts` carga directamente su componen
 -   ✅ **Mantenibilidad inmediata**: Fácil agregar/modificar rutas sin afectar otras
 -   ✅ **Transición preparada**: Estructura actual facilita migración futura al lazy loading por dominio
 
-#### ❌ **Incorrecto - NO usar `loadChildren` para componentes individuales**
+#### ❌ **Incorrecto - NO usar `loadComponent` para módulos independientes**
 
 ```typescript
 // pages.routes.ts - Ejemplo para componente en components/
-// ❌ INCORRECTO - NO usar loadChildren para componentes individuales
+// ❌ INCORRECTO - NO usar loadComponent para módulos independientes
 {
     path: 'administracion/proveedores',
     component: VistaAdministracionProveedoresComponent,
     canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadChildren: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.module').then(m => m.VistaAdministracionProveedoresModule), // ❌ NO USAR
+    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent), // ❌ NO USAR
     data: {
         titulo: 'Administración de proveedores',
         permissions: permisosKeysConfig['menu:administracion:proveedores']
@@ -300,12 +301,12 @@ Esto significa que cada ruta en `pages.routes.ts` carga directamente su componen
 }
 ```
 
-#### Beneficios de `loadComponent`:
+#### Beneficios de `loadChildren`:
 
--   ✅ **Bundle más pequeño**: Solo carga el componente específico cuando se necesita
--   ✅ **Arquitectura más simple**: No requiere módulos complejos por dominio
--   ✅ **Mejor mantenibilidad**: Cada componente es independiente
--   ✅ **Performance óptima**: Lazy loading a nivel de componente individual
+-   ✅ **Bundle completo**: Carga el módulo y todas sus dependencias bajo demanda
+-   ✅ **Arquitectura modular**: Respeta la regla "cada componente su módulo"
+-   ✅ **Mejor mantenibilidad**: Cada módulo es independiente y autocontenido
+-   ✅ **Performance óptima**: Lazy loading a nivel de módulo completo
 
 #### Organización de `pages.routes.ts` con Separadores de Sección
 
@@ -342,10 +343,10 @@ export const rutasAlmacenConteos: Routes = [
 	{
 		path: 'almacen/conteos/supervision',
 		canActivate: [VerificaTokenGuard, PermisosGuard],
-		loadComponent: () =>
+		loadChildren: () =>
 			import(
-				'./components/conteos/vista-supervision-conteos/vista-supervision-conteos.component'
-			).then((m) => m.VistaSupervisionConteosComponent),
+				'./components/conteos/vista-supervision-conteos/vista-supervision-conteos.module'
+			).then((m) => m.VistaSupervisionConteosModule),
 		data: {
 			titulo: 'Gestión de conteos (inventarios)',
 			permissions: permisosKeysConfig['menu:almacen:supervisionConteos'],
@@ -354,10 +355,10 @@ export const rutasAlmacenConteos: Routes = [
 	{
 		path: 'almacen/conteos/produccion',
 		canActivate: [VerificaTokenGuard, PermisosGuard],
-		loadComponent: () =>
+		loadChildren: () =>
 			import(
-				'./components/conteos/vista-produccion-conteos/vista-produccion-conteos.component'
-			).then((m) => m.VistaProduccionConteosComponent),
+				'./components/conteos/vista-produccion-conteos/vista-produccion-conteos.module'
+			).then((m) => m.VistaProduccionConteosModule),
 		data: {
 			titulo: 'Conteos de producción',
 			permissions: permisosKeysConfig['menu:almacen:produccionConteos'],
@@ -394,10 +395,10 @@ export const rutasAdministracion: Routes = [
 	{
 		path: 'administracion/proveedores',
 		canActivate: [VerificaTokenGuard, PermisosGuard],
-		loadComponent: () =>
+		loadChildren: () =>
 			import(
-				'./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component'
-			).then((m) => m.VistaAdministracionProveedoresComponent),
+				'./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.module'
+			).then((m) => m.VistaAdministracionProveedoresModule),
 		data: {
 			titulo: 'Administración de proveedores',
 			permissions: permisosKeysConfig['menu:administracion:proveedores'],
@@ -561,6 +562,9 @@ components/conteos/
 ```bash
 # Navegar al directorio del proyecto GUI
 cd carruci-sys-gui
+
+# Crear componente de vista (ejemplo para supervision de conteos)
+ng generate module components/conteos/vista-conteos-supervision
 
 # Crear componente de vista (ejemplo para supervision de conteos)
 ng generate component components/conteos/vista-conteos-supervision
@@ -867,7 +871,7 @@ export class PipesParaConteosModule {}
 
 ### 3.1 Rutas (`pages.routes.ts`)
 
-Agregar la ruta de la nueva vista con lazy loading:
+Agregar la ruta de la nueva vista con lazy loading usando `loadChildren` para cargar el módulo independiente:
 
 ```typescript
 // En pages.routes.ts
@@ -876,13 +880,21 @@ import permisosKeysConfig from 'src/app/config/permisosKeys.config';
 {
     path: 'almacen/conteos/supervision',
     canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadComponent: () => import('./components/conteos/vista-conteos-supervision/vista-conteos-supervision.component').then(m => m.VistaConteosSupervisionComponent),
+    loadChildren: () => import('./components/conteos/vista-conteos-supervision/vista-conteos-supervision.module').then(m => m.VistaConteosSupervisionModule),
     data: {
         titulo: 'Gestión de conteos (inventarios)',
         permissions: permisosKeysConfig['menu:almacen:supervisionConteos']
     }
 }
 ```
+
+?> **IMPORTANTE**: En CARRDUCI se usa `loadChildren` para cargar módulos independientes porque:
+- ✅ **Lazy loading completo**: Carga el módulo y todas sus dependencias bajo demanda
+- ✅ **Módulo independiente**: Cada componente tiene su propio módulo con todas las dependencias necesarias
+- ✅ **Optimización**: Solo se carga cuando el usuario navega a esa ruta específica
+- ✅ **Consistencia**: Arquitectura "cada componente su módulo" requiere `loadChildren`
+
+**NO usar `loadComponent`** - Este método es para componentes standalone sin módulo propio.
 
 ### 3.2 Sistema de Permisos
 
@@ -1061,10 +1073,11 @@ function compras() {
 > **🔄 CAMBIO ARQUITECTÓNICO IMPORTANTE**
 >
 > **De ahora en adelante en el API se usarán clases en los controladores y en las rutas.** Esto garantiza:
-> - Mejor organización y encapsulamiento del código
-> - Evitación de race conditions entre requests concurrentes
-> - Consistencia con la arquitectura de clases ya implementada en servicios
-> - Facilita el testing y mantenimiento del código
+>
+> -   Mejor organización y encapsulamiento del código
+> -   Evitación de race conditions entre requests concurrentes
+> -   Consistencia con la arquitectura de clases ya implementada en servicios
+> -   Facilita el testing y mantenimiento del código
 >
 > **A futuro se refactorizarán todos los controladores y rutas existentes para que también usen clases.**
 
@@ -1540,7 +1553,7 @@ module.exports = router;
 
 ## 5. Documentación Estándar
 
-La documentacion en CARRDUCI sigue reglas estrictas definidas en el archivo [`4-estructuras-de-documentacion.md`](./4-estructuras-de-documentacion.md). Todos los archivos deben estar completamente documentados siguiendo estos estandares.
+La documentacion en CARRDUCI sigue reglas estrictas definidas en el archivo [`4-estructuras-de-documentacion.md`](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md). Todos los archivos deben estar completamente documentados siguiendo estos estandares.
 
 ### 5.1 Reglas Generales de Documentación
 
@@ -2699,4 +2712,4 @@ describe('VistaAdministracionEjemplosComponent', () => {
 
 ## Conclusión
 
-Este proceso asegura que todos los componentes nuevos sigan los mismos estandares de calidad, seguridad, mantenibilidad y **documentacion completa** que el resto del sistema CARRDUCI. La documentacion siguiendo las reglas de `4-estructuras-de-documentacion.md` facilita el mantenimiento y la incorporación de nuevos desarrolladores al proyecto.
+Este proceso asegura que todos los componentes nuevos sigan los mismos estandares de calidad, seguridad, mantenibilidad y **documentacion completa** que el resto del sistema CARRDUCI. La documentacion siguiendo las reglas de [`4-estructuras-de-documentacion.md`](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md) facilita el mantenimiento y la incorporación de nuevos desarrolladores al proyecto.
