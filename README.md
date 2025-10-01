@@ -230,8 +230,8 @@ docs/
 ### 💬 **Preguntas**
 
 -   Revisar documentación existente primero
--   Usar canales de Slack del equipo para preguntas rápidas
--   Crear issues para preguntas técnicas complejas
+-   Crear issues en GitHub para preguntas técnicas
+-   Contactar al equipo de desarrollo directamente para consultas urgentes
 
 ---
 
