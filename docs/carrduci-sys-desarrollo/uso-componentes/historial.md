@@ -139,26 +139,30 @@ Para documentos nuevos que se crean con `.save()`:
 // services/miServicio.service.js
 const MiModelo = require('../models/miModelo.model');
 
-servicio.crearDocumento = async function (req) {
-	const nuevoDoc = new MiModelo({
-		nombre: req.body.nombre,
-		cantidad: req.body.cantidad,
-		precio: req.body.precio,
-		activo: true,
-	});
+class MiServicio {
+	async crearDocumento(req) {
+		const nuevoDoc = new MiModelo({
+			nombre: req.body.nombre,
+			cantidad: req.body.cantidad,
+			precio: req.body.precio,
+			activo: true,
+		});
 
-	// Agregar metadata ANTES de save()
-	nuevoDoc.metadata = {
-		idUsuario: req.user._id,
-		descripcion: 'documento creado',
-		descripcionLarga: `Se creó el documento ${req.body.nombre}`,
-	};
+		// Agregar metadata ANTES de save()
+		nuevoDoc.metadata = {
+			idUsuario: req.user._id,
+			descripcion: 'documento creado',
+			descripcionLarga: `Se creó el documento ${req.body.nombre}`,
+		};
 
-	// El plugin registrará automáticamente el cambio
-	const GUARDADO = await nuevoDoc.save();
+		// El plugin registrará automáticamente el cambio
+		const GUARDADO = await nuevoDoc.save();
 
-	return GUARDADO;
-};
+		return GUARDADO;
+	}
+}
+
+module.exports = MiServicio;
 ```
 
 !> **IMPORTANTE**: La metadata se agrega directamente al documento ANTES de llamar a `.save()`.
@@ -168,28 +172,30 @@ servicio.crearDocumento = async function (req) {
 Para actualizar documentos existentes (FORMA CORRECTA):
 
 ```javascript
-servicio.actualizarDocumento = async function (req) {
-	const { _id, ...datosActualizar } = req.body;
+class MiServicio {
+	async actualizarDocumento(req) {
+		const { _id, ...datosActualizar } = req.body;
 
-	const ACTUALIZADO = await MiModelo.findOneAndUpdate(
-		{ _id },
-		{ $set: datosActualizar },
-		{
-			lean: true,
-			new: true,
-			runValidators: true,
-			context: 'query',
-			// IMPORTANTE: Pasar metadata en options
-			metadata: {
-				idUsuario: req.user._id,
-				descripcion: 'documento modificado',
-				descripcionLarga: `Se modificó el documento con ID ${_id}`,
-			},
-		}
-	);
+		const ACTUALIZADO = await MiModelo.findOneAndUpdate(
+			{ _id },
+			{ $set: datosActualizar },
+			{
+				lean: true,
+				new: true,
+				runValidators: true,
+				context: 'query',
+				// IMPORTANTE: Pasar metadata en options
+				metadata: {
+					idUsuario: req.user._id,
+					descripcion: 'documento modificado',
+					descripcionLarga: `Se modificó el documento con ID ${_id}`,
+				},
+			}
+		);
 
-	return ACTUALIZADO;
-};
+		return ACTUALIZADO;
+	}
+}
 ```
 
 ?> **NOTA**: Con `findOneAndUpdate` y `updateOne`, la metadata se pasa en el tercer parámetro (options), NO en el documento.
@@ -199,19 +205,23 @@ servicio.actualizarDocumento = async function (req) {
 Similar a findOneAndUpdate:
 
 ```javascript
-servicio.desactivarDocumento = async function (req) {
-	await MiModelo.updateOne(
-		{ _id: req.body._id },
-		{ $set: { activo: false } },
-		{
-			context: 'query',
-			metadata: {
-				idUsuario: req.user._id,
-				descripcion: 'documento desactivado',
-			},
-		}
-	);
-};
+class MiServicio {
+	async desactivarDocumento(req) {
+		await MiModelo.updateOne(
+			{ _id: req.body._id },
+			{ $set: { activo: false } },
+			{
+				context: 'query',
+				metadata: {
+					idUsuario: req.user._id,
+					descripcion: 'documento desactivado',
+				},
+			}
+		);
+	}
+}
+
+module.exports = MiServicio;
 ```
 
 ### Paso 5: Omitir Registro de Historial
@@ -765,3 +775,32 @@ El **Sistema de Historial** proporciona:
 ✅ **Tipos de cambio** claramente identificados
 
 Este sistema es fundamental para auditoría, debugging y cumplimiento normativo en CARRDUCI.
+
+?> **IMPORTANTE**: Recuerda que los servicios del API deben usar clases con métodos de instancia, y los controladores deben crear nuevas instancias para evitar race conditions entre requests concurrentes.
+
+```javascript
+// ❌ INCORRECTO - Patrón antiguo
+const SERVICIO = {};
+SERVICIO.metodo = function() { ... };
+
+// ✅ CORRECTO - Patrón CARRDUCI
+const { response } = require('../../utils/response.utils');
+
+class Servicio {
+    async metodo() { ... }
+}
+
+class Controlador {
+    async metodo(req, res) {
+        // Crear nueva instancia del servicio
+        const servicio = new Servicio();
+        const resultado = await servicio.metodo();
+
+        // Usar response.utils.js para respuestas
+        return new response(res, __filename, {
+            mensaje: 'Operación exitosa',
+            datos: resultado
+        })._200_ok();
+    }
+}
+```

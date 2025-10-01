@@ -72,146 +72,146 @@ module.exports = camposBusqueda;
 
 ?> Para este paso ya debes tener una ruta y su controlador. Ver [estructura de archivos y código](./docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md).
 
-Para usar el índice, en la función del servicio del API correspondiente, hacer lo siguiente.
+Para usar el índice, en la clase del servicio del API correspondiente, hacer lo siguiente.
 
 ```js
 // Importar el modelo.
 // La ruta es de ejemplo y puede variar.
 const ELEMENTO_MODEL = require('../../../models/elementos/elemento.model');
 
-const SERVICIO = {};
+class ElementoService {
+    async obtenerElementos({
+        // Campos para paginacion.
+        desde,
+        limite,
+        sort,
+        campo,
 
-SERVICIO.obtenerElementos = async function ({
-    // Campos para paginacion.
-    desde,
-    limite,
-    sort,
-    campo,
+        filtros,
 
-    filtros,
+        // Aqui debe llegar la cadena de texto que
+        // el usuario escribe, con lo que se buscarán
+        // elementos.
+        termino
+    }) {
+        desde = Number(desde ?? 0);
+        limite = Number(limite ?? 5);
+        sort = Number(sort ?? -1);
+        campo = String(campo ?? '_id');
+        filtros = filtros ?? {};
 
-    // Aqui debe llegar la cadena de texto que
-    // el usuario escribe, con lo que se buscarán
-    // elementos.
-    termino
-}) {
-    desde = Number(desde ?? 0);
-    limite = Number(limite ?? 5);
-    sort = Number(sort ?? -1);
-    campo = String(campo ?? '_id');
-    filtros = filtros ?? {};
+        // Limpiar las diagonales invertidas de la cadena
+        // de texto.
+        termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
 
-    // Limpiar las diagonales invertidas de la cadena
-    // de texto.
-    termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
+        let filtrosProcesar = {
+            ...filtros,
 
-    let filtrosProcesar = {
-        ...filtros,
-
-        // La busqueda de texto se maneja como un filtro.
-        terminoTextSearch: termino
-    };
-
-    // Aquí se genera la query que se le pasa al .find(). Si llega un valor
-    // en el campo "termino", la query incluye lo necesario para hacer la
-    // busqueda de texto con indices.
-    let queryFiltros = queryFiltrosElementos(filtrosProcesar);
-
-    // Luego se cuenta el total de documentos que tendría el resultado.
-    let total = await FOLIO_PREFACTURA_MODEL.countDocuments(queryFiltros);
-
-    // Si no hay resultados y se uso la busqueda por termino, intentar
-    // la búsqueda por regex en lugar de índice. Si aún así el resultado
-    // está vacío, pasa como tal.
-    if (total === 0 && termino) {
-        // Aquí se indica el cambio de indice a regex.
-        filtrosProcesar.terminoRegex = termino;
-        delete filtrosProcesar.terminoTextSearch;
-
-        // Obtener la query de nuevo.
-        queryFiltros = queryFiltrosElementos(filtrosProcesar);
-
-        // Contar los documentos de nuevo.
-        total = await FOLIO_PREFACTURA_MODEL.countDocuments(queryFiltros);
-    }
-
-    // Si la query incluye el campo "$text", es busqueda de indice.
-    const ES_BUSQUEDA_INDICE = !!queryFiltros.$text;
-
-    // Si es busqueda de indice, agregar el campo "score", que guarda
-    // un valor numerico que, mientras mas alto, indica una mayor relacion
-    // con la busqueda de texto realizada. Esto servirá para ordenar los
-    // resultados por relevancia.
-    // La proyección es para agregar o quitar campos del resultado de la
-    // query, en este caso solo se agrega un campo (si es busqueda de
-    // índice).
-    const PROJECTION = ES_BUSQUEDA_INDICE
-        ? { score: { $meta: 'textScore' } }
-        : {};
-
-    // Esto es para ordenar los resultados. En la llave del objeto se
-    // indica el nombre del campo por el cual ordenar y el valor puede
-    // ser 1, que significa descendiente, o -1, que significa ascendente.
-    const CRITERIOS_SORT = ES_BUSQUEDA_INDICE
-        ? {
-              // Primero ordenar por el campo especificado en la GUI.
-              [campo]: sort,
-
-              // Luego siempre ordenar por _id.
-              _id: sort,
-
-              // Al final ordenar por relevancia respecto a la búsqueda
-              // con índices de texto.
-              score: { $meta: 'textScore' }
-          }
-        : {
-              // Si no hay búsqueda de índices de texto, solo ordenar por
-              // el campo de la GUI y por _id.
-              [campo]: sort,
-              _id: sort
-          };
-
-    // Esta es la ejecución de la query de búsqueda.
-    const RESULTADO = await ELEMENTO_MODEL.find(
-        queryFiltros, // La query que puede incluir la búsqueda de texto.
-        PROJECTION // La proyección que puede agregar "score".
-    )
-        // Esto es la paginación.
-        .skip(desde)
-        .skip(limite)
-
-        // Aquí se aplica el ordenamiento.
-        .sort(CRITERIOS_SORT)
-
-        // Estos campos se van a quitar del resultado final.
-        .select('-busqueda -__v -score');
-
-        // Esto convierte el resultado a un POJO, lo que lo que
-        // lo hace más ligero.
-        .lean();
-
-    // Retornar un objeto con el resultado paginado y el total
-    // de resultados sin paginar.
-    return { resultado, total }
-};
-
-// Esta función es para generar la query de busqueda.
-function queryFiltrosElementos({ terminoTextSearch, terminoRegex }) {
-    let filtros = {};
-    if (!!terminoTextSearch) {
-        filtros.$text = {
-            $search: `${terminoTextSearch} "${terminoTextSearch}"`
+            // La busqueda de texto se maneja como un filtro.
+            terminoTextSearch: termino
         };
+
+        // Aquí se genera la query que se le pasa al .find(). Si llega un valor
+        // en el campo "termino", la query incluye lo necesario para hacer la
+        // busqueda de texto con indices.
+        let queryFiltros = this.queryFiltrosElementos(filtrosProcesar);
+
+        // Luego se cuenta el total de documentos que tendría el resultado.
+        let total = await ELEMENTO_MODEL.countDocuments(queryFiltros);
+
+        // Si no hay resultados y se uso la busqueda por termino, intentar
+        // la búsqueda por regex en lugar de índice. Si aún así el resultado
+        // está vacío, pasa como tal.
+        if (total === 0 && termino) {
+            // Aquí se indica el cambio de indice a regex.
+            filtrosProcesar.terminoRegex = termino;
+            delete filtrosProcesar.terminoTextSearch;
+
+            // Obtener la query de nuevo.
+            queryFiltros = this.queryFiltrosElementos(filtrosProcesar);
+
+            // Contar los documentos de nuevo.
+            total = await ELEMENTO_MODEL.countDocuments(queryFiltros);
+        }
+
+        // Si la query incluye el campo "$text", es busqueda de indice.
+        const ES_BUSQUEDA_INDICE = !!queryFiltros.$text;
+
+        // Si es busqueda de indice, agregar el campo "score", que guarda
+        // un valor numerico que, mientras mas alto, indica una mayor relacion
+        // con la busqueda de texto realizada. Esto servirá para ordenar los
+        // resultados por relevancia.
+        // La proyección es para agregar o quitar campos del resultado de la
+        // query, en este caso solo se agrega un campo (si es busqueda de
+        // índice).
+        const PROJECTION = ES_BUSQUEDA_INDICE
+            ? { score: { $meta: 'textScore' } }
+            : {};
+
+        // Esto es para ordenar los resultados. En la llave del objeto se
+        // indica el nombre del campo por el cual ordenar y el valor puede
+        // ser 1, que significa descendiente, o -1, que significa ascendente.
+        const CRITERIOS_SORT = ES_BUSQUEDA_INDICE
+            ? {
+                  // Primero ordenar por el campo especificado en la GUI.
+                  [campo]: sort,
+
+                  // Luego siempre ordenar por _id.
+                  _id: sort,
+
+                  // Al final ordenar por relevancia respecto a la búsqueda
+                  // con índices de texto.
+                  score: { $meta: 'textScore' }
+              }
+            : {
+                  // Si no hay búsqueda de índices de texto, solo ordenar por
+                  // el campo de la GUI y por _id.
+                  [campo]: sort,
+                  _id: sort
+              };
+
+        // Esta es la ejecución de la query de búsqueda.
+        const RESULTADO = await ELEMENTO_MODEL.find(
+            queryFiltros, // La query que puede incluir la búsqueda de texto.
+            PROJECTION // La proyección que puede agregar "score".
+        )
+            // Esto es la paginación.
+            .skip(desde)
+            .limit(limite)
+
+            // Aquí se aplica el ordenamiento.
+            .sort(CRITERIOS_SORT)
+
+            // Estos campos se van a quitar del resultado final.
+            .select('-busqueda -__v -score')
+
+            // Esto convierte el resultado a un POJO, lo que lo que
+            // lo hace más ligero.
+            .lean();
+
+        // Retornar un objeto con el resultado paginado y el total
+        // de resultados sin paginar.
+        return { resultado, total };
     }
-    if (!!terminoRegex)
-        filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
 
-    // Aquí se pueden agregar más filtros.
+    // Esta función es para generar la query de busqueda.
+    queryFiltrosElementos({ terminoTextSearch, terminoRegex }) {
+        let filtros = {};
+        if (!!terminoTextSearch) {
+            filtros.$text = {
+                $search: `${terminoTextSearch} "${terminoTextSearch}"`
+            };
+        }
+        if (!!terminoRegex)
+            filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
 
-    return filtros;
+        // Aquí se pueden agregar más filtros.
+
+        return filtros;
+    }
 }
 
-module.exports = SERVICIO;
+module.exports = ElementoService;
 ```
 
 ## Uso en el servicio de la GUI

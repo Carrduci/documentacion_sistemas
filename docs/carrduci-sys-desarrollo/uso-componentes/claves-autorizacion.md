@@ -104,53 +104,68 @@ Por lo tanto, **NO necesitas** pasar manualmente `req.user` - ya está disponibl
 #### Ejemplo en un Controlador (Uso Real)
 
 ```javascript
-// routes/supervision/miControlador.controller.js
+// routes/supervision/autorizacionDeUsuarioSimple.controller.js
 const SERVICIO_AUTORIZACION = require('../../services/supervision/autorizacionDeusuarioSimple.service');
-const UTILES = require('../../utils/varios');
+const { response } = require('../../utils/response.utils');
 
-controlador.crearCodigoParaUsuario = async function (req, res) {
-	try {
-		// req.user YA ESTÁ DISPONIBLE gracias al middleware JWT
-		// req.body contiene los datos enviados desde el frontend
+class AutorizacionController {
+    async crearCodigoParaUsuario(req, res) {
+        try {
+            // req.user YA ESTÁ DISPONIBLE gracias al middleware JWT
+            // req.body contiene los datos enviados desde el frontend
 
-		const RESPUESTA = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion(
-			req
-		);
-		// El servicio internamente usa:
-		// - req.body.usuario (ID del usuario que usará el código)
-		// - req.body.clave (código numérico)
-		// - req.body.tipo ('PERMANENTE' o 'UN_USO')
-		// - req.body.uso (tipo de autorización)
-		// - req.user._id (ID del creador - automático)
+            const RESPUESTA = await SERVICIO_AUTORIZACION.crearCodigoDeAutorizacion(
+                req
+            );
+            // El servicio internamente usa:
+            // - req.body.usuario (ID del usuario que usará el código)
+            // - req.body.clave (código numérico)
+            // - req.body.tipo ('PERMANENTE' o 'UN_USO')
+            // - req.body.uso (tipo de autorización)
+            // - req.user._id (ID del creador - automático)
 
-		// Usar UTILES.respuestaCorrecta() en lugar de res.status()
-		if (RESPUESTA.nuevo) {
-			return UTILES.respuestaCorrecta(
-				RESPUESTA.codigo,
-				res,
-				'datos',
-				'Código de autorización creado'
-			);
-		} else {
-			return UTILES.respuestaCorrecta(
-				RESPUESTA.codigo,
-				res,
-				'datos',
-				'Código de autorización existente sobreescrito'
-			);
-		}
-	} catch (error) {
-		// Usar UTILES.respuestaError() para errores
-		return UTILES.respuestaError(
-			error,
-			res,
-			'Hubo un error al crear el código de autorización'
-		);
-	}
-};
+            // Usar clase Resp de response.utils.js
+            if (RESPUESTA.nuevo) {
+                return new response(res, __filename, {
+                    mensaje: 'Código de autorización creado',
+                    datos: RESPUESTA.codigo
+                })._201_created();
+            } else {
+                return new response(res, __filename, {
+                    mensaje: 'Código de autorización existente sobreescrito',
+                    datos: RESPUESTA.codigo
+                })._200_ok();
+            }
+        } catch (error) {
+            // Usar clase Resp de response.utils.js para errores
+            return new response(res, __filename, {
+                mensaje: 'Hubo un error al crear el código de autorización',
+                error: error.message
+            })._400_badRequest();
+        }
+    }
+}
+
+module.exports = AutorizacionController;
 ```
 
-?> **PATRÓN DE RESPUESTAS**: El proyecto usa `UTILES.respuestaCorrecta()` y `UTILES.respuestaError()` (de `/utils/varios.js`) en lugar de `res.status()` directamente. Esto asegura respuestas consistentes y logging automático.
+?> **PATRÓN DE RESPUESTAS**: El proyecto usa `response.utils.js` con métodos como `_200_ok()`, `_400_badRequest()`, etc. en lugar de `res.status()` directamente. Esto asegura respuestas consistentes y logging automático.
+
+```javascript
+// Importar response utils
+const { response } = require('../../utils/response.utils');
+
+// En el controlador
+return new response(res, __filename, {
+    mensaje: 'Operación exitosa',
+    datos: resultado
+})._200_ok();
+
+return new response(res, __filename, {
+    mensaje: 'Error en la operación',
+    error: error.message
+})._400_badRequest();
+```
 
 #### Ejemplo Directo (Para Testing)
 
@@ -490,30 +505,62 @@ export class GestionarAutorizacionesComponent {
 const AUTORIZACION_USUARIO = require('../supervision/autorizacionDeusuarioSimple.service');
 const { USOS_CODIGOS_NUMERICOS_AUTORIZACION } = require('../../utils/varios');
 
-SERVICIO.aprobarLineaConteo = async function (req) {
-	const CLAVE_CONFIRMAR = req.body.clave;
-	const MOTIVO_AUTORIZACION = req.body.motivoAutorizacion;
-	const ID_CONTEO = req.body.idConteo;
+class ConteosService {
+    async aprobarLineaConteo(req) {
+        const CLAVE_CONFIRMAR = req.body.clave;
+        const MOTIVO_AUTORIZACION = req.body.motivoAutorizacion;
+        const ID_CONTEO = req.body.idConteo;
 
-	if (!MOTIVO_AUTORIZACION) {
-		throw 'Se requiere un motivo de autorización.';
-	}
+        if (!MOTIVO_AUTORIZACION) {
+            throw 'Se requiere un motivo de autorización.';
+        }
 
-	// Validar código de autorización
-	const MENSAJE_AUTORIZACION = await AUTORIZACION_USUARIO.comprobarCodigo(
-		req.user._id,
-		CLAVE_CONFIRMAR,
-		USOS_CODIGOS_NUMERICOS_AUTORIZACION.LINEAS_CONTEOS,
-		null,
-		ID_CONTEO // Valida que el código sea para este conteo específico
-	);
+        // Validar código de autorización
+        const MENSAJE_AUTORIZACION = await AUTORIZACION_USUARIO.comprobarCodigo(
+            req.user._id,
+            CLAVE_CONFIRMAR,
+            USOS_CODIGOS_NUMERICOS_AUTORIZACION.LINEAS_CONTEOS,
+            null,
+            ID_CONTEO // Valida que el código sea para este conteo específico
+        );
 
-	console.log(MENSAJE_AUTORIZACION);
-	// Output: "Autorización disparada por: Juan Pérez. Era de un uso, así que se eliminó el código usado. El código fue expedido por Supervisor Conteos."
+        console.log(MENSAJE_AUTORIZACION);
+        // Output: "Autorización disparada por: Juan Pérez. Era de un uso, así que se eliminó el código usado. El código fue expedido por Supervisor Conteos."
 
-	// Continuar con la lógica de aprobación...
-	// ...
-};
+        // Continuar con la lógica de aprobación...
+        // ...
+    }
+}
+
+module.exports = ConteosService;
+```
+
+### Controlador - Crear Nueva Instancia
+
+```javascript
+const ConteosService = require('../services/conteos/conteos.service');
+
+class ConteosController {
+    async aprobarLinea(req, res) {
+        try {
+            // Crear nueva instancia del servicio para evitar race conditions
+            const conteosService = new ConteosService();
+
+            const resultado = await conteosService.aprobarLineaConteo(req);
+            return new response(res, __filename, {
+                mensaje: 'Línea aprobada correctamente',
+                datos: resultado
+            })._200_ok();
+        } catch (error) {
+            return new response(res, __filename, {
+                mensaje: 'Error al aprobar línea',
+                error: error.message
+            })._400_badRequest();
+        }
+    }
+}
+
+module.exports = ConteosController;
 ```
 
 ### Frontend - Componente de Conteos
@@ -866,24 +913,56 @@ const USOS_CODIGOS_NUMERICOS_AUTORIZACION = {
 ### Paso 2: Usar el Nuevo Código
 
 ```javascript
-// Backend - Validar en el servicio correspondiente
+// Backend - Servicio con clase
 const AUTORIZACION_USUARIO = require('../supervision/autorizacionDeusuarioSimple.service');
 const { USOS_CODIGOS_NUMERICOS_AUTORIZACION } = require('../../utils/varios');
 
-SERVICIO.eliminarOrden = async function (req) {
-	const CLAVE_CONFIRMAR = req.body.clave;
-	const ID_ORDEN = req.params.id;
+class OrdenesService {
+    async eliminarOrden(req) {
+        const CLAVE_CONFIRMAR = req.body.clave;
+        const ID_ORDEN = req.params.id;
 
-	// Validar autorización
-	await AUTORIZACION_USUARIO.comprobarCodigo(
-		req.user._id,
-		CLAVE_CONFIRMAR,
-		USOS_CODIGOS_NUMERICOS_AUTORIZACION.ELIMINAR_ORDENES
-	);
+        // Validar autorización
+        await AUTORIZACION_USUARIO.comprobarCodigo(
+            req.user._id,
+            CLAVE_CONFIRMAR,
+            USOS_CODIGOS_NUMERICOS_AUTORIZACION.ELIMINAR_ORDENES
+        );
 
-	// Proceder con eliminación...
-	// ...
-};
+        // Proceder con eliminación...
+        // ...
+    }
+}
+
+module.exports = OrdenesService;
+```
+
+```javascript
+// Backend - Controlador
+const OrdenesService = require('../services/ordenes/ordenes.service');
+const { response } = require('../../utils/response.utils');
+
+class OrdenesController {
+    async eliminarOrden(req, res) {
+        try {
+            // Crear nueva instancia del servicio para evitar race conditions
+            const ordenesService = new OrdenesService();
+
+            const resultado = await ordenesService.eliminarOrden(req);
+            return new response(res, __filename, {
+                mensaje: 'Orden eliminada correctamente',
+                datos: resultado
+            })._200_ok();
+        } catch (error) {
+            return new response(res, __filename, {
+                mensaje: 'Error al eliminar orden',
+                error: error.message
+            })._400_badRequest();
+        }
+    }
+}
+
+module.exports = OrdenesController;
 ```
 
 ```typescript
@@ -1081,3 +1160,30 @@ El sistema de **Claves de Autorización de Usuario Simples** proporciona:
 ✅ **Control**: Vincular códigos a documentos específicos
 
 Este sistema es ideal para autorizar acciones críticas que requieren doble validación, manteniendo un registro completo de quién autorizó qué y cuándo.
+
+?> **IMPORTANTE**: Recuerda que tanto servicios como controladores del API deben usar clases con métodos de instancia, y cada método debe crear nuevas instancias para evitar race conditions entre requests concurrentes.
+
+```javascript
+// ❌ INCORRECTO - Patrón antiguo
+const SERVICIO = {};
+SERVICIO.metodo = function() { ... };
+
+// ✅ CORRECTO - Patrón CARRDUCI
+class Servicio {
+    async metodo() { ... }
+}
+
+class Controlador {
+    async metodo(req, res) {
+        // Crear nueva instancia del servicio
+        const servicio = new Servicio();
+        const resultado = await servicio.metodo();
+
+        // Usar response.utils.js para respuestas
+        return new response(res, __filename, {
+            mensaje: 'Operación exitosa',
+            datos: resultado
+        })._200_ok();
+    }
+}
+```
