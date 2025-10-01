@@ -1058,6 +1058,16 @@ function compras() {
 
 ## 4. Desarrollo de la API
 
+> **🔄 CAMBIO ARQUITECTÓNICO IMPORTANTE**
+>
+> **De ahora en adelante en el API se usarán clases en los controladores y en las rutas.** Esto garantiza:
+> - Mejor organización y encapsulamiento del código
+> - Evitación de race conditions entre requests concurrentes
+> - Consistencia con la arquitectura de clases ya implementada en servicios
+> - Facilita el testing y mantenimiento del código
+>
+> **A futuro se refactorizarán todos los controladores y rutas existentes para que también usen clases.**
+
 ---
 
 ### 4.1 Estructura de Archivos
