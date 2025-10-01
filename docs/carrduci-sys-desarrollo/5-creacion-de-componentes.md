@@ -1762,19 +1762,15 @@ class EjemploService {
 		// Destructuring para excluir campos que se manejan en métodos específicos
 		const { estado, ...datosLimpios } = datos; // Ejemplo: estado se modifica en métodos específicos
 
-		return await EJEMPLO_MODEL.findOneAndUpdate(
-			{ _id: id },
-			datosLimpios,
-			{
-				new: true,
-				runValidators: true,
-				context: 'query',
-				metadata: {
-					idUsuario: datos.usuario,
-					descripcion: 'Elemento actualizado',
-				},
-			}
-		);
+		return await EJEMPLO_MODEL.findOneAndUpdate({ _id: id }, datosLimpios, {
+			new: true,
+			runValidators: true,
+			context: 'query',
+			metadata: {
+				idUsuario: datos.usuario,
+				descripcion: 'Elemento actualizado',
+			},
+		});
 	}
 
 	// Función helper para filtros
@@ -2018,95 +2014,65 @@ export class VistaAdministracionEjemplosComponent implements OnInit {
 }
 ```
 
-#### 5.2.6 Servicios de GUI (`services/**/*.service.ts`)
+_*Archivos HTML relacionados (`components/**/\*.component.html`):*_
 
-**Estructura obligatoria:**
+```html
+<!--================================================================o)
+  #region ESTRUCTURA PRINCIPAL (INICIO)
+(o-----------------------------------------------------------\/------>
 
-```typescript
-// (o==================================================================o)
-//   #region IMPORTACIONES
-// (o-----------------------------------------------------------\/-----o)
+<div [ngSwitch]="enMovil">
+	<div *ngSwitchCase="false">
+		<div [ngClass]="{ row: !enMovil }">
+			<div [ngClass]="{ 'col-12': !enMovil }">
+				<div [ngClass]="{ card: !enMovil }">
+					<div [ngClass]="{ 'card-body': !enMovil }">
+						<!-- Contenido principal aquí -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngSwitchCase="true">
+		<!-- Contenido para móvil aquí -->
+	</div>
+</div>
 
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+<!-----------------------------------------------------------/\-----o)
+  #endregion ESTRUCTURA PRINCIPAL (FIN)
+(o=================================================================-->
 
-/* MODELOS */
-/* INTERFACES */
-/* UTILIDADES */
+<!--================================================================o)
+  #region TEMPLATES ESTRUCTURA PRINCIPAL (INICIO)
+(o-----------------------------------------------------------\/------>
 
-// (o-----------------------------------------------------------/\-----o)
-//   #endregion IMPORTACIONES
-// (o==================================================================o)
+<ng-template #botonesPrincipales>
+	<div class="dis-flex">
+		<button class="btn btn-success mr-1 mb-1" (click)="crearElemento()">
+			<i class="fas fa-plus mr-1"></i>
+			Crear
+		</button>
+	</div>
+</ng-template>
 
-/**
- * Servicio para gestion de ejemplos
- * Maneja todas las operaciones HTTP relacionadas con ejemplos
- */
-@Injectable({
-	providedIn: 'root',
-})
-export class EjemploService {
-	// (o==================================================================o)
-	//   #region PROPIEDADES
-	// (o-----------------------------------------------------------\/-----o)
+<!-----------------------------------------------------------/\-----o)
+  #endregion TEMPLATES ESTRUCTURA PRINCIPAL (FIN)
+(o=================================================================-->
 
-	/** URL base del API */
-	private readonly API_URL = '/api/ejemplos';
+<!--================================================================o)
+  #region TEMPLATES FLOTANTES Y MODALES (INICIO)
+(o-----------------------------------------------------------\/------>
 
-	// (o-----------------------------------------------------------/\-----o)
-	//   #endregion PROPIEDADES
-	// (o==================================================================o)
+<ng-template #formularioCreacion>
+	<app-formulario-creacion
+		(formularioValido)="procesarCreacion($event)"
+		(cancelado)="cerrarModal()"
+	></app-formulario-creacion>
+</ng-template>
 
-	/**
-	 * Constructor del servicio
-	 * @param http Cliente HTTP de Angular
-	 */
-	constructor(private http: HttpClient) {}
-
-	// (o==================================================================o)
-	//   #region METODOS CRUD
-	// (o-----------------------------------------------------------\/-----o)
-
-	/**
-	 * Obtiene lista de elementos con filtros y paginacion
-	 * @param filtros Filtros de busqueda
-	 * @param pagina Numero de pagina
-	 * @param limite Cantidad de elementos por pagina
-	 * @returns Observable con lista de elementos
-	 */
-	obtenerElementos(
-		filtros?: any,
-		pagina: number = 1,
-		limite: number = 10
-	): Observable<any> {
-		const params = { filtros, pagina, limite };
-		return this.http.get(this.API_URL, { params });
-	}
-
-	/**
-	 * Crea un nuevo elemento
-	 * @param elemento Datos del elemento a crear
-	 * @returns Observable con elemento creado
-	 */
-	crearElemento(elemento: any): Observable<any> {
-		return this.http.post(this.API_URL, elemento);
-	}
-
-	/**
-	 * Actualiza un elemento existente
-	 * @param id ID del elemento a actualizar
-	 * @param elemento Datos actualizados del elemento
-	 * @returns Observable con elemento actualizado
-	 */
-	actualizarElemento(id: string, elemento: any): Observable<any> {
-		return this.http.put(`${this.API_URL}/${id}`, elemento);
-	}
-
-	// (o-----------------------------------------------------------/\-----o)
-	//   #endregion METODOS CRUD
-	// (o==================================================================o)
-}
+<!-----------------------------------------------------------/\-----o)
+  #endregion TEMPLATES FLOTANTES Y MODALES (FIN)
+(o=================================================================-->
 ```
 
 #### 5.2.7 Guards de Angular (`guards/**/*.guard.ts`)
@@ -2155,92 +2121,567 @@ export class PermisosGuard implements CanActivate {
 }
 ```
 
-### 5.3 Sistema de Permisos
+#### 5.2.8 Archivos CSS/SCSS del componente (`components/**/*.component.css`)
 
-#### Archivo 1: `permisosKeys.config.ts`
+**Estructura obligatoria con separadores de sección:**
 
-Agregar la clave del permiso:
+```css
+/*================================================================o)
+  #region VARIABLES Y CONSTANTES (INICIO)
+(o-----------------------------------------------------------\/------*/
 
-```typescript
-// En permisosKeys.config.ts
-'menu:administracion:proveedores': 'menu:administracion:proveedores',
-```
-
-#### Archivo 2: `permisos.config.ts`
-
-Configurar permisos descriptivos (NO_DEFINIDO por defecto):
-
-```typescript
-// En permisos.config.ts
-export const permisosConfig = {
-	// ... otros permisos
-	'menu:administracion:proveedores': NO_DEFINIDO,
-};
-```
-
-#### Archivo API: `permisos.config.js`
-
-Agregar el permiso correspondiente:
-
-```javascript
-// En permisos.config.js
-'proveedores:leer': NO_DEFINIDO,
-'proveedores:crear': NO_DEFINIDO,
-'proveedores:actualizar': NO_DEFINIDO,
-// ... otros permisos específicos de proveedores
-```
-
-### 5.4 Rutas de GUI (`pages.routes.ts`)
-
-Agregar entrada con lazy loading:
-
-```typescript
-{
-    path: 'administracion/proveedores',
-    canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
-    data: {
-        titulo: 'Administración de proveedores',
-        permissions: permisosKeysConfig['menu:administracion:proveedores']
-    }
+/* Variables de colores */
+:root {
+	--color-primario: #007bff;
+	--color-secundario: #6c757d;
+	--color-exito: #28a745;
+	--color-peligro: #dc3545;
+	--color-advertencia: #ffc107;
+	--color-info: #17a2b8;
 }
-```
 
-### 5.5 Menú Lateral (`login.menus.js`)
-
-Agregar menú principal:
-
-```javascript
-function administracion() {
-	const menu = {
-		permiso: permisos.$('menu:administracion', false),
-		titulo: 'Administración',
-		icono: 'fas fa-cogs',
-		submenu: [
-			// ... otros submenús
-			{
-				titulo: 'Proveedores',
-				url: '/administracion/proveedores',
-				permiso: permisos.$('menu:administracion:proveedores', false),
-			},
-		],
-	};
-	return menu;
+/* Variables del componente */
+.vista-administracion-ejemplos {
+	--altura-header: 60px;
+	--ancho-sidebar: 250px;
+	--espacio-elementos: 1rem;
 }
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion VARIABLES Y CONSTANTES (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region ESTILOS GENERALES (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Contenedor principal */
+.vista-administracion-ejemplos {
+	padding: var(--espacio-elementos);
+	background-color: #f8f9fa;
+	min-height: 100vh;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion ESTILOS GENERALES (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region CABECERA (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Estilos para la cabecera */
+.titulo-principal {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #495057;
+	margin-bottom: var(--espacio-elementos);
+}
+
+/* Barra de herramientas */
+.toolbar {
+	display: flex;
+	gap: var(--espacio-elementos);
+	margin-bottom: var(--espacio-elementos);
+	flex-wrap: wrap;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion CABECERA (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region FILTROS (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Panel de filtros */
+.filtros-panel {
+	background: white;
+	padding: var(--espacio-elementos);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: var(--espacio-elementos);
+}
+
+/* Grupo de filtros */
+.filtro-grupo {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: var(--espacio-elementos);
+}
+
+.filtro-grupo:last-child {
+	margin-bottom: 0;
+}
+
+.filtro-grupo label {
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+	color: #495057;
+}
+
+.filtro-grupo input,
+.filtro-grupo select {
+	padding: 0.5rem;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	font-size: 1rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.filtro-grupo input:focus,
+.filtro-grupo select:focus {
+	outline: 0;
+	border-color: var(--color-primario);
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion FILTROS (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region TABLA (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Contenedor de tabla */
+.tabla-contenedor {
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	overflow-x: auto;
+	margin-bottom: var(--espacio-elementos);
+}
+
+/* Tabla */
+.tabla-elementos {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9rem;
+}
+
+.tabla-elementos th,
+.tabla-elementos td {
+	padding: 0.75rem;
+	text-align: left;
+	border-bottom: 1px solid #dee2e6;
+}
+
+.tabla-elementos th {
+	background-color: #f8f9fa;
+	font-weight: 600;
+	color: #495057;
+	white-space: nowrap;
+}
+
+.tabla-elementos tbody tr:hover {
+	background-color: #f8f9fa;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion TABLA (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region PAGINACIÓN (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Contenedor de paginación */
+.paginacion {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: var(--espacio-elementos);
+}
+
+/* Botones de paginación */
+.btn-pagina {
+	padding: 0.5rem 1rem;
+	border: 1px solid #ced4da;
+	background: white;
+	color: var(--color-primario);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.15s ease-in-out;
+}
+
+.btn-pagina:hover:not(:disabled) {
+	background-color: var(--color-primario);
+	color: white;
+	border-color: var(--color-primario);
+}
+
+.btn-pagina:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Información de página */
+.pagina-info {
+	margin: 0 1rem;
+	font-weight: 500;
+	color: #495057;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion PAGINACIÓN (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region MODALES (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Modal */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1050;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	max-width: 90vw;
+	max-height: 90vh;
+	overflow-y: auto;
+	width: 500px;
+}
+
+/* Header del modal */
+.modal-header {
+	padding: var(--espacio-elementos);
+	border-bottom: 1px solid #dee2e6;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-header h3 {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #495057;
+}
+
+/* Botón cerrar */
+.btn-cerrar {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #6c757d;
+	padding: 0;
+	line-height: 1;
+}
+
+.btn-cerrar:hover {
+	color: #495057;
+}
+
+/* Formulario del modal */
+.modal-form {
+	padding: var(--espacio-elementos);
+}
+
+.form-grupo {
+	margin-bottom: var(--espacio-elementos);
+}
+
+.form-grupo:last-child {
+	margin-bottom: 0;
+}
+
+.form-grupo label {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+	color: #495057;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+	outline: 0;
+	border-color: var(--color-primario);
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Footer del modal */
+.modal-footer {
+	padding: var(--espacio-elementos);
+	border-top: 1px solid #dee2e6;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion MODALES (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region ESTADOS DE CARGA (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Overlay de carga */
+.loading-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1060;
+}
+
+/* Spinner */
+.spinner {
+	text-align: center;
+}
+
+.spinner i {
+	font-size: 2rem;
+	color: var(--color-primario);
+	margin-bottom: 0.5rem;
+}
+
+/* Mensaje sin datos */
+.no-datos {
+	text-align: center;
+	padding: 2rem;
+	color: #6c757d;
+}
+
+.no-datos i {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	display: block;
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion ESTADOS DE CARGA (FIN)
+(o=================================================================*/
+
+/*================================================================o)
+  #region RESPONSIVE (INICIO)
+(o-----------------------------------------------------------\/------*/
+
+/* Mobile */
+@media (max-width: 768px) {
+	.vista-administracion-ejemplos {
+		padding: 0.5rem;
+	}
+
+	.titulo-principal {
+		font-size: 1.5rem;
+	}
+
+	.toolbar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.toolbar button {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+
+	.filtros-panel {
+		padding: 0.5rem;
+	}
+
+	.tabla-contenedor {
+		font-size: 0.8rem;
+	}
+
+	.tabla-elementos th,
+	.tabla-elementos td {
+		padding: 0.5rem;
+	}
+
+	.modal-contenido {
+		width: 95vw;
+		margin: 1rem;
+	}
+
+	.paginacion {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.pagina-info {
+		margin: 0.5rem 0;
+	}
+}
+
+/*<!-----------------------------------------------------------/\-----o)
+  #endregion RESPONSIVE (FIN)
+(o=================================================================*/
 ```
 
-### 5.6 Checklist para Crear Componentes Nuevos
+#### 5.2.9 Archivos de pruebas unitarias (`components/**/*.component.spec.ts`)
+
+**Estructura obligatoria con separadores de sección:**
+
+```typescript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { VistaAdministracionEjemplosComponent } from './vista-administracion-ejemplos.component';
+import { EjemploService } from '../../services/ejemplo.service';
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+describe('VistaAdministracionEjemplosComponent', () => {
+	// (o==================================================================o)
+	//   #region CONFIGURACIÓN DE PRUEBAS
+	// (o-----------------------------------------------------------\/-----o)
+
+	let component: VistaAdministracionEjemplosComponent;
+	let fixture: ComponentFixture<VistaAdministracionEjemplosComponent>;
+	let ejemploService: EjemploService;
+
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [VistaAdministracionEjemplosComponent],
+			imports: [
+				HttpClientTestingModule,
+				RouterTestingModule,
+				FormsModule,
+				ReactiveFormsModule,
+			],
+			providers: [EjemploService],
+		}).compileComponents();
+
+		fixture = TestBed.createComponent(VistaAdministracionEjemplosComponent);
+		component = fixture.componentInstance;
+		ejemploService = TestBed.inject(EjemploService);
+		fixture.detectChanges();
+	});
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion CONFIGURACIÓN DE PRUEBAS
+	// (o==================================================================o)
+
+	// (o==================================================================o)
+	//   #region PRUEBAS UNITARIAS
+	// (o-----------------------------------------------------------\/-----o)
+
+	it('debería crear el componente', () => {
+		expect(component).toBeTruthy();
+	});
+
+	it('debería inicializar propiedades correctamente', () => {
+		expect(component.elementos).toEqual([]);
+		expect(component.cargando).toBeFalse();
+	});
+
+	it('debería crear el formulario correctamente', () => {
+		component.ngOnInit();
+		expect(component.formulario).toBeDefined();
+		expect(component.formulario.get('nombre')).toBeDefined();
+		expect(component.formulario.get('descripcion')).toBeDefined();
+	});
+
+	it('debería cargar elementos al inicializar', () => {
+		spyOn(component, 'cargarElementos');
+		component.ngOnInit();
+		expect(component.cargarElementos).toHaveBeenCalled();
+	});
+
+	it('debería validar el formulario correctamente', () => {
+		component.ngOnInit();
+		component.formulario.get('nombre')?.setValue('');
+		expect(component.formulario.valid).toBeFalse();
+
+		component.formulario.get('nombre')?.setValue('Nombre válido');
+		expect(component.formulario.valid).toBeTrue();
+	});
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion PRUEBAS UNITARIAS
+	// (o==================================================================o)
+
+	// (o==================================================================o)
+	//   #region PRUEBAS DE INTEGRACIÓN
+	// (o-----------------------------------------------------------\/-----o)
+
+	it('debería llamar al servicio al cargar elementos', () => {
+		const spy = spyOn(ejemploService, 'obtenerElementos').and.returnValue(
+			of([])
+		);
+		component.cargarElementos();
+		expect(spy).toHaveBeenCalled();
+	});
+
+	it('debería manejar errores del servicio correctamente', () => {
+		const errorResponse = new HttpErrorResponse({
+			error: 'Error del servidor',
+			status: 500,
+		});
+
+		spyOn(ejemploService, 'obtenerElementos').and.returnValue(
+			throwError(errorResponse)
+		);
+		spyOn(console, 'error');
+
+		component.cargarElementos();
+
+		expect(console.error).toHaveBeenCalled();
+		expect(component.cargando).toBeFalse();
+	});
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion PRUEBAS DE INTEGRACIÓN
+	// (o==================================================================o)
+});
+```
+
+### 5.3 Checklist para Crear Componentes Nuevos
 
 -   [ ] ✅ Planificar estructura de carpetas por dominio
 -   [ ] ✅ Crear modelo API con documentacion JSDoc completa
 -   [ ] ✅ Implementar servicio API con separadores de seccion
 -   [ ] ✅ Desarrollar controlador API con manejo de errores
 -   [ ] ✅ Crear rutas API con protecciones y documentacion
+-   [ ] ✅ Crear archivos HTML con separadores de seccion
+-   [ ] ✅ Crear archivos CSS/SCSS del componente (si necesario)
 -   [ ] ✅ Crear servicio Angular con documentacion completa
 -   [ ] ✅ Implementar componente Angular con estructura documentada
--   [ ] ✅ Configurar guards y permisos de acceso
--   [ ] ✅ Registrar rutas con lazy loading
--   [ ] ✅ Agregar al menú lateral con permisos
+-   [ ] ✅ Configurar guards y permisos de acceso (si necesario)
+-   [ ] ✅ Registrar rutas con lazy loading (si necesario)
+-   [ ] ✅ Agregar al menú lateral con permisos (si necesario)
+-   [ ] ✅ Crear archivos de pruebas unitarias (futuro)
 -   [ ] ✅ Documentar siguiendo estandares de estructuras
 -   [ ] ✅ Probar funcionalidades básicas
 -   [ ] ✅ Validar permisos y seguridad
