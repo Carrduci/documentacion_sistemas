@@ -743,6 +743,8 @@ export class VistaConteosSupervisionComponent implements OnInit {
 
 Los pipes se organizan por dominio y se comparten entre componentes del mismo objetivo. Cada pipe debe seguir la convención de nomenclatura: `pipe-[dominio]-[descripcion].pipe.ts`
 
+> ⚠️ **NOTA**: Los pipes en este ejemplo están mal nombrados según las reglas de nomenclatura CARRDUCI. Se muestran para mantener consistencia con el sistema existente, pero **NO deben usarse como referencia para nuevos pipes**.
+
 ```
 components/conteos/
 └── pipes-para-conteos/
@@ -771,8 +773,6 @@ components/conteos/
 ```
 
 #### Ejemplo de Pipe
-
-> ⚠️ **NOTA**: Los pipes en este ejemplo están mal nombrados según las reglas de nomenclatura CARRDUCI. Se muestran para mantener consistencia con el sistema existente, pero **NO deben usarse como referencia para nuevos pipes**.
 
 ```typescript
 // pipes-conteos/pipe-conteos-estado.pipe.ts  ❌ NOMBRE INCORRECTO
@@ -828,9 +828,13 @@ export class ConteosEstadoPipe implements PipeTransform {
 components/[dominio]/
 └── pipes-[dominio]/
     ├── pipes-[dominio].module.ts
-    ├── [dominio]-[descripcion].pipe.ts        # ✅ Nomenclatura correcta
-    ├── [dominio]-[descripcion].pipe.spec.ts   # ✅ Test correspondiente
+    ├── [dominio]-[descripcion]/
+    │   ├── [dominio]-[descripcion].pipe.ts        # ✅ Cada pipe en SU PROPIA carpeta
+    │   └── [dominio]-[descripcion].pipe.spec.ts   # ✅ Test correspondiente
     └── [otros pipes del dominio]/
+        ├── [dominio]-[otra-descripcion]/
+        │   ├── [dominio]-[otra-descripcion].pipe.ts
+        │   └── [dominio]-[otra-descripcion].pipe.spec.ts
 ```
 
 #### Módulo de Pipes
@@ -838,9 +842,9 @@ components/[dominio]/
 ```typescript
 // pipes-para-conteos/pipes-para-conteos.module.ts
 import { NgModule } from '@angular/core';
-import { ConteosEstadoPipe } from './conteos-estado.pipe'; // ✅ NOMBRE CORRECTO
-import { ConteosBadgeEstadoPipe } from './conteos-badge-estado.pipe'; // ✅ NOMBRE CORRECTO
-import { ConteosFormatoFechaPipe } from './conteos-formato-fecha.pipe'; // ✅ NOMBRE CORRECTO
+import { ConteosEstadoPipe } from './conteos-estado/conteos-estado.pipe'; // ✅ Desde carpeta individual
+import { ConteosBadgeEstadoPipe } from './conteos-badge-estado/conteos-badge-estado.pipe'; // ✅ Desde carpeta individual
+import { ConteosFormatoFechaPipe } from './conteos-formato-fecha/conteos-formato-fecha.pipe'; // ✅ Desde carpeta individual
 
 @NgModule({
 	declarations: [
@@ -1072,6 +1076,61 @@ carrduci-sys-api/
 
 ```
 
+> **📋 NOTA IMPORTANTE - Cambio a futuro en la estructura del API**
+>
+> **Motivación**: Para mantener consistencia con la arquitectura de la GUI y facilitar el desarrollo, próximamente se reorganizará la estructura del API siguiendo el mismo patrón modular.
+>
+> **Nueva estructura propuesta**:
+>
+> ```
+> carrduci-sys-api/
+> ├── components/                    # 📁 Carpeta principal de módulos (similar a GUI)
+> │   ├── compras/                   # 📁 Grupo de dominios relacionados
+> │   │   ├── proveedores/           # 🔧 Dominio individual
+> │   │   │   ├── proveedores.route.js       # Endpoints HTTP
+> │   │   │   ├── proveedores.controller.js  # Lógica de controladores
+> │   │   │   ├── proveedores.service.js     # Lógica de negocio
+> │   │   │   └── proveedores.model.js       # Modelo de MongoDB
+> │   │   └── pedidos/               # 🔧 Otro dominio en el grupo compras
+> │   │       ├── pedidos.route.js
+> │   │       ├── pedidos.controller.js
+> │   │       ├── pedidos.service.js
+> │   │       └── pedidos.model.js
+> │   ├── ventas/                    # 📁 Otro grupo de dominios
+> │   │   ├── clientes/
+> │   │   └── productos/
+> │   └── administracion/            # 📁 Grupo de administración
+> │       ├── usuarios/
+> │       └── permisos/
+> ├── utiles/                        # 🛠️ Utilidades del sistema
+> │   ├── response.utils.js
+> │   ├── validation.utils.js
+> │   └── crypto.utils.js
+> ├── plugins/                       # 🔌 Plugins de Mongoose
+> │   ├── historial.plugin.js
+> │   └── busqueda-texto.plugin.js
+> ├── middlewares/                   # 🎯 Middlewares personalizados
+> │   ├── autenticacion.js
+> │   └── autorizacion.js
+> └── config/                        # ⚙️ Configuraciones
+> ```
+>
+> **Principales cambios**:
+>
+> -   **Carpeta `components/`**: Centraliza todos los módulos de negocio, similar a la GUI
+> -   **Agrupación por contexto**: Dominios relacionados se agrupan en carpetas (compras, ventas, administracion)
+> -   **Archivos en raíz del dominio**: Cada dominio tiene sus 4 archivos principales directamente en la carpeta, sin subcarpetas separadas
+> -   **Separación clara**: Utilidades, plugins y middlewares tienen sus propias carpetas dedicadas
+>
+> **Beneficios**:
+>
+> -   🔄 **Consistencia**: Arquitectura idéntica entre GUI y API
+> -   🎯 **Navegación**: Más fácil encontrar componentes relacionados
+> -   📦 **Mantenimiento**: Estructura más intuitiva para nuevos desarrolladores
+> -   ⚡ **Desarrollo**: Menos carpetas anidadas, acceso directo a archivos
+>
+> **Esta reorganización se implementará de forma gradual para no afectar el funcionamiento actual del sistema.**
+
 ### 4.2 Modelo con Plugins Estándar
 
 ```javascript
@@ -1160,110 +1219,138 @@ module.exports = mongoose.model('Proveedor', proveedorSchema);
 
 ```javascript
 // services/proveedores/proveedores.service.js
-const { response } = require('../../utils/response.utils');
 const Proveedor = require('../../models/proveedores/proveedores.model');
 
 class ProveedoresService {
 	/**
 	 * Función de búsqueda UNIFICADA
+	 * Maneja: filtros, término, ID específico, paginación
 	 * Reemplaza: buscarPorTérmino, buscar, buscarPorId
-	 * Engloba: filtros, término, ID, paginación
 	 */
 	static async buscar({
 		filtros = {},
 		termino = '',
 		id = null,
-		pagina = 1,
+		desde = 0,
 		limite = 10,
-		orden = { createdAt: -1 },
-	}) {
-		try {
-			let query = {};
+		sort = -1,
+		campo = 'createdAt',
+	} = {}) {
+		// ⚠️ IMPORTANTE: = {} permite llamar la función sin argumentos
+		desde = Number(desde ?? 0);
+		limite = Number(limite ?? 10);
+		sort = Number(sort ?? -1);
+		campo = String(campo ?? 'createdAt');
+		filtros = filtros ?? {};
+		termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
 
-			// Aplicar filtros básicos
-			if (Object.keys(filtros).length > 0) {
-				query = { ...filtros };
-			}
+		// Si se proporciona un ID específico, filtrar solo por ese ID
+		if (id) {
+			const proveedor = await Proveedor.findOne({ _id: id })
+				.select('-busqueda -__v')
+				.lean();
 
-			// Búsqueda por término de texto
-			if (termino) {
-				query.$text = { $search: termino };
-			}
-
-			// Búsqueda específica por ID
-			if (id) {
-				query._id = id;
-			}
-
-			const opciones = {
-				page: pagina,
-				limit: limite,
-				sort: orden,
-				populate: [
-					// populate necesarios para proveedores
-				],
+			return {
+				resultado: proveedor ? [proveedor] : [],
+				total: proveedor ? 1 : 0,
 			};
-
-			const resultado = await Proveedor.paginate(query, opciones);
-
-			return response.success({
-				datos: resultado.docs,
-				paginacion: {
-					total: resultado.totalDocs,
-					pagina: resultado.page,
-					paginas: resultado.totalPages,
-					limite: resultado.limit,
-					hasNext: resultado.hasNextPage,
-					hasPrev: resultado.hasPrevPage,
-				},
-			});
-		} catch (error) {
-			return response.error(error.message);
 		}
+
+		let filtrosProcesar = {
+			...filtros,
+			terminoTextSearch: termino,
+		};
+		let queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
+		let total = await Proveedor.countDocuments(queryFiltros);
+
+		if (total === 0) {
+			filtrosProcesar.terminoRegex = termino;
+			delete filtrosProcesar.terminoTextSearch;
+			queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
+			total = await Proveedor.countDocuments(queryFiltros);
+		}
+
+		const ES_BUSQUEDA_TEXTO = !!queryFiltros.$text;
+		const PROJECTION = ES_BUSQUEDA_TEXTO
+			? { score: { $meta: 'textScore' } }
+			: {};
+		const CRITERIOS_SORT = ES_BUSQUEDA_TEXTO
+			? { [campo]: sort, _id: sort, score: { $meta: 'textScore' } }
+			: { [campo]: sort, _id: sort };
+
+		const resultado = await Proveedor.find(queryFiltros, PROJECTION)
+			.skip(desde)
+			.limit(limite)
+			.sort(CRITERIOS_SORT)
+			.select('-busqueda -__v -score')
+			.lean();
+
+		return { resultado, total };
 	}
 
 	/**
 	 * Crear nuevo proveedor
 	 */
 	static async crear(datos) {
-		try {
-			const nuevoProveedor = new Proveedor(datos);
+		const nuevoProveedor = new Proveedor(datos);
 
-			// Agregar metadata para historial
-			nuevoProveedor.metadata = {
-				idUsuario: datos.usuario,
-				descripcion: 'Proveedor creado',
-			};
+		// Agregar metadata para historial
+		nuevoProveedor.metadata = {
+			idUsuario: datos.usuario,
+			descripcion: 'Proveedor creado',
+		};
 
-			const proveedorGuardado = await nuevoProveedor.save();
-			return response.success(proveedorGuardado);
-		} catch (error) {
-			return response.error(error.message);
-		}
+		return await nuevoProveedor.save();
 	}
 
 	/**
 	 * Actualizar proveedor
+	 * ⚠️ IMPORTANTE: Eliminar campos que se modifican en métodos específicos del negocio
+	 * (ej: campos de estatus, campos calculados, etc.)
 	 */
 	static async actualizar(id, datos) {
-		try {
-			const resultado = await Proveedor.findByIdAndUpdate(id, datos, {
-				new: true,
-				runValidators: true,
-				metadata: {
-					idUsuario: datos.usuario,
-					descripcion: 'Proveedor actualizado',
-				},
-			});
+		// Destructuring para excluir campos que se manejan en métodos específicos:
+		// - { estado, ...datosLimpios } extrae 'estado' del objeto 'datos'
+		// - ...datosLimpios crea nuevo objeto con TODAS las demás propiedades
+		// - Resultado: 'estado' queda excluido del objeto que se actualiza
+		const { estado, ...datosLimpios } = datos; // Ejemplo: estado se modifica en métodos específicos
 
-			if (!resultado) {
-				return response.error('Proveedor no encontrado');
-			}
+		return await Proveedor.findOneAndUpdate({ _id: id }, datosLimpios, {
+			new: true,
+			runValidators: true,
+			context: 'query',
+			metadata: {
+				idUsuario: datos.usuario,
+				descripcion: 'Proveedor actualizado',
+			},
+		});
+	}
 
-			return response.success(resultado);
-		} catch (error) {
-			return response.error(error.message);
+	// Función helper para filtros (se pueden agregar más según necesidades del negocio)
+	// Ejemplos comunes de filtros en CARRDUCI:
+	// - Filtros exactos: folio, usuario, activo, etc.
+	// - Filtros booleanos: prioridad, estado, etc.
+	// - Filtros de fecha: updatedAt >= fecha, createdAt <= fecha
+	// - Filtros de subdocumentos: 'estatus.aprobado', 'contacto.email'
+	// - Filtros de existencia: campo: { $exists: true/false }
+	static queryFiltrosProveedores({ terminoTextSearch, terminoRegex }) {
+		let filtros = {};
+		if (!!terminoTextSearch) {
+			filtros.$text = {
+				$search: `${terminoTextSearch} "${terminoTextSearch}"`,
+			};
 		}
+		if (!!terminoRegex) {
+			filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
+		}
+
+		// Ejemplos de filtros adicionales que se pueden agregar:
+		// if (filtros.activo !== undefined) filtros.activo = filtros.activo;
+		// if (filtros.fecha) filtros.updatedAt = { $gte: filtros.fecha };
+		// if (filtros.estado) filtros['estatus.estado'] = filtros.estado;
+		// if (filtros.existeContacto) filtros.contacto = { $exists: true };
+
+		return filtros;
 	}
 
 	// Otros métodos específicos del negocio...
@@ -1283,19 +1370,36 @@ class ProveedoresController {
 	 */
 	static async obtener(req, res) {
 		try {
-			const { filtros, termino, pagina, limite, orden } = req.query;
+			const { filtros, termino, desde, limite, sort, campo } = req.query;
 
-			const resultado = await ProveedoresService.buscar({
+			// ⚠️ IMPORTANTE: Crear nueva instancia para evitar race conditions
+			// En entornos concurrentes, métodos estáticos comparten estado entre requests
+			// Crear instancias asegura aislamiento entre peticiones concurrentes
+			const { resultado, total } = await new ProveedoresService().buscar({
 				filtros: filtros ? JSON.parse(filtros) : {},
 				termino,
-				pagina: parseInt(pagina) || 1,
+				desde: parseInt(desde) || 0,
 				limite: parseInt(limite) || 10,
-				orden: orden ? JSON.parse(orden) : { createdAt: -1 },
+				sort: parseInt(sort) || -1,
+				campo: campo || 'createdAt',
 			});
 
-			return response.send(res, resultado);
+			// Crear instancia de respuesta y enviar
+			const resp = new response(res, __filename, {
+				mensaje: 'Proveedores obtenidos exitosamente',
+				datos: {
+					proveedores: resultado,
+					total,
+				},
+			});
+			return resp._200_ok();
 		} catch (error) {
-			return response.error(res, error.message);
+			// Crear instancia de respuesta de error
+			const resp = new response(res, __filename, {
+				mensaje: 'Error al obtener proveedores',
+				error: error,
+			});
+			return resp._500_internal_server_error();
 		}
 	}
 
@@ -1304,14 +1408,22 @@ class ProveedoresController {
 	 */
 	static async crearProveedor(req, res) {
 		try {
-			const resultado = await ProveedoresService.crear({
+			const resultado = await new ProveedoresService().crear({
 				...req.body,
 				usuario: req.user._id,
 			});
 
-			return response.send(res, resultado);
+			const resp = new response(res, __filename, {
+				mensaje: 'Proveedor creado exitosamente',
+				datos: resultado,
+			});
+			return resp._201_created();
 		} catch (error) {
-			return response.error(res, error.message);
+			const resp = new response(res, __filename, {
+				mensaje: 'Error al crear proveedor',
+				error: error,
+			});
+			return resp._500_internal_server_error();
 		}
 	}
 
@@ -1321,14 +1433,22 @@ class ProveedoresController {
 	static async actualizarProveedor(req, res) {
 		try {
 			const { id } = req.params;
-			const resultado = await ProveedoresService.actualizar(id, {
+			const resultado = await new ProveedoresService().actualizar(id, {
 				...req.body,
 				usuario: req.user._id,
 			});
 
-			return response.send(res, resultado);
+			const resp = new response(res, __filename, {
+				mensaje: 'Proveedor actualizado exitosamente',
+				datos: resultado,
+			});
+			return resp._200_ok();
 		} catch (error) {
-			return response.error(res, error.message);
+			const resp = new response(res, __filename, {
+				mensaje: 'Error al actualizar proveedor',
+				error: error,
+			});
+			return resp._500_internal_server_error();
 		}
 	}
 
@@ -1338,11 +1458,27 @@ class ProveedoresController {
 	static async obtenerPorId(req, res) {
 		try {
 			const { id } = req.params;
-			const resultado = await ProveedoresService.buscar({ id });
+			const { resultado } = await new ProveedoresService().buscar({ id });
 
-			return response.send(res, resultado);
+			if (!resultado[0]) {
+				const resp = new response(res, __filename, {
+					mensaje: 'Proveedor no encontrado',
+					error: new Error('Proveedor no encontrado'),
+				});
+				return resp._404_not_found();
+			}
+
+			const resp = new response(res, __filename, {
+				mensaje: 'Proveedor encontrado',
+				datos: resultado[0],
+			});
+			return resp._200_ok();
 		} catch (error) {
-			return response.error(res, error.message);
+			const resp = new response(res, __filename, {
+				mensaje: 'Error al obtener proveedor',
+				error: error,
+			});
+			return resp._500_internal_server_error();
 		}
 	}
 
@@ -1363,24 +1499,28 @@ const permisos = require('../../config/permisos.config');
 router.post(
 	'/',
 	permisos.$('proveedores:crear'),
-	ProveedoresController.crearProveedor
+	new ProveedoresController().crearProveedor
 );
 
 // Obtener proveedores con filtros y paginación
-router.get('/', permisos.$('proveedores:leer'), ProveedoresController.obtener);
+router.get(
+	'/',
+	permisos.$('proveedores:leer'),
+	new ProveedoresController().obtener
+);
 
 // Obtener proveedor específico por ID
 router.get(
 	'/id/:id',
 	permisos.$('proveedores:leer'),
-	ProveedoresController.obtenerPorId
+	new ProveedoresController().obtenerPorId
 );
 
 // Actualizar proveedor
 router.put(
 	'/id/:id',
 	permisos.$('proveedores:actualizar'),
-	ProveedoresController.actualizarProveedor
+	new ProveedoresController().actualizarProveedor
 );
 
 // Otros endpoints específicos...
@@ -1390,23 +1530,632 @@ module.exports = router;
 
 ## 5. Documentación Estándar
 
-### 5.1 Rutas (`pages.routes.ts`)
+La documentacion en CARRDUCI sigue reglas estrictas definidas en el archivo [`4-estructuras-de-documentacion.md`](./4-estructuras-de-documentacion.md). Todos los archivos deben estar completamente documentados siguiendo estos estandares.
 
-Agregar entrada con lazy loading usando `loadComponent`:
+### 5.1 Reglas Generales de Documentación
+
+#### ✅ **Comentarios JSDoc Obligatorios:**
+
+-   **Funciones y metodos**: Siempre usar `@param`, `@returns`, `@throws`
+-   **Clases**: Documentar con `@class` y descripcion completa
+-   **Propiedades**: Usar `@type` y descripcion
+
+#### ✅ **Separadores de Sección:**
+
+-   **Archivos grandes**: Usar separadores de seccion con `#region`
+-   **Funciones complejas**: Usar sub-separadores dentro de funciones
+
+#### ✅ **Estructura de Archivos:**
+
+-   **Comentarios arriba** de lineas, nunca al lado
+-   **Sin acentos** ni caracteres especiales en comentarios de codigo
+-   **Espacios** antes y despues de bloques comentados
+
+### 5.2 Documentación por Tipo de Archivo
+
+#### 5.2.1 Modelos de API (`models/*.model.js`)
+
+**Estructura obligatoria:**
+
+```javascript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+/* IMPORTACIONES EXTERNAS */
+const mongoose = require('mongoose');
+
+/* OTROS MODELOS */
+/* SERVICIOS */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+// (o==================================================================o)
+//   #region ESQUEMA
+// (o-----------------------------------------------------------\/-----o)
+
+/** -----------------------------------------------------
+  - NOMBRE: `Nombre del Esquema`
+  - Fecha documentacion: 01, October 2025
+  - Archivo: models/ejemplo.model.js
+
+  - Descripcion:
+  Descripcion completa del esquema y su proposito
+  en el sistema CARRDUCI.
+----------------------------------------------------- */
+
+const ejemploSchema = new mongoose.Schema(
+	{
+		// Documentar cada campo con JSDoc
+		/** @type {String} Nombre del elemento */
+		nombre: {
+			type: String,
+			required: true,
+			trim: true,
+		},
+
+		/** @type {Boolean} Estado activo/inactivo */
+		activo: {
+			type: Boolean,
+			default: true,
+		},
+	},
+	{
+		timestamps: true,
+		collection: 'ejemplos',
+	}
+);
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion ESQUEMA
+// (o==================================================================o)
+
+// (o==================================================================o)
+//   #region PLUGINS Y METODOS
+// (o-----------------------------------------------------------\/-----o)
+
+// Aplicar plugins con comentarios
+ejemploSchema.plugin(historialPlugin); // Plugin de historial de cambios
+ejemploSchema.plugin(textSearchPlugin); // Plugin de busqueda de texto
+
+// Indices con documentacion
+ejemploSchema.index({ nombre: 1 }); // Indice para busqueda por nombre
+ejemploSchema.index({ activo: 1 }); // Indice para filtrado por estado
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion PLUGINS Y METODOS
+// (o==================================================================o)
+
+// (o==================================================================o)
+//   #region EXPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+// Crear instancia del modelo (OBLIGATORIO en este nivel)
+const EJEMPLO_MODEL = mongoose.model('Ejemplo', ejemploSchema);
+
+module.exports = EJEMPLO_MODEL;
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion EXPORTACIONES
+// (o==================================================================o)
+```
+
+#### 5.2.2 Servicios de API (`services/**/*.service.js`)
+
+**Estructura obligatoria:**
+
+```javascript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+const EJEMPLO_MODEL = require('../models/ejemplo.model');
+
+/* IMPORTACIONES EXTERNAS */
+/* OTROS MODELOS */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+class EjemploService {
+	/**
+	 * Función de búsqueda unificada
+	 * @param {Object} params - Parametros de busqueda
+	 * @param {Object} params.filtros - Filtros adicionales
+	 * @param {string} params.termino - Termino de busqueda
+	 * @param {string} params.id - ID especifico para buscar
+	 * @param {number} params.desde - Indice desde donde buscar
+	 * @param {number} params.limite - Limite de resultados
+	 * @param {number} params.sort - Orden de resultados
+	 * @param {string} params.campo - Campo por el cual ordenar
+	 * @returns {Promise<{resultado: Array, total: number}>}
+	 */
+	buscar({
+		filtros = {},
+		termino = '',
+		id = null,
+		desde = 0,
+		limite = 10,
+		sort = -1,
+		campo = 'createdAt',
+	} = {}) {
+		desde = Number(desde ?? 0);
+		limite = Number(limite ?? 10);
+		sort = Number(sort ?? -1);
+		campo = String(campo ?? 'createdAt');
+		filtros = filtros ?? {};
+		termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
+
+		// Si se proporciona un ID específico, filtrar solo por ese ID
+		if (id) {
+			const elemento = EJEMPLO_MODEL.findOne({ _id: id })
+				.select('-busqueda -__v')
+				.lean();
+
+			return {
+				resultado: elemento ? [elemento] : [],
+				total: elemento ? 1 : 0,
+			};
+		}
+
+		let filtrosProcesar = {
+			...filtros,
+			terminoTextSearch: termino,
+		};
+		let queryFiltros = this.queryFiltrosEjemplo(filtrosProcesar);
+		let total = EJEMPLO_MODEL.countDocuments(queryFiltros);
+
+		if (total === 0) {
+			filtrosProcesar.terminoRegex = termino;
+			delete filtrosProcesar.terminoTextSearch;
+			queryFiltros = this.queryFiltrosEjemplo(filtrosProcesar);
+			total = EJEMPLO_MODEL.countDocuments(queryFiltros);
+		}
+
+		const ES_BUSQUEDA_TEXTO = !!queryFiltros.$text;
+		const PROJECTION = ES_BUSQUEDA_TEXTO
+			? { score: { $meta: 'textScore' } }
+			: {};
+		const CRITERIOS_SORT = ES_BUSQUEDA_TEXTO
+			? { [campo]: sort, _id: sort, score: { $meta: 'textScore' } }
+			: { [campo]: sort, _id: sort };
+
+		const resultado = EJEMPLO_MODEL.find(queryFiltros, PROJECTION)
+			.skip(desde)
+			.limit(limite)
+			.sort(CRITERIOS_SORT)
+			.select('-busqueda -__v -score')
+			.lean();
+
+		return { resultado, total };
+	}
+
+	/**
+	 * Crear nuevo elemento
+	 * @param {Object} datos - Datos del elemento a crear
+	 * @returns {Promise<Object>} Elemento creado
+	 */
+	async crear(datos) {
+		const nuevoElemento = new EJEMPLO_MODEL(datos);
+
+		// Agregar metadata para historial
+		nuevoElemento.metadata = {
+			idUsuario: datos.usuario,
+			descripcion: 'Elemento creado',
+		};
+
+		return await nuevoElemento.save();
+	}
+
+	/**
+	 * Actualizar elemento
+	 * @param {string} id - ID del elemento
+	 * @param {Object} datos - Datos actualizados
+	 * @returns {Promise<Object>} Elemento actualizado
+	 */
+	async actualizar(id, datos) {
+		// Destructuring para excluir campos que se manejan en métodos específicos
+		const { estado, ...datosLimpios } = datos; // Ejemplo: estado se modifica en métodos específicos
+
+		return await EJEMPLO_MODEL.findOneAndUpdate(
+			{ _id: id },
+			datosLimpios,
+			{
+				new: true,
+				runValidators: true,
+				context: 'query',
+				metadata: {
+					idUsuario: datos.usuario,
+					descripcion: 'Elemento actualizado',
+				},
+			}
+		);
+	}
+
+	// Función helper para filtros
+	queryFiltrosEjemplo({ terminoTextSearch, terminoRegex }) {
+		let filtros = {};
+		if (!!terminoTextSearch) {
+			filtros.$text = {
+				$search: `${terminoTextSearch} "${terminoTextSearch}"`,
+			};
+		}
+		if (!!terminoRegex) {
+			filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
+		}
+
+		// Ejemplos de filtros adicionales que se pueden agregar:
+		// if (filtros.activo !== undefined) filtros.activo = filtros.activo;
+		// if (filtros.fecha) filtros.updatedAt = { $gte: filtros.fecha };
+		// if (filtros.estado) filtros['estatus.estado'] = filtros.estado;
+		// if (filtros.existeContacto) filtros.contacto = { $exists: true };
+
+		return filtros;
+	}
+}
+
+module.exports = EjemploService;
+```
+
+#### 5.2.3 Controladores de API (`controllers/**/*.controller.js`)
+
+**Estructura obligatoria:**
+
+```javascript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+const { response } = require('../../utils/response.utils');
+const EJEMPLO_SERVICE = require('../services/ejemplo.service');
+
+/* IMPORTACIONES EXTERNAS */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+class EjemploController {
+    /**
+     * Obtener elementos con filtros y paginacion
+     * @param {Object} req - Request object
+     * @param {Object} res - Response object
+     */
+    static async obtener(req, res) {
+        try {
+            // Implementacion con manejo de errores
+            const { resultado, total } = await new EJEMPLO_SERVICE().buscar({...});
+
+            const resp = new response(res, __filename, {
+                mensaje: 'Elementos obtenidos exitosamente',
+                datos: { elementos: resultado, total }
+            });
+            return resp._200_ok();
+        } catch (error) {
+            const resp = new response(res, __filename, {
+                mensaje: 'Error al obtener elementos',
+                error: error
+            });
+            return resp._500_internal_server_error();
+        }
+    }
+
+    // Otros metodos documentados...
+}
+
+module.exports = EjemploController;
+```
+
+#### 5.2.4 Rutas de API (`routes/**/*.route.js`)
+
+**Estructura obligatoria:**
+
+```javascript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+const express = require('express');
+const EJEMPLO_CONTROLLER = require('../controllers/ejemplo.controller');
+const permisos = require('../config/permisos.config');
+
+/* MIDDLEWARES */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+const router = express.Router();
+
+// (o==================================================================o)
+//   #region ENDPOINTS CRUD
+// (o-----------------------------------------------------------\/-----o)
+
+// Crear elemento
+router.post(
+	'/',
+	permisos.$('ejemplo:crear'),
+	new EJEMPLO_CONTROLLER().crearElemento
+);
+
+// Obtener elementos
+router.get('/', permisos.$('ejemplo:leer'), new EJEMPLO_CONTROLLER().obtener);
+
+// Obtener elemento especifico
+router.get(
+	'/:id',
+	permisos.$('ejemplo:leer'),
+	new EJEMPLO_CONTROLLER().obtenerPorId
+);
+
+// Actualizar elemento
+router.put(
+	'/:id',
+	permisos.$('ejemplo:actualizar'),
+	new EJEMPLO_CONTROLLER().actualizarElemento
+);
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion ENDPOINTS CRUD
+// (o==================================================================o)
+
+module.exports = router;
+```
+
+#### 5.2.5 Componentes de GUI - TypeScript (`components/**/*.component.ts`)
+
+**Estructura obligatoria:**
 
 ```typescript
-{
-    path: 'administracion/proveedores',
-    canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
-    data: {
-        titulo: 'Administración de proveedores',
-        permissions: permisosKeysConfig['menu:administracion:proveedores']
-    }
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+/* SERVICIOS */
+/* MODELOS */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+/**
+ * Componente de administracion de ejemplos
+ * Gestiona el CRUD completo de elementos de ejemplo
+ */
+@Component({
+	selector: 'app-vista-administracion-ejemplos',
+	templateUrl: './vista-administracion-ejemplos.component.html',
+	styleUrls: ['./vista-administracion-ejemplos.component.css'],
+})
+export class VistaAdministracionEjemplosComponent implements OnInit {
+	// (o==================================================================o)
+	//   #region PROPIEDADES
+	// (o-----------------------------------------------------------\/-----o)
+
+	/** Formulario reactivo para creacion/edicion */
+	formulario: FormGroup;
+
+	/** Listado de elementos */
+	elementos: any[] = [];
+
+	/** Estado de carga */
+	cargando = false;
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion PROPIEDADES
+	// (o==================================================================o)
+
+	/**
+	 * Constructor del componente
+	 * @param fb FormBuilder para crear formularios reactivos
+	 * @param route ActivatedRoute para obtener parametros de ruta
+	 */
+	constructor(private fb: FormBuilder, private route: ActivatedRoute) {
+		this.crearFormulario();
+	}
+
+	// (o==================================================================o)
+	//   #region CICLO DE VIDA
+	// (o-----------------------------------------------------------\/-----o)
+
+	/**
+	 * Inicializacion del componente
+	 */
+	ngOnInit(): void {
+		this.cargarElementos();
+	}
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion CICLO DE VIDA
+	// (o==================================================================o)
+
+	// (o==================================================================o)
+	//   #region METODOS PUBLICOS
+	// (o-----------------------------------------------------------\/-----o)
+
+	/**
+	 * Carga la lista de elementos desde el API
+	 */
+	cargarElementos(): void {
+		this.cargando = true;
+		// Implementacion
+		this.cargando = false;
+	}
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion METODOS PUBLICOS
+	// (o==================================================================o)
+
+	// (o==================================================================o)
+	//   #region METODOS PRIVADOS
+	// (o-----------------------------------------------------------\/-----o)
+
+	/**
+	 * Crea el formulario reactivo con validaciones
+	 */
+	private crearFormulario(): void {
+		this.formulario = this.fb.group({
+			nombre: [''],
+			descripcion: [''],
+		});
+	}
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion METODOS PRIVADOS
+	// (o==================================================================o)
 }
 ```
 
-### 5.2 Sistema de Permisos
+#### 5.2.6 Servicios de GUI (`services/**/*.service.ts`)
+
+**Estructura obligatoria:**
+
+```typescript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+/* MODELOS */
+/* INTERFACES */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+/**
+ * Servicio para gestion de ejemplos
+ * Maneja todas las operaciones HTTP relacionadas con ejemplos
+ */
+@Injectable({
+	providedIn: 'root',
+})
+export class EjemploService {
+	// (o==================================================================o)
+	//   #region PROPIEDADES
+	// (o-----------------------------------------------------------\/-----o)
+
+	/** URL base del API */
+	private readonly API_URL = '/api/ejemplos';
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion PROPIEDADES
+	// (o==================================================================o)
+
+	/**
+	 * Constructor del servicio
+	 * @param http Cliente HTTP de Angular
+	 */
+	constructor(private http: HttpClient) {}
+
+	// (o==================================================================o)
+	//   #region METODOS CRUD
+	// (o-----------------------------------------------------------\/-----o)
+
+	/**
+	 * Obtiene lista de elementos con filtros y paginacion
+	 * @param filtros Filtros de busqueda
+	 * @param pagina Numero de pagina
+	 * @param limite Cantidad de elementos por pagina
+	 * @returns Observable con lista de elementos
+	 */
+	obtenerElementos(
+		filtros?: any,
+		pagina: number = 1,
+		limite: number = 10
+	): Observable<any> {
+		const params = { filtros, pagina, limite };
+		return this.http.get(this.API_URL, { params });
+	}
+
+	/**
+	 * Crea un nuevo elemento
+	 * @param elemento Datos del elemento a crear
+	 * @returns Observable con elemento creado
+	 */
+	crearElemento(elemento: any): Observable<any> {
+		return this.http.post(this.API_URL, elemento);
+	}
+
+	/**
+	 * Actualiza un elemento existente
+	 * @param id ID del elemento a actualizar
+	 * @param elemento Datos actualizados del elemento
+	 * @returns Observable con elemento actualizado
+	 */
+	actualizarElemento(id: string, elemento: any): Observable<any> {
+		return this.http.put(`${this.API_URL}/${id}`, elemento);
+	}
+
+	// (o-----------------------------------------------------------/\-----o)
+	//   #endregion METODOS CRUD
+	// (o==================================================================o)
+}
+```
+
+#### 5.2.7 Guards de Angular (`guards/**/*.guard.ts`)
+
+**Estructura obligatoria:**
+
+```typescript
+// (o==================================================================o)
+//   #region IMPORTACIONES
+// (o-----------------------------------------------------------\/-----o)
+
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+
+/* SERVICIOS */
+/* UTILIDADES */
+
+// (o-----------------------------------------------------------/\-----o)
+//   #endregion IMPORTACIONES
+// (o==================================================================o)
+
+/**
+ * Guard para verificar permisos de acceso
+ * Protege rutas que requieren permisos especificos
+ */
+@Injectable({
+	providedIn: 'root',
+})
+export class PermisosGuard implements CanActivate {
+	/**
+	 * Constructor del guard
+	 * @param router Router de Angular para navegacion
+	 */
+	constructor(private router: Router) {}
+
+	/**
+	 * Verifica si el usuario puede acceder a la ruta
+	 * @param route Ruta que se intenta acceder
+	 * @param state Estado del router
+	 * @returns true si tiene acceso, false si no
+	 */
+	canActivate(route: any, state: any): boolean {
+		// Implementacion de verificacion de permisos
+		return true; // o false con redireccion
+	}
+}
+```
+
+### 5.3 Sistema de Permisos
 
 #### Archivo 1: `permisosKeys.config.ts`
 
@@ -1419,16 +2168,13 @@ Agregar la clave del permiso:
 
 #### Archivo 2: `permisos.config.ts`
 
-Configurar permisos descriptivos:
+Configurar permisos descriptivos (NO_DEFINIDO por defecto):
 
 ```typescript
 // En permisos.config.ts
 export const permisosConfig = {
 	// ... otros permisos
-	'menu:administracion:proveedores': {
-		descripcion: 'Administración de proveedores',
-		modulo: 'administracion',
-	},
+	'menu:administracion:proveedores': NO_DEFINIDO,
 };
 ```
 
@@ -1444,9 +2190,25 @@ Agregar el permiso correspondiente:
 // ... otros permisos específicos de proveedores
 ```
 
-### 5.3 Menú Lateral (`login.menus.js`)
+### 5.4 Rutas de GUI (`pages.routes.ts`)
 
-#### Agregar Menú Principal
+Agregar entrada con lazy loading:
+
+```typescript
+{
+    path: 'administracion/proveedores',
+    canActivate: [VerificaTokenGuard, PermisosGuard],
+    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
+    data: {
+        titulo: 'Administración de proveedores',
+        permissions: permisosKeysConfig['menu:administracion:proveedores']
+    }
+}
+```
+
+### 5.5 Menú Lateral (`login.menus.js`)
+
+Agregar menú principal:
 
 ```javascript
 function administracion() {
@@ -1467,23 +2229,23 @@ function administracion() {
 }
 ```
 
-## Checklist para Crear Componentes Nuevos
+### 5.6 Checklist para Crear Componentes Nuevos
 
 -   [ ] ✅ Planificar estructura de carpetas por dominio
--   [ ] ✅ Crear componentes con módulos independientes
--   [ ] ✅ Implementar pipes para lógica de templates
--   [ ] ✅ Configurar permisos en GUI y API
+-   [ ] ✅ Crear modelo API con documentacion JSDoc completa
+-   [ ] ✅ Implementar servicio API con separadores de seccion
+-   [ ] ✅ Desarrollar controlador API con manejo de errores
+-   [ ] ✅ Crear rutas API con protecciones y documentacion
+-   [ ] ✅ Crear servicio Angular con documentacion completa
+-   [ ] ✅ Implementar componente Angular con estructura documentada
+-   [ ] ✅ Configurar guards y permisos de acceso
 -   [ ] ✅ Registrar rutas con lazy loading
--   [ ] ✅ Agregar al menú lateral
--   [ ] ✅ Crear modelo con plugins estándar (historial + búsqueda)
--   [ ] ✅ Implementar servicio con búsqueda unificada
--   [ ] ✅ Desarrollar controlador usando response.utils
--   [ ] ✅ Crear rutas con protecciones
--   [ ] ✅ Documentar siguiendo estándares
+-   [ ] ✅ Agregar al menú lateral con permisos
+-   [ ] ✅ Documentar siguiendo estandares de estructuras
 -   [ ] ✅ Probar funcionalidades básicas
 -   [ ] ✅ Validar permisos y seguridad
 -   [ ] ✅ Verificar integración con sistema existente
 
 ## Conclusión
 
-Este proceso asegura que todos los componentes nuevos sigan los mismos estándares de calidad, seguridad y mantenibilidad que el resto del sistema CARRDUCI. La consistencia en la estructura y patrones facilita el mantenimiento y la incorporación de nuevos desarrolladores al proyecto.
+Este proceso asegura que todos los componentes nuevos sigan los mismos estandares de calidad, seguridad, mantenibilidad y **documentacion completa** que el resto del sistema CARRDUCI. La documentacion siguiendo las reglas de `4-estructuras-de-documentacion.md` facilita el mantenimiento y la incorporación de nuevos desarrolladores al proyecto.
