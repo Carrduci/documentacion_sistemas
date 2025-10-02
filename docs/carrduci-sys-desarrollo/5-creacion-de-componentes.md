@@ -277,6 +277,35 @@ Esto significa que cada ruta en `pages.routes.ts` carga directamente su módulo 
 }
 ```
 
+En el módulo se debe generar una ruta única para el componente.
+
+```typescript
+// Archivo: components/administracion/vista-administracion-proveedores/vista-administracion-proveedores.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { VistaAdministracionProveedoresComponent } from './vista-administracion-proveedores.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+	{
+		path: '',
+		component: VistaAdministracionProveedoresComponent,
+	},
+	// Aquí puedes agregar rutas adicionales si el módulo tiene sub-rutas
+];
+
+@NgModule({
+	declarations: [VistaAdministracionProveedoresComponent],
+	imports: [
+		RouterModule.forChild(routes),
+		CommonModule,
+		// ... otros imports
+	],
+	exports: [VistaAdministracionProveedoresComponent],
+})
+export class VistaAdministracionProveedoresModule {}
+```
+
 **Características de la implementación actual:**
 
 -   ✅ **Componentes independientes**: Cada vista tiene su propio módulo y se carga individualmente
@@ -889,10 +918,11 @@ import permisosKeysConfig from 'src/app/config/permisosKeys.config';
 ```
 
 ?> **IMPORTANTE**: En CARRDUCI se usa `loadChildren` para cargar módulos independientes porque:
-- ✅ **Lazy loading completo**: Carga el módulo y todas sus dependencias bajo demanda
-- ✅ **Módulo independiente**: Cada componente tiene su propio módulo con todas las dependencias necesarias
-- ✅ **Optimización**: Solo se carga cuando el usuario navega a esa ruta específica
-- ✅ **Consistencia**: Arquitectura "cada componente su módulo" requiere `loadChildren`
+
+-   ✅ **Lazy loading completo**: Carga el módulo y todas sus dependencias bajo demanda
+-   ✅ **Módulo independiente**: Cada componente tiene su propio módulo con todas las dependencias necesarias
+-   ✅ **Optimización**: Solo se carga cuando el usuario navega a esa ruta específica
+-   ✅ **Consistencia**: Arquitectura "cada componente su módulo" requiere `loadChildren`
 
 **NO usar `loadComponent`** - Este método es para componentes standalone sin módulo propio.
 
@@ -1089,13 +1119,12 @@ function compras() {
 
 carrduci-sys-api/
 ├── routes/proveedores/
-│ └── proveedores.route.js # Endpoints HTTP
-├── controllers/proveedores/
+│ ├── proveedores.route.js # Endpoints HTTP
 │ └── proveedores.controller.js # Lógica de controladores
 ├── services/proveedores/
 │ └── proveedores.service.js # Lógica de negocio
 └── models/proveedores/
-└── proveedores.model.js # Modelo de MongoDB
+	└── proveedores.model.js # Modelo de MongoDB
 
 ```
 
