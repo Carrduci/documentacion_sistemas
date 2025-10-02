@@ -1,60 +1,61 @@
--   <b class="title-badge">Home</b>
--   [Readme](./README.md)
+- <b class="title-badge">Home</b>
+- [Readme](./README.md)
 
--   <b class="title-badge">Carrduci Sys</b>
-    -   [1 Generacion Certificados](./docs/carrduci-sys/1-generacion-certificados.md)
-    -   [2 Despliegue Csys](./docs/carrduci-sys/2-despliegue-csys.md)
-    -   [3 Administracion Respaldos](./docs/carrduci-sys/3-administracion-respaldos.md)
-    -   [4 Crear Respaldo Manualmente](./docs/carrduci-sys/4-crear-respaldo-manualmente.md)
-    -   [5 Restauracion Respaldos En Servidor](./docs/carrduci-sys/5-restauracion-respaldos-en-servidor.md)
-    -   [6 Instalar Certificado En Computadora Usuario](./docs/carrduci-sys/6-instalar-certificado-en-computadora-usuario.md)
-    -   [Servidor Samba Carpeta Respaldos](./docs/carrduci-sys/servidor-samba-carpeta-respaldos.md)
--   <b class="title-badge">Carrduci Sys Desarrollo</b>
-    -   [1 Instalacion Wsl](./docs/carrduci-sys-desarrollo/1-instalacion-wsl.md)
-    -   [2 Entorno Desarollo](./docs/carrduci-sys-desarrollo/2-entorno-desarollo.md)
-    -   [3 Estructura De Archivos Y Codigo](./docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md)
-    -   [4 Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md)
-    -   [5 Creacion De Componentes](./docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md)
-    -   [6 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md)
-    -   <b class="title-badge">Css</b>
-        -   [Colores Css](./docs/carrduci-sys-desarrollo/css/colores-css.md)
-        -   [Valores Dimensiones Css](./docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md)
-    -   <b class="title-badge">Uso Componentes</b>
-        -   [Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)
-        -   [Busqueda Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)
-        -   [Calendario Generico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)
-        -   [Carga De Imagenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)
-        -   [Carrusel De Imagenes Generico](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)
-        -   [Claves Autorizacion](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)
-        -   [Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)
-        -   [Flotante Generico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)
-        -   [Formulario Dinamico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)
-        -   [Gestor De Impresiones](./docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md)
-        -   [Historial](./docs/carrduci-sys-desarrollo/uso-componentes/historial.md)
-        -   [Manejo De Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)
-        -   [Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)
-        -   [Modal](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)
-        -   [Paginacion Y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)
-        -   [Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)
-        -   [Selector Fechas Generico](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)
-        -   [Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)
-        -   [Tabla Editable Generica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)
-        -   [Tabla Generica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md)
-        -   [Vista Generica](./docs/carrduci-sys-desarrollo/uso-componentes/vista-generica.md)
-        -   [Zona Comentarios Generica](./docs/carrduci-sys-desarrollo/uso-componentes/zona-comentarios-generica.md)
--   <b class="title-badge">Docker</b>
-    -   [Uso Docker](./docs/docker/uso-docker.md)
--   <b class="title-badge">Documentacion Sistemas</b>
-    -   [1 Estructura Y Organizacion](./docs/documentacion-sistemas/1-estructura-y-organizacion.md)
-    -   [2 Personalizacion Avanzada](./docs/documentacion-sistemas/2-personalizacion-avanzada.md)
--   <b class="title-badge">Odbc Mongo</b>
-    -   [1 Instalar Conector Bi Mongo En Linux](./docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
-    -   [2 Conectar A Bi De Mongo Remotamente Desde Windows](./docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
--   <b class="title-badge">Ubuntu Server</b>
-    -   [Conexion Ssh](./docs/ubuntu-server/conexion-ssh.md)
-    -   [Configurar Ubuntu Server](./docs/ubuntu-server/configurar-ubuntu-server.md)
-    -   [Llave Ssh](./docs/ubuntu-server/llave-ssh.md)
--   <b class="title-badge">Visual Studio Code</b>
-    -   [Agregar Snippets](./docs/visual-studio-code/agregar-snippets.md)
--   <b class="title-badge">Windows</b>
-    -   [Establecer Copia Automatica De Respaldos](./docs/windows/establecer-copia-automatica-de-respaldos.md)
+- <b class="title-badge">Carrduci Sys</b>
+  - [1 Generacion Certificados](./docs/carrduci-sys/1-generacion-certificados.md)
+  - [2 Despliegue Csys](./docs/carrduci-sys/2-despliegue-csys.md)
+  - [3 Administracion Respaldos](./docs/carrduci-sys/3-administracion-respaldos.md)
+  - [4 Crear Respaldo Manualmente](./docs/carrduci-sys/4-crear-respaldo-manualmente.md)
+  - [5 Restauracion Respaldos En Servidor](./docs/carrduci-sys/5-restauracion-respaldos-en-servidor.md)
+  - [6 Instalar Certificado En Computadora Usuario](./docs/carrduci-sys/6-instalar-certificado-en-computadora-usuario.md)
+  - [Servidor Samba Carpeta Respaldos](./docs/carrduci-sys/servidor-samba-carpeta-respaldos.md)
+- <b class="title-badge">Carrduci Sys Desarrollo</b>
+  - [1 Instalacion Wsl](./docs/carrduci-sys-desarrollo/1-instalacion-wsl.md)
+  - [2 Entorno Desarollo](./docs/carrduci-sys-desarrollo/2-entorno-desarollo.md)
+  - [3 Estructura De Archivos Y Codigo](./docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md)
+  - [4 Estructuras De Documentacion](./docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md)
+  - [5 Creacion De Componentes](./docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md)
+  - [6 Generar Version Y Compilar Imagenes Docker](./docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md)
+  - <b class="title-badge">Css</b>
+    - [Colores Css](./docs/carrduci-sys-desarrollo/css/colores-css.md)
+    - [Valores Dimensiones Css](./docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md)
+  - [Propuesta Nueva Estructura Api](./docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md)
+  - <b class="title-badge">Uso Componentes</b>
+    - [Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)
+    - [Busqueda Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)
+    - [Calendario Generico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)
+    - [Carga De Imagenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)
+    - [Carrusel De Imagenes Generico](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)
+    - [Claves Autorizacion](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)
+    - [Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)
+    - [Flotante Generico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)
+    - [Formulario Dinamico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)
+    - [Gestor De Impresiones](./docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md)
+    - [Historial](./docs/carrduci-sys-desarrollo/uso-componentes/historial.md)
+    - [Manejo De Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)
+    - [Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)
+    - [Modal](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)
+    - [Paginacion Y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)
+    - [Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)
+    - [Selector Fechas Generico](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)
+    - [Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)
+    - [Tabla Editable Generica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)
+    - [Tabla Generica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md)
+    - [Vista Generica](./docs/carrduci-sys-desarrollo/uso-componentes/vista-generica.md)
+    - [Zona Comentarios Generica](./docs/carrduci-sys-desarrollo/uso-componentes/zona-comentarios-generica.md)
+- <b class="title-badge">Docker</b>
+  - [Uso Docker](./docs/docker/uso-docker.md)
+- <b class="title-badge">Documentacion Sistemas</b>
+  - [1 Estructura Y Organizacion](./docs/documentacion-sistemas/1-estructura-y-organizacion.md)
+  - [2 Personalizacion Avanzada](./docs/documentacion-sistemas/2-personalizacion-avanzada.md)
+- <b class="title-badge">Odbc Mongo</b>
+  - [1 Instalar Conector Bi Mongo En Linux](./docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md)
+  - [2 Conectar A Bi De Mongo Remotamente Desde Windows](./docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md)
+- <b class="title-badge">Ubuntu Server</b>
+  - [Conexion Ssh](./docs/ubuntu-server/conexion-ssh.md)
+  - [Configurar Ubuntu Server](./docs/ubuntu-server/configurar-ubuntu-server.md)
+  - [Llave Ssh](./docs/ubuntu-server/llave-ssh.md)
+- <b class="title-badge">Visual Studio Code</b>
+  - [Agregar Snippets](./docs/visual-studio-code/agregar-snippets.md)
+- <b class="title-badge">Windows</b>
+  - [Establecer Copia Automatica De Respaldos](./docs/windows/establecer-copia-automatica-de-respaldos.md)
