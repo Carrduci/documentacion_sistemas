@@ -108,21 +108,21 @@ El plugin debe agregarse al esquema de Mongoose:
 // models/miModelo.model.js
 const mongoose = require('mongoose');
 const {
-	hystory_log_plugin,
+    hystory_log_plugin
 } = require('../../plugins/historial/historial.plugin');
 
 const miEsquema = new mongoose.Schema(
-	{
-		nombre: String,
-		cantidad: Number,
-		precio: Number,
-		activo: Boolean,
-		detalles: {
-			color: String,
-			tamano: String,
-		},
-	},
-	{ collection: 'micoleccion' }
+    {
+        nombre: String,
+        cantidad: Number,
+        precio: Number,
+        activo: Boolean,
+        detalles: {
+            color: String,
+            tamano: String
+        }
+    },
+    { collection: 'micoleccion' }
 );
 
 // Agregar el plugin de historial
@@ -140,26 +140,26 @@ Para documentos nuevos que se crean con `.save()`:
 const MiModelo = require('../models/miModelo.model');
 
 class MiServicio {
-	async crearDocumento(req) {
-		const nuevoDoc = new MiModelo({
-			nombre: req.body.nombre,
-			cantidad: req.body.cantidad,
-			precio: req.body.precio,
-			activo: true,
-		});
+    async crearDocumento(req) {
+        const nuevoDoc = new MiModelo({
+            nombre: req.body.nombre,
+            cantidad: req.body.cantidad,
+            precio: req.body.precio,
+            activo: true
+        });
 
-		// Agregar metadata ANTES de save()
-		nuevoDoc.metadata = {
-			idUsuario: req.user._id,
-			descripcion: 'documento creado',
-			descripcionLarga: `Se creó el documento ${req.body.nombre}`,
-		};
+        // Agregar metadata ANTES de save()
+        nuevoDoc.metadata = {
+            idUsuario: req.user._id,
+            descripcion: 'documento creado',
+            descripcionLarga: `Se creó el documento ${req.body.nombre}`
+        };
 
-		// El plugin registrará automáticamente el cambio
-		const GUARDADO = await nuevoDoc.save();
+        // El plugin registrará automáticamente el cambio
+        const GUARDADO = await nuevoDoc.save();
 
-		return GUARDADO;
-	}
+        return GUARDADO;
+    }
 }
 
 module.exports = MiServicio;
@@ -173,28 +173,28 @@ Para actualizar documentos existentes (FORMA CORRECTA):
 
 ```javascript
 class MiServicio {
-	async actualizarDocumento(req) {
-		const { _id, ...datosActualizar } = req.body;
+    async actualizarDocumento(req) {
+        const { _id, ...datosActualizar } = req.body;
 
-		const ACTUALIZADO = await MiModelo.findOneAndUpdate(
-			{ _id },
-			{ $set: datosActualizar },
-			{
-				lean: true,
-				new: true,
-				runValidators: true,
-				context: 'query',
-				// IMPORTANTE: Pasar metadata en options
-				metadata: {
-					idUsuario: req.user._id,
-					descripcion: 'documento modificado',
-					descripcionLarga: `Se modificó el documento con ID ${_id}`,
-				},
-			}
-		);
+        const ACTUALIZADO = await MiModelo.findOneAndUpdate(
+            { _id },
+            { $set: datosActualizar },
+            {
+                lean: true,
+                new: true,
+                runValidators: true,
+                context: 'query',
+                // IMPORTANTE: Pasar metadata en options
+                metadata: {
+                    idUsuario: req.user._id,
+                    descripcion: 'documento modificado',
+                    descripcionLarga: `Se modificó el documento con ID ${_id}`
+                }
+            }
+        );
 
-		return ACTUALIZADO;
-	}
+        return ACTUALIZADO;
+    }
 }
 ```
 
@@ -206,19 +206,19 @@ Similar a findOneAndUpdate:
 
 ```javascript
 class MiServicio {
-	async desactivarDocumento(req) {
-		await MiModelo.updateOne(
-			{ _id: req.body._id },
-			{ $set: { activo: false } },
-			{
-				context: 'query',
-				metadata: {
-					idUsuario: req.user._id,
-					descripcion: 'documento desactivado',
-				},
-			}
-		);
-	}
+    async desactivarDocumento(req) {
+        await MiModelo.updateOne(
+            { _id: req.body._id },
+            { $set: { activo: false } },
+            {
+                context: 'query',
+                metadata: {
+                    idUsuario: req.user._id,
+                    descripcion: 'documento desactivado'
+                }
+            }
+        );
+    }
 }
 
 module.exports = MiServicio;
@@ -230,13 +230,13 @@ Si por alguna razón NO quieres registrar un cambio:
 
 ```javascript
 await MiModelo.findOneAndUpdate(
-	{ _id },
-	{ $set: datosActualizar },
-	{
-		metadata: {
-			noRegistrarHistorial: true, // ← Omite el registro
-		},
-	}
+    { _id },
+    { $set: datosActualizar },
+    {
+        metadata: {
+            noRegistrarHistorial: true // ← Omite el registro
+        }
+    }
 );
 ```
 
@@ -317,20 +317,20 @@ metadata: {
 const jsondiffpatch = require('jsondiffpatch');
 
 const JSONDIFFPATCH_INSTANCE = jsondiffpatch.create({
-	arrays: {
-		detectMove: true, // Detecta reordenamientos
-		includeValueOnMove: true, // Incluye valor al mover
-	},
-	objectHash: function (obj, index) {
-		// Identifica objetos en arrays por campos únicos
-		return (
-			obj.servicio ||
-			obj.lista ||
-			obj._id ||
-			obj.referenciaInmediata ||
-			'$$index:' + index
-		);
-	},
+    arrays: {
+        detectMove: true, // Detecta reordenamientos
+        includeValueOnMove: true // Incluye valor al mover
+    },
+    objectHash: function (obj, index) {
+        // Identifica objetos en arrays por campos únicos
+        return (
+            obj.servicio ||
+            obj.lista ||
+            obj._id ||
+            obj.referenciaInmediata ||
+            '$$index:' + index
+        );
+    }
 });
 ```
 
@@ -350,16 +350,16 @@ El plugin traduce las operaciones de jsondiffpatch:
 ```javascript
 // Documento anterior
 const docAnterior = {
-	nombre: 'Producto X',
-	precio: 100,
-	categorias: ['a', 'b'],
+    nombre: 'Producto X',
+    precio: 100,
+    categorias: ['a', 'b']
 };
 
 // Documento nuevo
 const docNuevo = {
-	nombre: 'Producto X',
-	precio: 150,
-	categorias: ['a', 'b', 'c'],
+    nombre: 'Producto X',
+    precio: 150,
+    categorias: ['a', 'b', 'c']
 };
 
 // jsondiffpatch calcula el delta
@@ -517,8 +517,8 @@ El modelo tiene índices para optimizar consultas:
 ```javascript
 // Índice para buscar por documento
 registroHistorialSchema.index(
-	{ idElementoModificado: 1 },
-	{ name: 'filtro_por_elemento' }
+    { idElementoModificado: 1 },
+    { name: 'filtro_por_elemento' }
 );
 
 // Índice para buscar por usuario
@@ -538,12 +538,12 @@ import { HistorialElementoModule } from 'src/app/components/utiles/historial/his
 import { ModalModule } from 'src/app/pages/utilidadesPages/utilidades-tipo-crud-para-GUI/plantillas/modal.module';
 
 @NgModule({
-	declarations: [MiComponenteComponent],
-	imports: [
-		// ... otros módulos
-		HistorialElementoModule,
-		ModalModule, // Si usarás el componente en modales
-	],
+    declarations: [MiComponenteComponent],
+    imports: [
+        // ... otros módulos
+        HistorialElementoModule,
+        ModalModule // Si usarás el componente en modales
+    ]
 })
 export class MiModuloModule {}
 ```
@@ -578,8 +578,8 @@ Pasando el ID del documento:
 
 <!-- Directamente en la página (sin modal) -->
 <app-historial-elemento
-	[idElemento]="documento._id"
-	[enModal]="false"
+    [idElemento]="documento._id"
+    [enModal]="false"
 ></app-historial-elemento>
 ```
 
@@ -595,24 +595,24 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'app-mi-componente',
-	templateUrl: './mi-componente.component.html',
+    selector: 'app-mi-componente',
+    templateUrl: './mi-componente.component.html'
 })
 export class MiComponente implements OnInit {
-	// ID del documento del que queremos ver el historial
-	idDocumentoActual: string;
+    // ID del documento del que queremos ver el historial
+    idDocumentoActual: string;
 
-	constructor(private route: ActivatedRoute) {}
+    constructor(private route: ActivatedRoute) {}
 
-	ngOnInit() {
-		// Obtener ID del documento desde la ruta
-		this.idDocumentoActual = this.route.snapshot.params['id'];
+    ngOnInit() {
+        // Obtener ID del documento desde la ruta
+        this.idDocumentoActual = this.route.snapshot.params['id'];
 
-		// O desde un servicio
-		// this.miServicio.obtener(id).subscribe(doc => {
-		//     this.idDocumentoActual = doc._id;
-		// });
-	}
+        // O desde un servicio
+        // this.miServicio.obtener(id).subscribe(doc => {
+        //     this.idDocumentoActual = doc._id;
+        // });
+    }
 }
 ```
 
@@ -621,19 +621,19 @@ export class MiComponente implements OnInit {
 ```html
 <!-- mi-componente.component.html -->
 <div class="card">
-	<div class="card-header">
-		<h5>
-			<i class="fas fa-history"></i>
-			Historial de Cambios
-		</h5>
-	</div>
-	<div class="card-body">
-		<app-historial-elemento
-			[idElemento]="idDocumentoActual"
-			[enModal]="false"
-			[modelo]="'micoleccion'"
-		></app-historial-elemento>
-	</div>
+    <div class="card-header">
+        <h5>
+            <i class="fas fa-history"></i>
+            Historial de Cambios
+        </h5>
+    </div>
+    <div class="card-body">
+        <app-historial-elemento
+            [idElemento]="idDocumentoActual"
+            [enModal]="false"
+            [modelo]="'micoleccion'"
+        ></app-historial-elemento>
+    </div>
 </div>
 ```
 
@@ -647,27 +647,27 @@ import { Component, ViewChild } from '@angular/core';
 import { ModalComponent } from 'src/app/pages/utilidadesPages/utilidades-tipo-crud-para-GUI/plantillas/modal.component';
 
 @Component({
-	selector: 'app-mi-componente',
-	templateUrl: './mi-componente.component.html',
+    selector: 'app-mi-componente',
+    templateUrl: './mi-componente.component.html'
 })
 export class MiComponente {
-	idDocumentoActual: string;
-	documentoRevisandoHistorial: any; // El documento cuyo historial queremos ver
+    idDocumentoActual: string;
+    documentoRevisandoHistorial: any; // El documento cuyo historial queremos ver
 
-	// Referencia al modal
-	@ViewChild('modalHistorial') modalHistorial: ModalComponent;
+    // Referencia al modal
+    @ViewChild('modalHistorial') modalHistorial: ModalComponent;
 
-	// Abrir modal
-	abrirModalHistorial(documento: any) {
-		this.documentoRevisandoHistorial = documento;
-		this.modalHistorial.mostrarModal();
-	}
+    // Abrir modal
+    abrirModalHistorial(documento: any) {
+        this.documentoRevisandoHistorial = documento;
+        this.modalHistorial.mostrarModal();
+    }
 
-	// Cerrar modal
-	cerrarModalHistorial() {
-		this.documentoRevisandoHistorial = null;
-		this.modalHistorial.ocultarModal();
-	}
+    // Cerrar modal
+    cerrarModalHistorial() {
+        this.documentoRevisandoHistorial = null;
+        this.modalHistorial.ocultarModal();
+    }
 }
 ```
 
@@ -675,26 +675,36 @@ export class MiComponente {
 <!-- mi-componente.component.html -->
 
 <!-- Botón para abrir modal -->
-<button class="btn btn-info" (click)="abrirModalHistorial(miDocumento)">
-	<i class="fas fa-history"></i>
-	Ver Historial
+<button
+    class="btn btn-info"
+    (click)="abrirModalHistorial(miDocumento)"
+>
+    <i class="fas fa-history"></i>
+    Ver Historial
 </button>
 
 <!-- Modal -->
-<app-modal #modalHistorial [medida]="'extraGrande'" [usarModalFalso]="true">
-	<ng-container encabezado>
-		<h5>
-			<i class="fas fa-history"></i>
-			Historial de Cambios
-		</h5>
-	</ng-container>
+<app-modal
+    #modalHistorial
+    [medida]="'extraGrande'"
+    [usarModalFalso]="true"
+>
+    <ng-container encabezado>
+        <h5>
+            <i class="fas fa-history"></i>
+            Historial de Cambios
+        </h5>
+    </ng-container>
 
-	<ng-container contenido *ngIf="documentoRevisandoHistorial">
-		<app-historial-elemento
-			[idElemento]="documentoRevisandoHistorial._id"
-		></app-historial-elemento>
-		<!-- [enModal]="true" es el valor por defecto, no es necesario especificarlo -->
-	</ng-container>
+    <ng-container
+        contenido
+        *ngIf="documentoRevisandoHistorial"
+    >
+        <app-historial-elemento
+            [idElemento]="documentoRevisandoHistorial._id"
+        ></app-historial-elemento>
+        <!-- [enModal]="true" es el valor por defecto, no es necesario especificarlo -->
+    </ng-container>
 </app-modal>
 ```
 
@@ -717,39 +727,39 @@ export class MiComponente {
 ```typescript
 // historial-elemento.component.ts (simplificado)
 export class HistorialElementoComponent {
-	@Input('idElemento') set _idElemento(value: string) {
-		this.idElemento = value;
-		this.usarPaginacion = true; // ← Activa paginación
-		this.obtenerHistorialElemento();
-	}
+    @Input('idElemento') set _idElemento(value: string) {
+        this.idElemento = value;
+        this.usarPaginacion = true; // ← Activa paginación
+        this.obtenerHistorialElemento();
+    }
 
-	@Input('registroHistorial') set _registroHistorial(
-		value: RegistroHistorial[]
-	) {
-		this.registroHistorial = value;
-		this.usarPaginacion = false; // ← Desactiva paginación
-	}
+    @Input('registroHistorial') set _registroHistorial(
+        value: RegistroHistorial[]
+    ) {
+        this.registroHistorial = value;
+        this.usarPaginacion = false; // ← Desactiva paginación
+    }
 
-	paginacionRegistros: Paginacion = new Paginacion(
-		5, // límite: 5 registros por página
-		0, // desde: inicio
-		-1, // ordenDir: descendente (más reciente primero)
-		'_id' // ordenCampo
-	);
+    paginacionRegistros: Paginacion = new Paginacion(
+        5, // límite: 5 registros por página
+        0, // desde: inicio
+        -1, // ordenDir: descendente (más reciente primero)
+        '_id' // ordenCampo
+    );
 
-	obtenerHistorialElemento() {
-		this.cargandoRegistros = true;
-		this.historialService
-			.obtener(this.paginacionRegistros, this.idElemento)
-			.subscribe({
-				next: (registros: RegistroHistorial[]) => {
-					this.registroHistorial = registros;
-					this.totalRegistros =
-						this.historialService.TOTAL_REGISTROS_HISTORIAL;
-					this.cargandoRegistros = false;
-				},
-			});
-	}
+    obtenerHistorialElemento() {
+        this.cargandoRegistros = true;
+        this.historialService
+            .obtener(this.paginacionRegistros, this.idElemento)
+            .subscribe({
+                next: (registros: RegistroHistorial[]) => {
+                    this.registroHistorial = registros;
+                    this.totalRegistros =
+                        this.historialService.TOTAL_REGISTROS_HISTORIAL;
+                    this.cargandoRegistros = false;
+                }
+            });
+    }
 }
 ```
 
@@ -775,32 +785,3 @@ El **Sistema de Historial** proporciona:
 ✅ **Tipos de cambio** claramente identificados
 
 Este sistema es fundamental para auditoría, debugging y cumplimiento normativo en CARRDUCI.
-
-?> **IMPORTANTE**: Recuerda que los servicios del API deben usar clases con métodos de instancia, y los controladores deben crear nuevas instancias para evitar race conditions entre requests concurrentes.
-
-```javascript
-// ❌ INCORRECTO - Patrón antiguo
-const SERVICIO = {};
-SERVICIO.metodo = function() { ... };
-
-// ✅ CORRECTO - Patrón CARRDUCI
-const { response } = require('../../utils/response.utils');
-
-class Servicio {
-    async metodo() { ... }
-}
-
-class Controlador {
-    async metodo(req, res) {
-        // Crear nueva instancia del servicio
-        const servicio = new Servicio();
-        const resultado = await servicio.metodo();
-
-        // Usar response.utils.js para respuestas
-        return new response(res, __filename, {
-            mensaje: 'Operación exitosa',
-            datos: resultado
-        })._200_ok();
-    }
-}
-```
