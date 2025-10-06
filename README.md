@@ -1,4 +1,4 @@
-# 🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+# 🏗️ Documentación CARRDUCI-sys
 
 **Documentación oficial del sistema CARRDUCI-sys**, una arquitectura modular escalable organizada por dominios de negocio con componentes independientes y lazy loading granular.
 
@@ -8,7 +8,8 @@
 
 ---
 
-## 📋 Arquitectura Component Domain Architecture
+## 📋 Arquitectura Component Domain Driven Architecture
+
 CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de Componentes por Dominios), una arquitectura modular escalable que organiza el código por dominios de negocio con componentes independientes.
 
 ### 🏗️ Características Principales
@@ -23,7 +24,7 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 
 ```
 🏗️ Frontend (Angular) → Componentes modulares con lazy loading
-🔧 Backend (Node.js) → Clases con métodos estáticos para servicios
+🔧 Backend (Node.js) → Rutas, controladores, servicios, utilidades y plugins
 💾 Persistencia → Modelos Mongoose con plugins estándar
 🔐 Seguridad → Permisos jerárquicos unificados
 ```
@@ -48,30 +49,30 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 
 #### 🛠️ **Componentes Reutilizables**
 
-| Componente                                                                                                  | Descripción                               | Estado      | Última Actualización |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ----------- | -------------------- |
-| **[Tabla Genérica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md)**                      | Listados paginados con filtros y acciones | ✅ Completo | - |
-| **[Formulario Dinámico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)**            | Formularios reactivos tipados             | ✅ Completo | - |
-| **[Carga de Imágenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)**                | Upload y compresión de imágenes           | ✅ Completo | 2025-10-01 |
-| **[Historial](./docs/carrduci-sys-desarrollo/uso-componentes/historial.md)**                                | Sistema de auditoría automática           | ✅ Completo | 2025-10-01 |
-| **[Claves de Autorización](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)**         | Sistema de autorizaciones críticas        | ✅ Completo | 2025-10-01 |
-| **[Flotante Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)**                | Tooltips y popovers personalizados        | ✅ Completo | - |
-| **[Búsqueda de Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)**                   | Indexación y búsqueda avanzada            | ✅ Completo | 2025-10-01 |
-| **[Carrusel de Imágenes](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)** | Galerías de imágenes interactivas         | ✅ Completo | - |
-| **[Gestor de Impresiones](./docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md)**        | Sistema de impresión avanzado             | ✅ Completo | - |
-| **[Calendario Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)**            | Selectores de fecha personalizados        | ✅ Completo | - |
-| **[Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)**                      | Generación automática de IDs              | ✅ Completo | - |
-| **[Tabla Editable](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)**             | Tablas con edición inline                 | 🚧 Pendiente | - |
-| **[Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)**      | Previsualización de imágenes              | 🚧 Pendiente | - |
-| **[Modal Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)**                              | Diálogos modales reutilizables            | 🚧 Pendiente | - |
-| **[Paginación y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)**          | Sistema de paginación avanzado            | 🚧 Pendiente | - |
-| **[Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)**                                  | Gestión de permisos de usuario            | 🚧 Pendiente | - |
-| **[Selector Fechas](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)**           | Selectores de fecha avanzados             | 🚧 Pendiente | - |
-| **[Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)**                                    | Comunicación en tiempo real               | 🚧 Pendiente | - |
-| **[Vista Genérica](./docs/carrduci-sys-desarrollo/uso-componentes/vista-generica.md)**                      | Layouts reutilizables                     | 🚧 Pendiente | - |
-| **[Zona Comentarios](./docs/carrduci-sys-desarrollo/uso-componentes/zona-comentarios-generica.md)**         | Sistema de comentarios                    | 🚧 Pendiente | - |
-| **[Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)**                                | Listas de datos dinámicas                 | 🚧 Pendiente | - |
-| **[Manejo de Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)**              | Sistema de notificaciones                 | 🚧 Pendiente | - |
+| Componente                                                                                                  | Descripción                               | Estado       | Última Actualización |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------ | -------------------- |
+| **[Tabla Genérica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md)**                      | Listados paginados con filtros y acciones | ✅ Completo  | -                    |
+| **[Formulario Dinámico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)**            | Formularios reactivos tipados             | ✅ Completo  | 2025-10-03           |
+| **[Carga de Imágenes](./docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md)**                | Upload y compresión de imágenes           | ✅ Completo  | 2025-10-01           |
+| **[Historial](./docs/carrduci-sys-desarrollo/uso-componentes/historial.md)**                                | Sistema de auditoría automática           | ✅ Completo  | 2025-10-01           |
+| **[Claves de Autorización](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)**         | Sistema de autorizaciones críticas        | ✅ Completo  | 2025-10-01           |
+| **[Flotante Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)**                | Tooltips y popovers personalizados        | ✅ Completo  | -                    |
+| **[Búsqueda de Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)**                   | Indexación y búsqueda avanzada            | ✅ Completo  | 2025-10-01           |
+| **[Carrusel de Imágenes](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)** | Galerías de imágenes interactivas         | ✅ Completo  | -                    |
+| **[Gestor de Impresiones](./docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md)**        | Sistema de impresión avanzado             | ✅ Completo  | -                    |
+| **[Calendario Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)**            | Selectores de fecha personalizados        | ✅ Completo  | -                    |
+| **[Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)**                      | Generación automática de IDs              | ✅ Completo  | -                    |
+| **[Tabla Editable](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)**             | Tablas con edición inline                 | 🚧 Pendiente | -                    |
+| **[Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)**      | Previsualización de imágenes              | 🚧 Pendiente | -                    |
+| **[Modal Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)**                               | Diálogos modales reutilizables            | ✅ Completo  | -                    |
+| **[Paginación y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)**          | Sistema de paginación avanzado            | 🚧 Pendiente | -                    |
+| **[Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)**                                  | Gestión de permisos de usuario            | 🚧 Pendiente | -                    |
+| **[Selector Fechas](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)**           | Selectores de fecha avanzados             | 🚧 Pendiente | -                    |
+| **[Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)**                                    | Comunicación en tiempo real               | 🚧 Pendiente | -                    |
+| **[Vista Genérica](./docs/carrduci-sys-desarrollo/uso-componentes/vista-generica.md)**                      | Layouts reutilizables                     | 🚧 Pendiente | -                    |
+| **[Zona Comentarios](./docs/carrduci-sys-desarrollo/uso-componentes/zona-comentarios-generica.md)**         | Sistema de comentarios                    | 🚧 Pendiente | -                    |
+| **[Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)**                                | Listas de datos dinámicas                 | ✅ Completo  | -                    |
+| **[Manejo de Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)**              | Sistema de notificaciones                 | ✅ Completo  | 2025-10-06           |
 
 ### 🐳 **Docker**
 
@@ -83,31 +84,6 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 -   **[Windows](./docs/windows/)** - Configuración y utilidades Windows
 -   **[Visual Studio Code](./docs/visual-studio-code/)** - Configuración del IDE
 -   **[ODBC Mongo](./docs/odbc-mongo/)** - Conexiones ODBC con MongoDB
-
----
-
-## 🚀 Cambios 2025
-
-### 🔄 **Cambio Arquitectónico Principal**
-
-**A partir de 2025, la carpeta `pages/` ya NO se utiliza para nuevos desarrollos.** Todo se crea directamente en `components/`.
-
-### 🏗️ **Nueva Arquitectura Component Domain**
-
--   ✅ **Servicios** (`src/app/services/`)
--   ✅ **Modelos** (`src/app/models/`)
--   ✅ **Componentes de vista** (`src/app/components/`)
--   ✅ **Pipes** (`src/app/components/[dominio]/pipes-[dominio]/`)
-
-### 🔧 **API con Clases**
-
-**De ahora en adelante en el API se usarán clases en los controladores y rutas** para evitar race conditions entre requests concurrentes.
-
-### 📚 **Documentación Estandarizada**
-
--   ✅ **Separadores de sección** obligatorios con `#region`
--   ✅ **Comentarios JSDoc** para todas las funciones
--   ✅ **Reglas estrictas** de documentación
 
 ---
 
@@ -184,6 +160,7 @@ git push -u origin main
 -   ✅ **Commits descriptivos** en español
 -   ✅ **Commits atómicos** por funcionalidad
 -   ✅ **Referencias a issues** cuando aplique
+-   ✅ **Siempre usar [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)**
 
 ---
 
@@ -219,22 +196,6 @@ docs/
 
 ---
 
-## 📞 Soporte
-
-### 🐛 **Reportar Issues**
-
--   Usar GitHub Issues en el repositorio de documentación
--   Incluir pasos para reproducir el problema
--   Adjuntar capturas de pantalla si aplica
-
-### 💬 **Preguntas**
-
--   Revisar documentación existente primero
--   Crear issues en GitHub para preguntas técnicas
--   Contactar al equipo de desarrollo directamente para consultas urgentes
-
----
-
 ## 📈 Estado del Proyecto
 
 ### ✅ **Completado (2025)**
@@ -250,7 +211,7 @@ docs/
 -   🔧 **11 componentes restantes** por documentar
 -   📖 **Documentación de APIs** adicionales
 -   🧪 **Guías de testing** avanzado
--   🔄 **Completar migración** de arquitectura legacy (11/22 componentes)
+-   🔄 **Completar migración** de arquitectura legacy
 
 ---
 

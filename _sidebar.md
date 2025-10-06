@@ -19,7 +19,6 @@
   - <b class="title-badge">Css</b>
     - [Colores Css](./docs/carrduci-sys-desarrollo/css/colores-css.md)
     - [Valores Dimensiones Css](./docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md)
-  - [Propuesta Nueva Estructura Api](./docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md)
   - <b class="title-badge">Uso Componentes</b>
     - [Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)
     - [Busqueda Texto](./docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md)
@@ -37,6 +36,7 @@
     - [Modal](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)
     - [Paginacion Y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)
     - [Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)
+    - [Preloader](./docs/carrduci-sys-desarrollo/uso-componentes/preloader.md)
     - [Selector Fechas Generico](./docs/carrduci-sys-desarrollo/uso-componentes/selector-fechas-generico.md)
     - [Sockets](./docs/carrduci-sys-desarrollo/uso-componentes/sockets.md)
     - [Tabla Editable Generica](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)

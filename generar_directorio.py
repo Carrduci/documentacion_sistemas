@@ -24,8 +24,10 @@ def tree(dir_path: Path):
             'index.html',
             '.git',
             '.dist',
-            'docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md'
+            'tags',
+            'propuesta-nueva-estructura-api.md'
         ]):
+            print(path.name)
             if path.name == 'docs':
                 yield ''
             if path.is_dir():

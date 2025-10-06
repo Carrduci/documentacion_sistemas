@@ -1,0 +1,1034 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/sistemas/carrduci-dev/carrduci_sys_workspace/documentacion_sistemas/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+**Botón "Crear Nuevo Código"**	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### **Botón "Crear Nuevo Código"**$/;"	t	subsection:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)""Interfaz de Administración
+**Botón "Revocar" por Código**	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### **Botón "Revocar" por Código**$/;"	t	subsection:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)""Interfaz de Administración
+**Generar Menú Lateral**	README.md	/^#### **Generar Menú Lateral**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación""📝 **Editar Documentación**
+**Reglas de Nomenclatura**	README.md	/^#### **Reglas de Nomenclatura**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación""📝 **Editar Documentación**
+**Sintaxis Markdown**	README.md	/^#### **Sintaxis Markdown**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación""📝 **Editar Documentación**
+**Tabla de Códigos Existentes**	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### **Tabla de Códigos Existentes**$/;"	t	subsection:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)""Interfaz de Administración
+0	.obsidian/workspace.json	/^          {$/;"	o	array:left.children.0.children
+0	.obsidian/workspace.json	/^          {$/;"	o	array:main.children.0.children
+0	.obsidian/workspace.json	/^          {$/;"	o	array:right.children.0.children
+0	.obsidian/workspace.json	/^      {$/;"	o	array:left.children
+0	.obsidian/workspace.json	/^      {$/;"	o	array:main.children
+0	.obsidian/workspace.json	/^      {$/;"	o	array:right.children
+0	.obsidian/workspace.json	/^    "directorio.md",$/;"	s	array:lastOpenFiles
+1	.obsidian/workspace.json	/^          {$/;"	o	array:left.children.0.children
+1	.obsidian/workspace.json	/^          {$/;"	o	array:main.children.0.children
+1	.obsidian/workspace.json	/^          {$/;"	o	array:right.children.0.children
+1	.obsidian/workspace.json	/^    "carrduci-sys-desarrollo\/2-catalogo-archivos-por-modulo.md",$/;"	s	array:lastOpenFiles
+1. Asegurarse de tener instalado **OpenSSL**	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 1. Asegurarse de tener instalado **OpenSSL**$/;"	t	chapter:Instalar Mongo BI conector
+1. Badges de títulos	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^#### 1. Badges de títulos$/;"	t	subsection:Personalización avanzada del sistema de documentación""Personalización de estilos""Estilos personalizados actuales
+1. Búsqueda local	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### 1. Búsqueda local$/;"	S	section:Personalización avanzada del sistema de documentación""Plugins de Docsify instalados
+1. Colores por Palabras Clave (Keywords)	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## 1. Colores por Palabras Clave (Keywords)$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+1. Columna de Imágenes	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### 1. Columna de Imágenes$/;"	S	section:Tabla Genérica""Columnas Especiales
+1. Copiar desde Windows y restaurar	docs/carrduci-sys/5-restauracion-respaldos-en-servidor.md	/^#### 1. Copiar desde Windows y restaurar$/;"	t	chapter:Restaurar respaldos en servidor
+1. Crear archivo(s) markdown	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 1. Crear archivo(s) markdown$/;"	t	subsection:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación""Proceso paso a paso
+1. En el servicio de imágenes (API)	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 1. En el servicio de imágenes (API)$/;"	S	section:Carga de imágenes""Crear un tipo de imágen
+1. Establecer conexión con el servidor	docs/carrduci-sys/2-despliegue-csys.md	/^### 1. Establecer conexión con el servidor$/;"	S	section:Desplegar CARRDUCIsys""Procedimiento
+1. Establecer conexión con el servidor	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^### 1. Establecer conexión con el servidor$/;"	S	section:Desplegar servidor Samba en Ubuntu""Procedimiento
+1. Estructura Frontend (GUI) - Angular	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 1. Estructura Frontend (GUI) - Angular$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+1. Folios de Vendedor	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 1. Folios de Vendedor$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+1. Generar ObjectId antes de guardar imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 1. Generar ObjectId antes de guardar imágenes$/;"	S	section:Carga de imágenes""Mejores prácticas
+1. Importaciones	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### 1. Importaciones$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)""Para documentar modelos (esquemas de mongo) del API
+1. Instalar VsCode en Windows	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 1. Instalar VsCode en Windows$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+1. Instalar el controlador ODBC de mongo en Windows	docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md	/^## 1. Instalar el controlador ODBC de mongo en Windows$/;"	s	chapter:Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux
+1. Obtener el repositorio	docs/windows/establecer-copia-automatica-de-respaldos.md	/^### 1. Obtener el repositorio$/;"	S	section:Establecer copia automática de respaldo en Windows""Procedimiento
+1. Planificación Inicial	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## 1. Planificación Inicial$/;"	s	chapter:Creación de Componentes en CARRDUCI
+1. Reservas en Almacén de Producto Terminado	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 1. Reservas en Almacén de Producto Terminado$/;"	S	section:Claves de Autorización de Usuario Simples""Casos de Uso
+1. Seguridad	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 1. Seguridad$/;"	S	section:Claves de Autorización de Usuario Simples""Mejores Prácticas
+1. Separador de sección	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^### 1. Separador de sección$/;"	S	section:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)
+1. Subir mis cambios a la nube	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^## 1. Subir mis cambios a la nube$/;"	s	chapter:Proceso estandar
+1. Tipo de imagen no registrado	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### 1. Tipo de imagen no registrado$/;"	t	subsection:Carga de imágenes""Manejo de errores""Errores comunes
+1. Unidades de Longitud	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## 1. Unidades de Longitud$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+1. `carrduci-sys/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 1. `carrduci-sys\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+1.1 Arquitectura Actualizada (2025)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 1.1 Arquitectura Actualizada (2025)$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular
+1.1 Identificar el Dominio	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 1.1 Identificar el Dominio$/;"	S	section:Creación de Componentes en CARRDUCI""1. Planificación Inicial
+1.1 Unidades Absolutas	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^### 1.1 Unidades Absolutas$/;"	S	section:Guía Completa de Valores y Unidades de Dimensiones en CSS""1. Unidades de Longitud
+1.1. Programar encendido automático	docs/carrduci-sys/3-administracion-respaldos.md	/^#### 1.1. Programar encendido automático$/;"	t	subsection:Administración de respaldos""Sincronización con almacenamiento local
+1.2 Estructura de Carpetas Recomendada	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 1.2 Estructura de Carpetas Recomendada$/;"	S	section:Creación de Componentes en CARRDUCI""1. Planificación Inicial
+1.2 Tipos de Componentes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 1.2 Tipos de Componentes$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular
+1.2 Unidades Relativas - Basadas en la Fuente	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^### 1.2 Unidades Relativas - Basadas en la Fuente$/;"	S	section:Guía Completa de Valores y Unidades de Dimensiones en CSS""1. Unidades de Longitud
+1.2. Programar apagado automático	docs/carrduci-sys/3-administracion-respaldos.md	/^#### 1.2. Programar apagado automático$/;"	t	subsection:Administración de respaldos""Sincronización con almacenamiento local
+1.3 Otros Tipos de Archivos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 1.3 Otros Tipos de Archivos$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular
+1.3 Unidades Relativas - Basadas en el Viewport	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^### 1.3 Unidades Relativas - Basadas en el Viewport$/;"	S	section:Guía Completa de Valores y Unidades de Dimensiones en CSS""1. Unidades de Longitud
+1.4 Sistema de Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 1.4 Sistema de Pipes$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular
+1.4 Unidades de Consulta de Contenedor	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^### 1.4 Unidades de Consulta de Contenedor$/;"	S	section:Guía Completa de Valores y Unidades de Dimensiones en CSS""1. Unidades de Longitud
+10	.obsidian/workspace.json	/^    "windows\/instalacion-wsl.md",$/;"	s	array:lastOpenFiles
+10. Etiquetas de Trazabilidad	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 10. Etiquetas de Trazabilidad$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+11	.obsidian/workspace.json	/^    "visual-studio-code\/1-agregar-snippets.md",$/;"	s	array:lastOpenFiles
+11. Reportes de Faltantes - Producto Terminado	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 11. Reportes de Faltantes - Producto Terminado$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+12	.obsidian/workspace.json	/^    "().md",$/;"	s	array:lastOpenFiles
+12. Reportes de Faltantes - Almacén de Producción	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 12. Reportes de Faltantes - Almacén de Producción$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+13	.obsidian/workspace.json	/^    "ubuntu-server\/configurar-ubuntu-server.md",$/;"	s	array:lastOpenFiles
+13. Reportes Personalizados - Almacén de Producción	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 13. Reportes Personalizados - Almacén de Producción$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+14	.obsidian/workspace.json	/^    "assets\/gifs\/utilizacion_snippet_vscode.gif",$/;"	s	array:lastOpenFiles
+14. Programación de Transformación	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 14. Programación de Transformación$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+15	.obsidian/workspace.json	/^    "assets\/gifs\/ezgif-4-f8e9da1f0b.gif",$/;"	s	array:lastOpenFiles
+16	.obsidian/workspace.json	/^    "assets\/imagenes\/snippet_colocada_visual_studio.png",$/;"	s	array:lastOpenFiles
+17	.obsidian/workspace.json	/^    "assets\/imagenes\/Captura de pantalla 2024-07-16 131032.png",$/;"	s	array:lastOpenFiles
+18	.obsidian/workspace.json	/^    "assets\/imagenes\/espacion_donde_agregar_snippets_visual_studio.png",$/;"	s	array:lastOpenFiles
+19	.obsidian/workspace.json	/^    "assets\/imagenes\/Captura de pantalla 2024-07-16 125458.png",$/;"	s	array:lastOpenFiles
+2	.obsidian/workspace.json	/^          {$/;"	o	array:left.children.0.children
+2	.obsidian/workspace.json	/^          {$/;"	o	array:right.children.0.children
+2	.obsidian/workspace.json	/^    "carrduci-sys\/2-despliegue-csys.md",$/;"	s	array:lastOpenFiles
+2. Asegurarse de tener instalado Curl	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 2. Asegurarse de tener instalado Curl$/;"	t	chapter:Instalar Mongo BI conector
+2. Autorización de Líneas de Conteos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 2. Autorización de Líneas de Conteos$/;"	S	section:Claves de Autorización de Usuario Simples""Casos de Uso
+2. Clonar `utilidades_carrduci_sys`	docs/carrduci-sys/2-despliegue-csys.md	/^### 2. Clonar `utilidades_carrduci_sys`$/;"	S	section:Desplegar CARRDUCIsys""Procedimiento
+2. Colores Hexadecimales (Hex)	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## 2. Colores Hexadecimales (Hex)$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+2. Columna de Botones	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### 2. Columna de Botones$/;"	S	section:Tabla Genérica""Columnas Especiales
+2. Creación de Componentes GUI	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## 2. Creación de Componentes GUI$/;"	s	chapter:Creación de Componentes en CARRDUCI
+2. Escribir el contenido	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 2. Escribir el contenido$/;"	t	subsection:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación""Proceso paso a paso
+2. Esquema	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### 2. Esquema$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)""Para documentar modelos (esquemas de mongo) del API
+2. Establecer el cron	docs/carrduci-sys/3-administracion-respaldos.md	/^#### 2. Establecer el cron$/;"	t	subsection:Administración de respaldos""Sincronización con almacenamiento local
+2. Establecer las tareas automáticas en Windows	docs/windows/establecer-copia-automatica-de-respaldos.md	/^### 2. Establecer las tareas automáticas en Windows$/;"	S	section:Establecer copia automática de respaldo en Windows""Procedimiento
+2. Estructura Backend (API) - Node.js/Express	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 2. Estructura Backend (API) - Node.js\/Express$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+2. Etiquetas de Líneas de Folio	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 2. Etiquetas de Líneas de Folio$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+2. Evaluador combina los cambios con la rama dev y master.	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^## 2. Evaluador combina los cambios con la rama dev y master.$/;"	s	chapter:Proceso estandar
+2. Extensión no válida	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### 2. Extensión no válida$/;"	t	subsection:Carga de imágenes""Manejo de errores""Errores comunes
+2. Generar llave ssh	docs/carrduci-sys/3-administracion-respaldos.md	/^#### 2. Generar llave ssh$/;"	t	subsection:Administración de respaldos""Sincronización con almacenamiento local
+2. Importar el modelo en el servicio de imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 2. Importar el modelo en el servicio de imágenes$/;"	S	section:Carga de imágenes""Crear un tipo de imágen
+2. Instalar OpenSSH	docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md	/^## 2. Instalar OpenSSH$/;"	s	chapter:Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux
+2. Instalar el Subsistema de Linux en Windows	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 2. Instalar el Subsistema de Linux en Windows$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+2. Instalar y desplegar Samba	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^### 2. Instalar y desplegar Samba$/;"	S	section:Desplegar servidor Samba en Ubuntu""Procedimiento
+2. Obtener el último respaldo y restaurarlo	docs/carrduci-sys/5-restauracion-respaldos-en-servidor.md	/^#### 2. Obtener el último respaldo y restaurarlo$/;"	t	chapter:Restaurar respaldos en servidor
+2. Separadores personalizados	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^#### 2. Separadores personalizados$/;"	t	subsection:Personalización avanzada del sistema de documentación""Personalización de estilos""Estilos personalizados actuales
+2. Sub separadores de sección	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^### 2. Sub separadores de sección$/;"	S	section:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)
+2. Trazabilidad	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 2. Trazabilidad$/;"	S	section:Claves de Autorización de Usuario Simples""Mejores Prácticas
+2. Usar el operador opcional chaining para verificar imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 2. Usar el operador opcional chaining para verificar imágenes$/;"	S	section:Carga de imágenes""Mejores prácticas
+2. Valores de Dimensión	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## 2. Valores de Dimensión$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+2. Zoom de imágenes	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### 2. Zoom de imágenes$/;"	S	section:Personalización avanzada del sistema de documentación""Plugins de Docsify instalados
+2. `carrduci-sys-desarrollo/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 2. `carrduci-sys-desarrollo\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+2.1 Arquitectura de Clases (2025)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 2.1 Arquitectura de Clases (2025)$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express
+2.1 Tipos de Componentes	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 2.1 Tipos de Componentes$/;"	S	section:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI
+2.2 Creación Paso a Paso	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 2.2 Creación Paso a Paso$/;"	S	section:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI
+2.2 Tipos de Archivos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 2.2 Tipos de Archivos$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express
+2.3 Sistema de Pipes	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 2.3 Sistema de Pipes$/;"	S	section:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI
+20	.obsidian/workspace.json	/^    "assets\/imagenes\/seleccionar_typescript_snippets_visual_studio.png",$/;"	s	array:lastOpenFiles
+21	.obsidian/workspace.json	/^    "assets\/imagenes\/Captura de pantalla 2024-07-16 124733.png",$/;"	s	array:lastOpenFiles
+22	.obsidian/workspace.json	/^    "assets\/imagenes\/posibles_jsons_snippets_visual_studio.png",$/;"	s	array:lastOpenFiles
+23	.obsidian/workspace.json	/^    "assets\/imagenes\/Captura de pantalla 2024-07-16 124355.png",$/;"	s	array:lastOpenFiles
+24	.obsidian/workspace.json	/^    "visual-studio-code",$/;"	s	array:lastOpenFiles
+25	.obsidian/workspace.json	/^    "carrduci-sys\/5-instalar-certificado-en-computadora-usuario.md",$/;"	s	array:lastOpenFiles
+26	.obsidian/workspace.json	/^    "carrduci-sys\/4-servidor-samba-carpeta-respaldos.md",$/;"	s	array:lastOpenFiles
+27	.obsidian/workspace.json	/^    "odbc-mongo\/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md",$/;"	s	array:lastOpenFiles
+28	.obsidian/workspace.json	/^    "odbc-mongo\/1-instalar-conector-bi-mongo-en-linux.md",$/;"	s	array:lastOpenFiles
+29	.obsidian/workspace.json	/^    "2024-07-13.md",$/;"	s	array:lastOpenFiles
+3	.obsidian/workspace.json	/^          {$/;"	o	array:right.children.0.children
+3	.obsidian/workspace.json	/^    "carrduci-sys\/1-generacion-certificados.md",$/;"	s	array:lastOpenFiles
+3. Colores RGB y RGBA	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## 3. Colores RGB y RGBA$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+3. Columna de Estatus	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### 3. Columna de Estatus$/;"	S	section:Tabla Genérica""Columnas Especiales
+3. Convenciones de Nomenclatura	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 3. Convenciones de Nomenclatura$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+3. Crear función para obtener imágenes del nuevo modelo	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 3. Crear función para obtener imágenes del nuevo modelo$/;"	S	section:Carga de imágenes""Crear un tipo de imágen
+3. Crear una carpeta en el directorio del usuario e ingresar a ella	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 3. Crear una carpeta en el directorio del usuario e ingresar a ella$/;"	t	chapter:Instalar Mongo BI conector
+3. Ejecutar la script de actualización	docs/carrduci-sys/2-despliegue-csys.md	/^### 3. Ejecutar la script de actualización$/;"	S	section:Desplegar CARRDUCIsys""Procedimiento
+3. Evaluador genera la nueva versión y compila la o las imágenes.	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^## 3. Evaluador genera la nueva versión y compila la o las imágenes.$/;"	s	chapter:Proceso estandar
+3. Figuras con caption	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^#### 3. Figuras con caption$/;"	t	subsection:Personalización avanzada del sistema de documentación""Personalización de estilos""Estilos personalizados actuales
+3. Formato de imagen incorrecto	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### 3. Formato de imagen incorrecto$/;"	t	subsection:Carga de imágenes""Manejo de errores""Errores comunes
+3. Generar el sidebar	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 3. Generar el sidebar$/;"	t	subsection:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación""Proceso paso a paso
+3. Instalar el GitHub CLI (Command Line) e iniciar sesión	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 3. Instalar el GitHub CLI (Command Line) e iniciar sesión$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+3. Paginación	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### 3. Paginación$/;"	S	section:Personalización avanzada del sistema de documentación""Plugins de Docsify instalados
+3. Palabras Clave Globales	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## 3. Palabras Clave Globales$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+3. Plugins, métodos, validadores	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### 3. Plugins, métodos, validadores$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)""Para documentar modelos (esquemas de mongo) del API
+3. Redirigir el puerto del conector BI desde Linux a uno local	docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md	/^## 3. Redirigir el puerto del conector BI desde Linux a uno local$/;"	s	chapter:Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux
+3. Registro en el Sistema	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## 3. Registro en el Sistema$/;"	s	chapter:Creación de Componentes en CARRDUCI
+3. Tipos de Código	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 3. Tipos de Código$/;"	S	section:Claves de Autorización de Usuario Simples""Mejores Prácticas
+3. Usar `toHexString()` solo al crear documentos	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 3. Usar `toHexString()` solo al crear documentos$/;"	S	section:Carga de imágenes""Mejores prácticas
+3. `docker/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 3. `docker\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+3. Órdenes de Producción	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 3. Órdenes de Producción$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+3.1 Componentes de Vista	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 3.1 Componentes de Vista$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""3. Convenciones de Nomenclatura
+3.1 Rutas (`pages.routes.ts`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 3.1 Rutas (`pages.routes.ts`)$/;"	S	section:Creación de Componentes en CARRDUCI""3. Registro en el Sistema
+3.2 Componentes Auxiliares	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 3.2 Componentes Auxiliares$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""3. Convenciones de Nomenclatura
+3.2 Sistema de Permisos	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 3.2 Sistema de Permisos$/;"	S	section:Creación de Componentes en CARRDUCI""3. Registro en el Sistema
+3.3 Menú Lateral (`login.menus.js`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 3.3 Menú Lateral (`login.menus.js`)$/;"	S	section:Creación de Componentes en CARRDUCI""3. Registro en el Sistema
+3.3 Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 3.3 Pipes$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""3. Convenciones de Nomenclatura
+3.4 Servicios y Modelos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 3.4 Servicios y Modelos$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""3. Convenciones de Nomenclatura
+3.5 API (Backend)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 3.5 API (Backend)$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""3. Convenciones de Nomenclatura
+30	.obsidian/workspace.json	/^    "Untitled 1.canvas",$/;"	s	array:lastOpenFiles
+31	.obsidian/workspace.json	/^    "-por-hacer.md",$/;"	s	array:lastOpenFiles
+32	.obsidian/workspace.json	/^    "docker\/uso-docker.md",$/;"	s	array:lastOpenFiles
+33	.obsidian/workspace.json	/^    "odbc-mongo",$/;"	s	array:lastOpenFiles
+34	.obsidian/workspace.json	/^    "ubuntu-server\/conexion-ssh.md",$/;"	s	array:lastOpenFiles
+35	.obsidian/workspace.json	/^    "por-hacer.md",$/;"	s	array:lastOpenFiles
+36	.obsidian/workspace.json	/^    "_por-hacer.md",$/;"	s	array:lastOpenFiles
+37	.obsidian/workspace.json	/^    "otro.md",$/;"	s	array:lastOpenFiles
+38	.obsidian/workspace.json	/^    "carrduci-sys-api.md",$/;"	s	array:lastOpenFiles
+39	.obsidian/workspace.json	/^    "tempCodeRunnerFile.py",$/;"	s	array:lastOpenFiles
+4	.obsidian/workspace.json	/^    "carrduci-sys-desarrollo\/3-estructuras-de-documentacion.md",$/;"	s	array:lastOpenFiles
+4. Arquitectura de Rutas	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 4. Arquitectura de Rutas$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+4. Añadir usuario a git	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 4. Añadir usuario a git$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+4. Clases de texto	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^#### 4. Clases de texto$/;"	t	subsection:Personalización avanzada del sistema de documentación""Personalización de estilos""Estilos personalizados actuales
+4. Colores HSL y HSLA	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## 4. Colores HSL y HSLA$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+4. Columna Desplegable	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### 4. Columna Desplegable$/;"	S	section:Tabla Genérica""Columnas Especiales
+4. Creación del ODBC	docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md	/^## 4. Creación del ODBC$/;"	s	chapter:Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux
+4. Códigos QR de Almacén	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 4. Códigos QR de Almacén$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+4. Desarrollo de la API	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## 4. Desarrollo de la API$/;"	s	chapter:Creación de Componentes en CARRDUCI
+4. Descargar el archivo contenedor ejecutando el siguiente comando	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 4. Descargar el archivo contenedor ejecutando el siguiente comando$/;"	t	chapter:Instalar Mongo BI conector
+4. Documentos Específicos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### 4. Documentos Específicos$/;"	S	section:Claves de Autorización de Usuario Simples""Mejores Prácticas
+4. Funciones	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## 4. Funciones$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+4. Mapear correctamente las imágenes guardadas	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 4. Mapear correctamente las imágenes guardadas$/;"	S	section:Carga de imágenes""Mejores prácticas
+4. Middleware	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### 4. Middleware$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)""Para documentar modelos (esquemas de mongo) del API
+4. Previsualizar localmente	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 4. Previsualizar localmente$/;"	t	subsection:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación""Proceso paso a paso
+4. Registrar la función en `obtenerTodosLosIdsImagenes`	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 4. Registrar la función en `obtenerTodosLosIdsImagenes`$/;"	S	section:Carga de imágenes""Crear un tipo de imágen
+4. Sidebar colapsable	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### 4. Sidebar colapsable$/;"	S	section:Personalización avanzada del sistema de documentación""Plugins de Docsify instalados
+4. `odbc-mongo/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 4. `odbc-mongo\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+4.1 Estructura de Archivos	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 4.1 Estructura de Archivos$/;"	S	section:Creación de Componentes en CARRDUCI""4. Desarrollo de la API
+4.1 Lazy Loading por Componente	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 4.1 Lazy Loading por Componente$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""4. Arquitectura de Rutas
+4.2 Modelo con Plugins Estándar	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 4.2 Modelo con Plugins Estándar$/;"	S	section:Creación de Componentes en CARRDUCI""4. Desarrollo de la API
+4.2 Organización de `pages.routes.ts`	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 4.2 Organización de `pages.routes.ts`$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""4. Arquitectura de Rutas
+4.3 Servicio con CRUD Unificado	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 4.3 Servicio con CRUD Unificado$/;"	S	section:Creación de Componentes en CARRDUCI""4. Desarrollo de la API
+4.4 Controlador	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 4.4 Controlador$/;"	S	section:Creación de Componentes en CARRDUCI""4. Desarrollo de la API
+4.5 Rutas	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 4.5 Rutas$/;"	S	section:Creación de Componentes en CARRDUCI""4. Desarrollo de la API
+40	.obsidian/workspace.json	/^    "subir_cambios.ps1"$/;"	s	array:lastOpenFiles
+5	.obsidian/workspace.json	/^    "Untitled.canvas",$/;"	s	array:lastOpenFiles
+5. Colores en Gradientes y Funciones Avanzadas	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## 5. Colores en Gradientes y Funciones Avanzadas$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+5. Descargar el siguiente archivo para verificar la integridad el paquete descargado en el paso anterior	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 5. Descargar el siguiente archivo para verificar la integridad el paquete descargado en el /;"	t	chapter:Instalar Mongo BI conector
+5. Documentación Estándar	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## 5. Documentación Estándar$/;"	s	chapter:Creación de Componentes en CARRDUCI
+5. Ejecutar la script de despliegue y comandos iniciales	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 5. Ejecutar la script de despliegue y comandos iniciales$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+5. Exportaciones	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### 5. Exportaciones$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)""Para documentar modelos (esquemas de mongo) del API
+5. Formularios de Mantenimiento en Blanco	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 5. Formularios de Mantenimiento en Blanco$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+5. Hacer commit y push	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 5. Hacer commit y push$/;"	t	subsection:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación""Proceso paso a paso
+5. Limpiar imágenes huérfanas	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 5. Limpiar imágenes huérfanas$/;"	S	section:Carga de imágenes""Mejores prácticas
+5. Resaltado de sintaxis (Prism)	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### 5. Resaltado de sintaxis (Prism)$/;"	S	section:Personalización avanzada del sistema de documentación""Plugins de Docsify instalados
+5. Sistema de Permisos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 5. Sistema de Permisos$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+5. `ubuntu-server/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 5. `ubuntu-server\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+5.1 Estructura Jerárquica Unificada	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 5.1 Estructura Jerárquica Unificada$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""5. Sistema de Permisos
+5.1 Reglas Generales de Documentación	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 5.1 Reglas Generales de Documentación$/;"	S	section:Creación de Componentes en CARRDUCI""5. Documentación Estándar
+5.2 Archivos de Configuración	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 5.2 Archivos de Configuración$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""5. Sistema de Permisos
+5.2 Documentación por Tipo de Archivo	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 5.2 Documentación por Tipo de Archivo$/;"	S	section:Creación de Componentes en CARRDUCI""5. Documentación Estándar
+5.2.1 Modelos de API (`models/*.model.js`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.1 Modelos de API (`models\/*.model.js`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.2 Servicios de API (`services/**/*.service.js`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.2 Servicios de API (`services\/**\/*.service.js`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.3 Controladores de API (`controllers/**/*.controller.js`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.3 Controladores de API (`controllers\/**\/*.controller.js`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.4 Rutas de API (`routes/**/*.route.js`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.4 Rutas de API (`routes\/**\/*.route.js`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.5 Componentes de GUI - TypeScript (`components/**/*.component.ts`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.5 Componentes de GUI - TypeScript (`components\/**\/*.component.ts`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.7 Guards de Angular (`guards/**/*.guard.ts`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.7 Guards de Angular (`guards\/**\/*.guard.ts`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.8 Archivos CSS/SCSS del componente (`components/**/*.component.css`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.8 Archivos CSS\/SCSS del componente (`components\/**\/*.component.css`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.2.9 Archivos de pruebas unitarias (`components/**/*.component.spec.ts`)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 5.2.9 Archivos de pruebas unitarias (`components\/**\/*.component.spec.ts`)$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.2 Documentación por Tipo de Archivo
+5.3 Checklist para Crear Componentes Nuevos	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### 5.3 Checklist para Crear Componentes Nuevos$/;"	S	section:Creación de Componentes en CARRDUCI""5. Documentación Estándar
+6	.obsidian/workspace.json	/^    "carrduci-sys\/3-restauracion-respaldos.md",$/;"	s	array:lastOpenFiles
+6. Agregar el servidor de carrduci sys al registro de ssh	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 6. Agregar el servidor de carrduci sys al registro de ssh$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+6. Ejecutar el siguiente comando para descargar e importar el archivo key	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 6. Ejecutar el siguiente comando para descargar e importar el archivo key$/;"	t	chapter:Instalar Mongo BI conector
+6. Formularios de Mantenimiento Contestados	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 6. Formularios de Mantenimiento Contestados$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+6. Sistema de Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 6. Sistema de Pipes$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+6. Validar límite de imágenes en el componente	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 6. Validar límite de imágenes en el componente$/;"	S	section:Carga de imágenes""Mejores prácticas
+6. `visual-studio-code/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 6. `visual-studio-code\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+6.1 Organización por Dominio	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 6.1 Organización por Dominio$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""6. Sistema de Pipes
+6.2 Módulo de Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 6.2 Módulo de Pipes$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""6. Sistema de Pipes
+7	.obsidian/workspace.json	/^    "windows\/establecer-copia-automatica-de-respaldos.md",$/;"	s	array:lastOpenFiles
+7. Alimentar la base de datos local	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^## 7. Alimentar la base de datos local$/;"	s	chapter:Desplegar el entorno de desarrollo de CARRDUCI sys
+7. Documentación Estandarizada	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 7. Documentación Estandarizada$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+7. Reparaciones de Máquinas	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 7. Reparaciones de Máquinas$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+7. Usar `transformarFileAObjetoPlano` para HTTP	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 7. Usar `transformarFileAObjetoPlano` para HTTP$/;"	S	section:Carga de imágenes""Mejores prácticas
+7. Verificar el archivo de instalación con el siguiente comando	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 7. Verificar el archivo de instalación con el siguiente comando$/;"	t	chapter:Instalar Mongo BI conector
+7. `windows/`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### 7. `windows\/`$/;"	t	subsection:Estructura y organización del repositorio de documentación""Organización de la documentación""Categorías principales (bajo `/docs/`)
+7.1 Separadores de Sección	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 7.1 Separadores de Sección$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""7. Documentación Estandarizada
+7.2 Comentarios JSDoc Obligatorios	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### 7.2 Comentarios JSDoc Obligatorios$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""7. Documentación Estandarizada
+8	.obsidian/workspace.json	/^    "README.md",$/;"	s	array:lastOpenFiles
+8. Desarrollos de Tapón - Órdenes de Producción	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 8. Desarrollos de Tapón - Órdenes de Producción$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+8. Extraer los archivos descargados e instalarlos en un directorio que esté en el **PATH**	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^#### 8. Extraer los archivos descargados e instalarlos en un directorio que esté en el **PATH**$/;"	t	chapter:Instalar Mongo BI conector
+8. Usar `findOneAndUpdate` en lugar de `.save()` para actualizaciones	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### 8. Usar `findOneAndUpdate` en lugar de `.save()` para actualizaciones$/;"	S	section:Carga de imágenes""Mejores prácticas
+9	.obsidian/workspace.json	/^    "carrduci-sys-desarrollo\/1-entorno-desarollo.md",$/;"	s	array:lastOpenFiles
+9. Desarrollos de Tapón - Formato	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### 9. Desarrollos de Tapón - Formato$/;"	S	section:Gestor de Impresiones""Tipos de Impresión
+9. Ejecutar el conector BI de Mongo	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^### 9. Ejecutar el conector BI de Mongo$/;"	S	chapter:Instalar Mongo BI conector
+API Pública	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## API Pública$/;"	s	chapter:Manejo de Mensajes
+API del Componente	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## API del Componente$/;"	s	chapter:Data List
+API del Componente	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## API del Componente$/;"	s	chapter:Modal
+Activación	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Activación$/;"	S	section:Tabla Genérica""Modo Selección Múltiple
+Actualizar dependencias	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Actualizar dependencias$/;"	S	section:Personalización avanzada del sistema de documentación""Mantenimiento
+Administración de Claves (Solo SUPER_ADMIN)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Administración de Claves (Solo SUPER_ADMIN)$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Administración de respaldos	docs/carrduci-sys/3-administracion-respaldos.md	/^## Administración de respaldos$/;"	s
+Agregar Menú Principal	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Agregar Menú Principal$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.3 Menú Lateral (`login.menus.js`)
+Agregar Nuevos Usos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Agregar Nuevos Usos$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Agregar argumentos (opcional)	docs/carrduci-sys/3-administracion-respaldos.md	/^##### Agregar argumentos (opcional)$/;"	T	subsubsection:Administración de respaldos""Sincronización con almacenamiento local""1.2. Programar apagado automático
+Agregar argumentos (opcional)	docs/windows/establecer-copia-automatica-de-respaldos.md	/^##### Agregar argumentos (opcional)$/;"	T	subsection:Establecer copia automática de respaldo en Windows""Procedimiento""2. Establecer las tareas automáticas en Windows
+Agregar argumentos (opcional)	docs/windows/establecer-copia-automatica-de-respaldos.md	/^##### Agregar argumentos (opcional)$/;"	T	subsection:Establecer copia automática de respaldo en Windows""Procedimiento""Apagado automático (opcional)
+Agregar carpetas a ignorar	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Agregar carpetas a ignorar$/;"	S	section:Personalización avanzada del sistema de documentación""Modificar el script generador de sidebar
+Agregar logo	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Agregar logo$/;"	S	section:Personalización avanzada del sistema de documentación""Personalizar la portada
+Agregar nuevo lenguaje de programación	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Agregar nuevo lenguaje de programación$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Agregar nuevo plugin de Docsify	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Agregar nuevo plugin de Docsify$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Al escribir contenido	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Al escribir contenido$/;"	S	section:Estructura y organización del repositorio de documentación""Mejores prácticas
+Al final de las compilaciones	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^# Al final de las compilaciones$/;"	c
+Almacenamiento de imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Almacenamiento de imágenes$/;"	S	section:Carga de imágenes""Notas adicionales
+Anclas de ID	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### Anclas de ID$/;"	t	subsection:Estructura y organización del repositorio de documentación""Convenciones y estándares""Estilo de contenido
+Antes de hacer commit	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Antes de hacer commit$/;"	S	section:Estructura y organización del repositorio de documentación""Mejores prácticas
+Apagado automático (opcional)	docs/windows/establecer-copia-automatica-de-respaldos.md	/^### Apagado automático (opcional)$/;"	S	section:Establecer copia automática de respaldo en Windows""Procedimiento
+Archivo 1: `permisosKeys.config.ts`	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Archivo 1: `permisosKeys.config.ts`$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Archivo 2: `permisos.config.ts`	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Archivo 2: `permisos.config.ts`$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Archivo API: `permisos.config.js`	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Archivo API: `permisos.config.js`$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Archivo de excel (como JSON)	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Archivo de excel (como JSON)$/;"	s	chapter:Tipos de campo
+Archivos principales y su propósito	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Archivos principales y su propósito$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Arquitectura de Módulos (CORREGIDA)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Arquitectura de Módulos (CORREGIDA)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Arquitectura de Rutas Futura (Lazy Loading por Dominio)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Arquitectura de Rutas Futura (Lazy Loading por Dominio)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Arquitectura del Sistema	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Arquitectura del Sistema$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Arquitectura del Sistema	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Arquitectura del Sistema$/;"	s	chapter:Historial de Cambios
+Arquitectura del Sistema	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Arquitectura del Sistema$/;"	s	chapter:Tabla Genérica
+Arreglo de checkbox	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Arreglo de checkbox$/;"	s	chapter:Tipos de campo
+Auditoría	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Auditoría$/;"	S	section:Claves de Autorización de Usuario Simples""Notas Adicionales
+Auto increment	docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md	/^# Auto increment$/;"	c
+Backend (API)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Backend (API)$/;"	S	section:Claves de Autorización de Usuario Simples""Estructura del Sistema
+Backend (API)	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Backend (API)$/;"	S	section:Historial de Cambios""Ubicación de Archivos
+Backend - Servicio de Conteos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Backend - Servicio de Conteos$/;"	S	section:Claves de Autorización de Usuario Simples""Ejemplo Completo: Validación en Conteos
+Barras de Progreso CSS	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Barras de Progreso CSS$/;"	s	chapter:Tabla Genérica
+Beneficios de `loadChildren`:	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Beneficios de `loadChildren`:$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+Beneficios de esta organización:	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Beneficios de esta organización:$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)""Organización de `pages.routes.ts` con Separadores de Sección
+Beneficios del Sistema	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Beneficios del Sistema$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Bloques de código	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### Bloques de código$/;"	t	subsection:Estructura y organización del repositorio de documentación""Convenciones y estándares""Estilo de contenido
+Botones Automáticos	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Botones Automáticos$/;"	S	section:Tabla Genérica""Exportar y Copiar
+Botones de Ayuda	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Botones de Ayuda$/;"	S	section:Tabla Genérica""Modo Selección Múltiple
+Breakpoints Personalizados	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Breakpoints Personalizados$/;"	S	section:Tabla Genérica""Modo Móvil Responsivo
+Buenas Prácticas	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Buenas Prácticas$/;"	s	chapter:Data List
+Buenas Prácticas	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Buenas Prácticas$/;"	s	chapter:Manejo de Mensajes
+Buenas Prácticas	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Buenas Prácticas$/;"	s	chapter:Modal
+Búsqueda de texto	docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md	/^# Búsqueda de texto$/;"	c
+CARRDUCI	_coverpage.md	/^# CARRDUCI$/;"	c
+Calendario genérico	docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md	/^# Calendario genérico$/;"	c
+Callbacks	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Callbacks$/;"	t	subsection:Tabla Genérica""Servicio: generarEstructura()""Opciones del 4to Parámetro
+Cambiar color de fondo	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Cambiar color de fondo$/;"	S	section:Personalización avanzada del sistema de documentación""Personalizar la portada
+Cambiar formato de nombres	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Cambiar formato de nombres$/;"	S	section:Personalización avanzada del sistema de documentación""Modificar el script generador de sidebar
+Campos del Registro	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Campos del Registro$/;"	S	section:Historial de Cambios""Resultado en Base de Datos
+Caracteres especiales causan errores	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Caracteres especiales causan errores$/;"	S	section:Estructura y organización del repositorio de documentación""Solución de problemas comunes
+Características	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Características$/;"	S	section:Historial de Cambios""Librería jsondiffpatch
+Características especiales de Markdown (Docsify)	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Características especiales de Markdown (Docsify)$/;"	S	section:Estructura y organización del repositorio de documentación""Convenciones y estándares
+Características principales	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Características principales$/;"	S	section:Claves de Autorización de Usuario Simples""Descripción
+Características principales	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Características principales$/;"	S	section:Gestor de Impresiones""Descripción
+Características principales	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Características principales$/;"	S	section:Historial de Cambios""Descripción
+Características principales	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Características principales$/;"	S	section:Tabla Genérica""Descripción
+Características principales	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Características principales$/;"	S	section:Estructura y organización del repositorio de documentación""Stack tecnológico
+Carga de imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^# Carga de imágenes$/;"	c
+Carrusel de imágenes genérico	docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md	/^# Carrusel de imágenes genérico$/;"	c
+Casos de Uso	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Casos de Uso$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Categorías principales (bajo `/docs/`)	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Categorías principales (bajo `\/docs\/`)$/;"	S	section:Estructura y organización del repositorio de documentación""Organización de la documentación
+Catálogo completo de métodos (con ejemplos)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Catálogo completo de métodos (con ejemplos)$/;"	s	chapter:Manejo de Mensajes
+Certificado para desarrollo :id=cert-des	docs/carrduci-sys/1-generacion-certificados.md	/^### Certificado para desarrollo :id=cert-des$/;"	S	section:Generar certificados para CARRDUCIsys""Crear un CSR (Certificate Sign Request) :id=crear-csr
+Certificado para producción :id=cert-prod	docs/carrduci-sys/1-generacion-certificados.md	/^### Certificado para producción :id=cert-prod$/;"	S	section:Generar certificados para CARRDUCIsys""Crear un CSR (Certificate Sign Request) :id=crear-csr
+Checkbox	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Checkbox$/;"	s	chapter:Tipos de campo
+Clase especial	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial$/;"	S	section:Tipos de campo""Arreglo de checkbox
+Clase especial	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial$/;"	S	section:Tipos de campo""Datalist (no confundir con el de `Texto`)
+Clase especial	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial$/;"	S	section:Tipos de campo""Radio (tipo de checkbox)
+Clase especial	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial$/;"	S	section:Tipos de campo""Seleccionable
+Clase especial	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial$/;"	S	section:Tipos de campo""Texto
+Clase especial `ComponenteFormularioDinamico`	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Clase especial `ComponenteFormularioDinamico`$/;"	S	section:Tipos de campo""Componente
+Clases CSS Disponibles	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Clases CSS Disponibles$/;"	S	section:Tabla Genérica""Barras de Progreso CSS
+Claves de Autorización de Usuario Simples	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^# Claves de Autorización de Usuario Simples$/;"	c
+Colección: registroshistorial	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Colección: registroshistorial$/;"	S	section:Historial de Cambios""Resultado en Base de Datos
+Color	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Color$/;"	s	chapter:Tipos de campo
+Columna Simple	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Columna Simple$/;"	S	section:Tabla Genérica""Definición de Columnas
+Columnas Especiales	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Columnas Especiales$/;"	s	chapter:Tabla Genérica
+Columnas Especiales	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Columnas Especiales$/;"	t	subsection:Tabla Genérica""Servicio: generarEstructura()""Opciones del 4to Parámetro
+Componente	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Componente$/;"	s	chapter:Tipos de campo
+Componente Gestor	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Componente Gestor$/;"	S	section:Gestor de Impresiones""Ubicación de Archivos
+Componente de Administración	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Componente de Administración$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Componente de Proveedores Independiente	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Componente de Proveedores Independiente$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Ejemplo de Implementación Completa
+Componente de la GUI.	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Componente de la GUI.$/;"	s	chapter:Carga de imágenes
+Componente: app-historial-elemento	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Componente: app-historial-elemento$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Componentes	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Componentes$/;"	S	section:Historial de Cambios""Arquitectura del Sistema
+Componentes	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Componentes$/;"	S	section:Tabla Genérica""Arquitectura del Sistema
+Componentes Auxiliares (Auxiliary Components)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Componentes Auxiliares (Auxiliary Components)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.2 Tipos de Componentes
+Componentes Auxiliares (Auxiliary Components)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Componentes Auxiliares (Auxiliary Components)$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.1 Tipos de Componentes
+Componentes Registrados	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Componentes Registrados$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Resultado Final Automático
+Componentes Relacionados	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Componentes Relacionados$/;"	s	chapter:Tabla Genérica
+Componentes de Impresión Específicos	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Componentes de Impresión Específicos$/;"	S	section:Gestor de Impresiones""Ubicación de Archivos
+Componentes de Vista (Vista Components)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Componentes de Vista (Vista Components)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.2 Tipos de Componentes
+Componentes de Vista (Vista Components)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Componentes de Vista (Vista Components)$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.1 Tipos de Componentes
+Componentes que requieren confirmaciones	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Componentes que requieren confirmaciones$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Comportamiento Interno	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Comportamiento Interno$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Compresión automática	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Compresión automática$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Guardar imágenes
+Compresión con Sharp	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Compresión con Sharp$/;"	S	section:Carga de imágenes""Notas adicionales
+Con Alineación	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Alineación$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Clase Dinámica	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Clase Dinámica$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Grupo de Imágenes	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Con Grupo de Imágenes$/;"	t	subsection:Tabla Genérica""Columnas Especiales""1. Columna de Imágenes
+Con Imagen Directa (Sin Pipe)	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Con Imagen Directa (Sin Pipe)$/;"	t	subsection:Tabla Genérica""Columnas Especiales""1. Columna de Imágenes
+Con Link	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Link$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Pipe	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Pipe$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Pipes y Estilos	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Pipes y Estilos$/;"	S	section:Tabla Genérica""Modo Móvil Responsivo
+Con Prefijo/Sufijo	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Prefijo\/Sufijo$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Template	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Template$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con Tooltip	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Con Tooltip$/;"	S	section:Tabla Genérica""Definición de Columnas
+Con app-mini-visualizador-foto (Recomendado)	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Con app-mini-visualizador-foto (Recomendado)$/;"	t	subsection:Tabla Genérica""Columnas Especiales""1. Columna de Imágenes
+Concepto General	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Concepto General$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Conclusión	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^## Conclusión$/;"	s	chapter:Creación de Componentes en CARRDUCI
+Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux	docs/odbc-mongo/2-conectar-a-bi-de-mongo-remotamente-desde-windows.md	/^# Conectar un ODBC al conector BI de Mongo, en un servidor remoto de Linux$/;"	c
+Configuraciones avanzadas sugeridas	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Configuraciones avanzadas sugeridas$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Configuración Básica	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Configuración Básica$/;"	S	section:Tabla Genérica""Modo Móvil Responsivo
+Configuración de Docsify	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Configuración de Docsify$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Configuración de GitHub Pages	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Configuración de GitHub Pages$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Configuración de combinación de colecciones con imágenes	docs/carrduci-sys/3-administracion-respaldos.md	/^### Configuración de combinación de colecciones con imágenes$/;"	S	section:Administración de respaldos
+Configuración en el Plugin	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Configuración en el Plugin$/;"	S	section:Historial de Cambios""Librería jsondiffpatch
+Configurar Obsidian	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Configurar Obsidian$/;"	S	section:Personalización avanzada del sistema de documentación""Integración con Obsidian
+Configurar uso automático de llave	docs/ubuntu-server/llave-ssh.md	/^# Configurar uso automático de llave$/;"	c
+Confirmación con opciones extra (`vista-desarrollos-tapon-supervision.component.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Confirmación con opciones extra (`vista-desarrollos-tapon-supervision.component.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Confirmación de eliminación (`vista-folios-prefacturas.component.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Confirmación de eliminación (`vista-folios-prefacturas.component.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Consejos de rendimiento	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Consejos de rendimiento$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Consideraciones de Rendimiento	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Consideraciones de Rendimiento$/;"	S	section:Claves de Autorización de Usuario Simples""Notas Adicionales
+Consideraciones de rendimiento	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Consideraciones de rendimiento$/;"	S	section:Carga de imágenes""Notas adicionales
+Contexto: Autenticación JWT	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Contexto: Autenticación JWT$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Controlador - Crear Nueva Instancia	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Controlador - Crear Nueva Instancia$/;"	S	section:Claves de Autorización de Usuario Simples""Ejemplo Completo: Validación en Conteos
+Controladores (Controllers)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Controladores (Controllers)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express""2.2 Tipos de Archivos
+Convenciones de nomenclatura (CRÍTICO)	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Convenciones de nomenclatura (CRÍTICO)$/;"	S	section:Estructura y organización del repositorio de documentación""Convenciones y estándares
+Convenciones para Nuevos Permisos	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Convenciones para Nuevos Permisos$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Convenciones y estándares	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Convenciones y estándares$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Coordinación con flotantes	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Coordinación con flotantes$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Creación de Componentes en CARRDUCI	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^# Creación de Componentes en CARRDUCI$/;"	c
+Crear un CSR (Certificate Sign Request) :id=crear-csr	docs/carrduci-sys/1-generacion-certificados.md	/^## Crear un CSR (Certificate Sign Request) :id=crear-csr$/;"	s	chapter:Generar certificados para CARRDUCIsys
+Crear un Nuevo Tipo de Impresión	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Crear un Nuevo Tipo de Impresión$/;"	s	chapter:Gestor de Impresiones
+Crear un tipo de imágen	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Crear un tipo de imágen$/;"	s	chapter:Carga de imágenes
+Crear una entidad de certificación (CA) :id=crear-ca	docs/carrduci-sys/1-generacion-certificados.md	/^## Crear una entidad de certificación (CA) :id=crear-ca$/;"	s	chapter:Generar certificados para CARRDUCIsys
+Código del Componente	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Código del Componente$/;"	t	subsection:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)""Componente de Administración
+Cómo funciona `generar_directorio.py`	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Cómo funciona `generar_directorio.py`$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Data List	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^# Data List$/;"	c
+Data list (sugerencias)	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^### Data list (sugerencias)$/;"	S	section:Tipos de campo""Texto
+Datalist (no confundir con el de `Texto`)	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Datalist (no confundir con el de `Texto`)$/;"	s	chapter:Tipos de campo
+Definición de Columnas	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Definición de Columnas$/;"	s	chapter:Tabla Genérica
+Desactivar	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Desactivar$/;"	S	section:Tabla Genérica""Exportar y Copiar
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Descripción$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Descripción$/;"	s	chapter:Data List
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Descripción$/;"	s	chapter:Gestor de Impresiones
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Descripción$/;"	s	chapter:Historial de Cambios
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Descripción$/;"	s	chapter:Manejo de Mensajes
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Descripción$/;"	s	chapter:Modal
+Descripción	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Descripción$/;"	s	chapter:Tabla Genérica
+Desplegar CARRDUCIsys	docs/carrduci-sys/2-despliegue-csys.md	/^# Desplegar CARRDUCIsys$/;"	c
+Desplegar el entorno de desarrollo de CARRDUCI sys	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^# Desplegar el entorno de desarrollo de CARRDUCI sys$/;"	c
+Desplegar servidor Samba en Ubuntu	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^# Desplegar servidor Samba en Ubuntu$/;"	c
+Detectar cambios	docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md	/^## Detectar cambios$/;"	s	chapter:Flotante genérico
+Diagrama de Flujo	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Diagrama de Flujo$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Documentación Completa sobre los Colores en CSS	docs/carrduci-sys-desarrollo/css/colores-css.md	/^# Documentación Completa sobre los Colores en CSS$/;"	c
+Documentación de Sistemas	_coverpage.md	/^# Documentación de Sistemas$/;"	c
+Ejemplo	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Ejemplo$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Ejemplo Completo de Página Web	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## Ejemplo Completo de Página Web$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+Ejemplo Completo: Validación en Conteos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Ejemplo Completo: Validación en Conteos$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Ejemplo Directo (Para Testing)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Ejemplo Directo (Para Testing)$/;"	t	subsection:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)""Paso 1: Crear un Código de Autorización
+Ejemplo Manual (sin Formulario Dinámico)	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Ejemplo Manual (sin Formulario Dinámico)$/;"	s	chapter:Data List
+Ejemplo básico	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^#### Ejemplo básico$/;"	t	subsection:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)""`confirmarAccion()` y `confirmarAccionExtendido()`
+Ejemplo completo de implementación	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Ejemplo completo de implementación$/;"	s	chapter:Carga de imágenes
+Ejemplo de Implementación Completa	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Ejemplo de Implementación Completa$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Ejemplo de Manejo	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Ejemplo de Manejo$/;"	S	section:Claves de Autorización de Usuario Simples""Manejo de Errores
+Ejemplo de Notación de Punto	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Ejemplo de Notación de Punto$/;"	S	section:Historial de Cambios""Resultado en Base de Datos
+Ejemplo de Nueva Estructura Completa (Sin Lazy Loading)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Ejemplo de Nueva Estructura Completa (Sin Lazy Loading)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Ejemplo de Pipe	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Ejemplo de Pipe$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.3 Sistema de Pipes
+Ejemplo de Uso Interno	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Ejemplo de Uso Interno$/;"	S	section:Historial de Cambios""Librería jsondiffpatch
+Ejemplo de Uso Rápido	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Ejemplo de Uso Rápido$/;"	s	chapter:Tabla Genérica
+Ejemplo de Uso en Componente	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Ejemplo de Uso en Componente$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Frontend (GUI)
+Ejemplo de manejo de errores	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Ejemplo de manejo de errores$/;"	S	section:Carga de imágenes""Manejo de errores
+Ejemplo de transformación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Ejemplo de transformación$/;"	S	section:Estructura y organización del repositorio de documentación""Cómo funciona `generar_directorio.py`
+Ejemplo dentro de un Formulario Dinámico	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^### Ejemplo dentro de un Formulario Dinámico$/;"	S	section:Data List""Integración con el Formulario Dinámico
+Ejemplo en un Controlador (Uso Real)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Ejemplo en un Controlador (Uso Real)$/;"	t	subsection:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)""Paso 1: Crear un Código de Autorización
+Ejemplo extendido completo	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^#### Ejemplo extendido completo$/;"	t	subsection:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)""`confirmarAccion()` y `confirmarAccionExtendido()`
+Ejemplo: Folios de Vendedor	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Ejemplo: Folios de Vendedor$/;"	s	chapter:Modal
+Ejemplo: Supervisión de Conteos	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Ejemplo: Supervisión de Conteos$/;"	s	chapter:Modal
+Ejemplos	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Ejemplos$/;"	s	chapter:Modal
+Ejemplos de Descripciones	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Ejemplos de Descripciones$/;"	S	section:Historial de Cambios""Propiedades de Metadata
+Ejemplos extendidos	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Ejemplos extendidos$/;"	s	chapter:Manejo de Mensajes
+El sidebar no se actualiza	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### El sidebar no se actualiza$/;"	S	section:Estructura y organización del repositorio de documentación""Solución de problemas comunes
+Elementos personalizados	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### Elementos personalizados$/;"	t	subsection:Estructura y organización del repositorio de documentación""Convenciones y estándares""Estilo de contenido
+Eliminar imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Eliminar imágenes$/;"	S	section:Carga de imágenes""Uso del servicio del API
+En vista de escritorio	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^### En vista de escritorio$/;"	S	section:Modal""Ejemplos
+En vista móvil	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^### En vista móvil$/;"	S	section:Modal""Ejemplos
+Encabezados	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### Encabezados$/;"	t	subsection:Estructura y organización del repositorio de documentación""Convenciones y estándares""Estilo de contenido
+Enlaces rotos	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Enlaces rotos$/;"	S	section:Estructura y organización del repositorio de documentación""Solución de problemas comunes
+Entradas (`@Input`)	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^### Entradas (`@Input`)$/;"	S	section:Modal""API del Componente
+Error con impresión de detalles (`manejo-de-mensajes.service.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Error con impresión de detalles (`manejo-de-mensajes.service.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Errores Comunes	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Errores Comunes$/;"	S	section:Claves de Autorización de Usuario Simples""Manejo de Errores
+Errores comunes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Errores comunes$/;"	S	section:Carga de imágenes""Manejo de errores
+Escenario combinado: CRUD + confirmación + follow-up	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Escenario combinado: CRUD + confirmación + follow-up$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Establecer copia automática de respaldo en Windows	docs/windows/establecer-copia-automatica-de-respaldos.md	/^# Establecer copia automática de respaldo en Windows$/;"	c
+Establecimientos	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^## Establecimientos$/;"	s	chapter:Estructuras para documentar el CARRDUCIsys
+Estilo de contenido	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Estilo de contenido$/;"	S	section:Estructura y organización del repositorio de documentación""Convenciones y estándares
+Estilos personalizados actuales	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Estilos personalizados actuales$/;"	S	section:Personalización avanzada del sistema de documentación""Personalización de estilos
+Estrategias para agregar nueva documentación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Estrategias para agregar nueva documentación$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Estructura Actualizada (Nueva Arquitectura)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Estructura Actualizada (Nueva Arquitectura)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Estructura Completa	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Estructura Completa$/;"	S	section:Historial de Cambios""Propiedades de Metadata
+Estructura Conceptual Futura	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Estructura Conceptual Futura$/;"	t	subsection:Creación de Componentes en CARRDUCI""Arquitectura de Rutas Futura (Lazy Loading por Dominio)
+Estructura General Unificada	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Estructura General Unificada$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Estructura Recomendada para `pages.routes.ts`:	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Estructura Recomendada para `pages.routes.ts`:$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)""Organización de `pages.routes.ts` con Separadores de Sección
+Estructura actual	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Estructura actual$/;"	S	section:Personalización avanzada del sistema de documentación""Modificar el script generador de sidebar
+Estructura de Archivos y Código CARRDUCI-sys	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^# Estructura de Archivos y Código CARRDUCI-sys$/;"	c
+Estructura de Carpetas Propuesta	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Estructura de Carpetas Propuesta$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Arquitectura del Sistema
+Estructura de Movimientos	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Estructura de Movimientos$/;"	S	section:Historial de Cambios""Resultado en Base de Datos
+Estructura del Sistema	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Estructura del Sistema$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Estructura por Capas:	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^### Estructura por Capas:$/;"	S	section:Estructura de Archivos y Código CARRDUCI-sys""🏗️ Arquitectura General: Component Domain Architecture
+Estructura y organización del repositorio de documentación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^# Estructura y organización del repositorio de documentación$/;"	c
+Estructuras Generales (snippets)	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^## Estructuras Generales (snippets)$/;"	s	chapter:Estructuras para documentar el CARRDUCIsys
+Estructuras de Permisos CARRDUCI	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Estructuras de Permisos CARRDUCI$/;"	t	subsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos
+Estructuras para documentar el CARRDUCIsys	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^# Estructuras para documentar el CARRDUCIsys$/;"	c
+Estructuras para el API (snippets y procedimientos)	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^## Estructuras para el API (snippets y procedimientos)$/;"	s	chapter:Estructuras para documentar el CARRDUCIsys
+Exportar y Copiar	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Exportar y Copiar$/;"	s	chapter:Tabla Genérica
+Fecha	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Fecha$/;"	s	chapter:Tipos de campo
+Fecha y hora (`datetime-local`)	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Fecha y hora (`datetime-local`)$/;"	s	chapter:Tipos de campo
+Firma	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Firma$/;"	S	section:Tabla Genérica""Servicio: generarEstructura()
+Flotante genérico	docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md	/^# Flotante genérico$/;"	c
+Flujo de Creación de Código	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Flujo de Creación de Código$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Flujo de Funcionamiento	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Flujo de Funcionamiento$/;"	S	section:Historial de Cambios""Arquitectura del Sistema
+Flujo de trabajo para agregar documentación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Flujo de trabajo para agregar documentación$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Formulario dinámico	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^# Formulario dinámico$/;"	c
+Formularios dinámicos y validaciones	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Formularios dinámicos y validaciones$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Framework de documentación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Framework de documentación$/;"	S	section:Estructura y organización del repositorio de documentación""Stack tecnológico
+Frontend (GUI)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Frontend (GUI)$/;"	S	section:Claves de Autorización de Usuario Simples""Estructura del Sistema
+Frontend (GUI)	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Frontend (GUI)$/;"	S	section:Historial de Cambios""Ubicación de Archivos
+Frontend - Componente de Conteos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Frontend - Componente de Conteos$/;"	S	section:Claves de Autorización de Usuario Simples""Ejemplo Completo: Validación en Conteos
+Generación Automática de Menús	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Generación Automática de Menús$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Generación Automática de Permisos	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Generación Automática de Permisos$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Generador Automático de Permisos	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Generador Automático de Permisos$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Generación Automática de Permisos
+Generador de Menús por Contexto	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Generador de Menús por Contexto$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Generación Automática de Menús
+Generar certificados para CARRDUCIsys	docs/carrduci-sys/1-generacion-certificados.md	/^# Generar certificados para CARRDUCIsys$/;"	c
+Generar llave SSH	docs/ubuntu-server/llave-ssh.md	/^# Generar llave SSH$/;"	c
+Generar una versión nueva	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^# Generar una versión nueva$/;"	c
+Gestor de Impresiones	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^# Gestor de Impresiones$/;"	c
+Guardar imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Guardar imágenes$/;"	S	section:Carga de imágenes""Uso del servicio del API
+Guardar imágenes al crear un documento	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Guardar imágenes al crear un documento$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Guardar imágenes
+Guards	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Guards$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.3 Otros Tipos de Archivos
+Guía Completa de Valores y Unidades de Dimensiones en CSS	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^# Guía Completa de Valores y Unidades de Dimensiones en CSS$/;"	c
+Guía rápida (uso básico)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Guía rápida (uso básico)$/;"	s	chapter:Manejo de Mensajes
+HTML	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### HTML$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""1. Separador de sección
+HTML	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### HTML$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""2. Sub separadores de sección
+HTML	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### HTML$/;"	S	section:Tabla Genérica""Ejemplo de Uso Rápido
+Hacer uso del índice en el servicio del API	docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md	/^## Hacer uso del índice en el servicio del API$/;"	s	chapter:Búsqueda de texto
+Historial de Cambios	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^# Historial de Cambios$/;"	c
+Hora	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Hora$/;"	s	chapter:Tipos de campo
+IMPORTANTE	docs/windows/establecer-copia-automatica-de-respaldos.md	/^### IMPORTANTE$/;"	S	section:Establecer copia automática de respaldo en Windows""Procedimiento
+Impacto en Desarrollo	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Impacto en Desarrollo$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Implementación	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Implementación$/;"	S	section:Tabla Genérica""Modo Selección Múltiple
+Implementación Completa	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Implementación Completa$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Implementación en el Backend (API)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Implementación en el Backend (API)$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Implementación en el Frontend (GUI)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Implementación en el Frontend (GUI)$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Importar el Módulo	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Importar el Módulo$/;"	S	section:Tabla Genérica""Instalación e Importación
+Importar el Módulo del Mini Visualizador	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Importar el Módulo del Mini Visualizador$/;"	t	subsection:Tabla Genérica""Columnas Especiales""1. Columna de Imágenes
+Importar el servicio de imágenes	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Importar el servicio de imágenes$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Guardar imágenes
+Imágenes	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Imágenes$/;"	s	chapter:Tipos de campo
+Imágenes	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^#### Imágenes$/;"	t	subsection:Estructura y organización del repositorio de documentación""Convenciones y estándares""Estilo de contenido
+Imágenes no se muestran	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Imágenes no se muestran$/;"	S	section:Estructura y organización del repositorio de documentación""Solución de problemas comunes
+Inicialización en el Startup	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Inicialización en el Startup$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Inputs	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Inputs$/;"	S	section:Tabla Genérica""Propiedades del Componente
+Insertar llave pública en el servidor	docs/ubuntu-server/llave-ssh.md	/^# Insertar llave pública en el servidor$/;"	c
+Instalación del SubSistema de Linux en Windows	docs/carrduci-sys-desarrollo/1-instalacion-wsl.md	/^# Instalación del SubSistema de Linux en Windows$/;"	c
+Instalación e Importación	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Instalación e Importación$/;"	s	chapter:Tabla Genérica
+Instalación en Edge	docs/carrduci-sys/6-instalar-certificado-en-computadora-usuario.md	/^## Instalación en Edge$/;"	s	chapter:Instalar certificado de CARRDUCIsys en computadora de usuario
+Instalar Mongo BI conector	docs/odbc-mongo/1-instalar-conector-bi-mongo-en-linux.md	/^# Instalar Mongo BI conector$/;"	c
+Instalar certificado de CARRDUCIsys en computadora de usuario	docs/carrduci-sys/6-instalar-certificado-en-computadora-usuario.md	/^# Instalar certificado de CARRDUCIsys en computadora de usuario$/;"	c
+Integración con Obsidian	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Integración con Obsidian$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Integración con el Formulario Dinámico	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Integración con el Formulario Dinámico$/;"	s	chapter:Data List
+Interfaz de Administración	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Interfaz de Administración$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Lazy loading de imágenes	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Lazy loading de imágenes$/;"	S	section:Personalización avanzada del sistema de documentación""Consejos de rendimiento
+Librería jsondiffpatch	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Librería jsondiffpatch$/;"	s	chapter:Historial de Cambios
+Limpieza de archivos huérfanos	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Limpieza de archivos huérfanos$/;"	S	section:Personalización avanzada del sistema de documentación""Mantenimiento
+Manejo de Errores	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Manejo de Errores$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Manejo de Mensajes	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^# Manejo de Mensajes$/;"	c
+Manejo de errores	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Manejo de errores$/;"	s	chapter:Carga de imágenes
+Manejo de errores con detalle imprimible	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Manejo de errores con detalle imprimible$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Manejo de loader + toasts (`bitacora-mantenimiento.service.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Manejo de loader + toasts (`bitacora-mantenimiento.service.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Mantenimiento	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Mantenimiento$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Mejores Prácticas	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Mejores Prácticas$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Mejores Prácticas y Consideraciones	docs/carrduci-sys-desarrollo/css/colores-css.md	/^## Mejores Prácticas y Consideraciones$/;"	s	chapter:Documentación Completa sobre los Colores en CSS
+Mejores prácticas	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Mejores prácticas$/;"	s	chapter:Carga de imágenes
+Mejores prácticas	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Mejores prácticas$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Mensaje	subir_cambios.ps1	/^$Mensaje = git status -s -v$/;"	v
+Mensajes de Confirmación	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Mensajes de Confirmación$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Menú Generado Automáticamente por Contexto	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Menú Generado Automáticamente por Contexto$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Resultado Final Automático
+Mes	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Mes$/;"	s	chapter:Tipos de campo
+Modal	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^# Modal$/;"	c
+Modelo (API)	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^### Modelo (API)$/;"	S	section:Carga de imágenes""Ejemplo completo de implementación
+Modelo de Componente en Base de Datos	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^#### Modelo de Componente en Base de Datos$/;"	t	subsection:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Arquitectura del Sistema""Registro Automático en MongoDB
+Modelo de Datos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Modelo de Datos$/;"	t	subsection:Claves de Autorización de Usuario Simples""Estructura del Sistema""Backend (API)
+Modelo de Menú Dinámico	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^#### Modelo de Menú Dinámico$/;"	t	subsection:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Arquitectura del Sistema""Registro Automático en MongoDB
+Modelos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Modelos$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.3 Otros Tipos de Archivos
+Modelos (Models)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Modelos (Models)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express""2.2 Tipos de Archivos
+Modificar el script generador de sidebar	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Modificar el script generador de sidebar$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Modo 2: Con Paginación (CORRECTO) ✅	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^#### Modo 2: Con Paginación (CORRECTO) ✅$/;"	t	subsection:Historial de Cambios""Uso en el Frontend (GUI)""Componente: app-historial-elemento
+Modo Móvil	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^#### Modo Móvil$/;"	t	subsection:Tabla Genérica""Servicio: generarEstructura()""Opciones del 4to Parámetro
+Modo Móvil Responsivo	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Modo Móvil Responsivo$/;"	s	chapter:Tabla Genérica
+Modo Selección Múltiple	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Modo Selección Múltiple$/;"	s	chapter:Tabla Genérica
+Modo directo	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^# Modo directo$/;"	c
+Métodos Públicos	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^### Métodos Públicos$/;"	S	section:Modal""API del Componente
+Métodos Públicos Relevantes	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^### Métodos Públicos Relevantes$/;"	S	section:Data List""API del Componente
+Métodos principales	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Métodos principales$/;"	S	section:Manejo de Mensajes""API Pública
+Módulo de Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Módulo de Pipes$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.4 Sistema de Pipes
+Módulo de Pipes	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Módulo de Pipes$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.3 Sistema de Pipes
+Módulos por Componente (Regla Estricta)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Módulos por Componente (Regla Estricta)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Notas Adicionales	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Notas Adicionales$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Notas adicionales	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Notas adicionales$/;"	s	chapter:Carga de imágenes
+Notas sobre la Transición	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Notas sobre la Transición$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Notificaciones globales	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Notificaciones globales$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Número	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Número$/;"	s	chapter:Tipos de campo
+Opciones actuales	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Opciones actuales$/;"	S	section:Personalización avanzada del sistema de documentación""Configuración de Docsify
+Opciones del 4to Parámetro	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Opciones del 4to Parámetro$/;"	S	section:Tabla Genérica""Servicio: generarEstructura()
+Opción A: Nuevo tema independiente	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Opción A: Nuevo tema independiente$/;"	S	section:Estructura y organización del repositorio de documentación""Estrategias para agregar nueva documentación
+Opción B: Agregar a categoría existente	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Opción B: Agregar a categoría existente$/;"	S	section:Estructura y organización del repositorio de documentación""Estrategias para agregar nueva documentación
+Opción C: Nueva subsección	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Opción C: Nueva subsección$/;"	S	section:Estructura y organización del repositorio de documentación""Estrategias para agregar nueva documentación
+Optimizar imágenes	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Optimizar imágenes$/;"	S	section:Personalización avanzada del sistema de documentación""Consejos de rendimiento
+Organización de Pipes	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Organización de Pipes$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.3 Sistema de Pipes
+Organización de `pages.routes.ts` con Separadores de Sección	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Organización de `pages.routes.ts` con Separadores de Sección$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+Organización de contenido	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Organización de contenido$/;"	S	section:Estructura y organización del repositorio de documentación""Mejores prácticas
+Organización de la documentación	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Organización de la documentación$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Organización por Dominio	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Organización por Dominio$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.4 Sistema de Pipes
+Outputs	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Outputs$/;"	S	section:Tabla Genérica""Propiedades del Componente
+Para documentar modelos (esquemas de mongo) del API	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^### Para documentar modelos (esquemas de mongo) del API$/;"	S	section:Estructuras para documentar el CARRDUCIsys""Estructuras para el API (snippets y procedimientos)
+Parámetros clave de SweetAlert2	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Parámetros clave de SweetAlert2$/;"	S	section:Manejo de Mensajes""API Pública
+Parámetros clave de ngx-toastr	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Parámetros clave de ngx-toastr$/;"	S	section:Manejo de Mensajes""API Pública
+Parámetros de `cargarGrupoDeImagenes`	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Parámetros de `cargarGrupoDeImagenes`$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Guardar imágenes
+Parámetros de `eliminarGrupoDeImagenes`	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Parámetros de `eliminarGrupoDeImagenes`$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Eliminar imágenes
+Paso 1: Agregar Método al Servicio	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 1: Agregar Método al Servicio$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Paso 1: Agregar Plugin al Modelo	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Paso 1: Agregar Plugin al Modelo$/;"	S	section:Historial de Cambios""Uso en el Backend (API)
+Paso 1: Crear un Código de Autorización	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 1: Crear un Código de Autorización$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Paso 1: Definir el Nuevo Uso	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 1: Definir el Nuevo Uso$/;"	S	section:Claves de Autorización de Usuario Simples""Agregar Nuevos Usos
+Paso 1: Generar el Componente	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Paso 1: Generar el Componente$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.2 Creación Paso a Paso
+Paso 1: Importar en el Componente	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^#### Paso 1: Importar en el Componente$/;"	t	subsection:Historial de Cambios""Uso en el Frontend (GUI)""Implementación Completa
+Paso 1: Instalar `easy-rsa` y `openssl`	docs/carrduci-sys/1-generacion-certificados.md	/^### Paso 1: Instalar `easy-rsa` y `openssl`$/;"	S	section:Generar certificados para CARRDUCIsys""Crear una entidad de certificación (CA) :id=crear-ca
+Paso 2: Agregar en el Template	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^#### Paso 2: Agregar en el Template$/;"	t	subsection:Historial de Cambios""Uso en el Frontend (GUI)""Implementación Completa
+Paso 2: Crear Componente de Impresión	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 2: Crear Componente de Impresión$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Paso 2: Crear el Módulo del Componente	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Paso 2: Crear el Módulo del Componente$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.2 Creación Paso a Paso
+Paso 2: Preparar un directorio para la infraestructura de la clave pública (PKI - Public Key Infrastructure)	docs/carrduci-sys/1-generacion-certificados.md	/^### Paso 2: Preparar un directorio para la infraestructura de la clave pública (PKI - Public Ke/;"	S	section:Generar certificados para CARRDUCIsys""Crear una entidad de certificación (CA) :id=crear-ca
+Paso 2: Usar con .save() - Documentos Nuevos	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Paso 2: Usar con .save() - Documentos Nuevos$/;"	S	section:Historial de Cambios""Uso en el Backend (API)
+Paso 2: Usar el Nuevo Código	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 2: Usar el Nuevo Código$/;"	S	section:Claves de Autorización de Usuario Simples""Agregar Nuevos Usos
+Paso 2: Validar un Código	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 2: Validar un Código$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Paso 3: Agregar CSS de Impresión	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 3: Agregar CSS de Impresión$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Paso 3: Crear una entidad de certificación	docs/carrduci-sys/1-generacion-certificados.md	/^### Paso 3: Crear una entidad de certificación$/;"	S	section:Generar certificados para CARRDUCIsys""Crear una entidad de certificación (CA) :id=crear-ca
+Paso 3: Dentro de un Modal (Forma Correcta)	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^#### Paso 3: Dentro de un Modal (Forma Correcta)$/;"	t	subsection:Historial de Cambios""Uso en el Frontend (GUI)""Implementación Completa
+Paso 3: Implementar el Componente	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Paso 3: Implementar el Componente$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.2 Creación Paso a Paso
+Paso 3: Obtener Todos los Códigos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 3: Obtener Todos los Códigos$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Paso 3: Usar con .findOneAndUpdate() - Actualizaciones	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Paso 3: Usar con .findOneAndUpdate() - Actualizaciones$/;"	S	section:Historial de Cambios""Uso en el Backend (API)
+Paso 4: Agregar al Gestor	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 4: Agregar al Gestor$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Paso 4: Eliminar un Código	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Paso 4: Eliminar un Código$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Paso 4: Template HTML	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Paso 4: Template HTML$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.2 Creación Paso a Paso
+Paso 4: Usar con .updateOne()	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Paso 4: Usar con .updateOne()$/;"	S	section:Historial de Cambios""Uso en el Backend (API)
+Paso 5: Estilos CSS	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Paso 5: Estilos CSS$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.2 Creación Paso a Paso
+Paso 5: Omitir Registro de Historial	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Paso 5: Omitir Registro de Historial$/;"	S	section:Historial de Cambios""Uso en el Backend (API)
+Paso 5: Usar el Nuevo Tipo	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 5: Usar el Nuevo Tipo$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Paso 6: (Opcional) Agregar al Módulo	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Paso 6: (Opcional) Agregar al Módulo$/;"	S	section:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión
+Patrones de Uso en el Sistema	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Patrones de Uso en el Sistema$/;"	s	chapter:Manejo de Mensajes
+Patrón de Uso	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Patrón de Uso$/;"	S	section:Gestor de Impresiones""Uso Básico
+Patrón en Vista Genérica (Familias de Costos)	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Patrón en Vista Genérica (Familias de Costos)$/;"	s	chapter:Modal
+Permisos Especiales	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Permisos Especiales$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos""Estructuras de Permisos CARRDUCI
+Permisos Generados Automáticamente	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Permisos Generados Automáticamente$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Resultado Final Automático
+Permisos Necesarios	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Permisos Necesarios$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Permisos de Acciones/Consulta	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Permisos de Acciones\/Consulta$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos""Estructuras de Permisos CARRDUCI
+Permisos de Menú (Vista/Acceso)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Permisos de Menú (Vista\/Acceso)$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""3. Registro en el Sistema""3.2 Sistema de Permisos""Estructuras de Permisos CARRDUCI
+Personalización avanzada del sistema de documentación	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^# Personalización avanzada del sistema de documentación$/;"	c
+Personalización de estilos	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Personalización de estilos$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Personalizar la portada	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Personalizar la portada$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Pipes	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Pipes$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.3 Otros Tipos de Archivos
+Plugins de Docsify instalados	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Plugins de Docsify instalados$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Popup	docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md	/^## Popup$/;"	s	chapter:Flotante genérico
+Preparación: Importar Módulos Necesarios	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Preparación: Importar Módulos Necesarios$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Probar conexión	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^### Probar conexión$/;"	S	section:Desplegar servidor Samba en Ubuntu""Visualizar carpeta de red en Windows
+Procedimiento	docs/carrduci-sys/2-despliegue-csys.md	/^## Procedimiento$/;"	s	chapter:Desplegar CARRDUCIsys
+Procedimiento	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^## Procedimiento$/;"	s	chapter:Desplegar servidor Samba en Ubuntu
+Procedimiento	docs/windows/establecer-copia-automatica-de-respaldos.md	/^## Procedimiento$/;"	s	chapter:Establecer copia automática de respaldo en Windows
+Proceso estandar	docs/carrduci-sys-desarrollo/6-generar-version-y-compilar-imagenes-docker.md	/^# Proceso estandar$/;"	c
+Proceso paso a paso	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Proceso paso a paso$/;"	S	section:Estructura y organización del repositorio de documentación""Flujo de trabajo para agregar documentación
+Programa o script	docs/carrduci-sys/3-administracion-respaldos.md	/^##### Programa o script$/;"	T	subsubsection:Administración de respaldos""Sincronización con almacenamiento local""1.2. Programar apagado automático
+Programa o script	docs/windows/establecer-copia-automatica-de-respaldos.md	/^##### Programa o script$/;"	T	subsection:Establecer copia automática de respaldo en Windows""Procedimiento""2. Establecer las tareas automáticas en Windows
+Programa o script	docs/windows/establecer-copia-automatica-de-respaldos.md	/^##### Programa o script$/;"	T	subsection:Establecer copia automática de respaldo en Windows""Procedimiento""Apagado automático (opcional)
+Propiedades de Entrada (`@Input`)	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^### Propiedades de Entrada (`@Input`)$/;"	S	section:Data List""API del Componente
+Propiedades de Metadata	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Propiedades de Metadata$/;"	s	chapter:Historial de Cambios
+Propiedades de Salida (`@Output`)	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^### Propiedades de Salida (`@Output`)$/;"	S	section:Data List""API del Componente
+Propiedades del Componente	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Propiedades del Componente$/;"	S	section:Historial de Cambios""Uso en el Frontend (GUI)
+Propiedades del Componente	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Propiedades del Componente$/;"	s	chapter:Tabla Genérica
+Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^# Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos$/;"	c
+Python	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### Python$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""1. Separador de sección
+Python	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### Python$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""2. Sub separadores de sección
+Radio (tipo de checkbox)	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Radio (tipo de checkbox)$/;"	s	chapter:Tipos de campo
+Rango	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Rango$/;"	s	chapter:Tipos de campo
+Rango Fechas	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Rango Fechas$/;"	s	chapter:Tipos de campo
+Recomendaciones finales	docs/carrduci-sys-desarrollo/2-entorno-desarollo.md	/^# Recomendaciones finales$/;"	c
+Recursos adicionales	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Recursos adicionales$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Recursos adicionales	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Recursos adicionales$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Recursos para Consultar Más Información	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## Recursos para Consultar Más Información$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+Registro Automático en MongoDB	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Registro Automático en MongoDB$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Arquitectura del Sistema
+Registro de Módulos - Sistema Principal	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Registro de Módulos - Sistema Principal$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Registro de Rutas (Actualizado)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^### Registro de Rutas (Actualizado)$/;"	S	chapter:Creación de Componentes en CARRDUCI
+Registry Principal de Componentes	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Registry Principal de Componentes$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Registro de Módulos - Sistema Principal
+Relacionados	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Relacionados$/;"	s	chapter:Data List
+Relacionados	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Relacionados$/;"	s	chapter:Manejo de Mensajes
+Relacionados	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Relacionados$/;"	s	chapter:Modal
+Requerimientos	docs/carrduci-sys/2-despliegue-csys.md	/^## Requerimientos$/;"	s	chapter:Desplegar CARRDUCIsys
+Requerimientos	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^## Requerimientos$/;"	s	chapter:Desplegar servidor Samba en Ubuntu
+Requisitos	docs/windows/establecer-copia-automatica-de-respaldos.md	/^## Requisitos$/;"	s	chapter:Establecer copia automática de respaldo en Windows
+Respaldo manual	docs/carrduci-sys/4-crear-respaldo-manualmente.md	/^# Respaldo manual$/;"	c
+Restaurar respaldos en servidor	docs/carrduci-sys/5-restauracion-respaldos-en-servidor.md	/^# Restaurar respaldos en servidor$/;"	c
+Resultado Final Automático	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^## Resultado Final Automático$/;"	s	chapter:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos
+Resultado en Base de Datos	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Resultado en Base de Datos$/;"	s	chapter:Historial de Cambios
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^## Resumen$/;"	s	chapter:Claves de Autorización de Usuario Simples
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Resumen$/;"	s	chapter:Data List
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Resumen$/;"	s	chapter:Gestor de Impresiones
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Resumen$/;"	s	chapter:Historial de Cambios
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Resumen$/;"	s	chapter:Manejo de Mensajes
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Resumen$/;"	s	chapter:Modal
+Resumen	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Resumen$/;"	s	chapter:Tabla Genérica
+Resumen Conciso de Todas las Unidades	docs/carrduci-sys-desarrollo/css/valores-dimensiones-css.md	/^## Resumen Conciso de Todas las Unidades$/;"	s	chapter:Guía Completa de Valores y Unidades de Dimensiones en CSS
+Resumen por flujo	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Resumen por flujo$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Retorno de `cargarGrupoDeImagenes`	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Retorno de `cargarGrupoDeImagenes`$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Guardar imágenes
+Retorno de `eliminarGrupoDeImagenes`	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^#### Retorno de `eliminarGrupoDeImagenes`$/;"	t	subsection:Carga de imágenes""Uso del servicio del API""Eliminar imágenes
+Rutas (Routes)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Rutas (Routes)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express""2.2 Tipos de Archivos
+Rutas de la API	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Rutas de la API$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Backend (API)
+Rutas en `login.menus.js` (Futuro)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Rutas en `login.menus.js` (Futuro)$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""Arquitectura de Rutas Futura (Lazy Loading por Dominio)""Estructura Conceptual Futura
+Rutas en `pages.routes.ts` (Futuro)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^##### Rutas en `pages.routes.ts` (Futuro)$/;"	T	subsubsection:Creación de Componentes en CARRDUCI""Arquitectura de Rutas Futura (Lazy Loading por Dominio)""Estructura Conceptual Futura
+Rutas que se Auto-Registran por Componente	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Rutas que se Auto-Registran por Componente$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Ejemplo de Implementación Completa
+Salidas (`@Output`)	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^### Salidas (`@Output`)$/;"	S	section:Modal""API del Componente
+Seleccionable	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Seleccionable$/;"	s	chapter:Tipos de campo
+Semana	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Semana$/;"	s	chapter:Tipos de campo
+Servicio Angular	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Servicio Angular$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Frontend (GUI)
+Servicio Principal	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^### Servicio Principal$/;"	S	section:Gestor de Impresiones""Ubicación de Archivos
+Servicio de counters	docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md	/^## Servicio de counters$/;"	s	chapter:Auto increment
+Servicio: generarEstructura()	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Servicio: generarEstructura()$/;"	s	chapter:Tabla Genérica
+Servicios	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Servicios$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""1. Estructura Frontend (GUI) - Angular""1.3 Otros Tipos de Archivos
+Servicios (Services)	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^#### Servicios (Services)$/;"	t	subsection:Estructura de Archivos y Código CARRDUCI-sys""2. Estructura Backend (API) - Node.js/Express""2.2 Tipos de Archivos
+Servicios Requeridos	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Servicios Requeridos$/;"	S	section:Tabla Genérica""Instalación e Importación
+Servicios de datos (ej. `conteos.service.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Servicios de datos (ej. `conteos.service.ts`)$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Sincronización a la nube	docs/carrduci-sys/3-administracion-respaldos.md	/^### Sincronización a la nube$/;"	S	section:Administración de respaldos
+Sincronización con almacenamiento local	docs/carrduci-sys/3-administracion-respaldos.md	/^### Sincronización con almacenamiento local$/;"	S	section:Administración de respaldos
+Sintaxis para contenido de snippets	docs/visual-studio-code/agregar-snippets.md	/^## Sintaxis para contenido de snippets$/;"	s	chapter:Snippets en Visual Studio Code
+Sistema de Detección de Rutas	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### Sistema de Detección de Rutas$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Generación Automática de Permisos
+Sistema de numeración de archivos	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^### Sistema de numeración de archivos$/;"	S	section:Estructura y organización del repositorio de documentación""Convenciones y estándares
+Slots de Contenido	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Slots de Contenido$/;"	s	chapter:Modal
+Snippets en Visual Studio Code	docs/visual-studio-code/agregar-snippets.md	/^# Snippets en Visual Studio Code$/;"	c
+Sockets y tiempo real	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Sockets y tiempo real$/;"	S	section:Manejo de Mensajes""Patrones de Uso en el Sistema
+Solicitud de permiso (`vista-supervision-conteos.component.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Solicitud de permiso (`vista-supervision-conteos.component.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Solución de problemas comunes	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Solución de problemas comunes$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Stack tecnológico	docs/documentacion-sistemas/1-estructura-y-organizacion.md	/^## Stack tecnológico$/;"	s	chapter:Estructura y organización del repositorio de documentación
+Tabla Genérica	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^# Tabla Genérica$/;"	c
+Tablas responsivas	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Tablas responsivas$/;"	S	section:Personalización avanzada del sistema de documentación""Personalización de estilos
+Temas de Docsify	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Temas de Docsify$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Temas disponibles	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Temas disponibles$/;"	S	section:Personalización avanzada del sistema de documentación""Temas de Docsify
+Template HTML	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^#### Template HTML$/;"	t	subsection:Gestor de Impresiones""Crear un Nuevo Tipo de Impresión""Paso 2: Crear Componente de Impresión
+Texto	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Texto$/;"	s	chapter:Tipos de campo
+Tipos de Impresión	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Tipos de Impresión$/;"	s	chapter:Gestor de Impresiones
+Tipos de Operaciones	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Tipos de Operaciones$/;"	S	section:Historial de Cambios""Librería jsondiffpatch
+Tipos de campo	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^# Tipos de campo$/;"	c
+Toast informativo (`dashboard.component.ts`)	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Toast informativo (`dashboard.component.ts`)$/;"	S	section:Manejo de Mensajes""Ejemplos extendidos
+Tooltip	docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md	/^## Tooltip$/;"	s	chapter:Flotante genérico
+TypeScript	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### TypeScript$/;"	S	section:Tabla Genérica""Ejemplo de Uso Rápido
+TypeScript, JavaScript	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### TypeScript, JavaScript$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""1. Separador de sección
+TypeScript, JavaScript	docs/carrduci-sys-desarrollo/4-estructuras-de-documentacion.md	/^#### TypeScript, JavaScript$/;"	t	subsection:Estructuras para documentar el CARRDUCIsys""Estructuras Generales (snippets)""2. Sub separadores de sección
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Ubicación de Archivos$/;"	t	subsection:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)""Componente de Administración
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Ubicación de Archivos$/;"	t	subsection:Claves de Autorización de Usuario Simples""Estructura del Sistema""Backend (API)
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^#### Ubicación de Archivos$/;"	t	subsection:Claves de Autorización de Usuario Simples""Estructura del Sistema""Frontend (GUI)
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/data-list.md	/^## Ubicación de Archivos$/;"	s	chapter:Data List
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Ubicación de Archivos$/;"	s	chapter:Gestor de Impresiones
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Ubicación de Archivos$/;"	s	chapter:Historial de Cambios
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^## Ubicación de Archivos$/;"	s	chapter:Manejo de Mensajes
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## Ubicación de Archivos$/;"	s	chapter:Modal
+Ubicación de Archivos	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Ubicación de Archivos$/;"	S	section:Tabla Genérica""Arquitectura del Sistema
+Ubicación de Imágenes	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Ubicación de Imágenes$/;"	S	section:Claves de Autorización de Usuario Simples""Notas Adicionales
+Ubicación en la Aplicación	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Ubicación en la Aplicación$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Usar el plugin en el modelo	docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md	/^## Usar el plugin en el modelo$/;"	s	chapter:Búsqueda de texto
+Uso Básico	docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md	/^## Uso Básico$/;"	s	chapter:Gestor de Impresiones
+Uso Básico	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^### Uso Básico$/;"	S	section:Tabla Genérica""Servicio: generarEstructura()
+Uso de SSH para conectarse y copiar archivos al servidor de CARRDUCIsys	docs/ubuntu-server/conexion-ssh.md	/^# Uso de SSH para conectarse y copiar archivos al servidor de CARRDUCIsys$/;"	c
+Uso del servicio del API	docs/carrduci-sys-desarrollo/uso-componentes/carga-de-imagenes.md	/^## Uso del servicio del API$/;"	s	chapter:Carga de imágenes
+Uso en Modal	docs/carrduci-sys-desarrollo/uso-componentes/tabla-generica.md	/^## Uso en Modal$/;"	s	chapter:Tabla Genérica
+Uso en el Backend (API)	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Uso en el Backend (API)$/;"	s	chapter:Historial de Cambios
+Uso en el Frontend (GUI)	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^## Uso en el Frontend (GUI)$/;"	s	chapter:Historial de Cambios
+Uso en el servicio de la GUI	docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md	/^## Uso en el servicio de la GUI$/;"	s	chapter:Búsqueda de texto
+Uso en un componente	docs/carrduci-sys-desarrollo/uso-componentes/busqueda-texto.md	/^## Uso en un componente$/;"	s	chapter:Búsqueda de texto
+Utilidades internas destacadas	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### Utilidades internas destacadas$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+Utilización de los archivos generados	docs/carrduci-sys/1-generacion-certificados.md	/^## Utilización de los archivos generados$/;"	s	chapter:Generar certificados para CARRDUCIsys
+Validaciones en el Formulario	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Validaciones en el Formulario$/;"	S	section:Claves de Autorización de Usuario Simples""Administración de Claves (Solo SUPER_ADMIN)
+Validar enlaces	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^### Validar enlaces$/;"	S	section:Personalización avanzada del sistema de documentación""Mantenimiento
+Variables de entorno para desarrollo	docs/documentacion-sistemas/2-personalizacion-avanzada.md	/^## Variables de entorno para desarrollo$/;"	s	chapter:Personalización avanzada del sistema de documentación
+Visión General de Lazy Loading	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### Visión General de Lazy Loading$/;"	t	subsection:Creación de Componentes en CARRDUCI""Arquitectura de Rutas Futura (Lazy Loading por Dominio)
+Vista (HTML)	docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md	/^### Vista (HTML)$/;"	S	section:Claves de Autorización de Usuario Simples""Implementación en el Frontend (GUI)
+Visualizar carpeta de red en Windows	docs/carrduci-sys/servidor-samba-carpeta-respaldos.md	/^## Visualizar carpeta de red en Windows$/;"	s	chapter:Desplegar servidor Samba en Ubuntu
+`cerrarTodosLosFlotantes()`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `cerrarTodosLosFlotantes()`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`confirmacionDeEliminacion(msj, callback)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `confirmacionDeEliminacion(msj, callback)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`confirmarAccion()` y `confirmarAccionExtendido()`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `confirmarAccion()` y `confirmarAccionExtendido()`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`correcto(msj, titulo?, timer?)` e `informar(msj, titulo?, timer?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `correcto(msj, titulo?, timer?)` e `informar(msj, titulo?, timer?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`eliminado(msj)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `eliminado(msj)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`err(err, callback?, mostrarBotonImprimir?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `err(err, callback?, mostrarBotonImprimir?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`invalido(msj, titulo?, timer?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `invalido(msj, titulo?, timer?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`limpiarTodosLosToast()`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `limpiarTodosLosToast()`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`ok_(datos, callback?, idPreLoader?, tipo?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `ok_(datos, callback?, idPreLoader?, tipo?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`solicitarPermiso(msj, callback)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `solicitarPermiso(msj, callback)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`toastCorrecto(msj, titulo?, timer?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `toastCorrecto(msj, titulo?, timer?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`toastError(err)` y `toastErrorMensaje(msj)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `toastError(err)` y `toastErrorMensaje(msj)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+`ups(msj, titulo?, timer?)`	docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md	/^### `ups(msj, titulo?, timer?)`$/;"	S	section:Manejo de Mensajes""Catálogo completo de métodos (con ejemplos)
+accentColor	.obsidian/appearance.json	/^  "accentColor": "#5845e8",$/;"	s
+active	.obsidian/workspace.json	/^  "active": "596ed6abf20d1f3d",$/;"	s
+alwaysUpdateLinks	.obsidian/app.json	/^  "alwaysUpdateLinks": true$/;"	b
+app	index.html	/^		<div id="app"><\/div>$/;"	I
+app.js - Punto de Entrada con Sistema Automático	docs/carrduci-sys-desarrollo/propuesta-nueva-estructura-api.md	/^### app.js - Punto de Entrada con Sistema Automático$/;"	S	section:Propuesta: Nueva Estructura Automática de API con Módulos Dinámicos""Inicialización en el Startup
+audio-recorder	.obsidian/core-plugins-migration.json	/^  "audio-recorder": false,$/;"	b
+audio-recorder	.obsidian/core-plugins.json	/^  "audio-recorder": false,$/;"	b
+author	package.json	/^  "author": "Kyostenas",$/;"	s
+backlink	.obsidian/core-plugins-migration.json	/^  "backlink": true,$/;"	b
+backlink	.obsidian/core-plugins.json	/^  "backlink": true,$/;"	b
+backlinkCollapsed	.obsidian/workspace.json	/^                "backlinkCollapsed": false,$/;"	b	object:right.children.0.children.0.state.state
+baseFontSize	.obsidian/appearance.json	/^  "baseFontSize": 17$/;"	n
+baseFontSizeAction	.obsidian/appearance.json	/^  "baseFontSizeAction": true,$/;"	b
+bookmarks	.obsidian/core-plugins-migration.json	/^  "bookmarks": true,$/;"	b
+bookmarks	.obsidian/core-plugins.json	/^  "bookmarks": true,$/;"	b
+bugs	package.json	/^  "bugs": {$/;"	o
+canvas	.obsidian/core-plugins-migration.json	/^  "canvas": true,$/;"	b
+canvas	.obsidian/core-plugins.json	/^  "canvas": true,$/;"	b
+canvas:Create new canvas	.obsidian/workspace.json	/^      "canvas:Create new canvas": false,$/;"	b	object:left-ribbon.hiddenItems
+centerStrength	.obsidian/graph.json	/^  "centerStrength": 0.239583333333333,$/;"	n
+children	.obsidian/workspace.json	/^        "children": [$/;"	a	object:left.children.0
+children	.obsidian/workspace.json	/^        "children": [$/;"	a	object:main.children.0
+children	.obsidian/workspace.json	/^        "children": [$/;"	a	object:right.children.0
+children	.obsidian/workspace.json	/^    "children": [$/;"	a	object:left
+children	.obsidian/workspace.json	/^    "children": [$/;"	a	object:main
+children	.obsidian/workspace.json	/^    "children": [$/;"	a	object:right
+close	.obsidian/graph.json	/^  "close": true$/;"	b
+collapse-color-groups	.obsidian/graph.json	/^  "collapse-color-groups": false,$/;"	b
+collapse-display	.obsidian/graph.json	/^  "collapse-display": false,$/;"	b
+collapse-filter	.obsidian/graph.json	/^  "collapse-filter": true,$/;"	b
+collapse-forces	.obsidian/graph.json	/^  "collapse-forces": false,$/;"	b
+collapseAll	.obsidian/workspace.json	/^                "collapseAll": false,$/;"	b	object:left.children.0.children.1.state.state
+collapseAll	.obsidian/workspace.json	/^                "collapseAll": false,$/;"	b	object:right.children.0.children.0.state.state
+collapsed	.obsidian/workspace.json	/^    "collapsed": true$/;"	b	object:right
+colorGroups	.obsidian/graph.json	/^  "colorGroups": [],$/;"	a
+command-palette	.obsidian/core-plugins-migration.json	/^  "command-palette": true,$/;"	b
+command-palette	.obsidian/core-plugins.json	/^  "command-palette": true,$/;"	b
+command-palette:Open command palette	.obsidian/workspace.json	/^      "command-palette:Open command palette": false$/;"	b	object:left-ribbon.hiddenItems
+currentTab	.obsidian/workspace.json	/^        "currentTab": 1$/;"	n	object:main.children.0
+daily-notes	.obsidian/core-plugins-migration.json	/^  "daily-notes": true,$/;"	b
+daily-notes	.obsidian/core-plugins.json	/^  "daily-notes": true,$/;"	b
+daily-notes:Open today's daily note	.obsidian/workspace.json	/^      "daily-notes:Open today's daily note": false,$/;"	b	object:left-ribbon.hiddenItems
+description	package.json	/^  "description": "# Documentación de SISTEMAS Este repositorio tiene el objetivo de ir agregand/;"	s
+direction	.obsidian/workspace.json	/^    "direction": "horizontal",$/;"	s	object:left
+direction	.obsidian/workspace.json	/^    "direction": "horizontal",$/;"	s	object:right
+direction	.obsidian/workspace.json	/^    "direction": "vertical"$/;"	s	object:main
+editor-status	.obsidian/core-plugins-migration.json	/^  "editor-status": true,$/;"	b
+editor-status	.obsidian/core-plugins.json	/^  "editor-status": true,$/;"	b
+explainSearch	.obsidian/workspace.json	/^                "explainSearch": false,$/;"	b	object:left.children.0.children.1.state.state
+extraContext	.obsidian/workspace.json	/^                "extraContext": false,$/;"	b	object:left.children.0.children.1.state.state
+extraContext	.obsidian/workspace.json	/^                "extraContext": false,$/;"	b	object:right.children.0.children.0.state.state
+file	.obsidian/workspace.json	/^                "file": "carrduci-sys-desarrollo\/2-catalogo-archivos-por-modulo.md",$/;"	s	object:main.children.0.children.0.state.state
+file	.obsidian/workspace.json	/^                "file": "carrduci-sys-desarrollo\/3-estructuras-de-documentacion.md",$/;"	s	object:main.children.0.children.1.state.state
+file	.obsidian/workspace.json	/^                "file": "carrduci-sys\/2-despliegue-csys.md"$/;"	s	object:right.children.0.children.3.state.state
+file	.obsidian/workspace.json	/^                "file": "carrduci-sys\/2-despliegue-csys.md",$/;"	s	object:right.children.0.children.0.state.state
+file	.obsidian/workspace.json	/^                "file": "carrduci-sys\/2-despliegue-csys.md",$/;"	s	object:right.children.0.children.1.state.state
+file-explorer	.obsidian/core-plugins-migration.json	/^  "file-explorer": true,$/;"	b
+file-explorer	.obsidian/core-plugins.json	/^  "file-explorer": true,$/;"	b
+file-recovery	.obsidian/core-plugins-migration.json	/^  "file-recovery": true,$/;"	b
+file-recovery	.obsidian/core-plugins.json	/^  "file-recovery": true,$/;"	b
+global-search	.obsidian/core-plugins-migration.json	/^  "global-search": true,$/;"	b
+global-search	.obsidian/core-plugins.json	/^  "global-search": true,$/;"	b
+graph	.obsidian/core-plugins-migration.json	/^  "graph": true,$/;"	b
+graph	.obsidian/core-plugins.json	/^  "graph": true,$/;"	b
+graph:Open graph view	.obsidian/workspace.json	/^      "graph:Open graph view": false,$/;"	b	object:left-ribbon.hiddenItems
+hiddenItems	.obsidian/workspace.json	/^    "hiddenItems": {$/;"	o	object:left-ribbon
+hideUnresolved	.obsidian/graph.json	/^  "hideUnresolved": false,$/;"	b
+homepage	package.json	/^  "homepage": "https:\/\/github.com\/Carrduci\/documentacion_sistemas#readme"$/;"	s
+icon	.obsidian/workspace.json	/^              "icon": "links-coming-in",$/;"	s	object:right.children.0.children.0.state
+icon	.obsidian/workspace.json	/^              "icon": "links-going-out",$/;"	s	object:right.children.0.children.1.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-bookmark",$/;"	s	object:left.children.0.children.2.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-file",$/;"	s	object:main.children.0.children.0.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-file",$/;"	s	object:main.children.0.children.1.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-folder-closed",$/;"	s	object:left.children.0.children.0.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-list",$/;"	s	object:right.children.0.children.3.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-search",$/;"	s	object:left.children.0.children.1.state
+icon	.obsidian/workspace.json	/^              "icon": "lucide-tags",$/;"	s	object:right.children.0.children.2.state
+id	.obsidian/workspace.json	/^            "id": "23fc51090818f9c2",$/;"	s	object:left.children.0.children.1
+id	.obsidian/workspace.json	/^            "id": "2df86ba9a02b3e8c",$/;"	s	object:right.children.0.children.2
+id	.obsidian/workspace.json	/^            "id": "3da08f5b2ebfbb97",$/;"	s	object:right.children.0.children.3
+id	.obsidian/workspace.json	/^            "id": "596ed6abf20d1f3d",$/;"	s	object:main.children.0.children.1
+id	.obsidian/workspace.json	/^            "id": "714cf7bd866d3623",$/;"	s	object:right.children.0.children.1
+id	.obsidian/workspace.json	/^            "id": "adb2d9080ad699ce",$/;"	s	object:left.children.0.children.2
+id	.obsidian/workspace.json	/^            "id": "c8f3fbedb883c18c",$/;"	s	object:main.children.0.children.0
+id	.obsidian/workspace.json	/^            "id": "d257cd0bf87c589b",$/;"	s	object:right.children.0.children.0
+id	.obsidian/workspace.json	/^            "id": "d8bdb385ea2d8428",$/;"	s	object:left.children.0.children.0
+id	.obsidian/workspace.json	/^        "id": "0517901efa5bafc4",$/;"	s	object:main.children.0
+id	.obsidian/workspace.json	/^        "id": "18a35b18d4473564",$/;"	s	object:right.children.0
+id	.obsidian/workspace.json	/^        "id": "f77e71fb1307ad73",$/;"	s	object:left.children.0
+id	.obsidian/workspace.json	/^    "id": "830d2e3911f617e8",$/;"	s	object:left
+id	.obsidian/workspace.json	/^    "id": "cc540831be4ae369",$/;"	s	object:main
+id	.obsidian/workspace.json	/^    "id": "d8b5f13467dba795",$/;"	s	object:right
+last	generar_directorio.py	/^last = '- '$/;"	v
+lastOpenFiles	.obsidian/workspace.json	/^  "lastOpenFiles": [$/;"	a
+left	.obsidian/workspace.json	/^  "left": {$/;"	o
+left-ribbon	.obsidian/workspace.json	/^  "left-ribbon": {$/;"	o
+license	package.json	/^  "license": "ISC",$/;"	s
+lineSizeMultiplier	.obsidian/graph.json	/^  "lineSizeMultiplier": 1.27395833333333,$/;"	n
+linkDistance	.obsidian/graph.json	/^  "linkDistance": 302,$/;"	n
+linkStrength	.obsidian/graph.json	/^  "linkStrength": 0.161458333333333,$/;"	n
+linksCollapsed	.obsidian/workspace.json	/^                "linksCollapsed": false,$/;"	b	object:right.children.0.children.1.state.state
+main	.obsidian/workspace.json	/^  "main": {$/;"	o
+main	package.json	/^  "main": "index.js",$/;"	s
+markdown-importer	.obsidian/core-plugins-migration.json	/^  "markdown-importer": false,$/;"	b
+markdown-importer	.obsidian/core-plugins.json	/^  "markdown-importer": false,$/;"	b
+matchingCase	.obsidian/workspace.json	/^                "matchingCase": false,$/;"	b	object:left.children.0.children.1.state.state
+mensajeExtra	subir_cambios.ps1	/^$mensajeExtra = $args[0]$/;"	v
+mode	.obsidian/workspace.json	/^                "mode": "preview",$/;"	s	object:main.children.0.children.0.state.state
+mode	.obsidian/workspace.json	/^                "mode": "source",$/;"	s	object:main.children.0.children.1.state.state
+name	package.json	/^  "name": "documentacion_sistemas",$/;"	s
+nodeSizeMultiplier	.obsidian/graph.json	/^  "nodeSizeMultiplier": 2.24375,$/;"	n
+note-composer	.obsidian/core-plugins-migration.json	/^  "note-composer": true,$/;"	b
+note-composer	.obsidian/core-plugins.json	/^  "note-composer": true,$/;"	b
+outgoing-link	.obsidian/core-plugins-migration.json	/^  "outgoing-link": true,$/;"	b
+outgoing-link	.obsidian/core-plugins.json	/^  "outgoing-link": true,$/;"	b
+outline	.obsidian/core-plugins-migration.json	/^  "outline": true,$/;"	b
+outline	.obsidian/core-plugins.json	/^  "outline": true,$/;"	b
+page-preview	.obsidian/core-plugins-migration.json	/^  "page-preview": true,$/;"	b
+page-preview	.obsidian/core-plugins.json	/^  "page-preview": true,$/;"	b
+properties	.obsidian/core-plugins-migration.json	/^  "properties": false,$/;"	b
+properties	.obsidian/core-plugins.json	/^  "properties": false,$/;"	b
+publish	.obsidian/core-plugins-migration.json	/^  "publish": false,$/;"	b
+publish	.obsidian/core-plugins.json	/^  "publish": false,$/;"	b
+python.analysis.typeCheckingMode	.vscode/settings.json	/^    "python.analysis.typeCheckingMode": "basic"$/;"	s
+query	.obsidian/workspace.json	/^                "query": "tag:#catalogo",$/;"	s	object:left.children.0.children.1.state.state
+random-note	.obsidian/core-plugins-migration.json	/^  "random-note": false,$/;"	b
+random-note	.obsidian/core-plugins.json	/^  "random-note": false,$/;"	b
+repelStrength	.obsidian/graph.json	/^  "repelStrength": 6.66666666666667,$/;"	n
+repository	package.json	/^  "repository": {$/;"	o
+right	.obsidian/workspace.json	/^  "right": {$/;"	o
+scale	.obsidian/graph.json	/^  "scale": 1.0000000000000018,$/;"	n
+scripts	package.json	/^  "scripts": {$/;"	o
+search	.obsidian/graph.json	/^  "search": "",$/;"	s
+searchQuery	.obsidian/workspace.json	/^                "searchQuery": "",$/;"	s	object:right.children.0.children.0.state.state
+showArrow	.obsidian/graph.json	/^  "showArrow": true,$/;"	b
+showAttachments	.obsidian/graph.json	/^  "showAttachments": false,$/;"	b
+showOrphans	.obsidian/graph.json	/^  "showOrphans": true,$/;"	b
+showSearch	.obsidian/workspace.json	/^                "showSearch": false,$/;"	b	object:right.children.0.children.0.state.state
+showTags	.obsidian/graph.json	/^  "showTags": false,$/;"	b
+slash-command	.obsidian/core-plugins-migration.json	/^  "slash-command": false,$/;"	b
+slash-command	.obsidian/core-plugins.json	/^  "slash-command": false,$/;"	b
+slides	.obsidian/core-plugins-migration.json	/^  "slides": false,$/;"	b
+slides	.obsidian/core-plugins.json	/^  "slides": false,$/;"	b
+sortOrder	.obsidian/workspace.json	/^                "sortOrder": "alphabetical"$/;"	s	object:left.children.0.children.0.state.state
+sortOrder	.obsidian/workspace.json	/^                "sortOrder": "alphabetical"$/;"	s	object:left.children.0.children.1.state.state
+sortOrder	.obsidian/workspace.json	/^                "sortOrder": "alphabetical",$/;"	s	object:right.children.0.children.0.state.state
+sortOrder	.obsidian/workspace.json	/^                "sortOrder": "frequency",$/;"	s	object:right.children.0.children.2.state.state
+source	.obsidian/workspace.json	/^                "source": false$/;"	b	object:main.children.0.children.0.state.state
+source	.obsidian/workspace.json	/^                "source": false$/;"	b	object:main.children.0.children.1.state.state
+start	package.json	/^    "start": "bash -i -c 'nvm use lts\/*' && npx serve"$/;"	s	object:scripts
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:left.children.0.children.0.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:left.children.0.children.1.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:main.children.0.children.0.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:main.children.0.children.1.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:right.children.0.children.0.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:right.children.0.children.1.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:right.children.0.children.2.state
+state	.obsidian/workspace.json	/^              "state": {$/;"	o	object:right.children.0.children.3.state
+state	.obsidian/workspace.json	/^              "state": {},$/;"	o	object:left.children.0.children.2.state
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:left.children.0.children.0
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:left.children.0.children.1
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:left.children.0.children.2
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:main.children.0.children.0
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:main.children.0.children.1
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:right.children.0.children.0
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:right.children.0.children.1
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:right.children.0.children.2
+state	.obsidian/workspace.json	/^            "state": {$/;"	o	object:right.children.0.children.3
+switcher	.obsidian/core-plugins-migration.json	/^  "switcher": true,$/;"	b
+switcher	.obsidian/core-plugins.json	/^  "switcher": true,$/;"	b
+switcher:Open quick switcher	.obsidian/workspace.json	/^      "switcher:Open quick switcher": false,$/;"	b	object:left-ribbon.hiddenItems
+sync	.obsidian/core-plugins-migration.json	/^  "sync": false$/;"	b
+sync	.obsidian/core-plugins.json	/^  "sync": false$/;"	b
+tag-pane	.obsidian/core-plugins-migration.json	/^  "tag-pane": true,$/;"	b
+tag-pane	.obsidian/core-plugins.json	/^  "tag-pane": true,$/;"	b
+tee	generar_directorio.py	/^tee = '- '$/;"	v
+templates	.obsidian/core-plugins-migration.json	/^  "templates": true,$/;"	b
+templates	.obsidian/core-plugins.json	/^  "templates": true,$/;"	b
+templates:Insert template	.obsidian/workspace.json	/^      "templates:Insert template": false,$/;"	b	object:left-ribbon.hiddenItems
+test	package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1",$/;"	s	object:scripts
+textFadeMultiplier	.obsidian/graph.json	/^  "textFadeMultiplier": 0.6,$/;"	n
+theme	.obsidian/appearance.json	/^  "theme": "obsidian",$/;"	s
+tipoCommit	subir_cambios.ps1	/^$tipoCommit = $args[1]$/;"	v
+title	.obsidian/workspace.json	/^              "title": "2-catalogo-archivos-por-modulo"$/;"	s	object:main.children.0.children.0.state
+title	.obsidian/workspace.json	/^              "title": "3-estructuras-de-documentacion"$/;"	s	object:main.children.0.children.1.state
+title	.obsidian/workspace.json	/^              "title": "Backlinks for 2-despliegue-csys"$/;"	s	object:right.children.0.children.0.state
+title	.obsidian/workspace.json	/^              "title": "Bookmarks"$/;"	s	object:left.children.0.children.2.state
+title	.obsidian/workspace.json	/^              "title": "Files"$/;"	s	object:left.children.0.children.0.state
+title	.obsidian/workspace.json	/^              "title": "Outgoing links from 2-despliegue-csys"$/;"	s	object:right.children.0.children.1.state
+title	.obsidian/workspace.json	/^              "title": "Outline of 2-despliegue-csys"$/;"	s	object:right.children.0.children.3.state
+title	.obsidian/workspace.json	/^              "title": "Search"$/;"	s	object:left.children.0.children.1.state
+title	.obsidian/workspace.json	/^              "title": "Tags"$/;"	s	object:right.children.0.children.2.state
+tree	generar_directorio.py	/^def tree(dir_path: Path):$/;"	f
+type	.obsidian/workspace.json	/^              "type": "backlink",$/;"	s	object:right.children.0.children.0.state
+type	.obsidian/workspace.json	/^              "type": "bookmarks",$/;"	s	object:left.children.0.children.2.state
+type	.obsidian/workspace.json	/^              "type": "file-explorer",$/;"	s	object:left.children.0.children.0.state
+type	.obsidian/workspace.json	/^              "type": "markdown",$/;"	s	object:main.children.0.children.0.state
+type	.obsidian/workspace.json	/^              "type": "markdown",$/;"	s	object:main.children.0.children.1.state
+type	.obsidian/workspace.json	/^              "type": "outgoing-link",$/;"	s	object:right.children.0.children.1.state
+type	.obsidian/workspace.json	/^              "type": "outline",$/;"	s	object:right.children.0.children.3.state
+type	.obsidian/workspace.json	/^              "type": "search",$/;"	s	object:left.children.0.children.1.state
+type	.obsidian/workspace.json	/^              "type": "tag",$/;"	s	object:right.children.0.children.2.state
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:left.children.0.children.0
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:left.children.0.children.1
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:left.children.0.children.2
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:main.children.0.children.0
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:main.children.0.children.1
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:right.children.0.children.0
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:right.children.0.children.1
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:right.children.0.children.2
+type	.obsidian/workspace.json	/^            "type": "leaf",$/;"	s	object:right.children.0.children.3
+type	.obsidian/workspace.json	/^        "type": "tabs",$/;"	s	object:left.children.0
+type	.obsidian/workspace.json	/^        "type": "tabs",$/;"	s	object:main.children.0
+type	.obsidian/workspace.json	/^        "type": "tabs",$/;"	s	object:right.children.0
+type	.obsidian/workspace.json	/^    "type": "split",$/;"	s	object:left
+type	.obsidian/workspace.json	/^    "type": "split",$/;"	s	object:main
+type	.obsidian/workspace.json	/^    "type": "split",$/;"	s	object:right
+type	package.json	/^    "type": "git",$/;"	s	object:repository
+unlinkedCollapsed	.obsidian/workspace.json	/^                "unlinkedCollapsed": true$/;"	b	object:right.children.0.children.0.state.state
+unlinkedCollapsed	.obsidian/workspace.json	/^                "unlinkedCollapsed": true$/;"	b	object:right.children.0.children.1.state.state
+url	package.json	/^    "url": "git+https:\/\/github.com\/Carrduci\/documentacion_sistemas.git"$/;"	s	object:repository
+url	package.json	/^    "url": "https:\/\/github.com\/Carrduci\/documentacion_sistemas\/issues"$/;"	s	object:bugs
+useHierarchy	.obsidian/workspace.json	/^                "useHierarchy": true$/;"	b	object:right.children.0.children.2.state.state
+version	package.json	/^  "version": "1.0.0",$/;"	s
+width	.obsidian/workspace.json	/^    "width": 200,$/;"	n	object:right
+width	.obsidian/workspace.json	/^    "width": 396.5$/;"	n	object:left
+word-count	.obsidian/core-plugins-migration.json	/^  "word-count": true,$/;"	b
+word-count	.obsidian/core-plugins.json	/^  "word-count": true,$/;"	b
+workspaces	.obsidian/core-plugins-migration.json	/^  "workspaces": false,$/;"	b
+workspaces	.obsidian/core-plugins.json	/^  "workspaces": false,$/;"	b
+zk-prefixer	.obsidian/core-plugins-migration.json	/^  "zk-prefixer": false,$/;"	b
+zk-prefixer	.obsidian/core-plugins.json	/^  "zk-prefixer": false,$/;"	b
+¿Cómo agregarlos?	docs/visual-studio-code/agregar-snippets.md	/^## ¿Cómo agregarlos?$/;"	s	chapter:Snippets en Visual Studio Code
+¿Por qué `loadChildren` en lugar de `loadComponent`?	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ¿Por qué `loadChildren` en lugar de `loadComponent`?$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+¿Por qué preferir `modalFalso`?	docs/carrduci-sys-desarrollo/uso-componentes/modal.md	/^## ¿Por qué preferir `modalFalso`?$/;"	s	chapter:Modal
+¿Qué es?	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### ¿Qué es?$/;"	S	section:Historial de Cambios""Librería jsondiffpatch
+Área de texto	docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md	/^## Área de texto$/;"	s	chapter:Tipos de campo
+Índice de archivos	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^# Índice de archivos$/;"	c
+Índices en MongoDB	docs/carrduci-sys-desarrollo/uso-componentes/historial.md	/^### Índices en MongoDB$/;"	S	section:Historial de Cambios""Resultado en Base de Datos
+⚙️ **Configuración del Entorno**	README.md	/^#### ⚙️ **Configuración del Entorno**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación""🏗️ **CARRDUCI-sys Desarrollo**
+⚙️ Instalación y Configuración	README.md	/^## ⚙️ Instalación y Configuración$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+✅ **Comentarios JSDoc Obligatorios:**	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ✅ **Comentarios JSDoc Obligatorios:**$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.1 Reglas Generales de Documentación
+✅ **Completado (2025)**	README.md	/^### ✅ **Completado (2025)**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📈 Estado del Proyecto
+✅ **Estructura de Archivos:**	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ✅ **Estructura de Archivos:**$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.1 Reglas Generales de Documentación
+✅ **Separadores de Sección:**	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ✅ **Separadores de Sección:**$/;"	t	subsection:Creación de Componentes en CARRDUCI""5. Documentación Estándar""5.1 Reglas Generales de Documentación
+✅ Futuro: `loadChildren` con archivos `.routes.ts`	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ✅ Futuro: `loadChildren` con archivos `.routes.ts`$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+✅ Nomenclatura Correcta para Pipes (Futuras Creaciones)	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ✅ Nomenclatura Correcta para Pipes (Futuras Creaciones)$/;"	t	subsection:Creación de Componentes en CARRDUCI""2. Creación de Componentes GUI""2.3 Sistema de Pipes
+❌ **Incorrecto - NO usar `loadComponent` para módulos independientes**	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### ❌ **Incorrecto - NO usar `loadComponent` para módulos independientes**$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+🌐 **Acceso Online**	README.md	/^### 🌐 **Acceso Online**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación
+🎯 **Reglas Generales**	README.md	/^### 🎯 **Reglas Generales**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🤝 Contribución
+🏗️ **CARRDUCI-sys Desarrollo**	README.md	/^### 🏗️ **CARRDUCI-sys Desarrollo**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación
+🏗️ **Nueva Arquitectura Component Domain**	README.md	/^### 🏗️ **Nueva Arquitectura Component Domain**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🚀 Cambios 2025
+🏗️ Arquitectura General: Component Domain Architecture	docs/carrduci-sys-desarrollo/3-estructura-de-archivos-y-codigo.md	/^## 🏗️ Arquitectura General: Component Domain Architecture$/;"	s	chapter:Estructura de Archivos y Código CARRDUCI-sys
+🏗️ Características Principales	README.md	/^### 🏗️ Características Principales$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📋 Arquitectura Component Domain Architecture
+🏗️ Documentación CARRDUCI-sys - Component Domain Architecture	README.md	/^# 🏗️ Documentación CARRDUCI-sys - Component Domain Architecture$/;"	c
+🏛️ Estructura por Capas	README.md	/^### 🏛️ Estructura por Capas$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📋 Arquitectura Component Domain Architecture
+🐛 **Reportar Issues**	README.md	/^### 🐛 **Reportar Issues**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📞 Soporte
+🐳 **Docker**	README.md	/^### 🐳 **Docker**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación
+💬 **Preguntas**	README.md	/^### 💬 **Preguntas**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📞 Soporte
+📈 Estado del Proyecto	README.md	/^## 📈 Estado del Proyecto$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+📋 **Convenciones de Commit**	README.md	/^### 📋 **Convenciones de Commit**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🔄 Subir Cambios
+📋 Arquitectura Component Domain Architecture	README.md	/^## 📋 Arquitectura Component Domain Architecture$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+📖 **Estructura de Archivos**	README.md	/^### 📖 **Estructura de Archivos**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🤝 Contribución
+📖 Uso de la Documentación	README.md	/^## 📖 Uso de la Documentación$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+📚 **Documentación Estandarizada**	README.md	/^### 📚 **Documentación Estandarizada**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🚀 Cambios 2025
+📚 **Estándares de Documentación**	README.md	/^### 📚 **Estándares de Documentación**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🤝 Contribución
+📚 Contenido de la Documentación	README.md	/^## 📚 Contenido de la Documentación$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+📝 **Editar Documentación**	README.md	/^### 📝 **Editar Documentación**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación
+📝 **Flujo de Trabajo**	README.md	/^### 📝 **Flujo de Trabajo**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🔄 Subir Cambios
+📞 Soporte	README.md	/^## 📞 Soporte$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+🔄 **Cambio Arquitectónico Principal**	README.md	/^### 🔄 **Cambio Arquitectónico Principal**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🚀 Cambios 2025
+🔄 Subir Cambios	README.md	/^## 🔄 Subir Cambios$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+🔧 **API con Clases**	README.md	/^### 🔧 **API con Clases**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""🚀 Cambios 2025
+🕐 **Actualidad: `loadChildren` para módulos independientes**	docs/carrduci-sys-desarrollo/5-creacion-de-componentes.md	/^#### 🕐 **Actualidad: `loadChildren` para módulos independientes**$/;"	t	subsection:Creación de Componentes en CARRDUCI""Registro de Rutas (Actualizado)
+🖥️ **Servidor Local**	README.md	/^### 🖥️ **Servidor Local**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📖 Uso de la Documentación
+🖥️ **Sistemas**	README.md	/^### 🖥️ **Sistemas**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación
+🙏 Agradecimientos	README.md	/^## 🙏 Agradecimientos$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+🚀 Cambios 2025	README.md	/^## 🚀 Cambios 2025$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+🚧 **En Desarrollo**	README.md	/^### 🚧 **En Desarrollo**$/;"	S	section:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📈 Estado del Proyecto
+🛠️ **Componentes Reutilizables**	README.md	/^#### 🛠️ **Componentes Reutilizables**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación""🏗️ **CARRDUCI-sys Desarrollo**
+🤝 Contribución	README.md	/^## 🤝 Contribución$/;"	s	chapter:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture
+🧩 **Creación de Componentes**	README.md	/^#### 🧩 **Creación de Componentes**$/;"	t	subsection:🏗️ Documentación CARRDUCI-sys - Component Domain Architecture""📚 Contenido de la Documentación""🏗️ **CARRDUCI-sys Desarrollo**
