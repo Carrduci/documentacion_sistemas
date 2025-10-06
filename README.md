@@ -200,7 +200,7 @@ docs/
 
 ### ✅ **Completado (2025)**
 
--   🧩 **11 componentes reutilizables** completamente documentados
+-   🧩 **14 componentes reutilizables** completamente documentados
 -   ⚙️ **Entorno de desarrollo** completamente automatizado
 -   🐳 **Docker y despliegue** documentado
 
@@ -208,7 +208,7 @@ docs/
 
 -   🏗️ **Component Domain Architecture** - Implementación en progreso
 -   📚 **Documentación estandarizada** con JSDoc - En proceso de completación
--   🔧 **11 componentes restantes** por documentar
+-   🔧 **8 componentes restantes** por documentar
 -   📖 **Documentación de APIs** adicionales
 -   🧪 **Guías de testing** avanzado
 -   🔄 **Completar migración** de arquitectura legacy
