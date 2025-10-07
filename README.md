@@ -74,6 +74,7 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 | **[Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)**                                     | Listas de datos dinámicas                         | ✅ Completo  | -                    |
 | **[Manejo de Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)**                   | Sistema de notificaciones                         | ✅ Completo  | 2025-10-06           |
 | **[Detalle Genérico Formulario](./docs/carrduci-sys-desarrollo/uso-componentes/detalle-generico-formulario.md)** | Es para mostrar el detalle de cualquier documento | 🚧 Pendiente | -                    |
+| **[Pipes Varios](./docs/carrduci-sys-desarrollo/uso-componentes/pipes-varios.md)**                               | Varios pipes útiles para el sistema               | 🚧 Pendiente | -                    |
 
 ### 🐳 **Docker**
 
