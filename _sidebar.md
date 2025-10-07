@@ -27,6 +27,7 @@
     - [Carrusel De Imagenes Generico](./docs/carrduci-sys-desarrollo/uso-componentes/carrusel-de-imagenes-generico.md)
     - [Claves Autorizacion](./docs/carrduci-sys-desarrollo/uso-componentes/claves-autorizacion.md)
     - [Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)
+    - [Detalle Generico Formulario](./docs/carrduci-sys-desarrollo/uso-componentes/detalle-generico-formulario.md)
     - [Flotante Generico](./docs/carrduci-sys-desarrollo/uso-componentes/flotante-generico.md)
     - [Formulario Dinamico](./docs/carrduci-sys-desarrollo/uso-componentes/formulario-dinamico.md)
     - [Gestor De Impresiones](./docs/carrduci-sys-desarrollo/uso-componentes/gestor-de-impresiones.md)
