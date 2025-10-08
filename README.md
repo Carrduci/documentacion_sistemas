@@ -63,7 +63,7 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 | **[Calendario Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/calendario-generico.md)**                 | Selectores de fecha personalizados                | ✅ Completo  | -                    |
 | **[Auto Increment](./docs/carrduci-sys-desarrollo/uso-componentes/auto-increment.md)**                           | Generación automática de IDs                      | ✅ Completo  | -                    |
 | **[Tabla Editable](./docs/carrduci-sys-desarrollo/uso-componentes/tabla-editable-generica.md)**                  | Tablas con edición inline                         | 🚧 Pendiente | -                    |
-| **[Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)**           | Previsualización de imágenes                      | 🚧 Pendiente | -                    |
+| **[Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md)**           | Previsualización de imágenes                      | ✅ Completo  | 2025-10-08           |
 | **[Modal Genérico](./docs/carrduci-sys-desarrollo/uso-componentes/modal.md)**                                    | Diálogos modales reutilizables                    | ✅ Completo  | -                    |
 | **[Paginación y Filtros](./docs/carrduci-sys-desarrollo/uso-componentes/paginacion-y-filtros.md)**               | Sistema de paginación avanzado                    | 🚧 Pendiente | -                    |
 | **[Permisos](./docs/carrduci-sys-desarrollo/uso-componentes/permisos.md)**                                       | Gestión de permisos de usuario                    | 🚧 Pendiente | -                    |
