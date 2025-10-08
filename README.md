@@ -73,7 +73,7 @@ CARRDUCI-sys implementa una **"Component Domain Architecture"** (Arquitectura de
 | **[Zona Comentarios](./docs/carrduci-sys-desarrollo/uso-componentes/zona-comentarios-generica.md)**              | Sistema de comentarios                            | 🚧 Pendiente | -                    |
 | **[Data List](./docs/carrduci-sys-desarrollo/uso-componentes/data-list.md)**                                     | Listas de datos dinámicas                         | ✅ Completo  | -                    |
 | **[Manejo de Mensajes](./docs/carrduci-sys-desarrollo/uso-componentes/manejo-de-mensajes.md)**                   | Sistema de notificaciones                         | ✅ Completo  | 2025-10-06           |
-| **[Detalle Genérico Formulario](./docs/carrduci-sys-desarrollo/uso-componentes/detalle-generico-formulario.md)** | Es para mostrar el detalle de cualquier documento | 🚧 Pendiente | -                    |
+| **[Detalle Genérico Formulario](./docs/carrduci-sys-desarrollo/uso-componentes/detalle-generico-formulario.md)** | Es para mostrar el detalle de cualquier documento | ✅ Completo  | 2025-10-08           |
 | **[Pipes Varios](./docs/carrduci-sys-desarrollo/uso-componentes/pipes-varios.md)**                               | Varios pipes útiles para el sistema               | 🚧 Pendiente | -                    |
 
 ### 🐳 **Docker**
@@ -202,17 +202,17 @@ docs/
 
 ### ✅ **Completado (2025)**
 
--   🧩 **14 componentes reutilizables** completamente documentados
+-   🧩 **15 componentes reutilizables** completamente documentados
 -   ⚙️ **Entorno de desarrollo** completamente automatizado
 -   🐳 **Docker y despliegue** documentado
 
 ### 🚧 **En Desarrollo**
 
--   🏗️ **Component Domain Architecture** - Implementación en progreso
+-   🧩 **Component Domain Architecture** - Implementación en progreso
 -   📚 **Documentación estandarizada** con JSDoc - En proceso de completación
--   🔧 **9 componentes restantes** por documentar
+-   🔧 **8 componentes restantes** por documentar
 -   📖 **Documentación de APIs** adicionales
--   🧪 **Guías de testing** avanzado
+-   🧪 **Guías de testing** Avanzado
 -   🔄 **Completar migración** de arquitectura legacy
 
 ---
