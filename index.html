@@ -1,340 +1,628 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Docs Sistemas Carrduci</title>
-		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-		<meta content="width=device-width,initial-scale=1" name="viewport" />
-		<link
-			href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
-			rel="stylesheet"
-		/>
-		<!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">-->
-		<style>
-			nav.app-nav li ul {
-				min-width: 100px;
-			}
+    <head>
+        <meta charset="UTF-8" />
+        <title>Docs Sistemas Carrduci</title>
+        <meta
+            content="IE=edge,chrome=1"
+            http-equiv="X-UA-Compatible"
+        />
+        <meta
+            content="width=device-width,initial-scale=1"
+            name="viewport"
+        />
+        <link
+            href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
+            rel="stylesheet"
+        />
+        <!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet">-->
+        <style>
+            nav.app-nav li ul {
+                min-width: 100px;
+            }
 
-			.cover a.anchor span {
-				color: rgb(57, 57, 57) !important;
-			}
+            .cover a.anchor span {
+                color: rgb(57, 57, 57) !important;
+            }
 
-			.cover blockquote {
-				color: rgb(57, 57, 57) !important;
-			}
+            .cover blockquote {
+                color: rgb(57, 57, 57) !important;
+            }
 
-			.cover li {
-				color: rgb(57, 57, 57) !important;
-			}
+            .cover li {
+                color: rgb(57, 57, 57) !important;
+            }
 
-			.title-badge {
-				color: rgb(0, 116, 217);
-				padding-left: 3px;
-				padding-right: 3px;
-				padding-top: 1px;
-				padding-bottom: 1px;
-				/* color: white; */
-				font-weight: 900;
-			}
+            .title-badge {
+                color: rgb(0, 116, 217);
+                padding-left: 3px;
+                padding-right: 3px;
+                padding-top: 1px;
+                padding-bottom: 1px;
+                /* color: white; */
+                font-weight: 900;
+            }
 
-			.active {
-				font-weight: 600;
-			}
+            .active {
+                font-weight: 600;
+            }
 
-			.markdown-section table td::before {
-				display: none;
-			}
+            .markdown-section table td::before {
+                display: none;
+            }
 
-			hr.hr-secundario {
-				border-bottom: dashed 0.5px rgb(180 180 180);
-				margin-top: 50px;
-				margin-bottom: 50px;
-				border-top: none;
-			}
+            hr.hr-secundario {
+                border-bottom: dashed 0.5px rgb(180 180 180);
+                margin-top: 50px;
+                margin-bottom: 50px;
+                border-top: none;
+            }
 
-			hr.hr-principal {
-				border-bottom: dashed 1px rgb(80, 80, 80);
-				margin-top: 80px;
-				margin-bottom: 50px;
-				border-top: none;
-			}
+            hr.hr-principal {
+                border-bottom: dashed 1px rgb(80, 80, 80);
+                margin-top: 80px;
+                margin-bottom: 50px;
+                border-top: none;
+            }
 
-			figure {
-				width: fit-content;
-				align-items: center;
-				border: solid 1px rgb(180 180 180);
-				padding: 0px;
-			}
+            figure {
+                width: fit-content;
+                align-items: center;
+                border: solid 1px rgb(180 180 180);
+                padding: 0px;
+            }
 
-			figcaption {
-				padding: 8px;
-				border-top: solid 1px rgb(180 180 180);
-			}
+            figcaption {
+                padding: 8px;
+                border-top: solid 1px rgb(180 180 180);
+            }
 
-			.text-warning {
-				color: orange !important;
-				font-weight: 900 !important;
-			}
+            .text-warning {
+                color: orange !important;
+                font-weight: 900 !important;
+            }
 
-			.text-danger {
-				color: red !important;
-				font-weight: 900 !important;
-			}
+            .text-danger {
+                color: red !important;
+                font-weight: 900 !important;
+            }
 
-			.text-success {
-				color: green !important;
-				font-weight: 900 !important;
-			}
+            .text-success {
+                color: green !important;
+                font-weight: 900 !important;
+            }
 
-			.text-info {
-				color: cadetblue !important;
-				font-weight: 900 !important;
-			}
+            .text-info {
+                color: cadetblue !important;
+                font-weight: 900 !important;
+            }
 
-			/*.toolbar {*/
-			/*    background: #2d2d2d;*/
-			/*    !*border-radius: 4px 4px 0 0;*!*/
-			/*    padding: 4px 8px;*/
-			/*}*/
+            /*.toolbar {*/
+            /*    background: #2d2d2d;*/
+            /*    !*border-radius: 4px 4px 0 0;*!*/
+            /*    padding: 4px 8px;*/
+            /*}*/
 
-			:not(div.code-toolbar:hover) > .toolbar:focus-within {
-				transition: all 150ms ease;
-				opacity: 0 !important;
-			}
+            :not(div.code-toolbar:hover) > .toolbar:focus-within {
+                transition: all 150ms ease;
+                opacity: 0 !important;
+            }
 
-			/*div.code-toolbar:hover > .toolbar:focus-within {*/
-			/*    transition: all 150ms ease;*/
-			/*    !*background-color: red;*!*/
-			/*    opacity: 0 !important;*/
-			/*}*/
+            /*div.code-toolbar:hover > .toolbar:focus-within {*/
+            /*    transition: all 150ms ease;*/
+            /*    !*background-color: red;*!*/
+            /*    opacity: 0 !important;*/
+            /*}*/
 
-			div.code-toolbar > .toolbar > .toolbar-item > a:focus,
-			div.code-toolbar > .toolbar > .toolbar-item > span:focus,
-			div.code-toolbar > .toolbar > .toolbar-item > button:focus {
-				transition: all 850ms ease;
-				color: white;
-				transform: rotate3d(0, 50, 0, 0deg);
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+            div.code-toolbar > .toolbar > .toolbar-item > span:focus,
+            div.code-toolbar > .toolbar > .toolbar-item > button:focus {
+                transition: all 850ms ease;
+                color: white;
+                transform: rotate3d(0, 50, 0, 0deg);
+            }
 
-			div.code-toolbar > .toolbar > .toolbar-item > a:active,
-			div.code-toolbar > .toolbar > .toolbar-item > span:active,
-			div.code-toolbar > .toolbar > .toolbar-item > button:active {
-				transform: rotate3d(0, 50, 0, 360deg) !important;
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > a:active,
+            div.code-toolbar > .toolbar > .toolbar-item > span:active,
+            div.code-toolbar > .toolbar > .toolbar-item > button:active {
+                transform: rotate3d(0, 50, 0, 360deg) !important;
+            }
 
-			div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > a,
-			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > a {
-				color: white;
-				transform: rotate3d(0, 50, 0, 0deg);
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > a,
+            div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > a {
+                color: white;
+                transform: rotate3d(0, 50, 0, 0deg);
+            }
 
-			div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > a,
-			div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > a {
-				color: white;
-				cursor: pointer;
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > a,
+            div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > a {
+                color: white;
+                cursor: pointer;
+            }
 
-			div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-			div.code-toolbar > .toolbar > .toolbar-item > span:active {
-				cursor: none;
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+            div.code-toolbar > .toolbar > .toolbar-item > span:active {
+                cursor: none;
+            }
 
-			div.code-toolbar > .toolbar > .toolbar-item > a,
-			div.code-toolbar > .toolbar > .toolbar-item > button,
-			div.code-toolbar > .toolbar > .toolbar-item > span {
-				background: rgba(106, 106, 106, 0.4);
-				color: #fff;
-				border: none;
-				padding: 2px 8px;
-				margin-right: 4px;
-				border-radius: 3px;
-				font-size: 19px;
-				box-shadow: none;
-			}
+            div.code-toolbar > .toolbar > .toolbar-item > a,
+            div.code-toolbar > .toolbar > .toolbar-item > button,
+            div.code-toolbar > .toolbar > .toolbar-item > span {
+                background: rgba(106, 106, 106, 0.4);
+                color: #fff;
+                border: none;
+                padding: 2px 8px;
+                margin-right: 4px;
+                border-radius: 3px;
+                font-size: 19px;
+                box-shadow: none;
+            }
 
-			/*div.code-toolbar {*/
-			/*    padding-top: 40px;*/
-			/*    background-color: rgb(196, 196, 196);*/
-			/*}*/
+            /*div.code-toolbar {*/
+            /*    padding-top: 40px;*/
+            /*    background-color: rgb(196, 196, 196);*/
+            /*}*/
 
-			/*div.code-toolbar > .toolbar {*/
-			/*    position: absolute;*/
-			/*}*/
+            /*div.code-toolbar > .toolbar {*/
+            /*    position: absolute;*/
+            /*}*/
 
-			.github-corner {
-				display: none !important;
-			}
+            .github-corner {
+                display: none !important;
+            }
 
-			@media screen and (max-width: 768px) {
-				.table-card {
-					border: 1px solid #ddd;
-					margin-bottom: 10px;
-					background: #ffffff;
-				}
+            @media screen and (max-width: 768px) {
+                .table-card {
+                    border: 1px solid #ddd;
+                    margin-bottom: 10px;
+                    background: #ffffff;
+                }
 
-				.card-label {
-					padding-top: 10px;
-					padding-bottom: 5px;
-					padding-left: 10px;
-					padding-right: 10px;
-					font-weight: bold;
-				}
+                .card-label {
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-weight: bold;
+                }
 
-				.card-value {
-					padding-bottom: 10px;
-					padding-left: 10px;
-					padding-right: 10px;
-				}
+                .card-value {
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
 
-				.card-sep {
-					border-top: 1px solid #ddd;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div id="app"></div>
-		<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-		<script>
-			window.$docsify = {
-				loadNavbar: true,
-				repo: 'Carrduci/documentacion_sistemas',
-				coverpage: '_coverpage.md',
-				loadSidebar: '_sidebar.md',
-				maxLevel: 6,
-				subMaxLevel: 6,
-				name: 'Docs Sistemas Carrduci',
-				auto2top: true,
-				search: {
-					localSearch: true,
-					placeholder: 'Buscar...',
-					noData: 'No se encontró nada',
-					depth: 6,
-					hideOtherSidebarContent: true,
-					paths: 'auto',
-				},
-				tabs: {
-					persist: true,
-					sync: true,
-					theme: 'classic',
-					tabComments: true,
-					tabHeadings: true,
-				},
-				mermaidConfig: {
-					querySelector: '.mermaid',
-				},
-				plugins: [
-					{
-						hooks: {
-							afterEach: (html, next) => {
-								setTimeout(() => {
-									document
-										.querySelectorAll(
-											'pre[class*="language-"]'
-										)
-										.forEach((el) =>
-											Prism.highlightElement(el)
-										);
-								}, 100);
-								next();
-							},
-						},
-					},
-				],
-			};
-		</script>
-		<script src="//cdn.jsdelivr.net/npm/d3@7"></script>
-		<script type="module">
-			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-			mermaid.initialize({ startOnLoad: true });
-			window.mermaid = mermaid;
-		</script>
-		<script src="//unpkg.com/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
-		<script src="//unpkg.com/docsify-mermaid-zoom/dist/docsify-mermaid-zoom.js"></script>
-		<script src="https://unpkg.com/docsify-themeable"></script>
-		<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-		<script src="https://unpkg.com/docsify-swagger-ui@2.0.3/dist/index.min.js"></script>
-		<link
-			href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
-			rel="stylesheet"
-		/>
-		<script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-		<script src="https://unpkg.com/docsify-sidebar-nav@latest/dist/docsify-sidebar-nav.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-prism@latest/dist/docsify-prism.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-git.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+                .card-sep {
+                    border-top: 1px solid #ddd;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            (function () {
+                // Quick Title Search Plugin for Docsify
+                // Activates on Ctrl+Alt+M, searches current page headings in a modal with Fuse.js fuzzy matching.
 
-		<script>
-			const HACER_TABLAS_DE_MOVIL = () => {
-				setTimeout(() => {
-					const tables = document.querySelectorAll('table');
-					tables.forEach((table) => {
-						const rows = table.querySelectorAll('tr');
-						const headers = Array.from(
-							rows[0].querySelectorAll('th')
-						).map((th) => th.textContent);
+                let Fuse = null;
 
-						if (window.innerWidth <= 768) {
-							rows.forEach((row, index) => {
-								if (index === 0) return; // Skip header row
-								const card = document.createElement('div');
-								card.className = 'table-card';
-								const cells = row.querySelectorAll('td');
-								cells.forEach((cell, i) => {
-									const label = document.createElement('div');
-									label.className = 'card-label';
-									label.textContent = headers[i];
-									const value = document.createElement('div');
-									value.className = 'card-value';
-									value.innerHTML = cell.innerHTML;
-									const sep = document.createElement('div');
-									sep.className = 'card-sep';
-									card.appendChild(label);
-									card.appendChild(value);
-									if (i < cells.length - 1) {
-										card.appendChild(sep);
-									}
-								});
-								table.parentNode.insertBefore(card, table);
-							});
-							table.style.display = 'none';
-						}
-					});
-				}, 500);
-			};
-			document.addEventListener('DOMContentLoaded', () => {
-				HACER_TABLAS_DE_MOVIL();
-			});
+                function loadFuse(callback) {
+                    if (Fuse) {
+                        callback();
+                        return;
+                    }
+                    const script = document.createElement('script');
+                    script.src =
+                        'https://cdn.jsdelivr.net/npm/fuse.js@latest/dist/fuse.min.js';
+                    script.onload = () => {
+                        Fuse = window.Fuse;
+                        callback();
+                    };
+                    script.onerror = () => {
+                        console.error('Failed to load Fuse.js');
+                        callback(); // Proceed without Fuse, fallback to basic search
+                    };
+                    document.head.appendChild(script);
+                }
 
-			window.addEventListener('popstate', () => {
-				HACER_TABLAS_DE_MOVIL();
-			});
+                function initPlugin() {
+                    if (window.__quickTitleSearchInit) return; // Prevent duplicate init
+                    window.__quickTitleSearchInit = true;
 
-			window.addEventListener('beforeunload', () => {
-				HACER_TABLAS_DE_MOVIL();
-			});
-		</script>
-	</body>
+                    let headings = [];
+                    let fuse = null;
+                    let modal = null;
+                    let searchInput = null;
+                    let resultsList = null;
+                    let useFuse = false;
+
+                    function collectHeadings() {
+                        const section =
+                            document.querySelector('.markdown-section');
+                        if (!section) return [];
+                        const selectors = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+                            .map((tag) => `.markdown-section ${tag}`)
+                            .join(', ');
+                        return Array.from(section.querySelectorAll(selectors))
+                            .map((el, index) => ({
+                                text: el.textContent.trim(),
+                                el: el,
+                                index: index
+                            }))
+                            .filter((h) => h.text.length > 0);
+                    }
+
+                    function createModal() {
+                        if (modal) return;
+
+                        modal = document.createElement('div');
+                        modal.style.cssText = `
+					        position: fixed;
+					        top: 0;
+					        left: 0;
+					        width: 100%;
+					        height: 100%;
+					        background: rgba(0, 0, 0, 0.5);
+					        display: flex;
+					        align-items: center;
+					        justify-content: center;
+					        z-index: 9999;
+					        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+					      `;
+
+                        const box = document.createElement('div');
+                        box.style.cssText = `
+					        background: white;
+					        border-radius: 8px;
+					        width: 90%;
+					        max-width: 500px;
+					        max-height: 80%;
+					        overflow: hidden;
+					        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+					      `;
+
+                        searchInput = document.createElement('input');
+                        searchInput.type = 'text';
+                        searchInput.placeholder = 'Buscar lo que sea';
+                        searchInput.style.cssText = `
+					        width: 100%;
+					        padding: 12px;
+					        border: none;
+					        border-bottom: 1px solid #eee;
+					        font-size: 16px;
+					        outline: none;
+					        box-sizing: border-box;
+					      `;
+                        searchInput.addEventListener('input', filterResults);
+
+                        resultsList = document.createElement('ul');
+                        resultsList.style.cssText = `
+					        list-style: none;
+					        margin: 0;
+					        padding: 0;
+					        max-height: 400px;
+					        overflow-y: auto;
+					      `;
+
+                        const closeBtn = document.createElement('button');
+                        closeBtn.textContent = 'Close';
+                        closeBtn.style.cssText = `
+					        position: absolute;
+					        top: 8px;
+					        right: 12px;
+					        background: none;
+					        border: none;
+					        font-size: 14px;
+					        cursor: pointer;
+					        color: white;
+					      `;
+                        closeBtn.addEventListener('click', closeModal);
+
+                        box.appendChild(closeBtn);
+                        box.appendChild(searchInput);
+                        box.appendChild(resultsList);
+                        modal.appendChild(box);
+                        document.body.appendChild(modal);
+
+                        // Close on Escape
+                        document.addEventListener('keydown', function (e) {
+                            if (e.key === 'Escape' && modal) {
+                                closeModal();
+                            }
+                        });
+                    }
+
+                    function fuzzyScoreFallback(query, text) {
+                        if (query.length === 0) return 1;
+                        const q = query.toLowerCase();
+                        const t = text.toLowerCase();
+                        const ql = q.length;
+                        let matches = 0;
+                        let j = 0;
+                        for (let i = 0; i < t.length; i++) {
+                            if (j < ql && t.charAt(i) === q.charAt(j)) {
+                                j++;
+                                matches = j;
+                            }
+                        }
+                        const matchRatio = matches / ql;
+                        const textRatio = matches / t.length;
+                        return matchRatio * textRatio;
+                    }
+
+                    function filterResults() {
+                        const query = searchInput.value;
+                        let scored;
+
+                        if (useFuse && fuse) {
+                            const results = fuse.search(query);
+                            scored = results.map((r) => ({
+                                ...r.item,
+                                score: r.score || 0
+                            }));
+                            if (query.length === 0) {
+                                // For empty query, sort by original index
+                                scored.sort((a, b) => a.index - b.index);
+                            } else {
+                                // Sort by score ascending (lower score is better in Fuse.js)
+                                scored.sort((a, b) => a.score - b.score);
+                            }
+                        } else {
+                            // Fallback
+                            scored = headings
+                                .map((h) => ({
+                                    ...h,
+                                    score: fuzzyScoreFallback(query, h.text)
+                                }))
+                                .filter(
+                                    (s) =>
+                                        s.score >= (query.length > 0 ? 0.6 : 0)
+                                )
+                                .sort((a, b) => {
+                                    if (a.score !== b.score) {
+                                        return b.score - a.score; // Higher score first
+                                    }
+                                    return a.index - b.index;
+                                });
+                        }
+
+                        resultsList.innerHTML = '';
+
+                        scored.forEach((h, index) => {
+                            const li = document.createElement('li');
+                            li.textContent = h.text;
+                            li.style.cssText = `
+					          padding: 12px;
+					          border-bottom: 1px solid #eee;
+					          cursor: pointer;
+					          transition: background 0.2s;
+					          background: ${index === 0 ? '#f0f8ff' : 'white'};
+					        `;
+                            li.addEventListener(
+                                'mouseenter',
+                                () => (li.style.background = '#f5f5f5')
+                            );
+                            li.addEventListener(
+                                'mouseleave',
+                                () =>
+                                    (li.style.background =
+                                        index === 0 ? '#f0f8ff' : 'white')
+                            );
+                            li.addEventListener('click', () => {
+                                h.el.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                                closeModal();
+                            });
+                            resultsList.appendChild(li);
+                        });
+
+                        if (scored.length === 0 && query.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = 'No headings found.';
+                            li.style.cssText = 'padding: 12px; color: #999;';
+                            resultsList.appendChild(li);
+                        }
+                    }
+
+                    function openModal() {
+                        headings = collectHeadings();
+                        if (headings.length === 0) return;
+
+                        loadFuse(() => {
+                            if (Fuse) {
+                                useFuse = true;
+                                fuse = new Fuse(headings, {
+                                    keys: ['text'],
+                                    threshold: 0.4, // Adjust for fuzziness (0: exact, 1: loose)
+                                    includeScore: true
+                                });
+                            }
+                            createModal();
+                            modal.style.display = 'flex';
+                            searchInput.focus();
+                            searchInput.value = '';
+                            filterResults();
+                        });
+                    }
+
+                    function closeModal() {
+                        if (modal) {
+                            modal.style.display = 'none';
+                            searchInput.value = '';
+                        }
+                    }
+
+                    // Keyboard shortcut
+                    document.addEventListener('keydown', function (e) {
+                        if (e.ctrlKey && e.altKey && e.key === 'm') {
+                            e.preventDefault();
+                            openModal();
+                        }
+                    });
+                }
+
+                // Integrate with Docsify if available
+                if (window.Docsify) {
+                    window.Docsify.plugins = window.Docsify.plugins || [];
+                    window.Docsify.plugins.push(function (hook, vm) {
+                        hook.init([], initPlugin);
+                    });
+                } else {
+                    // Fallback: init after DOM ready
+                    if (document.readyState === 'loading') {
+                        document.addEventListener(
+                            'DOMContentLoaded',
+                            initPlugin
+                        );
+                    } else {
+                        initPlugin();
+                    }
+                }
+            })();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+        <script>
+            window.$docsify = {
+                loadNavbar: true,
+                repo: 'Carrduci/documentacion_sistemas',
+                coverpage: '_coverpage.md',
+                loadSidebar: '_sidebar.md',
+                maxLevel: 6,
+                subMaxLevel: 6,
+                name: 'Docs Sistemas Carrduci',
+                auto2top: true,
+                search: {
+                    localSearch: true,
+                    placeholder: 'Buscar...',
+                    noData: 'No se encontró nada',
+                    depth: 6,
+                    hideOtherSidebarContent: true,
+                    paths: 'auto'
+                },
+                tabs: {
+                    persist: true,
+                    sync: true,
+                    theme: 'classic',
+                    tabComments: true,
+                    tabHeadings: true
+                },
+                mermaidConfig: {
+                    querySelector: '.mermaid'
+                },
+                plugins: [
+                    {
+                        hooks: {
+                            afterEach: (html, next) => {
+                                setTimeout(() => {
+                                    document
+                                        .querySelectorAll(
+                                            'pre[class*="language-"]'
+                                        )
+                                        .forEach((el) =>
+                                            Prism.highlightElement(el)
+                                        );
+                                }, 100);
+                                next();
+                            }
+                        }
+                    }
+                ]
+            };
+        </script>
+        <script src="//cdn.jsdelivr.net/npm/d3@7"></script>
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ startOnLoad: true });
+            window.mermaid = mermaid;
+        </script>
+        <script src="//unpkg.com/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
+        <script src="//unpkg.com/docsify-mermaid-zoom/dist/docsify-mermaid-zoom.js"></script>
+        <script src="https://unpkg.com/docsify-themeable"></script>
+        <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+        <script src="https://unpkg.com/docsify-swagger-ui@2.0.3/dist/index.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+        <script src="https://unpkg.com/docsify-sidebar-nav@latest/dist/docsify-sidebar-nav.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-prism@latest/dist/docsify-prism.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-git.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+        <script>
+            const HACER_TABLAS_DE_MOVIL = () => {
+                setTimeout(() => {
+                    const tables = document.querySelectorAll('table');
+                    tables.forEach((table) => {
+                        const rows = table.querySelectorAll('tr');
+                        const headers = Array.from(
+                            rows[0].querySelectorAll('th')
+                        ).map((th) => th.textContent);
+
+                        if (window.innerWidth <= 768) {
+                            rows.forEach((row, index) => {
+                                if (index === 0) return; // Skip header row
+                                const card = document.createElement('div');
+                                card.className = 'table-card';
+                                const cells = row.querySelectorAll('td');
+                                cells.forEach((cell, i) => {
+                                    const label = document.createElement('div');
+                                    label.className = 'card-label';
+                                    label.textContent = headers[i];
+                                    const value = document.createElement('div');
+                                    value.className = 'card-value';
+                                    value.innerHTML = cell.innerHTML;
+                                    const sep = document.createElement('div');
+                                    sep.className = 'card-sep';
+                                    card.appendChild(label);
+                                    card.appendChild(value);
+                                    if (i < cells.length - 1) {
+                                        card.appendChild(sep);
+                                    }
+                                });
+                                table.parentNode.insertBefore(card, table);
+                            });
+                            table.style.display = 'none';
+                        }
+                    });
+                }, 500);
+            };
+            document.addEventListener('DOMContentLoaded', () => {
+                HACER_TABLAS_DE_MOVIL();
+            });
+
+            window.addEventListener('popstate', () => {
+                HACER_TABLAS_DE_MOVIL();
+            });
+
+            window.addEventListener('beforeunload', () => {
+                HACER_TABLAS_DE_MOVIL();
+            });
+        </script>
+    </body>
 </html>
