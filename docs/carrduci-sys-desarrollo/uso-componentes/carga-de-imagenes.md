@@ -12,9 +12,9 @@ Para usar el input de carga de imágenes, importarlo en el módulo del component
 import { CalendarioGenericoModule } from 'src/app/components/utiles/calendario-generico/calendario-generico.module';
 
 @NgModule({
-	declarations: [TalComponenteComponent],
-	imports: [CommonModule, CalendarioGenericoModule],
-	export: [TalComponenteComponent],
+    declarations: [TalComponenteComponent],
+    imports: [CommonModule, CalendarioGenericoModule],
+    export: [TalComponenteComponent]
 })
 export class TalComponenteModule {}
 ```
@@ -23,10 +23,10 @@ Y usar el componente de la siguiente manera. En la vista (`.html`) llamar al sel
 
 ```html
 <app-carga-de-imagenes
-	[transformarFileAObjetoPlano]="true"
-	[limiteImagenes]="3"
-	(imagenesParaSubir)="datosImagenes($event)"
-	(error)="errorImagenes($event)"
+    [transformarFileAObjetoPlano]="true"
+    [limiteImagenes]="3"
+    (imagenesParaSubir)="datosImagenes($event)"
+    (error)="errorImagenes($event)"
 ></app-carga-de-imagenes>
 ```
 
@@ -37,18 +37,18 @@ import { Component } from '@angular/core';
 import { CargaDeImagenesTransporte } from './carga-de-imagenes-transporte';
 
 @Component({
-	// ...
+    // ...
 })
 class TalCmponent {
-	// ...
+    // ...
 
-	datosImagenes(imagenes: CargaDeImagenesTransporte[]) {
-		console.log(imagenes);
-	}
+    datosImagenes(imagenes: CargaDeImagenesTransporte[]) {
+        console.log(imagenes);
+    }
 
-	errorImagenes(err: any) {
-		console.log(err);
-	}
+    errorImagenes(err: any) {
+        console.log(err);
+    }
 }
 ```
 
@@ -69,7 +69,7 @@ Explicación de las propiedades:
 Este es un ejemplo visual del componente.
 
 <figure>
-  <img src="../../../assets/gifs/componentes__carga_de_imagenes.gif" alt="radio">
+  <img src="./assets/gifs/componentes__carga_de_imagenes.gif" alt="Carga de imágenes">
   <figcaption>No se pueden cargar más imágenes de las permitidas</figcaption>
 </figure>
 
@@ -77,36 +77,36 @@ Y este es un ejemplo de arreglo que el componente emite:
 
 ```json
 [
-	{
-		"file": {
-			"lastModified": 1711491528372,
-			"name": "660791 - copia.jpg",
-			"size": 377638,
-			"type": "image/jpeg",
-			"webkitRelativePath": ""
-		},
-		"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQg..."
-	},
-	{
-		"file": {
-			"lastModified": 1711491999000,
-			"name": "45412.jpg",
-			"size": 2540812,
-			"type": "image/jpeg",
-			"webkitRelativePath": ""
-		},
-		"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIB..."
-	},
-	{
-		"file": {
-			"lastModified": 1741722504615,
-			"name": "aurora-borealis-beautiful-4k-2c.jpg",
-			"size": 2526714,
-			"type": "image/jpeg",
-			"webkitRelativePath": ""
-		},
-		"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4SXqRXhpZgAASUkqAAgAAAANAA4BA..."
-	}
+    {
+        "file": {
+            "lastModified": 1711491528372,
+            "name": "660791 - copia.jpg",
+            "size": 377638,
+            "type": "image/jpeg",
+            "webkitRelativePath": ""
+        },
+        "src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQg..."
+    },
+    {
+        "file": {
+            "lastModified": 1711491999000,
+            "name": "45412.jpg",
+            "size": 2540812,
+            "type": "image/jpeg",
+            "webkitRelativePath": ""
+        },
+        "src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIB..."
+    },
+    {
+        "file": {
+            "lastModified": 1741722504615,
+            "name": "aurora-borealis-beautiful-4k-2c.jpg",
+            "size": 2526714,
+            "type": "image/jpeg",
+            "webkitRelativePath": ""
+        },
+        "src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4SXqRXhpZgAASUkqAAgAAAANAA4BA..."
+    }
 ]
 ```
 
@@ -139,12 +139,12 @@ y en el servicio se debe esperar recibir esta misma clase
 import { Injectable } from '@angular/core';
 
 @Injectable({
-	// ...
+    // ...
 })
 class AlgunServicioService {
-	crearDocumentoConImagenes(documento: UnModeloCualquiera) {
-		// ...
-	}
+    crearDocumentoConImagenes(documento: UnModeloCualquiera) {
+        // ...
+    }
 }
 ```
 
@@ -173,39 +173,39 @@ const UTILES = require('.../utils/varios');
 const CAMPOS_BUSQUEDA = require('.../utils/camposBusquedaTodosLosModelos.utils');
 
 const UN_ELEMENTO_SCHEMA = Mongoose.Schema(
-	{
-		folio: {
-			type: Number,
-			unique: true,
-			inmutable: true,
-			min: [0, 'El mínimo posible del folio es 0'],
-		},
-		busqueda: String,
+    {
+        folio: {
+            type: Number,
+            unique: true,
+            inmutable: true,
+            min: [0, 'El mínimo posible del folio es 0']
+        },
+        busqueda: String,
 
-		nombre: String,
-		descripcion: String,
-		imagenes: [
-			{
-				fecha: Date,
-				imagen: String,
-			},
-		],
-	},
-	{
-		collection: 'elementos',
-		timestamps: true,
-	}
+        nombre: String,
+        descripcion: String,
+        imagenes: [
+            {
+                fecha: Date,
+                imagen: String
+            }
+        ]
+    },
+    {
+        collection: 'elementos',
+        timestamps: true
+    }
 );
 
 UN_ELEMENTO_SCHEMA.plugin(AUTO_INCREMENT, {
-	id: 'elemento',
-	inc_field: 'folio',
+    id: 'elemento',
+    inc_field: 'folio'
 });
 UN_ELEMENTO_SCHEMA.plugin(UNIQUE_VALIDATOR, {
-	message: "El campo '{PATH}' debe ser único.",
+    message: "El campo '{PATH}' debe ser único."
 });
 UN_ELEMENTO_SCHEMA.plugin(BUSQUEDA.text_search_index, {
-	fields: CAMPOS_BUSQUEDA.ELEMENTOS,
+    fields: CAMPOS_BUSQUEDA.ELEMENTOS
 });
 UN_ELEMENTO_SCHEMA.plugin(HISTORIAL.hystory_log_plugin);
 
@@ -224,28 +224,28 @@ En el archivo `imagenesAdministracion.service.js` es el primer lugar donde agreg
 const SERVICIO = {};
 
 SERVICIO.RELACION_CARPETAS_COLECCIONES = {
-	// ...
+    // ...
 
-	// La relación de la carpeta del nuevo tipo con su colección.
-	// Aquí se usa el nombre de la colección del modelo mencionado anteriormente.
-	elementos: 'elementos',
+    // La relación de la carpeta del nuevo tipo con su colección.
+    // Aquí se usa el nombre de la colección del modelo mencionado anteriormente.
+    elementos: 'elementos'
 };
 
 // No tocar esto
 SERVICIO.DIRECTORIO_IMGS = '/carrduci-sys-app-data/uploads';
 
 SERVICIO.DIRECTORIOS_IMAGENES = {
-	// ...
+    // ...
 
-	// El nombre de la carpeta que se usará.
-	elementos: `${SERVICIO.DIRECTORIO_IMGS}/elementos`,
+    // El nombre de la carpeta que se usará.
+    elementos: `${SERVICIO.DIRECTORIO_IMGS}/elementos`
 };
 
 SERVICIO.TIPOS = {
-	// ...
+    // ...
 
-	// El nombre del nuevo tipo.
-	elementos: 'elementos',
+    // El nombre del nuevo tipo.
+    elementos: 'elementos'
 };
 
 // ...
@@ -266,19 +266,19 @@ Agregar una función que obtenga las imágenes usando agregación de MongoDB:
 
 ```js
 async function obtenerImagenesElementos() {
-	return await ELEMENTO.aggregate([
-		{
-			$project: {
-				imagen: '$imagenes.imagen',
-			},
-		},
-		{
-			$unwind: {
-				path: '$imagen',
-				preserveNullAndEmptyArrays: false,
-			},
-		},
-	]);
+    return await ELEMENTO.aggregate([
+        {
+            $project: {
+                imagen: '$imagenes.imagen'
+            }
+        },
+        {
+            $unwind: {
+                path: '$imagen',
+                preserveNullAndEmptyArrays: false
+            }
+        }
+    ]);
 }
 ```
 
@@ -288,12 +288,12 @@ Dentro de la función `obtenerTodosLosIdsImagenes`, agregar la llamada a la nuev
 
 ```js
 async function obtenerTodosLosIdsImagenes() {
-	return [
-		...(await obtenerImagenesEmpleados()),
-		...(await obtenerImagenesBitacoraMantenimiento()),
-		// ... otras funciones
-		...(await obtenerImagenesElementos()), // Agregar esta línea
-	];
+    return [
+        ...(await obtenerImagenesEmpleados()),
+        ...(await obtenerImagenesBitacoraMantenimiento()),
+        // ... otras funciones
+        ...(await obtenerImagenesElementos()) // Agregar esta línea
+    ];
 }
 ```
 
@@ -313,7 +313,7 @@ Al inicio del archivo del servicio, importar el servicio de administración de i
 const SERVICIO_IMAGENES = require('../../services/imagenesAdministracion/imagenesAdministracion.service');
 ```
 
-#### Guardar imágenes al crear un documento
+#### Guardar imágenes al crear o editar un documento, así como eliminarlas
 
 ```javascript
 const Mongoose = require('mongoose');
@@ -321,123 +321,125 @@ const ObjectId = Mongoose.Types.ObjectId;
 const ELEMENTO_MODEL = require('../../models/elementos/elemento.model');
 const SERVICIO_IMAGENES = require('../../services/imagenesAdministracion/imagenesAdministracion.service');
 
-class ElementoService {
-	async crearDocumentoConImagenes({
-		nombre,
-		descripcion,
-		imagenes,
-		idUsuario,
-	}) {
-		// Generar un ObjectId para el nuevo documento
-		const OBJECT_ID = new ObjectId();
+const SERVICIO = {};
 
-		// Guardar las imágenes en el sistema de archivos
-		let imagenesGuardadas = [];
-		if (imagenes?.length > 0) {
-			imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-				imagenes,
-				SERVICIO_IMAGENES.TIPOS.elementos,
-				OBJECT_ID.toHexString()
-			);
-		}
+SERVICIO.crearDocumentoConImagenes = async function ({
+    nombre,
+    descripcion,
+    imagenes,
+    idUsuario
+}) {
+    // Generar un ObjectId para el nuevo documento
+    const OBJECT_ID = new ObjectId();
 
-		// Crear el documento con las referencias a las imágenes
-		let nuevoElemento = new ELEMENTO_MODEL({
-			_id: OBJECT_ID,
-			nombre: nombre,
-			descripcion: descripcion,
-			imagenes: imagenesGuardadas.map((nombreImagen) => ({
-				fecha: new Date(),
-				imagen: nombreImagen,
-			})),
-		});
+    // Guardar las imágenes en el sistema de archivos
+    let imagenesGuardadas = [];
+    if (imagenes?.length > 0) {
+        imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
+            imagenes,
+            SERVICIO_IMAGENES.TIPOS.elementos,
+            OBJECT_ID.toHexString()
+        );
+    }
 
-		// Agregar metadata para historial
-		nuevoElemento.metadata = {
-			idUsuario: idUsuario,
-			descripcion: 'Elemento creado',
-		};
+    // Crear el documento con las referencias a las imágenes
+    let nuevoElemento = new ELEMENTO_MODEL({
+        _id: OBJECT_ID,
+        nombre: nombre,
+        descripcion: descripcion,
+        imagenes: imagenesGuardadas.map((nombreImagen) => ({
+            fecha: new Date(),
+            imagen: nombreImagen
+        }))
+    });
 
-		// Guardar en la base de datos
-		return await nuevoElemento.save();
-	}
+    // Agregar metadata para historial
+    nuevoElemento.metadata = {
+        idUsuario: idUsuario,
+        descripcion: 'Elemento creado'
+    };
 
-	async modificarElemento({
-		folioDocumento,
-		nombre,
-		descripcion,
-		imagenes,
-		imagenesEliminar,
-		idUsuario,
-	}) {
-		// Buscar el documento existente
-		const ELEMENTO_EXISTENTE = await ELEMENTO_MODEL.findOne({
-			folio: folioDocumento,
-		}).lean();
+    // Guardar en la base de datos
+    return await nuevoElemento.save();
+};
 
-		if (!ELEMENTO_EXISTENTE) {
-			throw new Error('El documento no existe');
-		}
+SERVICIO.modificarElemento = async function ({
+    folioDocumento,
+    nombre,
+    descripcion,
+    imagenes,
+    imagenesEliminar,
+    idUsuario
+}) {
+    // Buscar el documento existente
+    const ELEMENTO_EXISTENTE = await ELEMENTO_MODEL.findOne({
+        folio: folioDocumento
+    }).lean();
 
-		// Guardar las nuevas imágenes usando el ID del documento existente
-		let imagenesGuardadas = [];
-		if (imagenes?.length > 0) {
-			imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-				imagenes,
-				SERVICIO_IMAGENES.TIPOS.elementos,
-				ELEMENTO_EXISTENTE._id
-			);
-		}
+    if (!ELEMENTO_EXISTENTE) {
+        throw new Error('El documento no existe');
+    }
 
-		// Mapear las nuevas imágenes con fecha y combinar con existentes
-		imagenesGuardadas = [
-			...imagenesGuardadas.map((nombreImagen) => ({
-				imagen: nombreImagen,
-				fecha: new Date(),
-			})),
-			...(ELEMENTO_EXISTENTE.imagenes ?? []),
-		];
+    // Guardar las nuevas imágenes usando el ID del documento existente
+    let imagenesGuardadas = [];
+    if (imagenes?.length > 0) {
+        imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
+            imagenes,
+            SERVICIO_IMAGENES.TIPOS.elementos,
+            ELEMENTO_EXISTENTE._id
+        );
+    }
 
-		// Eliminar imágenes si se especificaron
-		if (imagenesEliminar?.length > 0) {
-			const NOMBRES_ELIM = imagenesEliminar.map((img) => img.imagen);
-			imagenesGuardadas = imagenesGuardadas.filter(
-				(imgGuardada) => !NOMBRES_ELIM.includes(imgGuardada.imagen)
-			);
+    // Mapear las nuevas imágenes con fecha y combinar con existentes
+    imagenesGuardadas = [
+        ...imagenesGuardadas.map((nombreImagen) => ({
+            imagen: nombreImagen,
+            fecha: new Date()
+        })),
+        ...(ELEMENTO_EXISTENTE.imagenes ?? [])
+    ];
 
-			let grupoAEliminar = imagenesEliminar.map((img) => ({
-				imagen: img.imagen,
-				carpeta: 'elementos',
-			}));
+    // Eliminar imágenes si se especificaron
+    if (imagenesEliminar?.length > 0) {
+        const NOMBRES_ELIM = imagenesEliminar.map((img) => img.imagen);
+        imagenesGuardadas = imagenesGuardadas.filter(
+            (imgGuardada) => !NOMBRES_ELIM.includes(imgGuardada.imagen)
+        );
 
-			await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(grupoAEliminar);
-		}
+        let grupoAEliminar = imagenesEliminar.map((img) => ({
+            imagen: img.imagen,
+            carpeta: 'elementos'
+        }));
 
-		// Actualizar usando findOneAndUpdate (campos + imágenes)
-		return await ELEMENTO_MODEL.findOneAndUpdate(
-			{
-				folio: folioDocumento,
-			},
-			{
-				$set: {
-					nombre: nombre,
-					descripcion: descripcion,
-					imagenes: imagenesGuardadas,
-				},
-			},
-			{
-				runValidators: true,
-				new: true,
-				lean: true,
-				context: 'query',
-				metadata: {
-					idUsuario: idUsuario,
-					descripcion: 'Elemento modificado',
-				},
-			}
-		);
-	}
-}
+        await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(grupoAEliminar);
+    }
+
+    // Actualizar usando findOneAndUpdate (campos + imágenes)
+    return await ELEMENTO_MODEL.findOneAndUpdate(
+        {
+            folio: folioDocumento
+        },
+        {
+            $set: {
+                nombre: nombre,
+                descripcion: descripcion,
+                imagenes: imagenesGuardadas
+            }
+        },
+        {
+            runValidators: true,
+            new: true,
+            lean: true,
+            context: 'query',
+            metadata: {
+                idUsuario: idUsuario,
+                descripcion: 'Elemento modificado'
+            }
+        }
+    );
+};
+
+module.exports = SERVICIO;
 ```
 
 ?> **NOTA**: Esta función permite modificar **todos los aspectos** del documento en una sola operación: actualizar campos normales, agregar nuevas imágenes y eliminar imágenes existentes.
@@ -457,102 +459,13 @@ La función retorna un arreglo de strings con los nombres de las imágenes guard
 ```javascript
 // Ejemplo de retorno
 [
-	'507f1f77bcf86cd799439011-1711491528372_5847.jpg',
-	'507f1f77bcf86cd799439011-1711491999000_3921.png',
-	'507f1f77bcf86cd799439011-1741722504615_7234.jpeg',
+    '507f1f77bcf86cd799439011-1711491528372_5847.jpg',
+    '507f1f77bcf86cd799439011-1711491999000_3921.png',
+    '507f1f77bcf86cd799439011-1741722504615_7234.jpeg'
 ];
 ```
 
 **Formato del nombre**: `${idDocumento}-${timestamp}_${numeroAleatorio}.${extension}`
-
-#### Compresión automática
-
-?> El servicio utiliza la librería `sharp` para comprimir automáticamente las imágenes con calidad del 70%, reduciendo el espacio de almacenamiento sin perder demasiada calidad visual.
-
-### Eliminar imágenes
-
-Para eliminar imágenes del sistema de archivos, utilizar la función `eliminarGrupoDeImagenes`.
-
-```javascript
-    async eliminarImagenDeDocumento({
-        folioDocumento,
-        nombreImagen,
-        idUsuario
-    }) {
-        // Buscar el documento
-        const ELEMENTO = await ELEMENTO_MODEL.findOne({
-            folio: folioDocumento
-        }).lean();
-
-        if (!ELEMENTO) {
-            throw new Error('El documento no existe');
-        }
-
-        // Eliminar la imagen del sistema de archivos
-        await SERVICIO_IMAGENES.eliminarGrupoDeImagenes([
-            {
-                carpeta: 'elementos',
-                imagen: nombreImagen
-            }
-        ]);
-
-        // Filtrar la imagen del arreglo
-        const imagenesActualizadas = ELEMENTO.imagenes.filter(
-            img => img.imagen !== nombreImagen
-        );
-
-        // Actualizar usando findOneAndUpdate
-        return await ELEMENTO_MODEL.findOneAndUpdate(
-            {
-                folio: folioDocumento
-            },
-            {
-                $set: {
-                    imagenes: imagenesActualizadas
-                }
-            },
-            {
-                runValidators: true,
-                new: true,
-                lean: true,
-                context: 'query',
-                metadata: {
-                    idUsuario: idUsuario,
-                    descripcion: 'Imagen eliminada'
-                }
-            }
-        );
-    }
-
-    async eliminarDocumentoConImagenes({
-        idDocumento,
-        idUsuario
-    }) {
-        // Buscar el documento
-        const ELEMENTO = await ELEMENTO_MODEL.findById(idDocumento);
-        if (!ELEMENTO) {
-            throw new Error('El documento no existe');
-        }
-
-        // Preparar el arreglo de imágenes para eliminar
-        const IMAGENES_A_ELIMINAR = ELEMENTO.imagenes.map(img => ({
-            carpeta: 'elementos',
-            imagen: img.imagen
-        }));
-
-        // Eliminar las imágenes del sistema de archivos
-        if (IMAGENES_A_ELIMINAR.length > 0) {
-            await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(IMAGENES_A_ELIMINAR);
-        }
-
-        // Eliminar el documento de la base de datos
-        return await ELEMENTO_MODEL.findByIdAndDelete(idDocumento);
-    }
-
-}
-
-module.exports = ElementoService;
-```
 
 #### Parámetros de `eliminarGrupoDeImagenes`
 
@@ -560,10 +473,10 @@ La función espera un arreglo de objetos con la siguiente estructura:
 
 ```javascript
 [
-	{
-		carpeta: 'elementos', // Nombre de la carpeta donde está la imagen
-		imagen: 'nombre-archivo.jpg', // Nombre del archivo a eliminar
-	},
+    {
+        carpeta: 'elementos', // Nombre de la carpeta donde está la imagen
+        imagen: 'nombre-archivo.jpg' // Nombre del archivo a eliminar
+    }
 ];
 ```
 
@@ -571,9 +484,13 @@ La función espera un arreglo de objetos con la siguiente estructura:
 
 ```javascript
 {
-	eliminados: 3; // Cantidad de archivos eliminados exitosamente
+    eliminados: 3; // Cantidad de archivos eliminados exitosamente
 }
 ```
+
+#### Compresión automática
+
+?> El servicio utiliza la librería `sharp` para comprimir automáticamente las imágenes con calidad del 70%, reduciendo el espacio de almacenamiento sin perder demasiada calidad visual.
 
 <hr class='hr-secundario'>
 
@@ -618,70 +535,70 @@ const ObjectId = Mongoose.Types.ObjectId;
 const ELEMENTO_MODEL = require('../../models/elementos/elemento.model');
 const SERVICIO_IMAGENES = require('../../services/imagenesAdministracion/imagenesAdministracion.service');
 
-class ElementoService {
-    async crearDocumentoConImagenes({
-        nombre,
-        descripcion,
-        imagenes,
-        idUsuario,
-    }) {
-        const OBJECT_ID = new ObjectId();
-        let imagenesGuardadas = [];
+const SERVICIO = {};
 
-        try {
-            // Guardar las imágenes primero
-            if (imagenes?.length > 0) {
-                try {
-                    imagenesGuardadas =
-                        await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-                            imagenes,
-                            SERVICIO_IMAGENES.TIPOS.elementos,
-                            OBJECT_ID.toHexString()
-                        );
-                } catch (errorImagenes) {
-                    throw new Error(
-                        `Error al guardar imágenes: ${errorImagenes.message}`
+SERVICIO.crearDocumentoConImagenes = async function ({
+    nombre,
+    descripcion,
+    imagenes,
+    idUsuario
+}) {
+    const OBJECT_ID = new ObjectId();
+    let imagenesGuardadas = [];
+
+    try {
+        // Guardar las imágenes primero
+        if (imagenes?.length > 0) {
+            try {
+                imagenesGuardadas =
+                    await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
+                        imagenes,
+                        SERVICIO_IMAGENES.TIPOS.elementos,
+                        OBJECT_ID.toHexString()
                     );
-                }
+            } catch (errorImagenes) {
+                throw new Error(
+                    `Error al guardar imágenes: ${errorImagenes.message}`
+                );
             }
-
-            // Crear el documento
-            let nuevoElemento = new ELEMENTO_MODEL({
-                _id: OBJECT_ID,
-                nombre: nombre,
-                descripcion: descripcion,
-                imagenes: imagenesGuardadas.map((nombreImagen) => ({
-                    fecha: new Date(),
-                    imagen: nombreImagen,
-                })),
-            });
-
-            nuevoElemento.metadata = {
-                idUsuario: idUsuario,
-                descripcion: 'Elemento creado',
-            };
-
-            return await nuevoElemento.save();
-        } catch (error) {
-            // Si falla el guardado del documento, limpiar las imágenes guardadas
-            if (imagenesGuardadas.length > 0) {
-                try {
-                    await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(
-                        imagenesGuardadas.map((img) => ({
-                            carpeta: 'elementos',
-                            imagen: img,
-                        }))
-                    );
-                } catch (errorLimpieza) {
-                    console.error('Error al limpiar imágenes:', errorLimpieza);
-                }
-            }
-            throw error;
         }
-    }
-}
 
-module.exports = ElementoService;
+        // Crear el documento
+        let nuevoElemento = new ELEMENTO_MODEL({
+            _id: OBJECT_ID,
+            nombre: nombre,
+            descripcion: descripcion,
+            imagenes: imagenesGuardadas.map((nombreImagen) => ({
+                fecha: new Date(),
+                imagen: nombreImagen
+            }))
+        });
+
+        nuevoElemento.metadata = {
+            idUsuario: idUsuario,
+            descripcion: 'Elemento creado'
+        };
+
+        return await nuevoElemento.save();
+    } catch (error) {
+        // Si falla el guardado del documento, limpiar las imágenes guardadas
+        if (imagenesGuardadas.length > 0) {
+            try {
+                await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(
+                    imagenesGuardadas.map((img) => ({
+                        carpeta: 'elementos',
+                        imagen: img
+                    }))
+                );
+            } catch (errorLimpieza) {
+                console.error('Error al limpiar imágenes:', errorLimpieza);
+            }
+        }
+        throw error;
+    }
+};
+
+module.exports = SERVICIO;
 ```
 
 <hr class='hr-secundario'>
@@ -695,9 +612,9 @@ module.exports = ElementoService;
 ```javascript
 const OBJECT_ID = new ObjectId();
 const imagenes = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-	imagenesBase64,
-	SERVICIO_IMAGENES.TIPOS.elementos,
-	OBJECT_ID.toHexString() // ID conocido antes de guardar
+    imagenesBase64,
+    SERVICIO_IMAGENES.TIPOS.elementos,
+    OBJECT_ID.toHexString() // ID conocido antes de guardar
 );
 ```
 
@@ -712,7 +629,7 @@ const nuevoElemento = await ELEMENTO_MODEL.create({ nombre: 'test' });
 
 ```javascript
 if (imagenes?.length > 0) {
-	// Procesar imágenes
+    // Procesar imágenes
 }
 ```
 
@@ -722,17 +639,17 @@ if (imagenes?.length > 0) {
 // Al CREAR (con nuevo ObjectId)
 const OBJECT_ID = new ObjectId();
 await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-	imagenes,
-	SERVICIO_IMAGENES.TIPOS.elementos,
-	OBJECT_ID.toHexString() // Usar .toHexString()
+    imagenes,
+    SERVICIO_IMAGENES.TIPOS.elementos,
+    OBJECT_ID.toHexString() // Usar .toHexString()
 );
 
 // Al ACTUALIZAR (con documento existente)
 const ELEMENTO = await ELEMENTO_MODEL.findOne({ folio }).lean();
 await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-	imagenes,
-	SERVICIO_IMAGENES.TIPOS.elementos,
-	ELEMENTO._id // NO usar .toHexString(), pasar directamente el ObjectId
+    imagenes,
+    SERVICIO_IMAGENES.TIPOS.elementos,
+    ELEMENTO._id // NO usar .toHexString(), pasar directamente el ObjectId
 );
 ```
 
@@ -741,17 +658,17 @@ await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
 ```javascript
 // Al crear documento
 imagenes: imagenesGuardadas.map((nombreImagen) => ({
-	fecha: new Date(),
-	imagen: nombreImagen, // Solo el nombre del archivo
+    fecha: new Date(),
+    imagen: nombreImagen // Solo el nombre del archivo
 }));
 
 // Al actualizar documento (combinar nuevas con existentes)
 imagenesGuardadas = [
-	...imagenesGuardadas.map((nombreImagen) => ({
-		imagen: nombreImagen,
-		fecha: new Date(),
-	})),
-	...(ELEMENTO_EXISTENTE.imagenes ?? []),
+    ...imagenesGuardadas.map((nombreImagen) => ({
+        imagen: nombreImagen,
+        fecha: new Date()
+    })),
+    ...(ELEMENTO_EXISTENTE.imagenes ?? [])
 ];
 ```
 
@@ -761,16 +678,16 @@ Si un documento falla al guardarse después de cargar imágenes, eliminar las im
 
 ```javascript
 try {
-	const nuevoDoc = await documento.save();
+    const nuevoDoc = await documento.save();
 } catch (error) {
-	// Limpiar imágenes si falla el guardado
-	await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(
-		imagenesGuardadas.map((img) => ({
-			carpeta: 'elementos',
-			imagen: img,
-		}))
-	);
-	throw error;
+    // Limpiar imágenes si falla el guardado
+    await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(
+        imagenesGuardadas.map((img) => ({
+            carpeta: 'elementos',
+            imagen: img
+        }))
+    );
+    throw error;
 }
 ```
 
@@ -778,8 +695,8 @@ try {
 
 ```html
 <app-carga-de-imagenes
-	[limiteImagenes]="5"
-	[transformarFileAObjetoPlano]="true"
+    [limiteImagenes]="5"
+    [transformarFileAObjetoPlano]="true"
 ></app-carga-de-imagenes>
 ```
 
@@ -788,7 +705,7 @@ try {
 ```html
 <!-- Siempre usar esto para enviar por HTTP -->
 <app-carga-de-imagenes
-	[transformarFileAObjetoPlano]="true"
+    [transformarFileAObjetoPlano]="true"
 ></app-carga-de-imagenes>
 ```
 
@@ -800,18 +717,18 @@ Esto convierte el objeto `File` (que no es serializable) a un objeto plano que p
 
 ```javascript
 return await ELEMENTO_MODEL.findOneAndUpdate(
-	{ folio: folioDocumento },
-	{ $set: { imagenes: imagenesGuardadas } },
-	{
-		runValidators: true,
-		new: true,
-		lean: true,
-		context: 'query',
-		metadata: {
-			idUsuario: idUsuario,
-			descripcion: 'Elemento actualizado',
-		},
-	}
+    { folio: folioDocumento },
+    { $set: { imagenes: imagenesGuardadas } },
+    {
+        runValidators: true,
+        new: true,
+        lean: true,
+        context: 'query',
+        metadata: {
+            idUsuario: idUsuario,
+            descripcion: 'Elemento actualizado'
+        }
+    }
 );
 ```
 
@@ -827,433 +744,6 @@ return await elemento.save(); // NO usar .save() para actualizaciones
 ?> **IMPORTANTE**: El `metadata` se pasa en las **opciones** de `findOneAndUpdate`, no en el objeto de actualización.
 
 <hr class='hr-secundario'>
-
-## Ejemplo completo de implementación
-
-### Modelo (API)
-
-```javascript
-/* IMPORTACIONES EXTERNAS */
-const Mongoose = require('mongoose');
-const Schema = Mongoose.Schema;
-const AUTO_INCREMENT = require('mongoose-sequence')(Mongoose);
-
-/* UTILIDADES */
-const HISTORIAL = require('../../plugins/historial/historial.plugin');
-const BUSQUEDA = require('../../plugins/busqueda-texto/busqueda-texto.plugin');
-const CAMPOS_BUSQUEDA = require('../../utils/camposBusquedaTodosLosModelos.utils');
-
-const PRODUCTO_SCHEMA = Mongoose.Schema(
-	{
-		folio: {
-			type: Number,
-			unique: true,
-			inmutable: true,
-		},
-		busqueda: String,
-		nombre: {
-			type: String,
-			required: [true, 'El nombre es obligatorio'],
-		},
-		descripcion: String,
-		imagenes: [
-			{
-				fecha: {
-					type: Date,
-					default: Date.now,
-				},
-				imagen: {
-					type: String,
-					required: true,
-				},
-			},
-		],
-	},
-	{
-		collection: 'productos',
-		timestamps: true,
-	}
-);
-
-PRODUCTO_SCHEMA.plugin(AUTO_INCREMENT, {
-	id: 'producto',
-	inc_field: 'folio',
-});
-PRODUCTO_SCHEMA.plugin(BUSQUEDA.text_search_index, {
-	fields: CAMPOS_BUSQUEDA.PRODUCTOS,
-});
-PRODUCTO_SCHEMA.plugin(HISTORIAL.hystory_log_plugin);
-
-const PRODUCTO_MODEL = Mongoose.model('Producto', PRODUCTO_SCHEMA);
-module.exports = PRODUCTO_MODEL;
-PRODUCTO_MODEL.createCollection();
-```
-
-````javascript
-const Mongoose = require('mongoose');
-const ObjectId = Mongoose.Types.ObjectId;
-const PRODUCTO_MODEL = require('../../models/productos/producto.model');
-const SERVICIO_IMAGENES = require('../imagenesAdministracion/imagenesAdministracion.service');
-
-class ProductoService {
-    // Crear producto con imágenes
-    async crear({ nombre, descripcion, imagenes, idUsuario }) {
-        const OBJECT_ID = new ObjectId();
-
-        let imagenesGuardadas = [];
-        if (imagenes?.length > 0) {
-            imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-                imagenes,
-                SERVICIO_IMAGENES.TIPOS.productos,
-                OBJECT_ID.toHexString()
-            );
-        }
-
-        let nuevoProducto = new PRODUCTO_MODEL({
-            _id: OBJECT_ID,
-            nombre: nombre,
-            descripcion: descripcion,
-            imagenes: imagenesGuardadas.map(img => ({
-                fecha: new Date(),
-                imagen: img
-            }))
-        });
-
-        nuevoProducto.metadata = {
-            idUsuario: idUsuario,
-            descripcion: 'Producto creado'
-        };
-
-        return await nuevoProducto.save();
-    }
-
-    // Modificar producto (campos + imágenes)
-    async modificarProducto({
-        folioProducto,
-        nombre,
-        descripcion,
-        imagenes,
-        imagenesEliminar,
-        idUsuario
-    }) {
-        const PRODUCTO = await PRODUCTO_MODEL.findOne({ folio: folioProducto }).lean();
-        if (!PRODUCTO) throw new Error('Producto no encontrado');
-
-        // Guardar nuevas imágenes
-        let imagenesGuardadas = [];
-        if (imagenes?.length > 0) {
-            imagenesGuardadas = await SERVICIO_IMAGENES.cargarGrupoDeImagenes(
-                imagenes,
-                SERVICIO_IMAGENES.TIPOS.productos,
-                PRODUCTO._id
-            );
-        }
-
-        // Combinar nuevas imágenes con existentes
-        imagenesGuardadas = [
-            ...imagenesGuardadas.map(img => ({
-                imagen: img,
-                fecha: new Date()
-            })),
-            ...(PRODUCTO.imagenes ?? [])
-        ];
-
-        // Eliminar imágenes si se especificaron
-        if (imagenesEliminar?.length > 0) {
-            const NOMBRES_ELIM = imagenesEliminar.map(img => img.imagen);
-            imagenesGuardadas = imagenesGuardadas.filter(
-                imgGuardada => !NOMBRES_ELIM.includes(imgGuardada.imagen)
-            );
-
-            let grupoAEliminar = imagenesEliminar.map(img => ({
-                imagen: img.imagen,
-                carpeta: 'productos'
-            }));
-
-            await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(grupoAEliminar);
-        }
-
-        // Actualizar con findOneAndUpdate (todos los campos)
-        return await PRODUCTO_MODEL.findOneAndUpdate(
-            { folio: folioProducto },
-            {
-                $set: {
-                    nombre: nombre,
-                    descripcion: descripcion,
-                    imagenes: imagenesGuardadas
-                }
-            },
-            {
-                runValidators: true,
-                new: true,
-                lean: true,
-                context: 'query',
-                metadata: {
-                    idUsuario: idUsuario,
-                    descripcion: 'Producto modificado'
-                }
-            }
-        );
-    }
-
-    // Eliminar una imagen específica
-    async eliminarImagen({ folioProducto, nombreImagen, idUsuario }) {
-        const PRODUCTO = await PRODUCTO_MODEL.findOne({ folio: folioProducto }).lean();
-        if (!PRODUCTO) throw new Error('Producto no encontrado');
-
-        // Eliminar del sistema de archivos
-        await SERVICIO_IMAGENES.eliminarGrupoDeImagenes([
-            {
-                carpeta: 'productos',
-                imagen: nombreImagen
-            }
-        ]);
-
-        // Filtrar la imagen del arreglo
-        const imagenesActualizadas = PRODUCTO.imagenes.filter(
-            img => img.imagen !== nombreImagen
-        );
-
-        // Actualizar con findOneAndUpdate
-        return await PRODUCTO_MODEL.findOneAndUpdate(
-            { folio: folioProducto },
-            { $set: { imagenes: imagenesActualizadas } },
-            {
-                runValidators: true,
-                new: true,
-                lean: true,
-                context: 'query',
-                metadata: {
-                    idUsuario: idUsuario,
-                    descripcion: 'Imagen eliminada'
-                }
-            }
-        );
-    }
-
-    // Eliminar producto con todas sus imágenes
-    async eliminar({ folioProducto }) {
-        const PRODUCTO = await PRODUCTO_MODEL.findOne({ folio: folioProducto }).lean();
-        if (!PRODUCTO) throw new Error('Producto no encontrado');
-
-        // Preparar imágenes para eliminar del sistema de archivos
-        const IMAGENES_A_ELIMINAR = PRODUCTO.imagenes.map(img => ({
-            carpeta: 'productos',
-            imagen: img.imagen
-        }));
-
-        if (IMAGENES_A_ELIMINAR.length > 0) {
-            await SERVICIO_IMAGENES.eliminarGrupoDeImagenes(IMAGENES_A_ELIMINAR);
-        }
-
-        // Eliminar el documento
-        return await PRODUCTO_MODEL.findOneAndDelete({ folio: folioProducto });
-    }
-}
-
-module.exports = ProductoService;
-
-### Controlador (API)
-
-```javascript
-const ProductoService = require('../services/productos/producto.service');
-
-// Crear nueva instancia del servicio para evitar race conditions
-const productoService = new ProductoService();
-
-async function crearProducto(req, res) {
-    try {
-        const { nombre, descripcion, imagenes } = req.body;
-        const { idUsuario } = req.usuario;
-
-        const resultado = await productoService.crear({
-            nombre,
-            descripcion,
-            imagenes,
-            idUsuario
-        });
-
-        return res._200_ok({
-            mensaje: 'Producto creado exitosamente',
-            datos: resultado
-        });
-
-    } catch (error) {
-        return res._400_badRequest({
-            mensaje: 'Error al crear producto',
-            error: error.message
-        });
-    }
-}
-
-module.exports = {
-    crearProducto
-};
-````
-
-```typescript
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { Validators } from '@angular/forms';
-import { ProductoService } from '../../services/producto.service';
-import { CargaDeImagenesTransporte } from '../../components/utiles/carga-de-imagenes/carga-de-imagenes-transporte';
-import { ManejoMensajesService } from '../../services/manejo-mensajes.service';
-import {
-	CampoFormulario,
-	CLASES_ESPECIALES_FORM_DINAMICO,
-	ControlesFormularioDinamico,
-	EspecificacionFormularioDinamico,
-} from 'src/app/components/utiles/formulario-dinamico/formulario-dinamico.model';
-
-@Component({
-	selector: 'app-crear-producto',
-	templateUrl: './crear-producto.component.html',
-})
-export class CrearProductoComponent implements OnInit {
-	@ViewChild('cargaImagenesTemplate')
-	cargaImagenesTemplate!: TemplateRef<any>;
-
-	formularioProducto!: EspecificacionFormularioDinamico<
-		ReturnType<typeof this.camposFormulario>
-	>;
-	controlesFormulario!: ControlesFormularioDinamico<
-		ReturnType<typeof this.camposFormulario>
-	>;
-	imagenes: CargaDeImagenesTransporte[] = [];
-
-	constructor(
-		private productoService: ProductoService,
-		private mensajesService: ManejoMensajesService
-	) {}
-
-	ngOnInit() {
-		setTimeout(() => {
-			this.crearFormulario();
-		}, 0);
-	}
-
-	camposFormulario = () => {
-		return {
-			nombre: new CampoFormulario({
-				tipo: 'text',
-				claseColumna: 'col-12 col-lg-6',
-				orden: 1,
-				label: 'Nombre del Producto',
-				placeholder: 'Ingrese el nombre del producto',
-				validadores: [Validators.required],
-			}),
-			descripcion: new CampoFormulario({
-				tipo: 'TEXTAREA',
-				claseColumna: 'col-12',
-				orden: 2,
-				label: 'Descripción',
-				placeholder: 'Ingrese una descripción (opcional)',
-			}),
-			componenteImagenes: new CampoFormulario({
-				tipo: '__COMPONENTE',
-				claseColumna: 'col-12',
-				orden: 3,
-				claseEspecial: {
-					template: this.cargaImagenesTemplate,
-				},
-			}),
-		};
-	};
-
-	crearFormulario() {
-		this.formularioProducto = new EspecificacionFormularioDinamico(
-			this.camposFormulario(),
-			false, // mostrarBotonOnReset
-			true, // mostrarBotonSubmit
-			true, // resetOnSubmit
-			false // showValidationOnInvalidSubmit
-		);
-	}
-
-	subscribirseACambiosDeFormulario(
-		controles: ControlesFormularioDinamico<any>
-	) {
-		this.controlesFormulario = controles;
-	}
-
-	recibirImagenes(imagenes: CargaDeImagenesTransporte[]) {
-		this.imagenes = imagenes;
-	}
-
-	errorImagenes(error: string) {
-		this.mensajesService.mostrarError(error);
-	}
-
-	onSubmit(formulario: any) {
-		const datos = {
-			nombre: formulario.nombre,
-			descripcion: formulario.descripcion,
-			imagenes: this.imagenes,
-		};
-
-		this.productoService.crear(datos).subscribe({
-			next: (respuesta) => {
-				this.mensajesService.mostrarExito(
-					'Producto creado exitosamente'
-				);
-				this.limpiarFormulario();
-			},
-			error: (error) => {
-				this.mensajesService.mostrarError('Error al crear producto');
-				console.error(error);
-			},
-		});
-	}
-
-	limpiarFormulario() {
-		this.imagenes = [];
-		this.crearFormulario();
-	}
-}
-```
-
-```html
-<!-- Formulario dinámico (incluye sus propios botones de submit/reset) -->
-<app-formulario-dinamico
-	*ngIf="formularioProducto"
-	[especificacionFormulario]="formularioProducto"
-	(controlesFormulario)="subscribirseACambiosDeFormulario($event)"
-	(onSubmit)="onSubmit($event)"
-></app-formulario-dinamico>
-
-<!-- Template para el componente de carga de imágenes -->
-<ng-template #cargaImagenesTemplate>
-	<div class="row">
-		<div class="col-12">
-			<label class="form-label">Imágenes del Producto (máximo 5)</label>
-			<app-carga-de-imagenes
-				[transformarFileAObjetoPlano]="true"
-				[limiteImagenes]="5"
-				[multiple]="true"
-				(imagenesParaSubir)="recibirImagenes($event)"
-				(error)="errorImagenes($event)"
-			></app-carga-de-imagenes>
-		</div>
-	</div>
-</ng-template>
-```
-
-?> **PENDIENTE**: El tipo nativo `'IMAGENES'` aún NO está implementado (líneas 607-609 de `formulario-dinamico.component.html`). Por ahora, usa `'__COMPONENTE'` para integrar el componente de carga de imágenes dentro del formulario.
-
-?> **IMPORTANTE**: Recuerda que los servicios del API deben usar clases con métodos de instancia, y los controladores deben crear nuevas instancias para evitar race conditions entre requests concurrentes.
-
-```javascript
-// ❌ INCORRECTO - Patrón antiguo
-const SERVICIO = {};
-SERVICIO.metodo = function() { ... };
-
-// ✅ CORRECTO - Patrón CARRDUCI
-class Servicio {
-    async metodo() { ... }
-}
-
-// En el controlador - crear nueva instancia
-const servicio = new Servicio();
-```
 
 ## Notas adicionales
 

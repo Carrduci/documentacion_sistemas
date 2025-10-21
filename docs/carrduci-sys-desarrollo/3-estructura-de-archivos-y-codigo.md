@@ -92,10 +92,10 @@ vista-[name].component.spec.ts # Pruebas unitarias (futuro)
 
 ```typescript
 export interface Proveedor {
-	id: string;
-	nombre: string;
-	contacto: Contacto;
-	// ... otros campos
+    id: string;
+    nombre: string;
+    contacto: Contacto;
+    // ... otros campos
 }
 ```
 
@@ -106,10 +106,10 @@ export interface Proveedor {
 
 ```typescript
 @Injectable({
-	providedIn: 'root',
+    providedIn: 'root'
 })
 export class ProveedoresService {
-	// Lógica de comunicación HTTP
+    // Lógica de comunicación HTTP
 }
 ```
 
@@ -120,12 +120,12 @@ export class ProveedoresService {
 
 ```typescript
 @Pipe({
-	name: 'conteosEstado',
+    name: 'conteosEstado'
 })
 export class ConteosEstadoPipe implements PipeTransform {
-	transform(estado: string): string {
-		// Lógica de transformación
-	}
+    transform(estado: string): string {
+        // Lógica de transformación
+    }
 }
 ```
 
@@ -136,12 +136,12 @@ export class ConteosEstadoPipe implements PipeTransform {
 
 ```typescript
 @Injectable({
-	providedIn: 'root',
+    providedIn: 'root'
 })
 export class PermisosGuard implements CanActivate {
-	canActivate(route: any, state: any): boolean {
-		// Lógica de verificación de permisos
-	}
+    canActivate(route: any, state: any): boolean {
+        // Lógica de verificación de permisos
+    }
 }
 ```
 
@@ -166,18 +166,18 @@ components/[dominio]/
 
 ```typescript
 @NgModule({
-	declarations: [
-		ConteosEstadoPipe, // ✅ Nombres correctos
-		ConteosBadgeEstadoPipe,
-		ConteosFormatoFechaPipe,
-		// Todos los pipes del dominio conteos
-	],
-	exports: [
-		ConteosEstadoPipe, // ✅ Nombres correctos
-		ConteosBadgeEstadoPipe,
-		ConteosFormatoFechaPipe,
-		// Exportar todos los pipes para que otros módulos los usen
-	],
+    declarations: [
+        ConteosEstadoPipe, // ✅ Nombres correctos
+        ConteosBadgeEstadoPipe,
+        ConteosFormatoFechaPipe
+        // Todos los pipes del dominio conteos
+    ],
+    exports: [
+        ConteosEstadoPipe, // ✅ Nombres correctos
+        ConteosBadgeEstadoPipe,
+        ConteosFormatoFechaPipe
+        // Exportar todos los pipes para que otros módulos los usen
+    ]
 })
 export class PipesParaConteosModule {}
 ```
@@ -186,20 +186,18 @@ export class PipesParaConteosModule {}
 
 ## 2. Estructura Backend (API) - Node.js/Express
 
-### 2.1 Arquitectura de Clases (2025)
-
-**De ahora en adelante en el API se usarán clases en los controladores y en las rutas.**
+### 2.1 Organización carpetas
 
 ```
 carrduci-sys-api/
 ├── routes/proveedores/
-│ └── proveedores.route.js # Endpoints HTTP
+│   └── proveedores.route.js # Endpoints HTTP
 ├── controllers/proveedores/
-│ └── proveedores.controller.js # Lógica de controladores
+│   └── proveedores.controller.js # Lógica de controladores
 ├── services/proveedores/
-│ └── proveedores.service.js # Lógica de negocio
+│   └── proveedores.service.js # Lógica de negocio
 └── models/proveedores/
-└── proveedores.model.js # Modelo de MongoDB
+    └── proveedores.model.js # Modelo de MongoDB
 ```
 
 ### 2.2 Tipos de Archivos
@@ -212,35 +210,23 @@ carrduci-sys-api/
 ```javascript
 const express = require('express');
 const router = express.Router();
-const ProveedoresController = require('../../controllers/proveedores/proveedores.controller');
+const CONTROLLER = require('../../controllers/proveedores/proveedores.controller');
 const permisos = require('../config/permisos.config');
 
 // Crear nuevo proveedor
-router.post(
-	'/',
-	permisos.$('proveedores:crear'),
-	new ProveedoresController().crearProveedor
-);
+router.post('/', permisos.$('proveedores:crear'), CONTROLLER.crearProveedor);
 
 // Obtener proveedores con filtros y paginación
-router.get(
-	'/',
-	permisos.$('proveedores:leer'),
-	new ProveedoresController().obtener
-);
+router.get('/', permisos.$('proveedores:leer'), CONTROLLER.obtener);
 
 // Obtener proveedor específico por ID
-router.get(
-	'/id/:id',
-	permisos.$('proveedores:leer'),
-	new ProveedoresController().obtenerPorId
-);
+router.get('/id/:id', permisos.$('proveedores:leer'), CONTROLLER.obtenerPorId);
 
 // Actualizar proveedor
 router.put(
-	'/id/:id',
-	permisos.$('proveedores:actualizar'),
-	new ProveedoresController().actualizarProveedor
+    '/id/:id',
+    permisos.$('proveedores:actualizar'),
+    CONTROLLER.actualizarProveedor
 );
 
 module.exports = router;
@@ -253,123 +239,122 @@ module.exports = router;
 
 ```javascript
 const { response } = require('../../utils/response.utils');
-const ProveedoresService = require('../services/proveedores/proveedores.service');
+const SERVICIO = require('../services/proveedores/proveedores.service');
 
-class ProveedoresController {
-	/**
-	 * Obtener proveedores con filtros y paginación
-	 */
-	static async obtener(req, res) {
-		try {
-			const { filtros, termino, desde, limite, sort, campo } = req.query;
+const CONTROLLER = {};
+/**
+ * Obtener proveedores con filtros y paginación
+ */
+CONTROLLER.obtener = async function (req, res) {
+    try {
+        const { filtros, termino, desde, limite, sort, campo } = req.query;
 
-			const { resultado, total } = await new ProveedoresService().buscar({
-				filtros: filtros ? JSON.parse(filtros) : {},
-				termino,
-				desde: parseInt(desde) || 0,
-				limite: parseInt(limite) || 10,
-				sort: parseInt(sort) || -1,
-				campo: campo || 'createdAt',
-			});
+        const { resultado, total } = SERVICIO.buscar({
+            filtros: filtros ? JSON.parse(filtros) : {},
+            termino,
+            desde: parseInt(desde) || 0,
+            limite: parseInt(limite) || 10,
+            sort: parseInt(sort) || -1,
+            campo: campo || 'createdAt'
+        });
 
-			const resp = new response(res, __filename, {
-				mensaje: 'Proveedores obtenidos exitosamente',
-				datos: {
-					proveedores: resultado,
-					total,
-				},
-			});
-			return resp._200_ok();
-		} catch (error) {
-			const resp = new response(res, __filename, {
-				mensaje: 'Error al obtener proveedores',
-				error: error,
-			});
-			return resp._500_internal_server_error();
-		}
-	}
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedores obtenidos exitosamente',
+            datos: {
+                proveedores: resultado,
+                total
+            }
+        });
+        return resp._200_ok();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al obtener proveedores',
+            error: error
+        });
+        return resp._500_internal_server_error();
+    }
+};
 
-	/**
-	 * Crear nuevo proveedor
-	 */
-	static async crearProveedor(req, res) {
-		try {
-			const resultado = await new ProveedoresService().crear({
-				...req.body,
-				usuario: req.user._id,
-			});
+/**
+ * Crear nuevo proveedor
+ */
+CONTROLLER.crearProveedor = async function (req, res) {
+    try {
+        const resultado = SERVICIO.crear({
+            ...req.body,
+            usuario: req.user._id
+        });
 
-			const resp = new response(res, __filename, {
-				mensaje: 'Proveedor creado exitosamente',
-				datos: resultado,
-			});
-			return resp._201_created();
-		} catch (error) {
-			const resp = new response(res, __filename, {
-				mensaje: 'Error al crear proveedor',
-				error: error,
-			});
-			return resp._500_internal_server_error();
-		}
-	}
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor creado exitosamente',
+            datos: resultado
+        });
+        return resp._201_created();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al crear proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
+    }
+};
 
-	/**
-	 * Actualizar proveedor
-	 */
-	static async actualizarProveedor(req, res) {
-		try {
-			const { id } = req.params;
-			const resultado = await new ProveedoresService().actualizar(id, {
-				...req.body,
-				usuario: req.user._id,
-			});
+/**
+ * Actualizar proveedor
+ */
+CONTROLLER.actualizarProveedor = async function (req, res) {
+    try {
+        const { id } = req.params;
+        const resultado = SERVICIO.actualizar(id, {
+            ...req.body,
+            usuario: req.user._id
+        });
 
-			const resp = new response(res, __filename, {
-				mensaje: 'Proveedor actualizado exitosamente',
-				datos: resultado,
-			});
-			return resp._200_ok();
-		} catch (error) {
-			const resp = new response(res, __filename, {
-				mensaje: 'Error al actualizar proveedor',
-				error: error,
-			});
-			return resp._500_internal_server_error();
-		}
-	}
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor actualizado exitosamente',
+            datos: resultado
+        });
+        return resp._200_ok();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al actualizar proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
+    }
+};
 
-	/**
-	 * Obtener proveedor específico por ID
-	 */
-	static async obtenerPorId(req, res) {
-		try {
-			const { id } = req.params;
-			const { resultado } = await new ProveedoresService().buscar({ id });
+/**
+ * Obtener proveedor específico por ID
+ */
+CONTROLLER.obtenerPorId = async function (req, res) {
+    try {
+        const { id } = req.params;
+        const { resultado } = SERVICIO.buscar({ id });
 
-			if (!resultado[0]) {
-				const resp = new response(res, __filename, {
-					mensaje: 'Proveedor no encontrado',
-					error: new Error('Proveedor no encontrado'),
-				});
-				return resp._404_not_found();
-			}
+        if (!resultado[0]) {
+            const resp = new response(res, __filename, {
+                mensaje: 'Proveedor no encontrado',
+                error: new Error('Proveedor no encontrado')
+            });
+            return resp._404_not_found();
+        }
 
-			const resp = new response(res, __filename, {
-				mensaje: 'Proveedor encontrado',
-				datos: resultado[0],
-			});
-			return resp._200_ok();
-		} catch (error) {
-			const resp = new response(res, __filename, {
-				mensaje: 'Error al obtener proveedor',
-				error: error,
-			});
-			return resp._500_internal_server_error();
-		}
-	}
-}
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor encontrado',
+            datos: resultado[0]
+        });
+        return resp._200_ok();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al obtener proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
+    }
+};
 
-module.exports = ProveedoresController;
+module.exports = CONTROLLER;
 ```
 
 #### Servicios (Services)
@@ -380,119 +365,119 @@ module.exports = ProveedoresController;
 ```javascript
 const Proveedor = require('../models/proveedores/proveedores.model');
 
-class ProveedoresService {
-	/**
-	 * Función de búsqueda UNIFICADA
-	 * Maneja: filtros, término, ID específico, paginación
-	 * Reemplaza: buscarPorTérmino, buscar, buscarPorId
-	 */
-	static async buscar({
-		filtros = {},
-		termino = '',
-		id = null,
-		desde = 0,
-		limite = 10,
-		sort = -1,
-		campo = 'createdAt',
-	} = {}) {
-		desde = Number(desde ?? 0);
-		limite = Number(limite ?? 10);
-		sort = Number(sort ?? -1);
-		campo = String(campo ?? 'createdAt');
-		filtros = filtros ?? {};
-		termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
+const SERVICIO = {};
 
-		if (id) {
-			const proveedor = await Proveedor.findOne({ _id: id })
-				.select('-busqueda -__v')
-				.lean();
+/**
+ * Función de búsqueda UNIFICADA
+ * Maneja: filtros, término, ID específico, paginación
+ * Reemplaza: buscarPorTérmino, buscar, buscarPorId
+ */
+SERVICIO.buscar = async function ({
+    filtros = {},
+    termino = '',
+    id = null,
+    desde = 0,
+    limite = 10,
+    sort = -1,
+    campo = 'createdAt'
+} = {}) {
+    desde = Number(desde ?? 0);
+    limite = Number(limite ?? 10);
+    sort = Number(sort ?? -1);
+    campo = String(campo ?? 'createdAt');
+    filtros = filtros ?? {};
+    termino = !!termino ? String(termino).replace(/\\/gm, '') : undefined;
 
-			return {
-				resultado: proveedor ? [proveedor] : [],
-				total: proveedor ? 1 : 0,
-			};
-		}
+    if (id) {
+        const proveedor = await Proveedor.findOne({ _id: id })
+            .select('-busqueda -__v')
+            .lean();
 
-		let filtrosProcesar = {
-			...filtros,
-			terminoTextSearch: termino,
-		};
-		let queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
-		let total = await Proveedor.countDocuments(queryFiltros);
+        return {
+            resultado: proveedor ? [proveedor] : [],
+            total: proveedor ? 1 : 0
+        };
+    }
 
-		if (total === 0) {
-			filtrosProcesar.terminoRegex = termino;
-			delete filtrosProcesar.terminoTextSearch;
-			queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
-			total = await Proveedor.countDocuments(queryFiltros);
-		}
+    let filtrosProcesar = {
+        ...filtros,
+        terminoTextSearch: termino
+    };
+    let queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
+    let total = await Proveedor.countDocuments(queryFiltros);
 
-		const ES_BUSQUEDA_TEXTO = !!queryFiltros.$text;
-		const PROJECTION = ES_BUSQUEDA_TEXTO
-			? { score: { $meta: 'textScore' } }
-			: {};
-		const CRITERIOS_SORT = ES_BUSQUEDA_TEXTO
-			? { [campo]: sort, _id: sort, score: { $meta: 'textScore' } }
-			: { [campo]: sort, _id: sort };
+    if (total === 0) {
+        filtrosProcesar.terminoRegex = termino;
+        delete filtrosProcesar.terminoTextSearch;
+        queryFiltros = this.queryFiltrosProveedores(filtrosProcesar);
+        total = await Proveedor.countDocuments(queryFiltros);
+    }
 
-		const resultado = await Proveedor.find(queryFiltros, PROJECTION)
-			.skip(desde)
-			.limit(limite)
-			.sort(CRITERIOS_SORT)
-			.select('-busqueda -__v -score')
-			.lean();
+    const ES_BUSQUEDA_TEXTO = !!queryFiltros.$text;
+    const PROJECTION = ES_BUSQUEDA_TEXTO
+        ? { score: { $meta: 'textScore' } }
+        : {};
+    const CRITERIOS_SORT = ES_BUSQUEDA_TEXTO
+        ? { [campo]: sort, _id: sort, score: { $meta: 'textScore' } }
+        : { [campo]: sort, _id: sort };
 
-		return { resultado, total };
-	}
+    const resultado = await Proveedor.find(queryFiltros, PROJECTION)
+        .skip(desde)
+        .limit(limite)
+        .sort(CRITERIOS_SORT)
+        .select('-busqueda -__v -score')
+        .lean();
 
-	/**
-	 * Crear nuevo proveedor
-	 */
-	static async crear(datos) {
-		const nuevoProveedor = new Proveedor(datos);
+    return { resultado, total };
+};
 
-		nuevoProveedor.metadata = {
-			idUsuario: datos.usuario,
-			descripcion: 'Proveedor creado',
-		};
+/**
+ * Crear nuevo proveedor
+ */
+SERVICIO.crear = async function (datos) {
+    const nuevoProveedor = new Proveedor(datos);
 
-		return await nuevoProveedor.save();
-	}
+    nuevoProveedor.metadata = {
+        idUsuario: datos.usuario,
+        descripcion: 'Proveedor creado'
+    };
 
-	/**
-	 * Actualizar proveedor
-	 */
-	static async actualizar(id, datos) {
-		const { estado, ...datosLimpios } = datos;
+    return await nuevoProveedor.save();
+};
 
-		return await Proveedor.findOneAndUpdate({ _id: id }, datosLimpios, {
-			new: true,
-			runValidators: true,
-			context: 'query',
-			metadata: {
-				idUsuario: datos.usuario,
-				descripcion: 'Proveedor actualizado',
-			},
-		});
-	}
+/**
+ * Actualizar proveedor
+ */
+SERVICIO.actualizar = async function (id, datos) {
+    const { estado, ...datosLimpios } = datos;
 
-	// Función helper para filtros
-	static queryFiltrosProveedores({ terminoTextSearch, terminoRegex }) {
-		let filtros = {};
-		if (!!terminoTextSearch) {
-			filtros.$text = {
-				$search: `${terminoTextSearch} "${terminoTextSearch}"`,
-			};
-		}
-		if (!!terminoRegex) {
-			filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
-		}
+    return await Proveedor.findOneAndUpdate({ _id: id }, datosLimpios, {
+        new: true,
+        runValidators: true,
+        context: 'query',
+        metadata: {
+            idUsuario: datos.usuario,
+            descripcion: 'Proveedor actualizado'
+        }
+    });
+};
 
-		return filtros;
-	}
+// Función helper para filtros
+function queryFiltrosProveedores({ terminoTextSearch, terminoRegex }) {
+    let filtros = {};
+    if (!!terminoTextSearch) {
+        filtros.$text = {
+            $search: `${terminoTextSearch} "${terminoTextSearch}"`
+        };
+    }
+    if (!!terminoRegex) {
+        filtros.busqueda = { $regex: terminoRegex, $options: 'i' };
+    }
+
+    return filtros;
 }
 
-module.exports = ProveedoresService;
+module.exports = SERVICIO;
 ```
 
 #### Modelos (Models)
@@ -504,53 +489,53 @@ module.exports = ProveedoresService;
 const mongoose = require('mongoose');
 const { historialPlugin } = require('../plugins/historial/historial.plugin');
 const {
-	textSearchPlugin,
+    textSearchPlugin
 } = require('../plugins/busqueda-texto/busqueda-texto.plugin');
 
 const proveedorSchema = new mongoose.Schema(
-	{
-		nombre: {
-			type: String,
-			required: [true, 'El nombre es obligatorio'],
-			trim: true,
-		},
-		contacto: {
-			nombre: {
-				type: String,
-				required: [true, 'El nombre de contacto es obligatorio'],
-			},
-			email: {
-				type: String,
-				lowercase: true,
-				trim: true,
-			},
-			telefono: {
-				type: String,
-				trim: true,
-			},
-		},
-		tipoProveedor: {
-			type: String,
-			enum: [
-				'materiaPrima',
-				'servicios',
-				'equipo',
-				'consumibles',
-				'otros',
-			],
-			default: 'otros',
-		},
-		estado: {
-			type: String,
-			enum: ['activo', 'inactivo', 'suspendido'],
-			default: 'activo',
-		},
-		busqueda: String,
-	},
-	{
-		collection: 'proveedores',
-		timestamps: true,
-	}
+    {
+        nombre: {
+            type: String,
+            required: [true, 'El nombre es obligatorio'],
+            trim: true
+        },
+        contacto: {
+            nombre: {
+                type: String,
+                required: [true, 'El nombre de contacto es obligatorio']
+            },
+            email: {
+                type: String,
+                lowercase: true,
+                trim: true
+            },
+            telefono: {
+                type: String,
+                trim: true
+            }
+        },
+        tipoProveedor: {
+            type: String,
+            enum: [
+                'materiaPrima',
+                'servicios',
+                'equipo',
+                'consumibles',
+                'otros'
+            ],
+            default: 'otros'
+        },
+        estado: {
+            type: String,
+            enum: ['activo', 'inactivo', 'suspendido'],
+            default: 'activo'
+        },
+        busqueda: String
+    },
+    {
+        collection: 'proveedores',
+        timestamps: true
+    }
 );
 
 // Índices para optimización
@@ -624,7 +609,7 @@ vista-[dominio]-[funcion-principal].module.ts
 {
     path: 'administracion/proveedores',
     canActivate: [VerificaTokenGuard, PermisosGuard],
-    loadComponent: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.component').then(m => m.VistaAdministracionProveedoresComponent),
+    loadChildren: () => import('./components/proveedores/vista-administracion-proveedores/vista-administracion-proveedores.module').then(m => m.VistaAdministracionProveedoresModule),
     data: {
         titulo: 'Administración de proveedores',
         permissions: permisosKeysConfig['menu:administracion:proveedores']
@@ -646,7 +631,7 @@ El archivo usa separadores de sección para organizar rutas por dominio:
 // (o'''''''''''CONTEOS''''v'''''o)
 
 export const rutasAlmacenConteos: Routes = [
-	// Rutas de conteos aquí
+    // Rutas de conteos aquí
 ];
 
 // (o,,,,,,,,,,,CONTEOS,,,,^,,,,,o)

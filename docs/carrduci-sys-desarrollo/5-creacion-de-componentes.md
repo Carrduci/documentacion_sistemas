@@ -1518,123 +1518,126 @@ module.exports = SERVICIO;
 const { response } = require('../../utils/response.utils');
 const ProveedoresService = require('../../services/proveedores/proveedores.service');
 
-    /**
-     * Obtener proveedores con filtros y paginación
-     */
-    COTNROLADOR.obtener = async function(req, res) {
-        try {
-            const { filtros, termino, desde, limite, sort, campo } = req.query;
+const CONTROLADOR = {};
 
-            // ⚠️ IMPORTANTE: Crear nueva instancia para evitar race conditions
-            // En entornos concurrentes, métodos estáticos comparten estado entre requests
-            // Crear instancias asegura aislamiento entre peticiones concurrentes
-            const { resultado, total } = await ProveedoresService.buscar({
-                filtros: filtros ? JSON.parse(filtros) : {},
-                termino,
-                desde: parseInt(desde) || 0,
-                limite: parseInt(limite) || 10,
-                sort: parseInt(sort) || -1,
-                campo: campo || 'createdAt'
-            });
+/**
+ * Obtener proveedores con filtros y paginación
+ */
+COTNROLADOR.obtener = async function (req, res) {
+    try {
+        const { filtros, termino, desde, limite, sort, campo } = req.query;
 
-            // Crear instancia de respuesta y enviar
-            const resp = new response(res, __filename, {
-                mensaje: 'Proveedores obtenidos exitosamente',
-                datos: resultado,
-                total,
-            });
-            return resp._200_ok();
-        } catch (error) {
-            // Crear instancia de respuesta de error
-            const resp = new response(res, __filename, {
-                mensaje: 'Error al obtener proveedores',
-                error: error
-            });
-            return resp._500_internal_server_error();
-        }
+        // ⚠️ IMPORTANTE: Crear nueva instancia para evitar race conditions
+        // En entornos concurrentes, métodos estáticos comparten estado entre requests
+        // Crear instancias asegura aislamiento entre peticiones concurrentes
+        const { resultado, total } = await ProveedoresService.buscar({
+            filtros: filtros ? JSON.parse(filtros) : {},
+            termino,
+            desde: parseInt(desde) || 0,
+            limite: parseInt(limite) || 10,
+            sort: parseInt(sort) || -1,
+            campo: campo || 'createdAt'
+        });
+
+        // Crear instancia de respuesta y enviar
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedores obtenidos exitosamente',
+            datos: resultado,
+            total
+        });
+        return resp._200_ok();
+    } catch (error) {
+        // Crear instancia de respuesta de error
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al obtener proveedores',
+            error: error
+        });
+        return resp._500_internal_server_error();
     }
+};
 
-    /**
-     * Crear nuevo proveedor
-     */
-    COTNROLADOR.crearProveedor = async function(req, res) {
-        try {
-            const resultado = await ProveedoresService.crear({
-                ...req.body,
-                usuario: req.user._id
-            });
+/**
+ * Crear nuevo proveedor
+ */
+COTNROLADOR.crearProveedor = async function (req, res) {
+    try {
+        const resultado = await ProveedoresService.crear({
+            ...req.body,
+            usuario: req.user._id
+        });
 
-            const resp = new response(res, __filename, {
-                mensaje: 'Proveedor creado exitosamente',
-                datos: resultado
-            });
-            return resp._201_created();
-        } catch (error) {
-            const resp = new response(res, __filename, {
-                mensaje: 'Error al crear proveedor',
-                error: error
-            });
-            return resp._500_internal_server_error();
-        }
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor creado exitosamente',
+            datos: resultado
+        });
+        return resp._201_created();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al crear proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
     }
+};
 
-    /**
-     * Actualizar proveedor
-     */
-    COTNROLADOR.actualizarProveedor = async function(req, res) {
-        try {
-            const { id } = req.params;
-            const resultado = await ProveedoresService.actualizar(id, {
-                ...req.body,
-                usuario: req.user._id
-            });
+/**
+ * Actualizar proveedor
+ */
+COTNROLADOR.actualizarProveedor = async function (req, res) {
+    try {
+        const { id } = req.params;
+        const resultado = await ProveedoresService.actualizar(id, {
+            ...req.body,
+            usuario: req.user._id
+        });
 
-            const resp = new response(res, __filename, {
-                mensaje: 'Proveedor actualizado exitosamente',
-                datos: resultado
-            });
-            return resp._200_ok();
-        } catch (error) {
-            const resp = new response(res, __filename, {
-                mensaje: 'Error al actualizar proveedor',
-                error: error
-            });
-            return resp._500_internal_server_error();
-        }
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor actualizado exitosamente',
+            datos: resultado
+        });
+        return resp._200_ok();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al actualizar proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
     }
+};
 
-    /**
-     * Obtener proveedor específico por ID
-     */
-    COTNROLADOR.obtenerPorId = async function(req, res) {
-        try {
-            const { id } = req.params;
-            const { resultado } = await ProveedoresService.buscar({ id });
+/**
+ * Obtener proveedor específico por ID
+ */
+COTNROLADOR.obtenerPorId = async function (req, res) {
+    try {
+        const { id } = req.params;
+        const { resultado } = await ProveedoresService.buscar({ id });
 
-            if (!resultado[0]) {
-                const resp = new response(res, __filename, {
-                    mensaje: 'Proveedor no encontrado',
-                    error: new Error('Proveedor no encontrado')
-                });
-                return resp._404_not_found();
-            }
-
+        if (!resultado[0]) {
             const resp = new response(res, __filename, {
-                mensaje: 'Proveedor encontrado',
-                datos: resultado[0]
+                mensaje: 'Proveedor no encontrado',
+                error: new Error('Proveedor no encontrado')
             });
-            return resp._200_ok();
-        } catch (error) {
-            const resp = new response(res, __filename, {
-                mensaje: 'Error al obtener proveedor',
-                error: error
-            });
-            return resp._500_internal_server_error();
+            return resp._404_not_found();
         }
-    }
 
-    // Otros métodos del controlador...
-}
+        const resp = new response(res, __filename, {
+            mensaje: 'Proveedor encontrado',
+            datos: resultado[0]
+        });
+        return resp._200_ok();
+    } catch (error) {
+        const resp = new response(res, __filename, {
+            mensaje: 'Error al obtener proveedor',
+            error: error
+        });
+        return resp._500_internal_server_error();
+    }
+};
+
+// Otros métodos del controlador...
+
+modules.exports = CONTROLADOR;
 ```
 
 ### 4.5 Rutas
