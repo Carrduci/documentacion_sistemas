@@ -192,9 +192,7 @@ horizontal al formulario (`<hr>`), entonces el campo se vería así.
 
 ```ts
 @ViewChild('separadorHorizontal')
-separadorHorizontal
-:
-TemplateRef<any>;
+separadorHorizontal: TemplateRef<any>;
 
 camposFormulario = () => {
     return {
@@ -292,7 +290,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/imagenes/componentes__form_dinamico_array_checkbox.png" alt="radio">
+  <img src="/assets/imagenes/componentes__form_dinamico_array_checkbox.png" alt="radio">
   <figcaption>Se pueden seleccionar varios</figcaption>
 </figure>
 
@@ -353,7 +351,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/imagenes/componentes__form_dinamico_radio.png" alt="radio">
+  <img src="/assets/imagenes/componentes__form_dinamico_radio.png" alt="radio">
   <figcaption>Solo se puede seleccionar uno a la vez</figcaption>
 </figure>
 
@@ -574,7 +572,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/imagenes/componentes__form_dinamico_text.png" alt="radio">
+  <img src="/assets/imagenes/componentes__form_dinamico_text.png" alt="radio">
   <figcaption>No se pueden escribir decimales y se separan los miles</figcaption>
 </figure>
 
@@ -608,7 +606,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/imagenes/componentes__form_dinamico_text_datalist.png" alt="radio">
+  <img src="/assets/imagenes/componentes__form_dinamico_text_datalist.png" alt="radio">
   <figcaption>Se puede escribir algo diferente a lo sugerido</figcaption>
 </figure>
 
@@ -641,7 +639,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/gifs/componentes__form_dinamico_textarea.gif" alt="radio">
+  <img src="/assets/gifs/componentes__form_dinamico_textarea.gif" alt="radio">
   <figcaption>El recuadro crece automáticamente.</figcaption>
 </figure>
 
@@ -811,7 +809,7 @@ camposFormulario = () => {
 ```
 
 <figure>
-  <img src="../../../assets/gifs/componentes__form_dinamico_datalist.gif" alt="radio">
+  <img src="/assets/gifs/componentes__form_dinamico_datalist.gif" alt="radio">
   <figcaption>Si solo queda una opción, se autoselecciona</figcaption>
 </figure>
 
