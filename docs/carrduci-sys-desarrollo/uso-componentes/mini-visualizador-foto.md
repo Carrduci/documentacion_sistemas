@@ -18,10 +18,10 @@ carrduci-sys-gui/src/app/components/utiles/mini-visualizador-foto/
 
 ## Dependencias principales
 
-- `VisorDeImagenesService` (`src/app/services/visorDeImagenes/visor-de-imagenes.service.ts`): controla la vista modal y la navegación entre imágenes.
-- `ImagenPipe` (`src/app/pipes/imagen.pipe.ts`): genera la URL pública con cache busting para cada imagen.
-- `PipesModule`: requerido por `MiniVisualizadorFotoModule` para que el pipe esté disponible en la plantilla.
-- `CARPETAS_IMGS`: enumeración exportada junto al componente para tipar las carpetas soportadas.
+-   `VisorDeImagenesService` (`src/app/services/visorDeImagenes/visor-de-imagenes.service.ts`): controla la vista modal y la navegación entre imágenes.
+-   `ImagenPipe` (`src/app/pipes/imagen.pipe.ts`): genera la URL pública con cache busting para cada imagen.
+-   `PipesModule`: requerido por `MiniVisualizadorFotoModule` para que el pipe esté disponible en la plantilla.
+-   `CARPETAS_IMGS`: enumeración exportada junto al componente para tipar las carpetas soportadas.
 
 ## Importación del módulo
 
@@ -40,36 +40,36 @@ export class PerfilUsuarioModule {}
 
 ### Entradas (`@Input`)
 
-| Propiedad | Tipo | Requerido | Valor por defecto | Descripción |
-| --- | --- | --- | --- | --- |
-| `datosImagen` | `{ nombre: string; carpeta: string; grupoDeNombres?: string[] }` | ✅ | `undefined` | Define la ruta de la imagen base. `carpeta` debe existir en `VisorDeImagenesService.RUTAS_VALIDAS`. |
-| `imagenSrc` | `any` | ❌ | `undefined` | Permite inyectar una URL ya resuelta (blob, CDN, base64). Si se define, se ignora `datosImagen.nombre`. |
-| `mostrarImagenConClick` | `boolean` | ❌ | `true` | Abre automáticamente el visor al hacer click. |
-| `medida` | `string` | ❌ | `'3rem'` | Tamaño de la miniatura asignado a la variable CSS `--medida`. |
-| `margin` | `string` | ❌ | `'.2rem'` | Margen exterior (`--margin`). |
-| `borderRadius` | `string` | ❌ | `'.6rem'` | Radio de borde (`@Input('border-radius')`). |
-| `simboloMostrarHover` | `string` | ❌ | `undefined` | Clase FontAwesome que se muestra sobre la imagen al pasar el cursor. |
-| `claseContenedorSimbolo` | `string` | ❌ | `undefined` | Estilos adicionales para el contenedor del símbolo (ej. `badge badge-light`). |
-| `claseImagen` | `string` | ❌ | `undefined` | Clases CSS adicionales aplicadas al `<img>`. |
+| Propiedad                | Tipo                                                             | Requerido | Valor por defecto | Descripción                                                                                             |
+| ------------------------ | ---------------------------------------------------------------- | --------- | ----------------- | ------------------------------------------------------------------------------------------------------- |
+| `datosImagen`            | `{ nombre: string; carpeta: string; grupoDeNombres?: string[] }` | ✅        | `undefined`       | Define la ruta de la imagen base. `carpeta` debe existir en `VisorDeImagenesService.RUTAS_VALIDAS`.     |
+| `imagenSrc`              | `any`                                                            | ❌        | `undefined`       | Permite inyectar una URL ya resuelta (blob, CDN, base64). Si se define, se ignora `datosImagen.nombre`. |
+| `mostrarImagenConClick`  | `boolean`                                                        | ❌        | `true`            | Abre automáticamente el visor al hacer click.                                                           |
+| `medida`                 | `string`                                                         | ❌        | `'3rem'`          | Tamaño de la miniatura asignado a la variable CSS `--medida`.                                           |
+| `margin`                 | `string`                                                         | ❌        | `'.2rem'`         | Margen exterior (`--margin`).                                                                           |
+| `borderRadius`           | `string`                                                         | ❌        | `'.6rem'`         | Radio de borde (`@Input('border-radius')`).                                                             |
+| `simboloMostrarHover`    | `string`                                                         | ❌        | `undefined`       | Clase FontAwesome que se muestra sobre la imagen al pasar el cursor.                                    |
+| `claseContenedorSimbolo` | `string`                                                         | ❌        | `undefined`       | Estilos adicionales para el contenedor del símbolo (ej. `badge badge-light`).                           |
+| `claseImagen`            | `string`                                                         | ❌        | `undefined`       | Clases CSS adicionales aplicadas al `<img>`.                                                            |
 
 ### Salidas (`@Output`)
 
-| Evento | Tipo | Descripción |
-| --- | --- | --- |
-| `clickImagen` | `EventEmitter<{ nombre: string; carpeta: string } \| void>` | Se dispara al hacer click. Emite `void` si se usa `imagenSrc`; de lo contrario envía `datosImagen`. |
-| `imagenCargada` | `EventEmitter<void>` | Notifica cuando la miniatura terminó de cargarse (evento `load`). |
+| Evento          | Tipo                                                        | Descripción                                                                                         |
+| --------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `clickImagen`   | `EventEmitter<{ nombre: string; carpeta: string } \| void>` | Se dispara al hacer click. Emite `void` si se usa `imagenSrc`; de lo contrario envía `datosImagen`. |
+| `imagenCargada` | `EventEmitter<void>`                                        | Notifica cuando la miniatura terminó de cargarse (evento `load`).                                   |
 
 ## Funcionamiento interno
 
-- `manejarClick()` verifica `mostrarImagenConClick`; si está activo, abre el visor y luego emite `clickImagen` con el payload adecuado.
-- `mostrarImagen()` delega en `VisorDeImagenesService`. Si se entregó `grupoDeNombres`, transforma cada nombre con `ImagenPipe` y muestra la galería; en otro caso abre una imagen única usando `imagenSrc` o `imagenPipe.transform`.
-- `ImagenPipe` concatena `URL_SERVICIOS` con `/img/<carpeta>/<archivo>` y añade un número aleatorio para evitar cache.
+-   `manejarClick()` verifica `mostrarImagenConClick`; si está activo, abre el visor y luego emite `clickImagen` con el payload adecuado.
+-   `mostrarImagen()` delega en `VisorDeImagenesService`. Si se entregó `grupoDeNombres`, transforma cada nombre con `ImagenPipe` y muestra la galería; en otro caso abre una imagen única usando `imagenSrc` o `imagenPipe.transform`.
+-   `ImagenPipe` concatena `URL_SERVICIOS` con `/img/<carpeta>/<archivo>` y añade un número aleatorio para evitar cache.
 
 ## Consideraciones de seguridad
 
-- Las rutas `/img/**` en backend son **abiertas**. Cualquier persona con el link puede acceder al archivo sin autenticación.
-- Evita subir archivos con información confidencial a estas carpetas o usa nombres ofuscados y políticas de expiración externas.
-- Limítate a las carpetas definidas en `RUTAS_VALIDAS`; valores no contemplados provocan error y previenen accesos arbitrarios.
+-   Las rutas `/img/**` en backend son **abiertas**. Cualquier persona con el link puede acceder al archivo sin autenticación.
+-   Evita subir archivos con información confidencial a estas carpetas o usa nombres ofuscados y políticas de expiración externas.
+-   Limítate a las carpetas definidas en `RUTAS_VALIDAS`; valores no contemplados provocan error y previenen accesos arbitrarios.
 
 ## Ejemplos de uso
 
@@ -95,7 +95,6 @@ export class FichaEmpleadoComponent {
 <!-- ficha-empleado.component.html -->
 <app-mini-visualizador-foto
     [datosImagen]="imagenEmpleado"
-    (imagenCargada)="console.log('Miniatura lista')"
 ></app-mini-visualizador-foto>
 ```
 
@@ -155,8 +154,13 @@ import { CARPETAS_IMGS } from 'src/app/components/utiles/mini-visualizador-foto/
 })
 export class ReporteMantenimientoComponent {
     readonly carpeta = CARPETAS_IMGS.evidenciasBitacoraMtto;
-    readonly imagenes = ['evidencia-01.jpg', 'evidencia-02.jpg', 'evidencia-03.jpg'];
-    readonly miniaturaTemporal = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...';
+    readonly imagenes = [
+        'evidencia-01.jpg',
+        'evidencia-02.jpg',
+        'evidencia-03.jpg'
+    ];
+    readonly miniaturaTemporal =
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...';
 
     constructor(
         private readonly visorDeImagenes: VisorDeImagenesService,
@@ -185,30 +189,26 @@ export class ReporteMantenimientoComponent {
         grupoDeNombres: imagenes
     }"
     [imagenSrc]="miniaturaTemporal"
-    [mostrarImagenConClick]="false"
-    [medida]="'6rem'"
-    [margin]="'0 auto 1rem auto'"
+    [mostrarImagenConClick]="true"
+    [medida]="'3rem'"
     [borderRadius]="'1rem'"
     [simboloMostrarHover]="'fas fa-external-link-alt'"
     [claseContenedorSimbolo]="'badge bg-primary text-white position-absolute top-0 end-0'"
-    [claseImagen]="'shadow-lg border border-white'"
-    (clickImagen)="abrirGaleria()"
-    (imagenCargada)="manejarCarga()"
+    [claseImagen]="'shadow'"
 ></app-mini-visualizador-foto>
 ```
 
 ## Buenas prácticas
 
-- **Valida** que el archivo exista antes de renderizar el componente para evitar múltiples 404.
-- **Reutiliza** `CARPETAS_IMGS` para prevenir errores tipográficos en `carpeta`.
-- **Desactiva** `mostrarImagenConClick` si necesitas controlar el visor desde afuera y usa `clickImagen` para tu lógica.
-- **Optimiza** el peso de las imágenes en el backend; el componente no las reescala.
-- **Sincroniza** loaders con `imagenCargada` cuando sea crítico saber que la miniatura terminó de cargarse.
+-   **Valida** que el archivo exista antes de renderizar el componente para evitar múltiples 404.
+-   **Reutiliza** `CARPETAS_IMGS` para prevenir errores tipográficos en `carpeta`.
+-   **Desactiva** `mostrarImagenConClick` si necesitas controlar el visor desde afuera y usa `clickImagen` para tu lógica.
+-   **Optimiza** el peso de las imágenes en el backend; el componente no las reescala.
+-   **Sincroniza** loaders con `imagenCargada` cuando sea crítico saber que la miniatura terminó de cargarse.
 
 ## Checklist de integración
 
-- **Importa** `MiniVisualizadorFotoModule` en el módulo consumidor.
-- **Configura** `datosImagen` con `carpeta` válida y, si corresponde, `grupoDeNombres` para galerías.
-- **Personaliza** estilos (`claseImagen`, `claseContenedorSimbolo`, `borderRadius`, `medida`) para alinear el layout.
-- **Evalúa** el riesgo de compartir URLs abiertas y aplica mitigaciones si se manejan documentos sensibles.
-
+-   **Importa** `MiniVisualizadorFotoModule` en el módulo consumidor.
+-   **Configura** `datosImagen` con `carpeta` válida y, si corresponde, `grupoDeNombres` para galerías.
+-   **Personaliza** estilos (`claseImagen`, `claseContenedorSimbolo`, `borderRadius`, `medida`) para alinear el layout.
+-   **Evalúa** el riesgo de compartir URLs abiertas y aplica mitigaciones si se manejan documentos sensibles.

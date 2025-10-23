@@ -2,23 +2,7 @@
 
 ## Descripción
 
-La **Tabla Genérica** es el componente más completo y versátil del sistema CARRDUCI. Permite crear tablas dinámicas con funcionalidades avanzadas como selección múltiple, ordenamiento, filtrado, exportación, modo móvil responsivo, barras de progreso, desplegables y mucho más.
-
-### Características principales
-
-- **Generación dinámica**: Crea tablas desde arrays de objetos
-- **54+ implementaciones** en el sistema
-- **Modo selección múltiple**: Con botones de ayuda para gestionar selecciones
-- **Columnas especiales**: Imágenes, botones, estatus, desplegables
-- **Modo móvil responsivo**: Estilo masonry con breakpoints personalizables
-- **Barras de progreso CSS**: Visualización de porcentajes en filas
-- **Exportar/Copiar**: Copiar contenido a portapapeles o imprimir
-- **Templates personalizados**: ng-template para contenido complejo
-- **ngClass avanzado**: Sistema de grupos con bordes redondeados
-- **Scroll automático**: Ajuste al máximo disponible en viewport
-- **Pipes personalizados**: Para formatear datos (fecha, decimal, porcentaje, etc.)
-- **Callbacks dinámicos**: routerLink, click, estilos, clases
-- **Uso en modales**: Compatible con `app-modal`
+Este componente permite crear tablas dinámicas con funcionalidades avanzadas como selección múltiple, ordenamiento, filtrado, exportación, modo móvil responsivo, barras de progreso, desplegables y mucho más.
 
 ## Instalación e Importación
 
@@ -56,9 +40,9 @@ Si solo necesitas una tabla básica sin configuraciones avanzadas:
 ```typescript
 import { Component } from '@angular/core';
 import { TablaGenericaService } from 'src/app/services/tabla-generica.service';
-import { 
-    DatosTablaGenerica, 
-    DatosColumnaTablaGenerica 
+import {
+    DatosTablaGenerica,
+    DatosColumnaTablaGenerica
 } from 'src/app/components/utiles/tabla-generica/tabla-generica.component';
 
 @Component({
@@ -67,19 +51,18 @@ import {
 })
 export class MiComponente {
     datosTabla: DatosTablaGenerica;
-    cargando = {};
-    
+
     usuarios = [
         { nombre: 'Juan Pérez', edad: 30, email: 'juan@example.com' },
         { nombre: 'María García', edad: 25, email: 'maria@example.com' }
     ];
-    
+
     constructor(private tablaService: TablaGenericaService) {}
-    
+
     ngOnInit() {
         this.crearTabla();
     }
-    
+
     crearTabla() {
         const columnas: DatosColumnaTablaGenerica[] = [
             {
@@ -96,7 +79,7 @@ export class MiComponente {
                 campoCelda: { funcion: (usuario) => usuario.email }
             }
         ];
-        
+
         this.datosTabla = this.tablaService.generarEstructura(
             'No se encontraron usuarios',
             this.usuarios,
@@ -109,10 +92,7 @@ export class MiComponente {
 ### HTML
 
 ```html
-<app-tabla-generica
-    [datos]="datosTabla"
-    [cargando]="cargando"
-></app-tabla-generica>
+<app-tabla-generica [datos]="datosTabla"></app-tabla-generica>
 ```
 
 ?> **NOTA**: Este ejemplo básico crea una tabla funcional con 3 columnas. Las secciones siguientes explican todas las funcionalidades avanzadas disponibles.
@@ -165,27 +145,27 @@ carrduci-sys-gui/src/app/
 
 ### Inputs
 
-| Propiedad | Tipo | Descripción | Por Defecto |
-|-----------|------|-------------|-------------|
-| `[datos]` | `DatosTablaGenerica` | Datos estructurados de la tabla | - |
-| `[cargando]` | `object` | Objeto con mensajes de carga | `{}` |
-| `[modoSeleccion]` | `boolean` | Activa modo selección múltiple | `false` |
-| `[campoSeleccion]` | `string` | Campo para identificar selección | `null` |
-| `[seleccionOtrasPaginas]` | `any[]` | IDs seleccionados en otras páginas | - |
-| `[ObjetosOtrasPaginas]` | `any` | Objetos seleccionados previamente | - |
-| `[enMovil]` | `boolean` | Activa modo móvil | `false` |
-| `[enModal]` | `boolean` | Dentro de modal | `false` |
-| `[botonesCopiar]` | `boolean` | Muestra botones copiar/exportar | `true` |
-| `[botonScrollTop]` | `boolean` | Muestra botón scroll arriba | `true` |
-| `[ajustarTablaAlMaximoScrollPosible]` | `boolean` | Auto-ajustar altura | `false` |
-| `[correccionAjusteScrollMaximoInferior]` | `string` | Corrección altura | `'60px'` |
+| Propiedad                                | Tipo                 | Descripción                        | Por Defecto |
+| ---------------------------------------- | -------------------- | ---------------------------------- | ----------- |
+| `[datos]`                                | `DatosTablaGenerica` | Datos estructurados de la tabla    | -           |
+| `[cargando]`                             | `object`             | Objeto con mensajes de carga       | `{}`        |
+| `[modoSeleccion]`                        | `boolean`            | Activa modo selección múltiple     | `false`     |
+| `[campoSeleccion]`                       | `string`             | Campo para identificar selección   | `null`      |
+| `[seleccionOtrasPaginas]`                | `any[]`              | IDs seleccionados en otras páginas | -           |
+| `[ObjetosOtrasPaginas]`                  | `any`                | Objetos seleccionados previamente  | -           |
+| `[enMovil]`                              | `boolean`            | Activa modo móvil                  | `false`     |
+| `[enModal]`                              | `boolean`            | Dentro de modal                    | `false`     |
+| `[botonesCopiar]`                        | `boolean`            | Muestra botones copiar/exportar    | `true`      |
+| `[botonScrollTop]`                       | `boolean`            | Muestra botón scroll arriba        | `true`      |
+| `[ajustarTablaAlMaximoScrollPosible]`    | `boolean`            | Auto-ajustar altura                | `false`     |
+| `[correccionAjusteScrollMaximoInferior]` | `string`             | Corrección altura                  | `'60px'`    |
 
 ### Outputs
 
-| Emisor | Tipo | Descripción |
-|--------|------|-------------|
-| `(seleccionado)` | `EventEmitter<any[]>` | Emite array de IDs seleccionados |
-| `(objetosSeleccionados)` | `EventEmitter<any>` | Emite objeto con elementos completos |
+| Emisor                   | Tipo                  | Descripción                          |
+| ------------------------ | --------------------- | ------------------------------------ |
+| `(seleccionado)`         | `EventEmitter<any[]>` | Emite array de IDs seleccionados     |
+| `(objetosSeleccionados)` | `EventEmitter<any>`   | Emite objeto con elementos completos |
 
 <hr class='hr-principal'>
 
@@ -224,17 +204,17 @@ this.datosTabla = this.tablaService.generarEstructura(
     imagen: this.templateImagen,
     tituloColumnaImagen: 'Foto',
     alineacionImagen: 'center',
-    
+
     // Botones (última columna)
     botones: this.templateBotones,
     tituloColumnaBotones: 'Acciones',
     alineacionBotones: 'center',
-    
+
     // Estatus
     estatus: this.templateEstatus,
     tituloEstatus: 'Estado',
     alineacionEstatus: 'center',
-    
+
     // Desplegable
     desplegable: this.templateDesplegable,
     alineacionDesplegable: 'center'
@@ -364,7 +344,10 @@ import { DatePipe, DecimalPipe, PercentPipe } from '@angular/common';
 
 ```html
 <!-- HTML -->
-<ng-template #miTemplate let-contexto>
+<ng-template
+    #miTemplate
+    let-contexto
+>
     <div>{{ contexto.datos.nombre }}</div>
 </ng-template>
 ```
@@ -449,48 +432,51 @@ import { Component, ViewChild, TemplateRef } from '@angular/core';
     templateUrl: './productos.component.html'
 })
 export class ProductosComponent {
+    constructor(public visorImagenesService: VisorDeImagenesService) {}
+
     @ViewChild('columnaImagen') columnaImagen: TemplateRef<any>;
-    
+
     productos = [
-        { 
-            _id: '1', 
-            nombre: 'Producto A', 
+        {
+            _id: '1',
+            nombre: 'Producto A',
             imagen: 'prod-001.jpg',
-            carpeta: 'productos' 
+            carpeta: 'productos'
         }
     ];
-    
+
     crearTabla() {
         const columnas: DatosColumnaTablaGenerica[] = [
             {
-                titulo: 'imagen',
-                tooltip: 'Visualización de la imagen',
-                alineacion: 'center',
-                campoCelda: {
-                    template: this.columnaImagen
-                }
-            },
-            {
+                alineacion: 'left',
                 titulo: 'nombre',
                 campoCelda: { funcion: (p) => p.nombre }
             }
         ];
-        
+
         this.datosTabla = this.tablaService.generarEstructura(
             'No hay productos',
             this.productos,
-            columnas
+            columnas,
+            {
+                imagen: this.columnaImagen,
+                tituloColumnaImagen: 'imagen',
+                alineacionImagen: 'center'
+            }
         );
     }
 }
 ```
 
 ```html
-<ng-template #columnaImagen let-contexto>
+<ng-template
+    #columnaImagen
+    let-contexto
+>
     <app-mini-visualizador-foto
         [datosImagen]="{
             nombre: contexto.datos.imagen,
-            carpeta: contexto.datos.carpeta
+            carpeta: visorImagenesService.TIPOS_DE_IMAGENES.empleados
         }"
         [medida]="'3rem'"
         [margin]="'0rem'"
@@ -500,12 +486,15 @@ export class ProductosComponent {
 <app-tabla-generica [datos]="datosTabla"></app-tabla-generica>
 ```
 
-?> **NOTA**: El componente `app-mini-visualizador-foto` abre automáticamente un visor de imágenes al hacer click. Ver más en [Mini Visualizador Foto](./mini-visualizador-foto.md).
+?> **NOTA**: El componente `app-mini-visualizador-foto` abre automáticamente un visor de imágenes al hacer click. Ver más en [Mini Visualizador Foto](./docs/carrduci-sys-desarrollo/uso-componentes/mini-visualizador-foto.md).
 
 #### Con Grupo de Imágenes
 
 ```html
-<ng-template #columnaImagen let-contexto>
+<ng-template
+    #columnaImagen
+    let-contexto
+>
     <app-mini-visualizador-foto
         [datosImagen]="{
             nombre: contexto.datos.imagenes[0].imagen,
@@ -518,10 +507,15 @@ export class ProductosComponent {
 </ng-template>
 ```
 
+?> En `[datosImagen]`, notese que en el campo `nombre` se selecciona la primera imagen. Aqui se puede poner la imagen que se desea que se muestre en el visualizador. El resto de imagenes (`grupoDeNombres`), incluyendo la que esta en el visualizador, serán visbles cuando se de click en este mismo.
+
 #### Con Imagen Directa (Sin Pipe)
 
 ```html
-<ng-template #columnaImagen let-contexto>
+<ng-template
+    #columnaImagen
+    let-contexto
+>
     <app-mini-visualizador-foto
         [imagenSrc]="contexto.datos.urlCompleta"
         [medida]="'3rem'"
@@ -559,15 +553,18 @@ eliminar(elem: any) {
 ```
 
 ```html
-<ng-template #botonesAcciones let-contexto>
+<ng-template
+    #botonesAcciones
+    let-contexto
+>
     <div class="btn-group">
-        <button 
+        <button
             class="btn btn-sm btn-primary"
             (click)="editar(contexto.datos)"
         >
             <i class="fas fa-edit"></i>
         </button>
-        <button 
+        <button
             class="btn btn-sm btn-danger"
             (click)="eliminar(contexto.datos)"
         >
@@ -596,8 +593,11 @@ crearTabla() {
 ```
 
 ```html
-<ng-template #estatusElemento let-contexto>
-    <span 
+<ng-template
+    #estatusElemento
+    let-contexto
+>
+    <span
         class="badge"
         [ngClass]="{
             'badge-success': contexto.datos.estado === 'COMPLETADO',
@@ -628,12 +628,18 @@ crearTabla() {
 ```
 
 ```html
-<ng-template #desplegable let-contexto>
+<ng-template
+    #desplegable
+    let-contexto
+>
     <div class="card">
         <div class="card-body">
             <h5>Detalles #{{ contexto.datos.numero }}</h5>
-            <hr>
-            <p><strong>Cliente:</strong> {{ contexto.datos.cliente }}</p>
+            <hr />
+            <p>
+                <strong>Cliente:</strong>
+                {{ contexto.datos.cliente }}
+            </p>
         </div>
     </div>
 </ng-template>
@@ -665,11 +671,11 @@ export class SelectorComponent {
     modoSeleccion = true;
     listaSeleccionados: any[] = [];
     objetosSeleccionados: any = {};
-    
+
     cargarSeleccionados(ids: any[]) {
         this.listaSeleccionados = ids;
     }
-    
+
     cargarObjetos(objetos: any) {
         this.objetosSeleccionados = objetos;
     }
@@ -680,9 +686,9 @@ export class SelectorComponent {
 
 Aparecen automáticamente:
 
-- **❌ Limpiar todo** (rojo): Deselecciona toda la selección
-- **🧹 Limpiar página** (naranja): Deselecciona solo página actual
-- **✓ Seleccionar página** (verde): Selecciona toda la página actual
+-   **❌ Limpiar todo** (rojo): Deselecciona toda la selección
+-   **🧹 Limpiar página** (naranja): Deselecciona solo página actual
+-   **✓ Seleccionar página** (verde): Selecciona toda la página actual
 
 <hr class='hr-principal'>
 
@@ -719,9 +725,9 @@ crearTabla() {
 
 ### Clases CSS Disponibles
 
-- `barra-progreso-una-fila`: Barra horizontal
-- `llenado-botella`: Efecto de llenado vertical
-- `blanco-hover-primera-col`: Fondo blanco en hover
+-   `barra-progreso-una-fila`: Barra horizontal
+-   `llenado-botella`: Efecto de llenado vertical
+-   `blanco-hover-primera-col`: Fondo blanco en hover
 
 <hr class='hr-principal'>
 
@@ -745,7 +751,7 @@ crearTabla() {
 {
     campoAMostrarMovil: 'nombre',
     classCampoAMostrarMovilCallback: () => 'text-primary font-bold',
-    
+
     campoSecundario2Movil: 'precio',
     PipeCampoSecundario2Movil: DecimalPipe,
     PipeArgsCampoSecundario2Movil: ['1.2-2'],
@@ -815,9 +821,12 @@ abrirModal() {
     [usarModalFalso]="true"
 >
     <ng-container encabezado>
-        <h5><i class="fas fa-list"></i> Lista</h5>
+        <h5>
+            <i class="fas fa-list"></i>
+            Lista
+        </h5>
     </ng-container>
-    
+
     <ng-container contenido>
         <app-tabla-generica
             [datos]="datosTabla"
@@ -832,9 +841,9 @@ abrirModal() {
 
 ## Componentes Relacionados
 
-- **[Paginador](./paginacion-y-filtros.md)**: Para paginación de datos
-- **[Modal](./modal.md)**: Para uso en modales
-- **[Historial](./historial.md)**: Para ver cambios de elementos
+-   **[Paginador](./paginacion-y-filtros.md)**: Para paginación de datos
+-   **[Modal](./modal.md)**: Para uso en modales
+-   **[Historial](./historial.md)**: Para ver cambios de elementos
 
 <hr class='hr-principal'>
 
