@@ -1473,6 +1473,7 @@ SERVICIO.actualizar = async function (id, datos) {
         runValidators: true,
         context: 'query',
         metadata: {
+            filename: __filename,
             idUsuario: datos.usuario,
             descripcion: 'Proveedor actualizado'
         }
@@ -1920,6 +1921,7 @@ SERVICIO.actualizar = async function (id, datos) {
         runValidators: true,
         context: 'query',
         metadata: {
+            filename: __filename,
             idUsuario: datos.usuario,
             descripcion: 'Elemento actualizado'
         }

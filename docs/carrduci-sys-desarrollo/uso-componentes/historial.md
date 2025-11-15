@@ -186,6 +186,7 @@ class MiServicio {
                 context: 'query',
                 // IMPORTANTE: Pasar metadata en options
                 metadata: {
+                    filename: __filename,
                     idUsuario: req.user._id,
                     descripcion: 'documento modificado',
                     descripcionLarga: `Se modificó el documento con ID ${_id}`
@@ -213,6 +214,7 @@ class MiServicio {
             {
                 context: 'query',
                 metadata: {
+                    filename: __filename,
                     idUsuario: req.user._id,
                     descripcion: 'documento desactivado'
                 }
@@ -234,6 +236,7 @@ await MiModelo.findOneAndUpdate(
     { $set: datosActualizar },
     {
         metadata: {
+            filename: __filename,
             noRegistrarHistorial: true // ← Omite el registro
         }
     }
@@ -248,6 +251,8 @@ await MiModelo.findOneAndUpdate(
 
 ```typescript
 metadata: {
+filename: __filename,
+
     // REQUERIDO (uno de los dos)
     idUsuario: string,           // ID del usuario que hace el cambio
     esUsuarioExterno: boolean,   // true si es usuario externo (sin ID)
@@ -264,12 +269,16 @@ metadata: {
 ```javascript
 // Corta y directa
 metadata: {
+filename: __filename,
+
     idUsuario: req.user._id,
     descripcion: 'folio modificado'
 }
 
 // Con descripción larga
 metadata: {
+filename: __filename,
+
     idUsuario: req.user._id,
     descripcion: 'entrada de material registrada',
     descripcionLarga: `Entrada de ${cantidad} kg de ${material.nombre}`
@@ -277,12 +286,16 @@ metadata: {
 
 // Usuario externo (cambio del sistema)
 metadata: {
+filename: __filename,
+
     esUsuarioExterno: true,
     descripcion: 'actualización automática del sistema'
 }
 
 // Con contexto específico y valores dinámicos
 metadata: {
+filename: __filename,
+
     idUsuario: req.user._id,
     descripcion: `salida para folio de producción #${folio}`,
     descripcionLarga: `Salieron ${cantidad} ${unidad} desde almacén para producción`
@@ -290,6 +303,8 @@ metadata: {
 
 // Ejemplo con operación compleja
 metadata: {
+filename: __filename,
+
     idUsuario: req.user._id,
     descripcion: `cantidad facturable de linea #${lineaNum} ajustada`,
     descripcionLarga: `Se ajustó al liberar reserva de ${cantidadReservada} unidades`

@@ -432,6 +432,7 @@ SERVICIO.modificarElemento = async function ({
             lean: true,
             context: 'query',
             metadata: {
+                filename: __filename,
                 idUsuario: idUsuario,
                 descripcion: 'Elemento modificado'
             }
@@ -725,6 +726,7 @@ return await ELEMENTO_MODEL.findOneAndUpdate(
         lean: true,
         context: 'query',
         metadata: {
+            filename: __filename,
             idUsuario: idUsuario,
             descripcion: 'Elemento actualizado'
         }
