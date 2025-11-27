@@ -211,7 +211,7 @@ UN_ELEMENTO_SCHEMA.plugin(HISTORIAL.hystory_log_plugin);
 
 const ELEMENTO_MODEL = Mongoose.model('Elemento', UN_ELEMENTO_SCHEMA);
 module.exports = ELEMENTO_MODEL;
-ELEMENTO_MODEL.createCollection();
+// ELEMENTO_MODEL.createCollection();
 ```
 
 ### 1. En el servicio de imágenes (API)

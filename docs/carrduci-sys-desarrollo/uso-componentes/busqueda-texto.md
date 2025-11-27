@@ -50,7 +50,7 @@ const ELEMENTO_MODEL = Mongoose.model('Elemento', ELEMENTO_SCHEMA);
 
 module.exports = ELEMENTO_MODEL;
 
-ELEMENTO_MODEL.createCollection();
+// ELEMENTO_MODEL.createCollection();
 ```
 
 Esto es lo que hay que agregar en le archivo `camposBusquedaTodosLosModelos.utils.js`.
